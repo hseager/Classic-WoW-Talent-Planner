@@ -3,3 +3,6 @@ body{ background:#efefef; font-family:'Helvetica', 'Arial'; color:#333;}
 main{ max-width: 1200px; margin: auto; padding: 40px; }
 
 h1,h2,h3,h4,h5,h6{ font-weight: normal; }
+
+.talent-trees{ display: flex; margin:20px 0; }
+.talent-tree{ width: 240px; padding:20px; margin:0 20px 0 0; background:#fff; min-height: 350px; }
