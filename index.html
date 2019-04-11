@@ -6,6 +6,7 @@
 	<main>
 		<h2>Classic WoW Talent Tree</h2>
 		<div id="app">
+			<strong>Skill points: {{talentTrees[currentClass].skillPoints}}</strong>
 			<ul>
 				<class-selection
 					v-for="klass in classes"
@@ -16,7 +17,7 @@
 			</ul>
 			<div class="talent-trees">
 				<talent-tree 
-					v-for="tree in talentTrees[currentClass]"
+					v-for="tree in talentTrees[currentClass].specs"
 					v-bind:tree="tree"
 					v-bind:key="tree.id"
 				></talent-tree>
