@@ -1,0 +1,5 @@
+*{ box-sizing: border-box; padding: 0; margin: 0; }
+body{ background:#efefef; font-family:'Helvetica', 'Arial'; color:#333;}
+main{ max-width: 1200px; margin: auto; padding: 40px; }
+
+h1,h2,h3,h4,h5,h6{ font-weight: normal; }
