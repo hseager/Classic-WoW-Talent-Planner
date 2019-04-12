@@ -5,20 +5,7 @@
 <body>
 	<main>
 		<h2>Classic WoW Talent Tree</h2>
-		<div id="app">
-			<ul>
-				<class-selection
-					v-for="klass in classes"
-					v-bind:klass="klass"
-					v-bind:key="klass.id"
-					v-on:change-class="currentClass = klass.name"
-				></class-selection>
-			</ul>
-			<class-trees
-				v-bind:class-tree="talentTrees[currentClass]"
-			></class-trees>
-
-		</div>
+		<div id="talent-calculator"></div>
 	</main>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="assets/scripts/main.js"></script>
