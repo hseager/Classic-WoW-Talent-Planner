@@ -1,169 +1,7 @@
-let talentData = {
-	"currentClass": 0,
-	"classes": [
-		{ 
-			"id": 0, 
-			"name": "hunter", 
-			"skillPoints": 51, 
-			"talentTrees": [
-				{ 
-					"id": 0,
-					"name": "Beast Mastery",
-					"skills": [
-						{ 
-							"id": 0, 
-							"name": "Improved Aspect of the Hawk", 
-							"maxRank": 5, 
-							"currentRank": 0
-						},
-						{ 
-							"id": 1,
-							"name": "Endurance Training",
-							"maxRank": 5,
-							"currentRank": 0
-						}
-					]
-				},
-				{ 
-					"id": 1,
-					"name": "Markmanship",
-					"skills": [
-						{ 
-							"id": 0,
-							"name": "Improved Concussive Shot",
-							"maxRank": 5,
-							"currentRank": 0
-						},
-						{ 
-							"id": 1, 
-							"name": "Efficiency", 
-							"maxRank": 5, 
-							"currentRank": 0
-						}
-					]
-				},
-				{ 
-					"id": 2,
-					"name": "Survival"
-				}
-			]
-		},
-		{ 
-			"id": 1, 
-			"name": "rogue", 
-			"skillPoints": 51, 
-			"talentTrees": [
-				{ 
-					"id": 0,
-					"name": "Assassination",
-					"skills": [
-						{ 
-							"id": 0, 
-							"name": "Improved Eviscerate", 
-							"maxRank": 5, 
-							"currentRank": 0
-						},
-					]
-				},
-				{ 
-					"id": 1,
-					"name": "Combat",
-					"skills": [
-						{ 
-							"id": 0,
-							"name": "Improved Gouge",
-							"maxRank": 5,
-							"currentRank": 0
-						},
-					]
-				},
-				{ 
-					"id": 2,
-					"name": "Subtlety"
-				}
-			]
-		},
-		{ 
-			"id": 2, 
-			"name": "mage", 
-			"skillPoints": 51, 
-			"talentTrees": [
-				{ 
-					"id": 0,
-					"name": "Arcane",
-					"skills": [
-						{ 
-							"id": 0, 
-							"name": "Arcane Subtlety", 
-							"maxRank": 2, 
-							"currentRank": 0
-						},
-					]
-				},
-				{ 
-					"id": 1,
-					"name": "Fire",
-					"skills": [
-						{ 
-							"id": 0,
-							"name": "Improved Fireball",
-							"maxRank": 5,
-							"currentRank": 0
-						},
-					]
-				},
-				{ 
-					"id": 2,
-					"name": "Frost"
-				}
-			]
-		}
-	]
-};
-
-Vue.component('class-list', {
-	props: ['classType'],
-	template: `<li><button v-on:click="$emit('change-class')">{{classType.name}}</button></li>`
-});
-
-Vue.component('class-panel', {
-	props: ['classType'],
-	template: 
-	`<div class="talent-trees">
-		<strong>Skills points: {{classType.skillPoints}}</strong>
-		<talent-tree 
-			v-for="tree in classType.talentTrees"
-			v-bind:tree="tree"
-			v-bind:key="tree.id"
-			v-on:decreaseClassSkillPoints="decreaseClassSkillPoints(classType)"
-			v-on:increaseClassSkillPoints="increaseClassSkillPoints(classType)"
-		></talent-tree>
-	</div>`,
-	methods: {
-		decreaseClassSkillPoints: function(classType){
-			classType.skillPoints--;
-		},
-		increaseClassSkillPoints: function(classType){
-			classType.skillPoints++;
-		}
-	}
-});
-
-Vue.component('talent-tree', {
-	props: ['tree'],
-	template: 
-	`<div class="talent-tree">
-		<h3>{{tree.name}}</h3>
-		<skills
-			v-for="skill in tree.skills"
-			v-bind:skill="skill"
-			v-bind:key="skill.id">
-		></skills>
-	</div>`,
-});
- 
-Vue.component('skills', {
-	props: ['skill'],
+let skills = {
+	props: {
+		skill: Object
+	},
 	template: 
 		`<div class="skill"
 			v-on:click="onIncreaseSkillRank(skill)"
@@ -184,12 +22,73 @@ Vue.component('skills', {
 			}
 		}
 	}
-});
+};
+
+let talentTree = {
+	props: {
+		treeName: String,
+		treeSkills: Array
+	},
+	template: 
+	`<div class="talent-tree">
+		<h3>{{treeName}}</h3>
+		<skills
+			v-for="skill in treeSkills"
+			v-bind:skill="skill"
+			v-bind:key="skill.id">
+		></skills>
+	</div>`,
+	components: {
+		skills
+	}
+};
+
+let classPanel = {
+	props: {
+		classType: Object
+	},
+	template:
+	`<div class="talent-trees">
+		<talent-tree 
+			v-for="tree in classType.talentTrees"
+			v-bind:treeName="tree.name"
+			v-bind:treeSkills="tree.skills"
+			v-bind:key="tree.id"
+			v-on:decreaseClassSkillPoints="decreaseClassSkillPoints(classType)"
+			v-on:increaseClassSkillPoints="increaseClassSkillPoints(classType)"
+		></talent-tree>
+	</div>`,
+	methods: {
+		decreaseClassSkillPoints: function(classType){
+			classType.skillPoints--;
+		},
+		increaseClassSkillPoints: function(classType){
+			classType.skillPoints++;
+		}
+	},
+	components: {
+		talentTree
+	}
+};
+
+let classList = {
+	props: {
+		classType: Object
+	},
+	template: `<li><button v-on:click="$emit('change-class')">{{classType.name}}</button></li>`
+};
 
 var app = new Vue({
 	el: '#talent-calculator',
+	data: talentData,
+	components: {
+		classList,
+		classPanel
+	},
 	template: 
 	`<div>
+		<strong>Skills points: {{classes[currentClass].skillPoints}}</strong>
+		<strong>Current level: {{classes[currentClass].currentLevel}}</strong>
 		<ul>
 			<class-list
 				v-for="classType in classes"
@@ -202,5 +101,4 @@ var app = new Vue({
 			v-bind:class-type="classes[currentClass]"
 		></class-panel>
 	</div>`,
-	data: talentData,
 });
