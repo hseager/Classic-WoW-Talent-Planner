@@ -6,7 +6,12 @@ let skills = {
 		`<div class="skill"
 			v-on:click="onIncreaseSkillRank(skill)"
 			v-on:click.right.prevent="onDecreaseSkillRank(skill)">
-			{{skill.name}}: {{skill.currentRank}}
+			<p>{{skill.name}}: {{skill.currentRank}}</p>
+			<em>{{skill.rankDescription[skill.currentRank-1]}}</em>
+			<span>
+				<strong v-if="skill.currentRank > 0 && skill.currentRank != 5">Next rank</strong>
+				<em>{{skill.rankDescription[skill.currentRank]}}</em>
+			</span>
 		</div>`,
 	methods: {
 		onIncreaseSkillRank: function(skill){

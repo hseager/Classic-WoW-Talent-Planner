@@ -15,13 +15,21 @@ let talentData = {
 							"id": 0, 
 							"name": "Improved Aspect of the Hawk", 
 							"maxRank": 5, 
-							"currentRank": 0
+							"currentRank": 0,
+							"rankDescription": [
+								"While Aspect of the Hawk is active, all normal ranged attacks have a 1% chance of increasing ranged attack speed by 30% for 12 sec.",
+								"While Aspect of the Hawk is active, all normal ranged attacks have a 2% chance of increasing ranged attack speed by 30% for 12 sec.",
+								"While Aspect of the Hawk is active, all normal ranged attacks have a 3% chance of increasing ranged attack speed by 30% for 12 sec.",
+								"While Aspect of the Hawk is active, all normal ranged attacks have a 4% chance of increasing ranged attack speed by 30% for 12 sec.",
+								"While Aspect of the Hawk is active, all normal ranged attacks have a 5% chance of increasing ranged attack speed by 30% for 12 sec."
+							]
 						},
 						{ 
 							"id": 1,
 							"name": "Endurance Training",
 							"maxRank": 5,
-							"currentRank": 0
+							"currentRank": 0,
+							"rankDescription": []
 						}
 					]
 				},
@@ -33,19 +41,24 @@ let talentData = {
 							"id": 0,
 							"name": "Improved Concussive Shot",
 							"maxRank": 5,
-							"currentRank": 0
+							"currentRank": 0,
+							"rankDescription": []
 						},
 						{ 
 							"id": 1, 
 							"name": "Efficiency", 
 							"maxRank": 5, 
-							"currentRank": 0
+							"currentRank": 0,
+							"rankDescription": []
 						}
 					]
 				},
 				{ 
 					"id": 2,
-					"name": "Survival"
+					"name": "Survival",
+					"maxRank": 5,
+					"currentRank": 0,
+					"rankDescription": []
 				}
 			]
 		},
@@ -63,7 +76,8 @@ let talentData = {
 							"id": 0, 
 							"name": "Improved Eviscerate", 
 							"maxRank": 5, 
-							"currentRank": 0
+							"currentRank": 0,
+							"rankDescription": []
 						},
 					]
 				},
@@ -75,13 +89,17 @@ let talentData = {
 							"id": 0,
 							"name": "Improved Gouge",
 							"maxRank": 5,
-							"currentRank": 0
+							"currentRank": 0,
+							"rankDescription": []
 						},
 					]
 				},
 				{ 
 					"id": 2,
-					"name": "Subtlety"
+					"name": "Subtlety",
+					"maxRank": 5,
+					"currentRank": 0,
+					"rankDescription": []
 				}
 			]
 		},
@@ -99,7 +117,8 @@ let talentData = {
 							"id": 0, 
 							"name": "Arcane Subtlety", 
 							"maxRank": 2, 
-							"currentRank": 0
+							"currentRank": 0,
+							"rankDescription": []
 						},
 					]
 				},
@@ -111,13 +130,17 @@ let talentData = {
 							"id": 0,
 							"name": "Improved Fireball",
 							"maxRank": 5,
-							"currentRank": 0
+							"currentRank": 0,
+							"rankDescription": []
 						},
 					]
 				},
 				{ 
 					"id": 2,
-					"name": "Frost"
+					"name": "Frost",
+					"maxRank": 5,
+					"currentRank": 0,
+					"rankDescription": []
 				}
 			]
 		}
