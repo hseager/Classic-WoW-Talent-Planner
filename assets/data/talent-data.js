@@ -5,7 +5,7 @@ let talentData = {
 			"id": 0, 
 			"name": "hunter", 
 			"skillPoints": 51,
-			"currentLevel": 0,
+			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -53,7 +53,7 @@ let talentData = {
 			"id": 1, 
 			"name": "rogue", 
 			"skillPoints": 51,
-			"currentLevel": 0,
+			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -89,7 +89,7 @@ let talentData = {
 			"id": 2, 
 			"name": "mage", 
 			"skillPoints": 51,
-			"currentLevel": 0,
+			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
 					"id": 0,

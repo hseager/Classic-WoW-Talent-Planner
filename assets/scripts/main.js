@@ -13,12 +13,14 @@ let skills = {
 			if(skill.currentRank < skill.maxRank){
 				skill.currentRank++
 				this.$parent.$emit('decreaseClassSkillPoints');
+				this.$parent.$emit('increaseRequiredLevel');
 			}
 		},
 		onDecreaseSkillRank: function(skill){
 			if(skill.currentRank >= 1){
 				skill.currentRank--;
 				this.$parent.$emit('increaseClassSkillPoints');
+				this.$parent.$emit('decreaseRequiredLevel');
 			}
 		}
 	}
@@ -56,6 +58,8 @@ let classPanel = {
 			v-bind:key="tree.id"
 			v-on:decreaseClassSkillPoints="decreaseClassSkillPoints(classType)"
 			v-on:increaseClassSkillPoints="increaseClassSkillPoints(classType)"
+			v-on:decreaseRequiredLevel="decreaseRequiredLevel(classType)"
+			v-on:increaseRequiredLevel="increaseRequiredLevel(classType)"
 		></talent-tree>
 	</div>`,
 	methods: {
@@ -64,7 +68,19 @@ let classPanel = {
 		},
 		increaseClassSkillPoints: function(classType){
 			classType.skillPoints++;
-		}
+		},
+		increaseRequiredLevel: function(classType){
+			if(classType.requiredLevel == 0)
+				classType.requiredLevel = 10;
+			else
+				classType.requiredLevel++;
+		},
+		decreaseRequiredLevel: function(classType){
+			if(classType.requiredLevel == 10)
+				classType.requiredLevel = 0
+			else
+				classType.requiredLevel--;
+		},
 	},
 	components: {
 		talentTree
@@ -88,7 +104,7 @@ var app = new Vue({
 	template: 
 	`<div>
 		<strong>Skills points: {{classes[currentClass].skillPoints}}</strong>
-		<strong>Current level: {{classes[currentClass].currentLevel}}</strong>
+		<strong>Required level: {{classes[currentClass].requiredLevel}}</strong>
 		<ul>
 			<class-list
 				v-for="classType in classes"
