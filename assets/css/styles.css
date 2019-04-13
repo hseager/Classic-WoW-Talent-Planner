@@ -1,8 +1,14 @@
 *{ box-sizing: border-box; padding: 0; margin: 0; }
-body{ background:#efefef; font-family:'Helvetica', 'Arial'; color:#333;}
+body{ background:#111; font-family:'Helvetica', 'Arial'; color:#efefef;}
 main{ max-width: 1200px; margin: auto; padding: 40px; }
 
 h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 
 .talent-trees{ display: flex; margin:20px 0; }
-.talent-tree{ width: 240px; padding:20px; margin:0 20px 0 0; background:#fff; min-height: 350px; }
+.talent-tree{ width: 240px; padding:20px; margin:0 20px 0 0; background:#333; min-height: 350px; }
+
+.class-list{ list-style-type: none; padding: 20px 0; }
+.class-list li { display: inline-block; margin:0 10px 0 0; position: relative; cursor:pointer; width: 62px; height:62px; }
+.class-list li img{ display: block; width:100%; }
+.class-list li:hover:after,
+.class-list li.active:after{ content:''; box-shadow: inset 0 0 16px #526db1; position: absolute; top: 3px; left: 2px; width: 58px; height: 58px; border-radius: 3px; }

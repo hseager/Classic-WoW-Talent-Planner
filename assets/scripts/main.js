@@ -4,8 +4,8 @@ let skills = {
 	},
 	template: 
 		`<div class="skill"
-			v-on:click="onIncreaseSkillRank(skill)"
-			v-on:click.right.prevent="onDecreaseSkillRank(skill)">
+			v-on:click="onIncreaseSkillRank"
+			v-on:click.right.prevent="onDecreaseSkillRank">
 			<p>{{skill.name}}: {{skill.currentRank}}</p>
 			<em>{{skill.rankDescription[skill.currentRank-1]}}</em>
 			<span>
@@ -14,16 +14,16 @@ let skills = {
 			</span>
 		</div>`,
 	methods: {
-		onIncreaseSkillRank: function(skill){
-			if(skill.currentRank < skill.maxRank){
-				skill.currentRank++
+		onIncreaseSkillRank: function(){
+			if(this.skill.currentRank < this.skill.maxRank){
+				this.skill.currentRank++
 				this.$parent.$emit('decreaseClassSkillPoints');
 				this.$parent.$emit('increaseRequiredLevel');
 			}
 		},
-		onDecreaseSkillRank: function(skill){
-			if(skill.currentRank >= 1){
-				skill.currentRank--;
+		onDecreaseSkillRank: function(){
+			if(this.skill.currentRank >= 1){
+				this.skill.currentRank--;
 				this.$parent.$emit('increaseClassSkillPoints');
 				this.$parent.$emit('decreaseRequiredLevel');
 			}
@@ -61,30 +61,30 @@ let classPanel = {
 			v-bind:treeName="tree.name"
 			v-bind:treeSkills="tree.skills"
 			v-bind:key="tree.id"
-			v-on:decreaseClassSkillPoints="decreaseClassSkillPoints(classType)"
-			v-on:increaseClassSkillPoints="increaseClassSkillPoints(classType)"
-			v-on:decreaseRequiredLevel="decreaseRequiredLevel(classType)"
-			v-on:increaseRequiredLevel="increaseRequiredLevel(classType)"
+			v-on:decreaseClassSkillPoints="decreaseClassSkillPoints"
+			v-on:increaseClassSkillPoints="increaseClassSkillPoints"
+			v-on:decreaseRequiredLevel="decreaseRequiredLevel"
+			v-on:increaseRequiredLevel="increaseRequiredLevel"
 		></talent-tree>
 	</div>`,
 	methods: {
-		decreaseClassSkillPoints: function(classType){
-			classType.skillPoints--;
+		decreaseClassSkillPoints: function(){
+			this.classType.skillPoints--;
 		},
-		increaseClassSkillPoints: function(classType){
-			classType.skillPoints++;
+		increaseClassSkillPoints: function(){
+			this.classType.skillPoints++;
 		},
-		increaseRequiredLevel: function(classType){
-			if(classType.requiredLevel == 0)
-				classType.requiredLevel = 10;
+		increaseRequiredLevel: function(){
+			if(this.classType.requiredLevel == 0)
+				this.classType.requiredLevel = 10;
 			else
-				classType.requiredLevel++;
+				this.classType.requiredLevel++;
 		},
-		decreaseRequiredLevel: function(classType){
-			if(classType.requiredLevel == 10)
-				classType.requiredLevel = 0
+		decreaseRequiredLevel: function(){
+			if(this.classType.requiredLevel == 10)
+				this.classType.requiredLevel = 0;
 			else
-				classType.requiredLevel--;
+				this.classType.requiredLevel--;
 		},
 	},
 	components: {
@@ -98,27 +98,15 @@ let classList = {
 		classType: Object,
 		currentClass: Number
 	},
-	data(){
-		return {
-			iconHoverCheck: false
-		}
-	},
 	template: 
-	`<li>
+	`<li v-on:click="onClassSelect" v-bind:class="{ active: currentClass === classType.id }">
 		<img 
-			v-on:click="$emit('change-class')"
-			v-on:mouseover="iconHoverCheck = true"
-			v-on:mouseout="iconHoverCheck = false"
-			v-bind:src="setClassIcon(classType, iconHoverCheck, constants, currentClass)"
+			v-bind:src="constants.imageDirectory + classType.icon"
 		>
-		<button v-on:click="$emit('change-class')">{{classType.name}}</button>
 	</li>`,
 	methods: {
-		setClassIcon: function(classType, iconHoverCheck, constants, currentClass){
-			if(currentClass == classType.id){
-				return constants.imageDirectory + classType.iconHover;
-			}
-			return iconHoverCheck ? constants.imageDirectory + classType.iconHover : constants.imageDirectory + classType.icon;
+		onClassSelect: function(){
+			this.$emit('change-class');
 		}
 	}
 };
@@ -134,7 +122,7 @@ var app = new Vue({
 	`<div>
 		<strong>Skills points: {{classes[currentClass].skillPoints}}</strong>
 		<strong>Required level: {{classes[currentClass].requiredLevel}}</strong>
-		<ul>
+		<ul class="class-list">
 			<class-list
 				v-for="classType in classes"
 				v-bind:classType="classType"

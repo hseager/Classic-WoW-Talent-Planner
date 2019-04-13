@@ -9,6 +9,7 @@ let talentData = {
 			"name": "hunter", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
+			"icon": "icon-hunter.png",
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -70,6 +71,7 @@ let talentData = {
 			"name": "rogue", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
+			"icon": "icon-rogue.png",
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -111,6 +113,7 @@ let talentData = {
 			"name": "mage", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
+			"icon": "icon-mage.png",
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -152,30 +155,35 @@ let talentData = {
 			"name": "druid", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
+			"icon": "icon-druid.png",
 		},
 		{
 			"id": 4, 
 			"name": "paladin", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
+			"icon": "icon-paladin.png",
 		},
 		{
 			"id": 5, 
 			"name": "priest", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
+			"icon": "icon-priest.png",
 		},
 		{
 			"id": 6, 
 			"name": "shaman", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
+			"icon": "icon-shaman.png",
 		},
 		{
 			"id": 7, 
 			"name": "warlock", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
+			"icon": "icon-warlock.png",
 		},
 		{
 			"id": 8, 
@@ -183,7 +191,6 @@ let talentData = {
 			"skillPoints": 51,
 			"requiredLevel": 0,
 			"icon": "icon-warrior.png",
-			"iconHover": "icon-warrior-hover.png"
 		}
 	]
 };
