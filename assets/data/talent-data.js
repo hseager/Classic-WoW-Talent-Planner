@@ -1,5 +1,8 @@
 let talentData = {
 	"currentClass": 0,
+	"constants": {
+		"imageDirectory": "assets/images/",
+	},
 	"classes": [
 		{ 
 			"id": 0, 
@@ -143,6 +146,44 @@ let talentData = {
 					"rankDescription": []
 				}
 			]
+		},
+		{
+			"id": 3, 
+			"name": "druid", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+		},
+		{
+			"id": 4, 
+			"name": "paladin", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+		},
+		{
+			"id": 5, 
+			"name": "priest", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+		},
+		{
+			"id": 6, 
+			"name": "shaman", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+		},
+		{
+			"id": 7, 
+			"name": "warlock", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+		},
+		{
+			"id": 8, 
+			"name": "warrior", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+			"icon": "icon-warrior.png",
+			"iconHover": "icon-warrior-hover.png"
 		}
 	]
 };

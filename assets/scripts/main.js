@@ -94,9 +94,33 @@ let classPanel = {
 
 let classList = {
 	props: {
-		classType: Object
+		constants: Object,		
+		classType: Object,
+		currentClass: Number
 	},
-	template: `<li><button v-on:click="$emit('change-class')">{{classType.name}}</button></li>`
+	data(){
+		return {
+			iconHoverCheck: false
+		}
+	},
+	template: 
+	`<li>
+		<img 
+			v-on:click="$emit('change-class')"
+			v-on:mouseover="iconHoverCheck = true"
+			v-on:mouseout="iconHoverCheck = false"
+			v-bind:src="setClassIcon(classType, iconHoverCheck, constants, currentClass)"
+		>
+		<button v-on:click="$emit('change-class')">{{classType.name}}</button>
+	</li>`,
+	methods: {
+		setClassIcon: function(classType, iconHoverCheck, constants, currentClass){
+			if(currentClass == classType.id){
+				return constants.imageDirectory + classType.iconHover;
+			}
+			return iconHoverCheck ? constants.imageDirectory + classType.iconHover : constants.imageDirectory + classType.icon;
+		}
+	}
 };
 
 var app = new Vue({
@@ -116,6 +140,8 @@ var app = new Vue({
 				v-bind:classType="classType"
 				v-bind:key="classType.id"
 				v-on:change-class="currentClass = classType.id"
+				v-bind:constants="constants"
+				v-bind:currentClass="currentClass"
 			></class-list>
 		</ul>
 		<class-panel
