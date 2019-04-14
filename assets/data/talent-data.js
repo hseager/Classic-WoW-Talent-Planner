@@ -6,8 +6,104 @@ let talentData = {
 		"backgroundDirectory": "backrounds/",
 	},
 	"classes": [
-		{ 
+		{
 			"id": 0, 
+			"name": "warrior", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+			"icon": "icon-warrior.png",
+			"talentTrees": [
+				{ 
+					"id": 0,
+					"name": "Arms",
+					"skills": [
+						{ 
+							"id": 0, 
+							"name": "Improved Heroic Strike", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 1,
+					"name": "Fury",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Booming Voice",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 2,
+					"name": "Protection",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Sheild Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				}
+			]
+		},
+		{
+			"id": 1, 
+			"name": "paladin", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+			"icon": "icon-paladin.png",
+			"talentTrees": [
+				{ 
+					"id": 0,
+					"name": "Holy",
+					"skills": [
+						{ 
+							"id": 0, 
+							"name": "Divine Strength", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 1,
+					"name": "Protection",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Improved Devotion Aura",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 2,
+					"name": "Retribution",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Improved Blessing of Might",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				}
+			]
+		},
+		{ 
+			"id": 2,
 			"name": "hunter", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
@@ -62,12 +158,20 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Survival",
-					"backgroundImage": "background-hunter-survival.jpg",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Monster Slaying",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": []
+						}
+					]
 				}
 			]
 		},
 		{ 
-			"id": 1, 
+			"id": 3, 
 			"name": "rogue", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
@@ -102,14 +206,116 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Subtlety",
-					"maxRank": 5,
-					"currentRank": 0,
-					"rankDescription": []
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Master of Deception",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				}
+			]
+		},
+		{
+			"id": 4, 
+			"name": "priest", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+			"icon": "icon-priest.png",
+			"talentTrees": [
+				{ 
+					"id": 0,
+					"name": "Discipline",
+					"skills": [
+						{ 
+							"id": 0, 
+							"name": "Unbreakable Will", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 1,
+					"name": "Holy",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Healing Focus",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 2,
+					"name": "Shadow",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Spirit Tap",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				}
+			]
+		},
+		{
+			"id": 5, 
+			"name": "shaman", 
+			"skillPoints": 51,
+			"requiredLevel": 0,
+			"icon": "icon-shaman.png",
+			"talentTrees": [
+				{ 
+					"id": 0,
+					"name": "Elemental",
+					"skills": [
+						{ 
+							"id": 0, 
+							"name": "Convection", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 1,
+					"name": "Enhancement",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Ancestral Knowledge",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 2,
+					"name": "Restoration",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Improved Healing Wave",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
 				}
 			]
 		},
 		{ 
-			"id": 2, 
+			"id": 6, 
 			"name": "mage", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
@@ -151,46 +357,100 @@ let talentData = {
 			]
 		},
 		{
-			"id": 3, 
-			"name": "druid", 
-			"skillPoints": 51,
-			"requiredLevel": 0,
-			"icon": "icon-druid.png",
-		},
-		{
-			"id": 4, 
-			"name": "paladin", 
-			"skillPoints": 51,
-			"requiredLevel": 0,
-			"icon": "icon-paladin.png",
-		},
-		{
-			"id": 5, 
-			"name": "priest", 
-			"skillPoints": 51,
-			"requiredLevel": 0,
-			"icon": "icon-priest.png",
-		},
-		{
-			"id": 6, 
-			"name": "shaman", 
-			"skillPoints": 51,
-			"requiredLevel": 0,
-			"icon": "icon-shaman.png",
-		},
-		{
 			"id": 7, 
 			"name": "warlock", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
 			"icon": "icon-warlock.png",
+			"talentTrees": [
+				{ 
+					"id": 0,
+					"name": "Affliction",
+					"skills": [
+						{ 
+							"id": 0, 
+							"name": "Suppression", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 1,
+					"name": "Demonology",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Improved Healthstone",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 2,
+					"name": "Destruction",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Improved Shadow Bolt",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				}
+			]
 		},
 		{
 			"id": 8, 
-			"name": "warrior", 
+			"name": "druid", 
 			"skillPoints": 51,
 			"requiredLevel": 0,
-			"icon": "icon-warrior.png",
-		}
+			"icon": "icon-druid.png",
+			"talentTrees": [
+				{ 
+					"id": 0,
+					"name": "Balance",
+					"skills": [
+						{ 
+							"id": 0, 
+							"name": "Improved Wrath", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 1,
+					"name": "Feral Combat",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Ferocity",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				},
+				{ 
+					"id": 2,
+					"name": "Restoration",
+					"skills": [
+						{ 
+							"id": 0,
+							"name": "Improved Mark of the Wild",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": []
+						},
+					]
+				}
+			]
+		},
 	]
 };

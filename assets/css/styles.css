@@ -13,6 +13,14 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 .class-list li:hover:after,
 .class-list li.active:after{ content:''; box-shadow: inset 0 0 16px #526db1; position: absolute; top: 3px; left: 2px; width: 58px; height: 58px; border-radius: 3px; }
 
+.talent-tree.tree-warrior-arms{ background: url('../images/backgrounds/background-warrior-arms.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-warrior-fury{ background: url('../images/backgrounds/background-warrior-fury.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-warrior-protection{ background: url('../images/backgrounds/background-warrior-protection.jpg') no-repeat; background-size: 100% 100%; }
+
+.talent-tree.tree-paladin-holy{ background: url('../images/backgrounds/background-paladin-holy.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-paladin-protection{ background: url('../images/backgrounds/background-paladin-protection.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-paladin-retribution{ background: url('../images/backgrounds/background-paladin-retribution.jpg') no-repeat; background-size: 100% 100%; }
+
 .talent-tree.tree-hunter-beast-mastery{ background: url('../images/backgrounds/background-hunter-beast-mastery.jpg') no-repeat; background-size: 100% 100%; }
 .talent-tree.tree-hunter-marksmanship{ background: url('../images/backgrounds/background-hunter-marksmanship.jpg') no-repeat; background-size: 100% 100%; }
 .talent-tree.tree-hunter-survival{ background: url('../images/backgrounds/background-hunter-survival.jpg') no-repeat; background-size: 100% 100%; }
@@ -21,6 +29,22 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 .talent-tree.tree-rogue-combat{ background: url('../images/backgrounds/background-rogue-combat.jpg') no-repeat; background-size: 100% 100%; }
 .talent-tree.tree-rogue-subtlety{ background: url('../images/backgrounds/background-rogue-subtlety.jpg') no-repeat; background-size: 100% 100%; }
 
+.talent-tree.tree-priest-discipline{ background: url('../images/backgrounds/background-priest-discipline.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-priest-holy{ background: url('../images/backgrounds/background-priest-holy.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-priest-shadow{ background: url('../images/backgrounds/background-priest-shadow.jpg') no-repeat; background-size: 100% 100%; }
+
+.talent-tree.tree-shaman-elemental{ background: url('../images/backgrounds/background-shaman-elemental.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-shaman-enhancement{ background: url('../images/backgrounds/background-shaman-enhancement.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-shaman-restoration{ background: url('../images/backgrounds/background-shaman-restoration.jpg') no-repeat; background-size: 100% 100%; }
+
 .talent-tree.tree-mage-arcane{ background: url('../images/backgrounds/background-mage-arcane.jpg') no-repeat; background-size: 100% 100%; }
 .talent-tree.tree-mage-fire{ background: url('../images/backgrounds/background-mage-fire.jpg') no-repeat; background-size: 100% 100%; }
 .talent-tree.tree-mage-frost{ background: url('../images/backgrounds/background-mage-frost.jpg') no-repeat; background-size: 100% 100%; }
+
+.talent-tree.tree-warlock-affliction{ background: url('../images/backgrounds/background-warlock-affliction.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-warlock-demonology{ background: url('../images/backgrounds/background-warlock-demonology.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-warlock-destruction{ background: url('../images/backgrounds/background-warlock-destruction.jpg') no-repeat; background-size: 100% 100%; }
+
+.talent-tree.tree-druid-balance{ background: url('../images/backgrounds/background-druid-balance.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-druid-feral-combat{ background: url('../images/backgrounds/background-druid-feral-combat.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-druid-restoration{ background: url('../images/backgrounds/background-druid-restoration.jpg') no-repeat; background-size: 100% 100%; }
