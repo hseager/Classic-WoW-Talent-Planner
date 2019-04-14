@@ -2,6 +2,8 @@ let talentData = {
 	"currentClass": 0,
 	"constants": {
 		"imageDirectory": "assets/images/",
+		"classIconDirectory": "class-icons/",
+		"backgroundDirectory": "backrounds/",
 	},
 	"classes": [
 		{ 
@@ -39,7 +41,7 @@ let talentData = {
 				},
 				{ 
 					"id": 1,
-					"name": "Markmanship",
+					"name": "Marksmanship",
 					"skills": [
 						{ 
 							"id": 0,
@@ -60,9 +62,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Survival",
-					"maxRank": 5,
-					"currentRank": 0,
-					"rankDescription": []
+					"backgroundImage": "background-hunter-survival.jpg",
 				}
 			]
 		},

@@ -33,21 +33,26 @@ let skills = {
 
 let talentTree = {
 	props: {
-		treeName: String,
-		treeSkills: Array
+		className: String,
+		tree: Object
 	},
 	template: 
-	`<div class="talent-tree">
-		<h3>{{treeName}}</h3>
+	`<div :class="['talent-tree', 'tree-' + getTalentCssClass()]">
+		<h3>{{tree.name}}</h3>
 		<skills
-			v-for="skill in treeSkills"
+			v-for="skill in tree.skills"
 			v-bind:skill="skill"
 			v-bind:key="skill.id">
 		></skills>
 	</div>`,
 	components: {
 		skills
-	}
+	},
+	methods: {
+		getTalentCssClass: function(){
+			return this.className + '-' + this.tree.name.replace(' ','-').toLowerCase();
+		}
+	},
 };
 
 let classPanel = {
@@ -56,15 +61,15 @@ let classPanel = {
 	},
 	template:
 	`<div class="talent-trees">
-		<talent-tree 
+		<talent-tree
 			v-for="tree in classType.talentTrees"
-			v-bind:treeName="tree.name"
-			v-bind:treeSkills="tree.skills"
+			v-bind:tree="tree"
 			v-bind:key="tree.id"
 			v-on:decreaseClassSkillPoints="decreaseClassSkillPoints"
 			v-on:increaseClassSkillPoints="increaseClassSkillPoints"
 			v-on:decreaseRequiredLevel="decreaseRequiredLevel"
 			v-on:increaseRequiredLevel="increaseRequiredLevel"
+			v-bind:className="classType.name"
 		></talent-tree>
 	</div>`,
 	methods: {
@@ -98,11 +103,14 @@ let classList = {
 		classType: Object,
 		currentClass: Number
 	},
+	data: function(){
+		return {
+			classIconImage: this.constants.imageDirectory + this.constants.classIconDirectory + this.classType.icon
+		}
+	},
 	template: 
 	`<li v-on:click="onClassSelect" v-bind:class="{ active: currentClass === classType.id }">
-		<img 
-			v-bind:src="constants.imageDirectory + classType.icon"
-		>
+		<img v-bind:src="classIconImage">
 	</li>`,
 	methods: {
 		onClassSelect: function(){

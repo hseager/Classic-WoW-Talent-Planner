@@ -5,10 +5,22 @@ main{ max-width: 1200px; margin: auto; padding: 40px; }
 h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 
 .talent-trees{ display: flex; margin:20px 0; }
-.talent-tree{ width: 240px; padding:20px; margin:0 20px 0 0; background:#333; min-height: 350px; }
+.talent-tree{ width: 380px; min-height: 450px; padding:20px; margin:0 20px 0 0; background:#333; }
 
 .class-list{ list-style-type: none; padding: 20px 0; }
 .class-list li { display: inline-block; margin:0 10px 0 0; position: relative; cursor:pointer; width: 62px; height:62px; }
 .class-list li img{ display: block; width:100%; }
 .class-list li:hover:after,
 .class-list li.active:after{ content:''; box-shadow: inset 0 0 16px #526db1; position: absolute; top: 3px; left: 2px; width: 58px; height: 58px; border-radius: 3px; }
+
+.talent-tree.tree-hunter-beast-mastery{ background: url('../images/backgrounds/background-hunter-beast-mastery.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-hunter-marksmanship{ background: url('../images/backgrounds/background-hunter-marksmanship.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-hunter-survival{ background: url('../images/backgrounds/background-hunter-survival.jpg') no-repeat; background-size: 100% 100%; }
+
+.talent-tree.tree-rogue-assassination{ background: url('../images/backgrounds/background-rogue-assassination.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-rogue-combat{ background: url('../images/backgrounds/background-rogue-combat.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-rogue-subtlety{ background: url('../images/backgrounds/background-rogue-subtlety.jpg') no-repeat; background-size: 100% 100%; }
+
+.talent-tree.tree-mage-arcane{ background: url('../images/backgrounds/background-mage-arcane.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-mage-fire{ background: url('../images/backgrounds/background-mage-fire.jpg') no-repeat; background-size: 100% 100%; }
+.talent-tree.tree-mage-frost{ background: url('../images/backgrounds/background-mage-frost.jpg') no-repeat; background-size: 100% 100%; }
