@@ -4,14 +4,18 @@ main{ max-width: 1200px; margin: auto; padding: 40px; }
 
 h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 
-.talent-trees{ display: flex; margin:20px 0; }
-.talent-tree{ width: 380px; min-height: 450px; padding:20px; margin:0 20px 0 0; background:#333; }
-
 .class-list{ list-style-type: none; padding: 20px 0; }
 .class-list li { display: inline-block; margin:0 10px 0 0; position: relative; cursor:pointer; width: 62px; height:62px; }
 .class-list li img{ display: block; width:100%; }
 .class-list li:hover:after,
 .class-list li.active:after{ content:''; box-shadow: inset 0 0 16px #526db1; position: absolute; top: 3px; left: 2px; width: 58px; height: 58px; border-radius: 3px; }
+
+.talent-trees{ display: flex; margin:20px 0; }
+.talent-tree{ width: 380px; min-height: 450px; padding:20px; margin:0 20px 0 0; background:#333; display: grid; grid-template-columns: 25% 25% 25% 25%; grid-template-rows: auto; }
+
+.skill{ margin: 10px; }
+
+.tooltip{ display: none; }
 
 .talent-tree.tree-warrior-arms{ background: url('../images/backgrounds/background-warrior-arms.jpg') no-repeat; background-size: 100% 100%; }
 .talent-tree.tree-warrior-fury{ background: url('../images/backgrounds/background-warrior-fury.jpg') no-repeat; background-size: 100% 100%; }

@@ -4,6 +4,7 @@ let talentData = {
 		"imageDirectory": "assets/images/",
 		"classIconDirectory": "class-icons/",
 		"backgroundDirectory": "backrounds/",
+		"skillIconDirectory": "skill-icons/",
 	},
 	"classes": [
 		{
@@ -22,7 +23,48 @@ let talentData = {
 							"name": "Improved Heroic Strike", 
 							"maxRank": 3, 
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [],
+							"icon": "skill-warrior-1.jpg",
+						},
+						{ 
+							"id": 1, 
+							"name": "Deflection", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [],
+							"icon": "skill-warrior-1.jpg",
+						},
+						{ 
+							"id": 2, 
+							"name": "Improved Rend", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [],
+							"icon": "skill-warrior-1.jpg",
+						},
+						{ 
+							"id": 3, 
+							"name": "Improved Charge", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [],
+							"icon": "skill-warrior-1.jpg",
+						},
+						{ 
+							"id": 4, 
+							"name": "Tactical Mastery", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [],
+							"icon": "skill-warrior-1.jpg",
+						},
+						{ 
+							"id": 5, 
+							"name": "Improved Thunder Clap", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [],
+							"icon": "skill-warrior-1.jpg",
 						},
 					]
 				},
@@ -452,5 +494,5 @@ let talentData = {
 				}
 			]
 		},
-	]
+	],
 };
