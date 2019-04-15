@@ -9,7 +9,7 @@ let skills = {
 		}
 	},
 	template: 
-		`<div class="skill" :style="{ gridRowStart: skill.position[0], gridColumnStart: skill.position[1] }"
+		`<div class="skill" :style="getGridPosition()"
 			v-on:click="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank">
 			<img v-bind:src="skillIconImage">
@@ -36,6 +36,12 @@ let skills = {
 				this.skill.currentRank--;
 				this.$parent.$emit('increaseClassSkillPoints');
 				this.$parent.$emit('decreaseRequiredLevel');
+			}
+		},
+		getGridPosition: function(){
+			return {
+				gridRowStart: this.skill.position[0], 
+				gridColumnStart: this.skill.position[1]
 			}
 		}
 	}

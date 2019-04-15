@@ -33,7 +33,7 @@ let talentData = {
 							"maxRank": 5, 
 							"currentRank": 0,
 							"rankDescription": [],
-							"icon": "skill-warrior-1.jpg",
+							"icon": "skill-warrior-2.jpg",
 							"position" : [1,2]
 						},
 						{ 
@@ -42,7 +42,7 @@ let talentData = {
 							"maxRank": 3, 
 							"currentRank": 0,
 							"rankDescription": [],
-							"icon": "skill-warrior-1.jpg",
+							"icon": "skill-warrior-3.jpg",
 							"position" : [1,3]
 						},
 						{ 
@@ -51,7 +51,7 @@ let talentData = {
 							"maxRank": 2, 
 							"currentRank": 0,
 							"rankDescription": [],
-							"icon": "skill-warrior-1.jpg",
+							"icon": "skill-warrior-4.jpg",
 							"position" : [2,1]
 						},
 						{ 
@@ -60,7 +60,7 @@ let talentData = {
 							"maxRank": 5, 
 							"currentRank": 0,
 							"rankDescription": [],
-							"icon": "skill-warrior-1.jpg",
+							"icon": "skill-warrior-5.jpg",
 							"position" : [2,2]
 						},
 						{ 
@@ -69,7 +69,7 @@ let talentData = {
 							"maxRank": 3, 
 							"currentRank": 0,
 							"rankDescription": [],
-							"icon": "skill-warrior-1.jpg",
+							"icon": "skill-warrior-6.jpg",
 							"position" : [2,4]
 						},
 					]
@@ -118,7 +118,8 @@ let talentData = {
 							"name": "Divine Strength", 
 							"maxRank": 5, 
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [],
+							"icon": "skill-warrior-2.jpg",
 						},
 					]
 				},
