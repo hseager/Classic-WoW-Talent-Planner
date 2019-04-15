@@ -25,6 +25,7 @@ let talentData = {
 							"currentRank": 0,
 							"rankDescription": [],
 							"icon": "skill-warrior-1.jpg",
+							"position" : [1,1]
 						},
 						{ 
 							"id": 1, 
@@ -33,6 +34,7 @@ let talentData = {
 							"currentRank": 0,
 							"rankDescription": [],
 							"icon": "skill-warrior-1.jpg",
+							"position" : [1,2]
 						},
 						{ 
 							"id": 2, 
@@ -41,6 +43,7 @@ let talentData = {
 							"currentRank": 0,
 							"rankDescription": [],
 							"icon": "skill-warrior-1.jpg",
+							"position" : [1,3]
 						},
 						{ 
 							"id": 3, 
@@ -49,6 +52,7 @@ let talentData = {
 							"currentRank": 0,
 							"rankDescription": [],
 							"icon": "skill-warrior-1.jpg",
+							"position" : [2,1]
 						},
 						{ 
 							"id": 4, 
@@ -57,6 +61,7 @@ let talentData = {
 							"currentRank": 0,
 							"rankDescription": [],
 							"icon": "skill-warrior-1.jpg",
+							"position" : [2,2]
 						},
 						{ 
 							"id": 5, 
@@ -65,6 +70,7 @@ let talentData = {
 							"currentRank": 0,
 							"rankDescription": [],
 							"icon": "skill-warrior-1.jpg",
+							"position" : [2,4]
 						},
 					]
 				},

@@ -9,7 +9,7 @@ let skills = {
 		}
 	},
 	template: 
-		`<div class="skill"
+		`<div class="skill" :style="{ gridRowStart: skill.position[0], gridColumnStart: skill.position[1] }"
 			v-on:click="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank">
 			<img v-bind:src="skillIconImage">
@@ -19,7 +19,7 @@ let skills = {
 				<span>
 					<strong v-if="skill.currentRank > 0 && skill.currentRank != 5">Next rank</strong>
 					<em>{{skill.rankDescription[skill.currentRank]}}</em>
-				</span>			
+				</span>
 			</div>
 		</div>
 		`,
