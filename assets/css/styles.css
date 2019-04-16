@@ -5,8 +5,10 @@ main{ max-width: 1200px; margin: auto; padding: 40px; }
 h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 
 .class-list{ list-style-type: none; padding: 20px 0; }
-.class-list li { display: inline-block; margin:0 10px 0 0; position: relative; cursor:pointer; width: 58px; height:58px; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; }
+.class-list li { display: inline-block; margin:0 10px 0 0; position: relative; cursor:pointer; width: 58px; height:58px; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; opacity:0.8; }
 .class-list li img{ display: block; width:100%; }
+.class-list li.active,
+.class-list li:hover{ opacity: 1; }
 .class-list li:hover:after,
 .class-list li.active:after{ content:''; box-shadow: inset 0 0 16px #526db1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 5px; }
 
@@ -17,4 +19,6 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 .skill-icon{ margin: 10px; width:60px; overflow:hidden; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; box-shadow:0 1px 5px #000; cursor:pointer; }
 .skill-rank{ position: absolute; bottom: 2px; right: -4px; background: #000; border-radius: 3px; padding: 2px 6px; }
 
-.skill-tooltip{ position: absolute; bottom:85%; left:85%;  padding: 10px; background:rgba(11, 21, 41, 0.9); width: 300px; z-index:1; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; }
+.skill-tooltip{ position: absolute; bottom:86%; left:86%;  padding: 10px; background:rgba(11, 21, 41, 0.9); width: 300px; z-index:1; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; }
+
+.rank-description{ color: #ffd200; }

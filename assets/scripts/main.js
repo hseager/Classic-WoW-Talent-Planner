@@ -1,3 +1,21 @@
+let tooltip = {
+	props: {
+		skill: Object,
+		showTooltip: Boolean,
+	},
+	template: 
+	`<div v-if="showTooltip" class="skill-tooltip">
+		<h3>{{skill.name}}</h3>
+		<p>Rank {{skill.currentRank}}/{{skill.maxRank}}</p>
+		<p class="rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
+		<div v-if="skill.currentRank > 0 && skill.currentRank != skill.maxRank">
+			<br/>
+			<p>Next rank:</p>
+		</div>
+		<p class="rank-description">{{skill.rankDescription[skill.currentRank]}}</p>
+	</div>`,
+};
+
 let skills = {
 	props: {
 		skill: Object,
@@ -18,17 +36,13 @@ let skills = {
 				<img v-bind:src="getSkillIcon()">
 			</div>
 			<span class="skill-rank">{{skill.currentRank}}/{{skill.maxRank}}</span>
-			<div v-if="showTooltip" class="skill-tooltip">
-				<h3>{{skill.name}}</h3>
-				<p>Rank {{skill.currentRank}}/{{skill.maxRank}}</p>
-				<em>{{skill.rankDescription[skill.currentRank-1]}}</em>
-				<div v-if="skill.currentRank > 0 && skill.currentRank != skill.maxRank">
-					<br/>
-					<strong>Next rank</strong>
-				</div>
-				<em>{{skill.rankDescription[skill.currentRank]}}</em>
-			</div>
+			<tooltip
+				v-bind:skill="skill"
+				v-bind:showTooltip="showTooltip"></tooltip>
 		</div>`,
+	components: {
+		tooltip,
+	},
 	methods: {
 		onIncreaseSkillRank: function(){
 			if(this.skill.currentRank < this.skill.maxRank){
@@ -57,7 +71,7 @@ let skills = {
 				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon;
 			}
 		}
-	}
+	},
 };
 
 let talentTree = {
