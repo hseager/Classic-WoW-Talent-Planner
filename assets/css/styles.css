@@ -5,10 +5,10 @@ main{ max-width: 1200px; margin: auto; padding: 40px; }
 h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 
 .class-list{ list-style-type: none; padding: 20px 0; }
-.class-list li { display: inline-block; margin:0 10px 0 0; position: relative; cursor:pointer; width: 50px; height:50px; }
+.class-list li { display: inline-block; margin:0 10px 0 0; position: relative; cursor:pointer; width: 58px; height:58px; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; }
 .class-list li img{ display: block; width:100%; }
 .class-list li:hover:after,
-.class-list li.active:after{ content:''; box-shadow: inset 0 0 16px #526db1; position: absolute; top: 3px; left: 2px; width: 48px; height: 48px; border-radius: 3px; }
+.class-list li.active:after{ content:''; box-shadow: inset 0 0 16px #526db1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 5px; }
 
 .talent-trees{ display: flex; margin:20px 0; }
 .talent-tree{ width: 344px; min-height: 450px; padding:20px; margin:0 20px 0 0; background:#333; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(7, 1fr); }
