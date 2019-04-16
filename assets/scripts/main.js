@@ -3,23 +3,30 @@ let skills = {
 		skill: Object,
 		constants: Object,
 	},
+	data: function(){
+		return {
+			showTooltip: false,
+		}
+	},
 	template: 
 		`<div class="skill" :style="getGridPosition()">
 			<div class="skill-icon"
 				v-on:click="onIncreaseSkillRank"
-				v-on:click.right.prevent="onDecreaseSkillRank">
+				v-on:click.right.prevent="onDecreaseSkillRank"
+				v-on:mouseover="showTooltip = true"
+				v-on:mouseout="showTooltip = false">
 				<img v-bind:src="getSkillIcon()">
-				<div class="tooltip">
-					<p>{{skill.name}}: {{skill.currentRank}}</p>
-					<em>{{skill.rankDescription[skill.currentRank-1]}}</em>
-					<span>
-						<strong v-if="skill.currentRank > 0 && skill.currentRank != 5">Next rank</strong>
-						<em>{{skill.rankDescription[skill.currentRank]}}</em>
-					</span>
-				</div>
 			</div>
-			<div class="skill-rank">
-				{{skill.currentRank}}/{{skill.maxRank}}
+			<span class="skill-rank">{{skill.currentRank}}/{{skill.maxRank}}</span>
+			<div v-if="showTooltip" class="skill-tooltip">
+				<h3>{{skill.name}}</h3>
+				<p>Rank {{skill.currentRank}}/{{skill.maxRank}}</p>
+				<em>{{skill.rankDescription[skill.currentRank-1]}}</em>
+				<div v-if="skill.currentRank > 0 && skill.currentRank != skill.maxRank">
+					<br/>
+					<strong>Next rank</strong>
+				</div>
+				<em>{{skill.rankDescription[skill.currentRank]}}</em>
 			</div>
 		</div>`,
 	methods: {
@@ -140,7 +147,7 @@ let classList = {
 	},
 	data: function(){
 		return {
-			classIconImage: this.constants.imageDirectory + this.constants.classIconDirectory + this.classType.icon
+			classIconImage: this.constants.imageDirectory + this.constants.classIconDirectory + 'icon-' + this.classType.name + '.jpg',
 		}
 	},
 	template: 

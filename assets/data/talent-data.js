@@ -25,7 +25,12 @@ let talentData = {
 							"currentRank": 0,
 							"rankDescription": [],
 							"icon": "skill-warrior-1.jpg",
-							"position" : [1,1]
+							"position" : [1,1],
+							"rankDescription": [
+								"Reduces the cost of your Heroic Strike ability by 1 rage point.",
+								"Reduces the cost of your Heroic Strike ability by 2 rage point.",
+								"Reduces the cost of your Heroic Strike ability by 3 rage point.",
+							]
 						},
 						{ 
 							"id": 1, 
@@ -34,7 +39,14 @@ let talentData = {
 							"currentRank": 0,
 							"rankDescription": [],
 							"icon": "skill-warrior-2.jpg",
-							"position" : [1,2]
+							"position" : [1,2],
+							"rankDescription": [
+								"Increases your Parry chance by 1%.",
+								"Increases your Parry chance by 2%.",
+								"Increases your Parry chance by 3%.",
+								"Increases your Parry chance by 4%.",
+								"Increases your Parry chance by 5%.",
+							]
 						},
 						{ 
 							"id": 2, 
