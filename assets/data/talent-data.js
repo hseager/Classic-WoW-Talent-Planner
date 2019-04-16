@@ -3,7 +3,7 @@ let talentData = {
 	"constants": {
 		"imageDirectory": "assets/images/",
 		"classIconDirectory": "class-icons/",
-		"backgroundDirectory": "backrounds/",
+		"backgroundDirectory": "backgrounds/",
 		"skillIconDirectory": "skill-icons/",
 	},
 	"classes": [
@@ -83,7 +83,9 @@ let talentData = {
 							"name": "Booming Voice",
 							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [],
+							"icon": "skill-warrior-2.jpg",
+							"position" : [1,1],
 						},
 					]
 				},
@@ -96,7 +98,9 @@ let talentData = {
 							"name": "Sheild Specialization",
 							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [],
+							"icon": "skill-warrior-2.jpg",
+							"position" : [1,1],
 						},
 					]
 				}

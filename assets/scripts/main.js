@@ -3,26 +3,25 @@ let skills = {
 		skill: Object,
 		constants: Object,
 	},
-	data: function(){
-		return {
-			skillIconImage: this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon,
-		}
-	},
 	template: 
-		`<div class="skill" :style="getGridPosition()"
-			v-on:click="onIncreaseSkillRank"
-			v-on:click.right.prevent="onDecreaseSkillRank">
-			<img v-bind:src="skillIconImage">
-			<div class="tooltip">
-				<p>{{skill.name}}: {{skill.currentRank}}</p>
-				<em>{{skill.rankDescription[skill.currentRank-1]}}</em>
-				<span>
-					<strong v-if="skill.currentRank > 0 && skill.currentRank != 5">Next rank</strong>
-					<em>{{skill.rankDescription[skill.currentRank]}}</em>
-				</span>
+		`<div class="skill" :style="getGridPosition()">
+			<div class="skill-icon"
+				v-on:click="onIncreaseSkillRank"
+				v-on:click.right.prevent="onDecreaseSkillRank">
+				<img v-bind:src="getSkillIcon()">
+				<div class="tooltip">
+					<p>{{skill.name}}: {{skill.currentRank}}</p>
+					<em>{{skill.rankDescription[skill.currentRank-1]}}</em>
+					<span>
+						<strong v-if="skill.currentRank > 0 && skill.currentRank != 5">Next rank</strong>
+						<em>{{skill.rankDescription[skill.currentRank]}}</em>
+					</span>
+				</div>
 			</div>
-		</div>
-		`,
+			<div class="skill-rank">
+				{{skill.currentRank}}/{{skill.maxRank}}
+			</div>
+		</div>`,
 	methods: {
 		onIncreaseSkillRank: function(){
 			if(this.skill.currentRank < this.skill.maxRank){
@@ -39,9 +38,16 @@ let skills = {
 			}
 		},
 		getGridPosition: function(){
-			return {
-				gridRowStart: this.skill.position[0], 
-				gridColumnStart: this.skill.position[1]
+			if(typeof this.skill.position !== 'undefined'){
+				return {
+					gridRowStart: this.skill.position[0],
+					gridColumnStart: this.skill.position[1],
+				}
+			}
+		},
+		getSkillIcon: function(){
+			if(typeof this.skill.icon !== 'undefined'){
+				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon;
 			}
 		}
 	}
@@ -56,7 +62,7 @@ let talentTree = {
 	template: 
 	`<div>
 		<h3>{{tree.name}}</h3>
-		<div :class="['talent-tree', 'tree-' + getTalentCssClass()]">
+		<div :class="['talent-tree', 'tree-' + getTalentCssClass()]" :style="getTalentBackgroundImage()">
 			<skills
 				v-for="skill in tree.skills"
 				v-bind:skill="skill"
@@ -71,6 +77,13 @@ let talentTree = {
 	methods: {
 		getTalentCssClass: function(){
 			return this.className + '-' + this.tree.name.replace(' ','-').toLowerCase();
+		},
+		getTalentBackgroundImage: function(){
+			let backgroundImageUrl = this.constants.imageDirectory + this.constants.backgroundDirectory + 'background-' + this.className + '-' + this.tree.name.replace(' ','-').toLowerCase() + '.jpg';
+			return {
+				background: `url('${backgroundImageUrl}') no-repeat`,
+				backgroundSize: 'cover',
+			}
 		}
 	},
 };
