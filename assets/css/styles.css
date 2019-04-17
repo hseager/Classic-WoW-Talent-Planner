@@ -16,8 +16,12 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 .talent-tree{ width: 360px; min-height: 450px; padding:10px; margin:0 20px 0 0; background:#333; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(7, 1fr); }
 
 .skill{ position: relative; }
-.skill-icon{ margin: 10px; width:60px; overflow:hidden; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; box-shadow:0 1px 5px #000; cursor:pointer; }
-.skill-rank{ position: absolute; bottom: 2px; right: -4px; background: #000; border-radius: 3px; padding: 2px 6px; }
+.skill-icon{ margin: 10px; width:60px; overflow:hidden; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; box-shadow:0 1px 5px #000; }
+.skill-rank{ position: absolute; bottom: 2px; right: -4px; background: #000; border-radius: 3px; padding: 2px 6px; cursor: default; }
+.skill-icon-image{ filter: grayscale(100%); }
+
+.skill.is-enabled .skill{ cursor:pointer; }
+.skill.is-enabled .skill-icon-image{ filter: grayscale(0); }
 
 .skill-tooltip{ position: absolute; bottom:86%; left:86%;  padding: 10px; background:rgba(11, 21, 41, 0.9); width: 300px; z-index:1; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; }
 

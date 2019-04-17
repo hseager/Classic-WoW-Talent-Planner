@@ -27,13 +27,13 @@ let skills = {
 		}
 	},
 	template: 
-		`<div class="skill" :style="getGridPosition()">
+		`<div :class="['skill', skill.enabled ? 'is-enabled' : '']" :style="getGridPosition()">
 			<div class="skill-icon"
 				v-on:click="onIncreaseSkillRank"
 				v-on:click.right.prevent="onDecreaseSkillRank"
 				v-on:mouseover="showTooltip = true"
 				v-on:mouseout="showTooltip = false">
-				<img v-bind:src="getSkillIcon()">
+				<img v-bind:src="getSkillIcon()" class="skill-icon-image">
 			</div>
 			<span class="skill-rank">{{skill.currentRank}}/{{skill.maxRank}}</span>
 			<tooltip
@@ -45,10 +45,12 @@ let skills = {
 	},
 	methods: {
 		onIncreaseSkillRank: function(){
-			if(this.skill.currentRank < this.skill.maxRank){
-				this.skill.currentRank++
-				this.$parent.$emit('decreaseClassSkillPoints');
-				this.$parent.$emit('increaseRequiredLevel');
+			if(this.skill.enabled){
+				if(this.skill.currentRank < this.skill.maxRank){
+					this.skill.currentRank++
+					this.$parent.$emit('decreaseClassSkillPoints');
+					this.$parent.$emit('increaseRequiredLevel');
+				}
 			}
 		},
 		onDecreaseSkillRank: function(){
