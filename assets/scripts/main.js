@@ -83,7 +83,7 @@ let talentTree = {
 	template: 
 	`<div>
 		<h3>{{tree.name}}</h3>
-		<div :class="['talent-tree', 'tree-' + getTalentCssClass()]" :style="getTalentBackgroundImage()">
+		<div class="talent-tree" :style="getTalentBackgroundImage()">
 			<skills
 				v-for="skill in tree.skills"
 				v-bind:skill="skill"

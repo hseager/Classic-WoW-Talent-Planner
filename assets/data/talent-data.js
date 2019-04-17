@@ -103,12 +103,157 @@ let talentData = {
 							"name": "Improved Overpower", 
 							"maxRank": 2, 
 							"currentRank": 0,
-							"icon": "skill-warrior-6.jpg",
+							"icon": "skill-warrior-7.jpg",
 							"position" : [3,1],
 							"rankDescription": [
-								"Reduces the cost of your Thunder Clap ability by 1 rage point.",
-								"Reduces the cost of your Thunder Clap ability by 2 rage point.",
-								"Reduces the cost of your Thunder Clap ability by 4 rage point.",
+								"Increases the critical strike chance of your Overpower ability by 25%.",
+								"Increases the critical strike chance of your Overpower ability by 50%.",
+							]
+						},
+						{ 
+							"id": 7, 
+							"name": "Anger Management", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"icon": "skill-warrior-8.jpg",
+							"position" : [3,2],
+							"rankDescription": [
+								"Increases the time required for your rage to decay while out of combat by 30%.",
+							]
+						},
+						{ 
+							"id": 8, 
+							"name": "Deep Wounds", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"icon": "skill-warrior-9.jpg",
+							"position" : [3,3],
+							"rankDescription": [
+								"Your critical strikes cause the opponent to bleed, dealing 20% of your melee weapon's average damage over 12 sec.",
+								"Your critical strikes cause the opponent to bleed, dealing 40% of your melee weapon's average damage over 12 sec.",
+								"Your critical strikes cause the opponent to bleed, dealing 60% of your melee weapon's average damage over 12 sec.",
+							]
+						},
+						{ 
+							"id": 9, 
+							"name": "Two-Handed Weapon Specialization", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"icon": "skill-warrior-10.jpg",
+							"position" : [4,2],
+							"rankDescription": [
+								"Increases the damage you deal with two-handed melee weapons by 1%.",
+								"Increases the damage you deal with two-handed melee weapons by 2%.",
+								"Increases the damage you deal with two-handed melee weapons by 3%.",
+								"Increases the damage you deal with two-handed melee weapons by 4%.",
+								"Increases the damage you deal with two-handed melee weapons by 5%.",
+							]
+						},
+						{ 
+							"id": 10, 
+							"name": "Impale", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"icon": "skill-warrior-11.jpg",
+							"position" : [4,3],
+							"rankDescription": [
+								"Increases the critical strike damage bonus of your abilities in Battle, Defensive, and Berserker stance by 10%.",
+								"Increases the critical strike damage bonus of your abilities in Battle, Defensive, and Berserker stance by 20%.",
+							]
+						},
+						{ 
+							"id": 11, 
+							"name": "Axe Specialization", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"icon": "skill-warrior-12.jpg",
+							"position" : [5,1],
+							"rankDescription": [
+								"Increases the damage you deal with two-handed melee weapons by 1%.",
+								"Increases the damage you deal with two-handed melee weapons by 2%.",
+								"Increases the damage you deal with two-handed melee weapons by 3%.",
+								"Increases the damage you deal with two-handed melee weapons by 4%.",
+								"Increases the damage you deal with two-handed melee weapons by 5%.",
+							]
+						},
+						{ 
+							"id": 12, 
+							"name": "Sweeping Strikes", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"icon": "skill-warrior-13.jpg",
+							"position" : [5,2],
+							"rankDescription": [
+								"Your next 5 melee attacks strike an additional nearby opponent.",
+							]
+						},
+						{ 
+							"id": 13, 
+							"name": "Mace Specialization", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"icon": "skill-warrior-14.jpg",
+							"position" : [5,3],
+							"rankDescription": [
+								"Gives you a 1% chance to stun your target for 3 sec with a Mace.",
+								"Gives you a 2% chance to stun your target for 3 sec with a Mace.",
+								"Gives you a 3% chance to stun your target for 3 sec with a Mace.",
+								"Gives you a 4% chance to stun your target for 3 sec with a Mace.",
+								"Gives you a 5% chance to stun your target for 3 sec with a Mace.",
+							]
+						},
+						{ 
+							"id": 14, 
+							"name": "Sword Specialization", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"icon": "skill-warrior-15.jpg",
+							"position" : [5,4],
+							"rankDescription": [
+								"Gives you a 1% chance to get an extra attack on the same target after dealing damage with your Sword.",
+								"Gives you a 2% chance to get an extra attack on the same target after dealing damage with your Sword.",
+								"Gives you a 3% chance to get an extra attack on the same target after dealing damage with your Sword.",
+								"Gives you a 4% chance to get an extra attack on the same target after dealing damage with your Sword.",
+								"Gives you a 5% chance to get an extra attack on the same target after dealing damage with your Sword.",
+							]
+						},
+						{ 
+							"id": 15, 
+							"name": "Polearm Specialization", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"icon": "skill-warrior-16.jpg",
+							"position" : [6,1],
+							"rankDescription": [
+								"Increases your chance to get a critical strike with Polearms by 1%.",
+								"Increases your chance to get a critical strike with Polearms by 2%.",
+								"Increases your chance to get a critical strike with Polearms by 3%.",
+								"Increases your chance to get a critical strike with Polearms by 4%.",
+								"Increases your chance to get a critical strike with Polearms by 5%.",
+							]
+						},
+						{ 
+							"id": 16, 
+							"name": "Improved Hamstring", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"icon": "skill-warrior-17.jpg",
+							"position" : [6,3],
+							"rankDescription": [
+								"Gives your Hamstring ability a 5% chance to immobilize the target for 5 sec.",
+								"Gives your Hamstring ability a 10% chance to immobilize the target for 5 sec.",
+								"Gives your Hamstring ability a 15% chance to immobilize the target for 5 sec.",
+							]
+						},
+						{ 
+							"id": 17, 
+							"name": "Mortal Strike", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"icon": "skill-warrior-18.jpg",
+							"position" : [7,2],
+							"rankDescription": [
+								"A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.",
 							]
 						},
 					]
