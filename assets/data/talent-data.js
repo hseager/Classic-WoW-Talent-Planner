@@ -75,7 +75,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 5,
+								"specPoints": 5,
 							}
 						},
 						{ 
@@ -94,7 +94,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 5,
+								"specPoints": 5,
 							}
 						},
 						{ 
@@ -111,7 +111,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 5,
+								"specPoints": 5,
 							}
 						},
 						{ 
@@ -127,7 +127,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 10,
+								"specPoints": 10,
 							}
 						},
 						{ 
@@ -142,8 +142,12 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 10,
-							}
+								"specPoints": 10,
+								"talent": {
+									"id": 4,
+									"skillPoints": 5,
+								}
+							},
 						},
 						{ 
 							"id": 8, 
@@ -159,7 +163,11 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 10,
+								"specPoints": 10,
+								"talent": {
+									"id": 2,
+									"skillPoints": 3,
+								}
 							}
 						},
 						{ 
@@ -178,7 +186,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 15,
+								"specPoints": 15,
 							}
 						},
 						{ 
@@ -194,7 +202,11 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 15,
+								"specPoints": 15,
+								"talent": {
+									"id": 8,
+									"skillPoints": 3,
+								}
 							}
 						},
 						{ 
@@ -213,7 +225,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 20,
+								"specPoints": 20,
 							}
 						},
 						{ 
@@ -228,7 +240,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 20,
+								"specPoints": 20,
 							}
 						},
 						{ 
@@ -247,7 +259,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 20,
+								"specPoints": 20,
 							}
 						},
 						{ 
@@ -266,7 +278,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 20,
+								"specPoints": 20,
 							}
 						},
 						{ 
@@ -285,7 +297,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 25,
+								"specPoints": 25,
 							}
 						},
 						{ 
@@ -302,7 +314,7 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 25,
+								"specPoints": 25,
 							}
 						},
 						{ 
@@ -317,7 +329,11 @@ let talentData = {
 							],
 							"enabled": false,
 							"requirements": {
-								"treePoints": 30,
+								"specPoints": 30,
+								"talent": {
+									"id": 12,
+									"skillPoints": 1,
+								}
 							}
 						},
 					]

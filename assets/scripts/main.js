@@ -9,7 +9,9 @@ let tooltip = {
 		<h3>{{skill.name}}</h3>
 		<p>Rank {{skill.currentRank}}/{{skill.maxRank}}</p>
 		<p class="rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
-		<p v-if="hasRequirements" class="skill-requirement">Requires {{requirements}} points in {{treeName}} talents</p>
+		<div v-if="hasRequirements">
+			<p class="skill-requirement">Requires {{requirements}} points in {{treeName}} talents</p>
+		</div>
 		<div v-if="hasNextRank">
 			<br/>
 			<p>Next rank:</p>
@@ -19,8 +21,8 @@ let tooltip = {
 	computed: {
 		requirements: function(){
 			if(typeof this.skill.requirements != 'undefined'){
-				if(typeof this.skill.requirements.treePoints != 'undefined'){
-					return this.skill.requirements.treePoints;
+				if(typeof this.skill.requirements.specPoints != 'undefined'){
+					return this.skill.requirements.specPoints;
 				}
 			}
 		},
@@ -78,8 +80,8 @@ let skill = {
 		},
 		isSkillEnabled: function(){
 			if(typeof this.skill.requirements != 'undefined'){
-				if(typeof this.skill.requirements.treePoints != 'undefined'){
-					if(this.tree.skillPoints >= this.skill.requirements.treePoints){
+				if(typeof this.skill.requirements.specPoints != 'undefined'){
+					if(this.tree.skillPoints >= this.skill.requirements.specPoints){
 						this.skill.enabled = true;
 					} else {
 						this.skill.enabled = false;
