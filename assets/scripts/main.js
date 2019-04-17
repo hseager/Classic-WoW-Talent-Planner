@@ -27,13 +27,13 @@ let skills = {
 		}
 	},
 	template: 
-		`<div :class="['skill', skill.enabled ? 'is-enabled' : '']" :style="getGridPosition()">
+		`<div :class="['skill', skill.enabled ? 'is-enabled' : '']" :style="getGridPosition">
 			<div class="skill-icon"
 				v-on:click="onIncreaseSkillRank"
 				v-on:click.right.prevent="onDecreaseSkillRank"
 				v-on:mouseover="showTooltip = true"
 				v-on:mouseout="showTooltip = false">
-				<img v-bind:src="getSkillIcon()" class="skill-icon-image">
+				<img v-bind:src="getSkillIcon" class="skill-icon-image">
 			</div>
 			<span class="skill-rank">{{skill.currentRank}}/{{skill.maxRank}}</span>
 			<tooltip
@@ -42,6 +42,21 @@ let skills = {
 		</div>`,
 	components: {
 		tooltip,
+	},
+	computed:{
+		getGridPosition: function(){
+			if(typeof this.skill.position !== 'undefined'){
+				return {
+					gridRowStart: this.skill.position[0],
+					gridColumnStart: this.skill.position[1],
+				}
+			}
+		},
+		getSkillIcon: function(){
+			if(typeof this.skill.icon !== 'undefined'){
+				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon;
+			}
+		}
 	},
 	methods: {
 		onIncreaseSkillRank: function(){
@@ -60,19 +75,6 @@ let skills = {
 				this.$parent.$emit('decreaseRequiredLevel');
 			}
 		},
-		getGridPosition: function(){
-			if(typeof this.skill.position !== 'undefined'){
-				return {
-					gridRowStart: this.skill.position[0],
-					gridColumnStart: this.skill.position[1],
-				}
-			}
-		},
-		getSkillIcon: function(){
-			if(typeof this.skill.icon !== 'undefined'){
-				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon;
-			}
-		}
 	},
 };
 
@@ -85,7 +87,7 @@ let talentTree = {
 	template: 
 	`<div>
 		<h3>{{tree.name}}</h3>
-		<div class="talent-tree" :style="getTalentBackgroundImage()">
+		<div class="talent-tree" :style="getTalentBackgroundImage">
 			<skills
 				v-for="skill in tree.skills"
 				v-bind:skill="skill"
@@ -97,14 +99,12 @@ let talentTree = {
 	components: {
 		skills
 	},
-	methods: {
-		getTalentCssClass: function(){
-			return this.className + '-' + this.tree.name.replace(' ','-').toLowerCase();
-		},
+	computed: {
 		getTalentBackgroundImage: function(){
 			let backgroundImageUrl = this.constants.imageDirectory + this.constants.backgroundDirectory + 'background-' + this.className + '-' + this.tree.name.replace(' ','-').toLowerCase() + '.jpg';
 			return {
-				background: `url('${backgroundImageUrl}') no-repeat`,
+				backgroundImage: `url('${backgroundImageUrl}')`,
+				backgroundRepeat: 'no-repeat',
 				backgroundSize: 'cover',
 			}
 		}
