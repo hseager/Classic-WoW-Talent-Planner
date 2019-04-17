@@ -9,8 +9,8 @@ let tooltip = {
 		<h3>{{skill.name}}</h3>
 		<p>Rank {{skill.currentRank}}/{{skill.maxRank}}</p>
 		<p class="rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
-		<p v-if="this.skill.requirements" class="skill-requirement">Requires {{requirements}} points in {{treeName}} talents</p>
-		<div v-if="skill.currentRank > 0 && skill.currentRank != skill.maxRank">
+		<p v-if="hasRequirements" class="skill-requirement">Requires {{requirements}} points in {{treeName}} talents</p>
+		<div v-if="hasNextRank">
 			<br/>
 			<p>Next rank:</p>
 		</div>
@@ -24,6 +24,12 @@ let tooltip = {
 				}
 			}
 		},
+		hasNextRank: function(){
+			return this.skill.currentRank > 0 && this.skill.currentRank != this.skill.maxRank
+		},
+		hasRequirements: function(){
+			return this.skill.requirements && !this.skill.enabled;
+		}
 	},
 };
 
@@ -31,7 +37,7 @@ let skill = {
 	props: {
 		constants: Object,
 		skill: Object,
-		treeName: String,
+		tree: Object,
 	},
 	data: function(){
 		return {
@@ -39,7 +45,7 @@ let skill = {
 		}
 	},
 	template: 
-		`<div :class="['skill', skill.enabled ? 'is-enabled' : '']" :style="getGridPosition">
+		`<div :class="['skill', { 'is-enabled': isSkillEnabled }]" :style="getGridPosition">
 			<div class="skill-icon"
 				v-on:click="onIncreaseSkillRank"
 				v-on:click.right.prevent="onDecreaseSkillRank"
@@ -51,7 +57,7 @@ let skill = {
 			<tooltip
 				v-bind:skill="skill"
 				v-bind:showTooltip="showTooltip"
-				v-bind:treeName="treeName"></tooltip>
+				v-bind:treeName="tree.name"></tooltip>
 		</div>`,
 	components: {
 		tooltip,
@@ -69,6 +75,20 @@ let skill = {
 			if(typeof this.skill.icon !== 'undefined'){
 				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon;
 			}
+		},
+		isSkillEnabled: function(){
+			if(typeof this.skill.requirements != 'undefined'){
+				if(typeof this.skill.requirements.treePoints != 'undefined'){
+					if(this.tree.skillPoints >= this.skill.requirements.treePoints){
+						this.skill.enabled = true;
+					} else {
+						this.skill.enabled = false;
+						this.$emit('decreaseTreeSkillPoints', this.skill.currentRank);
+						this.skill.currentRank = 0;
+					}
+				}
+			}
+			return this.skill.enabled;
 		}
 	},
 	methods: {
@@ -76,16 +96,18 @@ let skill = {
 			if(this.skill.enabled){
 				if(this.skill.currentRank < this.skill.maxRank){
 					this.skill.currentRank++
-					this.$parent.$emit('decreaseClassSkillPoints');
+					this.$parent.$emit('decreaseAvailableSkillPoints');
 					this.$parent.$emit('increaseRequiredLevel');
+					this.$emit('increaseTreeSkillPoints');
 				}
 			}
 		},
 		onDecreaseSkillRank: function(){
 			if(this.skill.currentRank >= 1){
 				this.skill.currentRank--;
-				this.$parent.$emit('increaseClassSkillPoints');
+				this.$parent.$emit('increaseAvailableSkillPoints');
 				this.$parent.$emit('decreaseRequiredLevel');
+				this.$emit('decreaseTreeSkillPoints', 1);
 			}
 		},
 	},
@@ -99,14 +121,16 @@ let talentTree = {
 	},
 	template: 
 	`<div>
-		<h3>{{tree.name}}</h3>
-		<div class="talent-tree" :style="getTalentBackgroundImage">
+		<h3>{{tree.name}} ({{tree.skillPoints}})</h3>
+		<div class="talent-tree" :style="getTreeBackgroundImage">
 			<skill
 				v-for="skill in tree.skills"
 				v-bind:skill="skill"
 				v-bind:key="skill.id"
 				v-bind:constants="constants"
-				v-bind:treeName="tree.name">
+				v-bind:tree="tree"
+				v-on:increaseTreeSkillPoints="onIncreaseTreeSkillPoints"
+				v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints">
 			></skill>
 		</div>
 	</div>`,
@@ -114,15 +138,23 @@ let talentTree = {
 		skill
 	},
 	computed: {
-		getTalentBackgroundImage: function(){
+		getTreeBackgroundImage: function(){
 			let backgroundImageUrl = this.constants.imageDirectory + this.constants.backgroundDirectory + 'background-' + this.className + '-' + this.tree.name.replace(' ','-').toLowerCase() + '.jpg';
 			return {
 				backgroundImage: `url('${backgroundImageUrl}')`,
 				backgroundRepeat: 'no-repeat',
 				backgroundSize: 'cover',
 			}
-		}
+		},
 	},
+	methods: {
+		onIncreaseTreeSkillPoints: function(){
+			this.tree.skillPoints++;
+		},
+		onDecreaseTreeSkillPoints: function(amount){
+			this.tree.skillPoints = this.tree.skillPoints - amount;
+		}
+	}
 };
 
 let classPanel = {
@@ -136,8 +168,8 @@ let classPanel = {
 			v-for="tree in classType.talentTrees"
 			v-bind:tree="tree"
 			v-bind:key="tree.id"
-			v-on:decreaseClassSkillPoints="decreaseClassSkillPoints"
-			v-on:increaseClassSkillPoints="increaseClassSkillPoints"
+			v-on:decreaseAvailableSkillPoints="decreaseAvailableSkillPoints"
+			v-on:increaseAvailableSkillPoints="increaseAvailableSkillPoints"
 			v-on:decreaseRequiredLevel="decreaseRequiredLevel"
 			v-on:increaseRequiredLevel="increaseRequiredLevel"
 			v-bind:className="classType.name"
@@ -145,11 +177,11 @@ let classPanel = {
 		></talent-tree>
 	</div>`,
 	methods: {
-		decreaseClassSkillPoints: function(){
-			this.classType.skillPoints--;
+		decreaseAvailableSkillPoints: function(){
+			this.classType.availableSkillPoints--;
 		},
-		increaseClassSkillPoints: function(){
-			this.classType.skillPoints++;
+		increaseAvailableSkillPoints: function(){
+			this.classType.availableSkillPoints++;
 		},
 		increaseRequiredLevel: function(){
 			if(this.classType.requiredLevel == 0)
@@ -200,8 +232,6 @@ var app = new Vue({
 	},
 	template: 
 	`<div>
-		<strong>Skills points: {{classes[currentClass].skillPoints}}</strong>
-		<strong>Required level: {{classes[currentClass].requiredLevel}}</strong>
 		<ul class="class-list">
 			<class-list
 				v-for="classType in classes"
@@ -212,6 +242,8 @@ var app = new Vue({
 				v-bind:currentClass="currentClass"
 			></class-list>
 		</ul>
+		<strong>Skills points: {{classes[currentClass].availableSkillPoints}}</strong><br/>
+		<strong>Required level: {{classes[currentClass].requiredLevel}}</strong>
 		<class-panel
 			v-bind:class-type="classes[currentClass]"
 			v-bind:constants="constants"

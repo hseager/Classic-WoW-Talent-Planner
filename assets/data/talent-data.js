@@ -10,12 +10,13 @@ let talentData = {
 		{
 			"id": 0, 
 			"name": "warrior", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
 					"id": 0,
 					"name": "Arms",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0, 
@@ -125,6 +126,9 @@ let talentData = {
 								"Increases the critical strike chance of your Overpower ability by 50%.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 10,
+							}
 						},
 						{ 
 							"id": 7, 
@@ -137,6 +141,9 @@ let talentData = {
 								"Increases the time required for your rage to decay while out of combat by 30%.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 10,
+							}
 						},
 						{ 
 							"id": 8, 
@@ -151,6 +158,9 @@ let talentData = {
 								"Your critical strikes cause the opponent to bleed, dealing 60% of your melee weapon's average damage over 12 sec.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 10,
+							}
 						},
 						{ 
 							"id": 9, 
@@ -167,6 +177,9 @@ let talentData = {
 								"Increases the damage you deal with two-handed melee weapons by 5%.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 15,
+							}
 						},
 						{ 
 							"id": 10, 
@@ -180,6 +193,9 @@ let talentData = {
 								"Increases the critical strike damage bonus of your abilities in Battle, Defensive, and Berserker stance by 20%.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 15,
+							}
 						},
 						{ 
 							"id": 11, 
@@ -196,6 +212,9 @@ let talentData = {
 								"Increases the damage you deal with two-handed melee weapons by 5%.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 20,
+							}
 						},
 						{ 
 							"id": 12, 
@@ -208,6 +227,9 @@ let talentData = {
 								"Your next 5 melee attacks strike an additional nearby opponent.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 20,
+							}
 						},
 						{ 
 							"id": 13, 
@@ -224,6 +246,9 @@ let talentData = {
 								"Gives you a 5% chance to stun your target for 3 sec with a Mace.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 20,
+							}
 						},
 						{ 
 							"id": 14, 
@@ -240,6 +265,9 @@ let talentData = {
 								"Gives you a 5% chance to get an extra attack on the same target after dealing damage with your Sword.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 20,
+							}
 						},
 						{ 
 							"id": 15, 
@@ -256,6 +284,9 @@ let talentData = {
 								"Increases your chance to get a critical strike with Polearms by 5%.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 25,
+							}
 						},
 						{ 
 							"id": 16, 
@@ -270,6 +301,9 @@ let talentData = {
 								"Gives your Hamstring ability a 15% chance to immobilize the target for 5 sec.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 25,
+							}
 						},
 						{ 
 							"id": 17, 
@@ -282,12 +316,16 @@ let talentData = {
 								"A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.",
 							],
 							"enabled": false,
+							"requirements": {
+								"treePoints": 30,
+							}
 						},
 					]
 				},
 				{ 
 					"id": 1,
 					"name": "Fury",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -303,6 +341,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Protection",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -320,7 +359,7 @@ let talentData = {
 		{
 			"id": 1, 
 			"name": "paladin", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
@@ -368,7 +407,7 @@ let talentData = {
 		{ 
 			"id": 2,
 			"name": "hunter", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
@@ -435,7 +474,7 @@ let talentData = {
 		{ 
 			"id": 3, 
 			"name": "rogue", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
@@ -482,7 +521,7 @@ let talentData = {
 		{
 			"id": 4, 
 			"name": "priest", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
@@ -529,7 +568,7 @@ let talentData = {
 		{
 			"id": 5, 
 			"name": "shaman", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
@@ -576,7 +615,7 @@ let talentData = {
 		{ 
 			"id": 6, 
 			"name": "mage", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
@@ -617,7 +656,7 @@ let talentData = {
 		{
 			"id": 7, 
 			"name": "warlock", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
@@ -664,7 +703,7 @@ let talentData = {
 		{
 			"id": 8, 
 			"name": "druid", 
-			"skillPoints": 51,
+			"availableSkillPoints": 51,
 			"requiredLevel": 0,
 			"talentTrees": [
 				{ 
