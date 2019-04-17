@@ -2,24 +2,36 @@ let tooltip = {
 	props: {
 		skill: Object,
 		showTooltip: Boolean,
+		treeName: String,
 	},
 	template: 
 	`<div v-if="showTooltip" class="skill-tooltip">
 		<h3>{{skill.name}}</h3>
 		<p>Rank {{skill.currentRank}}/{{skill.maxRank}}</p>
 		<p class="rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
+		<p v-if="this.skill.requirements" class="skill-requirement">Requires {{requirements}} points in {{treeName}} talents</p>
 		<div v-if="skill.currentRank > 0 && skill.currentRank != skill.maxRank">
 			<br/>
 			<p>Next rank:</p>
 		</div>
 		<p class="rank-description">{{skill.rankDescription[skill.currentRank]}}</p>
 	</div>`,
+	computed: {
+		requirements: function(){
+			if(typeof this.skill.requirements != 'undefined'){
+				if(typeof this.skill.requirements.treePoints != 'undefined'){
+					return this.skill.requirements.treePoints;
+				}
+			}
+		},
+	},
 };
 
-let skills = {
+let skill = {
 	props: {
-		skill: Object,
 		constants: Object,
+		skill: Object,
+		treeName: String,
 	},
 	data: function(){
 		return {
@@ -38,7 +50,8 @@ let skills = {
 			<span class="skill-rank">{{skill.currentRank}}/{{skill.maxRank}}</span>
 			<tooltip
 				v-bind:skill="skill"
-				v-bind:showTooltip="showTooltip"></tooltip>
+				v-bind:showTooltip="showTooltip"
+				v-bind:treeName="treeName"></tooltip>
 		</div>`,
 	components: {
 		tooltip,
@@ -88,16 +101,17 @@ let talentTree = {
 	`<div>
 		<h3>{{tree.name}}</h3>
 		<div class="talent-tree" :style="getTalentBackgroundImage">
-			<skills
+			<skill
 				v-for="skill in tree.skills"
 				v-bind:skill="skill"
 				v-bind:key="skill.id"
-				v-bind:constants="constants">
-			></skills>
+				v-bind:constants="constants"
+				v-bind:treeName="tree.name">
+			></skill>
 		</div>
 	</div>`,
 	components: {
-		skills
+		skill
 	},
 	computed: {
 		getTalentBackgroundImage: function(){
