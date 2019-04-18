@@ -80,9 +80,11 @@ let skill = {
 					arrowDistance = this.skill.position[0] - requiredSkill.position[0];
 
 				if(arrowDistance == 1){
-					cssClassName = 'down-arrow-short';
+					cssClassName = 'down-arrow';
 				} else if(arrowDistance == 2){
-					cssClassName = 'down-arrow-long';
+					cssClassName = ['down-arrow','medium-arrow'];
+				} else if(arrowDistance == 2){
+					cssClassName = ['down-arrow','large-arrow'];
 				}
 
 				return cssClassName;
