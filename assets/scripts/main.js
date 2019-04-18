@@ -95,7 +95,7 @@ let skill = {
 					this.skill.currentRank++
 					this.$parent.$emit('decreaseAvailableSkillPoints');
 					this.$parent.$emit('increaseRequiredLevel');
-					this.$emit('increaseTreeSkillPoints');
+					this.$emit('increaseTreeSkillPoints', this.skill.position[0]);
 					this.checkSkillRequirements();
 				}
 			}
@@ -112,21 +112,29 @@ let skill = {
 		checkSkillRequirements: function(){
 			this.tree.skills.forEach((skill) => {
 				if(skill.requirements && skill.requirements.specPoints){
-					if(this.tree.skillPoints >= skill.requirements.specPoints){
+
+					let tierKey = 0;
+					if(skill.position[0] == 1){
+						tierKey = 1;
+					} else {
+						tierKey = 2;
+					}
+
+					if(this.tree.skillPointsByTier[skill.position[0] - tierKey] >= skill.requirements.specPoints){
 						if(skill.requirements.skill){
 							let requiredSkill = this.getSkill(skill.requirements.skill.id);
 							if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
 								skill.enabled = true;
 							} else{
 								skill.enabled = false;
-								this.resetDisabledTalentPoints();
+								//this.resetDisabledTalentPoints();
 							}
 						} else {
 							skill.enabled = true;
 						}
 					} else {
 						skill.enabled = false;
-						this.resetDisabledTalentPoints();
+						//this.resetDisabledTalentPoints();
 					}
 				}
 			});
@@ -134,23 +142,36 @@ let skill = {
 		getSkill: function(id){
 			return this.tree.skills[id];
 		},
+		/*
 		resetDisabledTalentPoints: function(){
-			/*
-			var firstRowSkillPoints = 0;
-			this.tree.skills.forEach((skill) => {
-				if(skill.position[0] == 1){
-					firstRowSkillPoints = firstRowSkillPoints + skill.currentRank;
-				}
-			});
-			*/
-
+			var firstRowSkillPoints = this.getFirstRowTotalSkillPoints();
+			if(firstRowSkillPoints < 5){
+				this.disableSecondRowAndHigherSkills();
+			}
 			this.tree.skills.forEach((skill) => {
 				if(!skill.enabled && skill.currentRank > 0){
 					this.$emit('decreaseTreeSkillPoints', skill.currentRank);
 					skill.currentRank = 0;
 				}
 			});
+		},
+		getFirstRowTotalSkillPoints: function(){
+			var firstRowSkillPoints = 0;
+			this.tree.skills.forEach((skill) => {
+				if(skill.position[0] == 1){
+					firstRowSkillPoints = firstRowSkillPoints + skill.currentRank;
+				}
+			});
+			return firstRowSkillPoints;
+		},
+		disableSecondRowAndHigherSkills: function(){
+			this.tree.skills.forEach((skill) => {
+				if(skill.position[0] > 1){
+					skill.enabled = false;
+				}
+			});
 		}
+		*/
 	},
 };
 
@@ -189,8 +210,9 @@ let talentTree = {
 		},
 	},
 	methods: {
-		onIncreaseTreeSkillPoints: function(){
-			this.tree.skillPoints++;
+		onIncreaseTreeSkillPoints: function(tier){
+			this.tree.skillPointsByTier[tier - 1] = this.tree.skillPointsByTier[tier - 1] + 1;
+			console.log(this.tree.skillPointsByTier);
 		},
 		onDecreaseTreeSkillPoints: function(amount){
 			this.tree.skillPoints = this.tree.skillPoints - amount;
