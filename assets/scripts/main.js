@@ -111,28 +111,45 @@ let skill = {
 		},
 		checkSkillRequirements: function(){
 			this.tree.skills.forEach((skill) => {
-				if(skill.requirements){
-					if(skill.requirements.specPoints){
-						if(this.tree.skillPoints >= skill.requirements.specPoints){
-							if(skill.requirements.skill){
-								let requiredSkill = this.getSkill(skill.requirements.skill.id);
-								if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
-									skill.enabled = true;
-								} else{
-									skill.enabled = false;
-								}
-							} else {
+				if(skill.requirements && skill.requirements.specPoints){
+					if(this.tree.skillPoints >= skill.requirements.specPoints){
+						if(skill.requirements.skill){
+							let requiredSkill = this.getSkill(skill.requirements.skill.id);
+							if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
 								skill.enabled = true;
+							} else{
+								skill.enabled = false;
+								this.resetDisabledTalentPoints();
 							}
 						} else {
-							skill.enabled = false;
+							skill.enabled = true;
 						}
+					} else {
+						skill.enabled = false;
+						this.resetDisabledTalentPoints();
 					}
 				}
 			});
 		},
 		getSkill: function(id){
 			return this.tree.skills[id];
+		},
+		resetDisabledTalentPoints: function(){
+			/*
+			var firstRowSkillPoints = 0;
+			this.tree.skills.forEach((skill) => {
+				if(skill.position[0] == 1){
+					firstRowSkillPoints = firstRowSkillPoints + skill.currentRank;
+				}
+			});
+			*/
+
+			this.tree.skills.forEach((skill) => {
+				if(!skill.enabled && skill.currentRank > 0){
+					this.$emit('decreaseTreeSkillPoints', skill.currentRank);
+					skill.currentRank = 0;
+				}
+			});
 		}
 	},
 };
