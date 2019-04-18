@@ -47,7 +47,7 @@ let skill = {
 		}
 	},
 	template: 
-		`<div :class="['skill', { 'is-enabled': isSkillEnabled }]" :style="getGridPosition">
+		`<div :class="['skill', { 'is-enabled': skill.enabled }]" :style="getGridPosition">
 			<div class="skill-icon"
 				v-on:click="onIncreaseSkillRank"
 				v-on:click.right.prevent="onDecreaseSkillRank"
@@ -78,20 +78,6 @@ let skill = {
 				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon;
 			}
 		},
-		isSkillEnabled: function(){
-			if(typeof this.skill.requirements != 'undefined'){
-				if(typeof this.skill.requirements.specPoints != 'undefined'){
-					if(this.tree.skillPoints >= this.skill.requirements.specPoints){
-						this.skill.enabled = true;
-					} else {
-						this.skill.enabled = false;
-						this.$emit('decreaseTreeSkillPoints', this.skill.currentRank);
-						this.skill.currentRank = 0;
-					}
-				}
-			}
-			return this.skill.enabled;
-		}
 	},
 	methods: {
 		onIncreaseSkillRank: function(){
@@ -101,6 +87,7 @@ let skill = {
 					this.$parent.$emit('decreaseAvailableSkillPoints');
 					this.$parent.$emit('increaseRequiredLevel');
 					this.$emit('increaseTreeSkillPoints');
+					this.checkSkillRequirements();
 				}
 			}
 		},
@@ -110,8 +97,23 @@ let skill = {
 				this.$parent.$emit('increaseAvailableSkillPoints');
 				this.$parent.$emit('decreaseRequiredLevel');
 				this.$emit('decreaseTreeSkillPoints', 1);
+				this.checkSkillRequirements();
 			}
 		},
+		checkSkillRequirements: function(){
+			let treeSkillPoints = this.tree.skillPoints;
+			this.tree.skills.forEach(function(skill){
+				if(skill.requirements){
+					if(skill.requirements.specPoints){
+						if(treeSkillPoints >= skill.requirements.specPoints){
+							skill.enabled = true;
+						} else {
+							skill.enabled = false;
+						}
+					}
+				}
+			});
+		}
 	},
 };
 
