@@ -143,7 +143,7 @@ let talentData = {
 							"enabled": false,
 							"requirements": {
 								"specPoints": 10,
-								"talent": {
+								"skill": {
 									"id": 4,
 									"skillPoints": 5,
 								}
@@ -164,7 +164,7 @@ let talentData = {
 							"enabled": false,
 							"requirements": {
 								"specPoints": 10,
-								"talent": {
+								"skill": {
 									"id": 2,
 									"skillPoints": 3,
 								}
@@ -203,7 +203,7 @@ let talentData = {
 							"enabled": false,
 							"requirements": {
 								"specPoints": 15,
-								"talent": {
+								"skill": {
 									"id": 8,
 									"skillPoints": 3,
 								}
@@ -330,7 +330,7 @@ let talentData = {
 							"enabled": false,
 							"requirements": {
 								"specPoints": 30,
-								"talent": {
+								"skill": {
 									"id": 12,
 									"skillPoints": 1,
 								}

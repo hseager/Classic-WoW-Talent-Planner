@@ -9,8 +9,9 @@ let tooltip = {
 		<h3>{{skill.name}}</h3>
 		<p>Rank {{skill.currentRank}}/{{skill.maxRank}}</p>
 		<p class="rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
-		<div v-if="hasRequirements">
-			<p class="skill-requirement">Requires {{requirements}} points in {{treeName}} talents</p>
+		<div v-if="this.skill.requirements && !this.skill.enabled">
+			<p class="skill-requirement" v-if="skill.requirements.skill">Requires {{skill.requirements.skill.skillPoints}} points in {{ getRequiredSkillName }} </p>
+			<p class="skill-requirement" v-if="skill.requirements.specPoints">Requires {{skill.requirements.specPoints}} points in {{treeName}} talents</p>
 		</div>
 		<div v-if="hasNextRank">
 			<br/>
@@ -19,18 +20,11 @@ let tooltip = {
 		<p class="rank-description">{{skill.rankDescription[skill.currentRank]}}</p>
 	</div>`,
 	computed: {
-		requirements: function(){
-			if(typeof this.skill.requirements != 'undefined'){
-				if(typeof this.skill.requirements.specPoints != 'undefined'){
-					return this.skill.requirements.specPoints;
-				}
-			}
-		},
 		hasNextRank: function(){
 			return this.skill.currentRank > 0 && this.skill.currentRank != this.skill.maxRank
 		},
-		hasRequirements: function(){
-			return this.skill.requirements && !this.skill.enabled;
+		getRequiredSkillName: function(){
+			return this.$parent.getSkill(this.skill.requirements.skill.id).name;
 		}
 	},
 };
@@ -113,6 +107,9 @@ let skill = {
 					}
 				}
 			});
+		},
+		getSkill: function(id){
+			return this.tree.skills[id];
 		}
 	},
 };
