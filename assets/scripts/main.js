@@ -41,7 +41,7 @@ let skill = {
 		}
 	},
 	template: 
-		`<div :class="['skill', { 'is-enabled': skill.enabled }]" :style="getGridPosition">
+		`<div :class="['skill', { 'is-enabled': skill.enabled }, skillRequirementArrow]" :style="getGridPosition">
 			<div class="skill-icon"
 				v-on:click="onIncreaseSkillRank"
 				v-on:click.right.prevent="onDecreaseSkillRank"
@@ -72,6 +72,22 @@ let skill = {
 				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon;
 			}
 		},
+		skillRequirementArrow: function(){
+			if(this.skill.requirements && this.skill.requirements.skill){
+
+				let requiredSkill = this.getSkill(this.skill.requirements.skill.id),
+					cssClassName = '',
+					arrowDistance = this.skill.position[0] - requiredSkill.position[0];
+
+				if(arrowDistance == 1){
+					cssClassName = 'down-arrow-short';
+				} else if(arrowDistance == 2){
+					cssClassName = 'down-arrow-long';
+				}
+
+				return cssClassName;
+			}
+		}
 	},
 	methods: {
 		onIncreaseSkillRank: function(){
