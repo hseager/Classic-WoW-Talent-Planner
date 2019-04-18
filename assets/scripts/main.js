@@ -74,11 +74,9 @@ let skill = {
 		},
 		skillRequirementArrow: function(){
 			if(this.skill.requirements && this.skill.requirements.skill){
-
 				let requiredSkill = this.getSkill(this.skill.requirements.skill.id),
 					cssClassName = '',
 					arrowDistance = this.skill.position[0] - requiredSkill.position[0];
-
 				if(arrowDistance == 1){
 					cssClassName = 'down-arrow';
 				} else if(arrowDistance == 2){
@@ -86,7 +84,6 @@ let skill = {
 				} else if(arrowDistance == 2){
 					cssClassName = ['down-arrow','large-arrow'];
 				}
-
 				return cssClassName;
 			}
 		}
@@ -113,12 +110,20 @@ let skill = {
 			}
 		},
 		checkSkillRequirements: function(){
-			let treeSkillPoints = this.tree.skillPoints;
-			this.tree.skills.forEach(function(skill){
+			this.tree.skills.forEach((skill) => {
 				if(skill.requirements){
 					if(skill.requirements.specPoints){
-						if(treeSkillPoints >= skill.requirements.specPoints){
-							skill.enabled = true;
+						if(this.tree.skillPoints >= skill.requirements.specPoints){
+							if(skill.requirements.skill){
+								let requiredSkill = this.getSkill(skill.requirements.skill.id);
+								if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
+									skill.enabled = true;
+								} else{
+									skill.enabled = false;
+								}
+							} else {
+								skill.enabled = true;
+							}
 						} else {
 							skill.enabled = false;
 						}

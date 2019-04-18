@@ -24,10 +24,10 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 .skill.is-enabled .skill-icon{ cursor:pointer; }
 .skill.is-enabled .skill-icon-image{ filter: grayscale(0); }
 
-.skill-tooltip{ position: absolute; bottom:86%; left:86%;  padding: 10px; background:rgba(11, 21, 41, 0.9); width: 300px; z-index:1; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; }
+.skill-tooltip{ position: absolute; bottom:86%; left:86%;  padding: 10px; background:rgba(11, 21, 41, 0.9); width: 300px; z-index:2; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; }
 
 .rank-description{ color: #ffd200; }
 
-.down-arrow:before{ content:''; background:url('../images/down-arrow.png') no-repeat bottom; position: absolute; bottom: 68px; left: 28px; width:20px; height: 22px; z-index:2; }
+.down-arrow:before{ content:''; background:url('../images/down-arrow.png') no-repeat bottom; position: absolute; bottom: 68px; left: 28px; width:20px; height: 22px; z-index:1; }
 .down-arrow.medium-arrow:before{ height: 102px; }
 .down-arrow.large-arrow:before{ height: 152px; }
