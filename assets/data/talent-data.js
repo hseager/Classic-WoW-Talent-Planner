@@ -17,7 +17,6 @@ let talentData = {
 					"id": 0,
 					"name": "Arms",
 					"skillPoints": 0,
-					"skillPointsByTier": [0,0,0,0,0,0,0],
 					"skills": [
 						{ 
 							"id": 0, 

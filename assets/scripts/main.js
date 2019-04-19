@@ -41,7 +41,7 @@ let skill = {
 		}
 	},
 	template: 
-		`<div :class="['skill', { 'is-enabled': skill.enabled }, skillRequirementArrow]" :style="getGridPosition">
+		`<div :class="['skill', { 'is-enabled': skill.enabled }, { 'is-max-rank': skill.currentRank == skill.maxRank }, skillRequirementArrow]" :style="getGridPosition">
 			<div class="skill-icon"
 				v-on:click="onIncreaseSkillRank"
 				v-on:click.right.prevent="onDecreaseSkillRank"
@@ -49,7 +49,11 @@ let skill = {
 				v-on:mouseout="showTooltip = false">
 				<img v-bind:src="getSkillIcon" class="skill-icon-image">
 			</div>
-			<span class="skill-rank">{{skill.currentRank}}/{{skill.maxRank}}</span>
+			<span class="skill-rank"
+				v-on:click="onIncreaseSkillRank"
+				v-on:click.right.prevent="onDecreaseSkillRank"
+				v-on:mouseover="showTooltip = true"
+				v-on:mouseout="showTooltip = false">{{skill.currentRank}}/{{skill.maxRank}}</span>
 			<tooltip
 				v-bind:skill="skill"
 				v-bind:showTooltip="showTooltip"
@@ -112,29 +116,21 @@ let skill = {
 		checkSkillRequirements: function(){
 			this.tree.skills.forEach((skill) => {
 				if(skill.requirements && skill.requirements.specPoints){
-
-					let tierKey = 0;
-					if(skill.position[0] == 1){
-						tierKey = 1;
-					} else {
-						tierKey = 2;
-					}
-
-					if(this.tree.skillPointsByTier[skill.position[0] - tierKey] >= skill.requirements.specPoints){
+					if(this.tree.skillPoints >= skill.requirements.specPoints){
 						if(skill.requirements.skill){
 							let requiredSkill = this.getSkill(skill.requirements.skill.id);
 							if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
 								skill.enabled = true;
 							} else{
 								skill.enabled = false;
-								//this.resetDisabledTalentPoints();
+								this.resetDisabledTalentPoints();
 							}
 						} else {
 							skill.enabled = true;
 						}
 					} else {
 						skill.enabled = false;
-						//this.resetDisabledTalentPoints();
+						this.resetDisabledTalentPoints();
 					}
 				}
 			});
@@ -142,7 +138,6 @@ let skill = {
 		getSkill: function(id){
 			return this.tree.skills[id];
 		},
-		/*
 		resetDisabledTalentPoints: function(){
 			var firstRowSkillPoints = this.getFirstRowTotalSkillPoints();
 			if(firstRowSkillPoints < 5){
@@ -171,7 +166,6 @@ let skill = {
 				}
 			});
 		}
-		*/
 	},
 };
 
@@ -182,8 +176,8 @@ let talentTree = {
 		constants: Object,
 	},
 	template: 
-	`<div>
-		<h3>{{tree.name}} ({{tree.skillPoints}})</h3>
+	`<div class="talent-tree-container">
+		<h3 class="talent-tree-title">{{tree.name}} ({{tree.skillPoints}})</h3>
 		<div class="talent-tree" :style="getTreeBackgroundImage">
 			<skill
 				v-for="skill in tree.skills"
@@ -211,8 +205,7 @@ let talentTree = {
 	},
 	methods: {
 		onIncreaseTreeSkillPoints: function(tier){
-			this.tree.skillPointsByTier[tier - 1] = this.tree.skillPointsByTier[tier - 1] + 1;
-			console.log(this.tree.skillPointsByTier);
+			this.tree.skillPoints++;
 		},
 		onDecreaseTreeSkillPoints: function(amount){
 			this.tree.skillPoints = this.tree.skillPoints - amount;
