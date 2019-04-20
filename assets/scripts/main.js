@@ -34,6 +34,7 @@ let skill = {
 		constants: Object,
 		skill: Object,
 		tree: Object,
+		className: String,
 	},
 	data: function(){
 		return {
@@ -73,7 +74,7 @@ let skill = {
 		},
 		getSkillIcon: function(){
 			if(typeof this.skill.icon !== 'undefined'){
-				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.skill.icon;
+				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name + '/' + this.skill.icon;
 			}
 		},
 		skillRequirementArrow: function(){
@@ -107,8 +108,8 @@ let skill = {
 		onDecreaseSkillRank: function(){
 			if(this.skill.currentRank >= 1){
 				this.skill.currentRank--;
-				this.$parent.$emit('increaseAvailableSkillPoints');
-				this.$parent.$emit('decreaseRequiredLevel');
+				this.$parent.$emit('increaseAvailableSkillPoints', 1);
+				this.$parent.$emit('decreaseRequiredLevel', 1);
 				this.$emit('decreaseTreeSkillPoints', 1);
 				this.checkSkillRequirements();
 			}
@@ -146,6 +147,8 @@ let skill = {
 			this.tree.skills.forEach((skill) => {
 				if(!skill.enabled && skill.currentRank > 0){
 					this.$emit('decreaseTreeSkillPoints', skill.currentRank);
+					this.$parent.$emit('increaseAvailableSkillPoints', skill.currentRank);
+					this.$parent.$emit('decreaseRequiredLevel', skill.currentRank);
 					skill.currentRank = 0;
 				}
 			});
@@ -185,6 +188,7 @@ let talentTree = {
 				v-bind:key="skill.id"
 				v-bind:constants="constants"
 				v-bind:tree="tree"
+				v-bind:className="className"
 				v-on:increaseTreeSkillPoints="onIncreaseTreeSkillPoints"
 				v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints">
 			></skill>
@@ -236,8 +240,8 @@ let classPanel = {
 		decreaseAvailableSkillPoints: function(){
 			this.classType.availableSkillPoints--;
 		},
-		increaseAvailableSkillPoints: function(){
-			this.classType.availableSkillPoints++;
+		increaseAvailableSkillPoints: function(amount){
+			this.classType.availableSkillPoints = this.classType.availableSkillPoints + amount;
 		},
 		increaseRequiredLevel: function(){
 			if(this.classType.requiredLevel == 0)
@@ -245,11 +249,11 @@ let classPanel = {
 			else
 				this.classType.requiredLevel++;
 		},
-		decreaseRequiredLevel: function(){
+		decreaseRequiredLevel: function(amount){
 			if(this.classType.requiredLevel == 10)
 				this.classType.requiredLevel = 0;
 			else
-				this.classType.requiredLevel--;
+				this.classType.requiredLevel = this.classType.requiredLevel - amount;
 		},
 	},
 	components: {

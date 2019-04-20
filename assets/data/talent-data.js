@@ -348,9 +348,300 @@ let talentData = {
 							"name": "Booming Voice",
 							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": [],
+							"rankDescription": [
+								"Increases the area of effect and duration of your Battle Shout and Demoralizing Shout by 10%.",
+								"Increases the area of effect and duration of your Battle Shout and Demoralizing Shout by 20%.",
+								"Increases the area of effect and duration of your Battle Shout and Demoralizing Shout by 30%.",
+								"Increases the area of effect and duration of your Battle Shout and Demoralizing Shout by 40%.",
+								"Increases the area of effect and duration of your Battle Shout and Demoralizing Shout by 50%.",
+							],
+							"icon": "skill-warrior-1.jpg",
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Cruelty",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your chance to get a critical strike with melee weapons by 1%.",
+								"Increases your chance to get a critical strike with melee weapons by 2%.",
+								"Increases your chance to get a critical strike with melee weapons by 3%.",
+								"Increases your chance to get a critical strike with melee weapons by 4%.",
+								"Increases your chance to get a critical strike with melee weapons by 5%.",
+							],
 							"icon": "skill-warrior-2.jpg",
-							"position" : [1,1],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Improved Demoralizing Shout",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the melee attack power reduction of your Demoralizing Shout by 8%.",
+								"Increases the melee attack power reduction of your Demoralizing Shout by 16%.",
+								"Increases the melee attack power reduction of your Demoralizing Shout by 24%.",
+								"Increases the melee attack power reduction of your Demoralizing Shout by 32%.",
+								"Increases the melee attack power reduction of your Demoralizing Shout by 40%.",
+							],
+							"icon": "skill-warrior-3.jpg",
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{
+							"id": 3,
+							"name": "Unbridled Wrath",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 8% chance to generate an additional Rage point when you deal melee damage with a weapon.",
+								"Gives you a 16% chance to generate an additional Rage point when you deal melee damage with a weapon.",
+								"Gives you a 24% chance to generate an additional Rage point when you deal melee damage with a weapon.",
+								"Gives you a 32% chance to generate an additional Rage point when you deal melee damage with a weapon.",
+								"Gives you a 40% chance to generate an additional Rage point when you deal melee damage with a weapon.",
+							],
+							"icon": "skill-warrior-4.jpg",
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{
+							"id": 4,
+							"name": "Improved Cleave",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the bonus damage done by your Cleave ability by 40%.",
+								"Increases the bonus damage done by your Cleave ability by 80%.",
+								"Increases the bonus damage done by your Cleave ability by 120%.",
+							],
+							"icon": "skill-warrior-5.jpg",
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{
+							"id": 5,
+							"name": "Piercing Howl",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Causes all enemies near the warrior to be dazed, reducing movement speed by 50% for 6 sec.",
+							],
+							"icon": "skill-warrior-6.jpg",
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{
+							"id": 6,
+							"name": "Blood Craze",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Regenerates 2% of your total Health over 6 sec after being the victim of a critical strike.",
+								"Regenerates 6% of your total Health over 6 sec after being the victim of a critical strike.",
+								"Regenerates 12% of your total Health over 6 sec after being the victim of a critical strike.",
+							],
+							"icon": "skill-warrior-7.jpg",
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{
+							"id": 7,
+							"name": "Improved Battle Shout",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the melee attack power bonus of your Battle Shout by 5%.",
+								"Increases the melee attack power bonus of your Battle Shout by 10%.",
+								"Increases the melee attack power bonus of your Battle Shout by 15%.",
+								"Increases the melee attack power bonus of your Battle Shout by 20%.",
+								"Increases the melee attack power bonus of your Battle Shout by 25%.",
+							],
+							"icon": "skill-warrior-8.jpg",
+							"position" : [3,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{
+							"id": 8,
+							"name": "Dual Wield Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage done by your offhand weapon by 5%.",
+								"Increases the damage done by your offhand weapon by 10%.",
+								"Increases the damage done by your offhand weapon by 15%.",
+								"Increases the damage done by your offhand weapon by 20%.",
+								"Increases the damage done by your offhand weapon by 25%.",
+							],
+							"icon": "skill-warrior-9.jpg",
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{
+							"id": 9,
+							"name": "Improved Execute",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the Rage cost of your Execute ability by 2.",
+								"Reduces the Rage cost of your Execute ability by 5.",
+							],
+							"icon": "skill-warrior-10.jpg",
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{
+							"id": 10,
+							"name": "Enrage",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 5% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+								"Gives you a 10% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+								"Gives you a 15% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+								"Gives you a 20% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+								"Gives you a 25% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.",
+							],
+							"icon": "skill-warrior-11.jpg",
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{
+							"id": 11,
+							"name": "Improved Slam",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Decreases the casting time of your Slam ability by 0.1 sec.",
+								"Decreases the casting time of your Slam ability by 0.2 sec.",
+								"Decreases the casting time of your Slam ability by 0.3 sec.",
+								"Decreases the casting time of your Slam ability by 0.4 sec.",
+								"Decreases the casting time of your Slam ability by 0.5 sec.",
+							],
+							"icon": "skill-warrior-12.jpg",
+							"position" : [5,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{
+							"id": 12,
+							"name": "Death Wish",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, increases your physical damage by 20% and makes you immune to Fear effects, but lowers your armor and all resistances by 20%. Lasts 30 sec.",
+							],
+							"icon": "skill-warrior-13.jpg",
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{
+							"id": 13,
+							"name": "Improved Intercept",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the cooldown of your Intercept ability by 5 sec.",
+								"Reduces the cooldown of your Intercept ability by 10 sec.",
+							],
+							"icon": "skill-warrior-14.jpg",
+							"position" : [5,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{
+							"id": 14,
+							"name": "Improved Berserker Rage",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"The Berserker Rage ability will generate 5 rage when used.",
+								"The Berserker Rage ability will generate 10 rage when used.",
+							],
+							"icon": "skill-warrior-15.jpg",
+							"position" : [6,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							}
+						},
+						{
+							"id": 15,
+							"name": "Flurry",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your attack speed by 10% for your next 3 swings after dealing a melee critical strike.",
+								"Increases your attack speed by 15% for your next 3 swings after dealing a melee critical strike.",
+								"Increases your attack speed by 20% for your next 3 swings after dealing a melee critical strike.",
+								"Increases your attack speed by 25% for your next 3 swings after dealing a melee critical strike.",
+								"Increases your attack speed by 30% for your next 3 swings after dealing a melee critical strike.",
+							],
+							"icon": "skill-warrior-16.jpg",
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 10,
+									"skillPoints": 5,
+								}
+							}
+						},
+						{
+							"id": 16,
+							"name": "Bloodthirst",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Instantly attack the target causing damage equal to 45% of your attack power. In addition, the next 5 successful melee attacks will restore 10 health. This effect lasts 8 sec.",
+							],
+							"icon": "skill-warrior-17.jpg",
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 12,
+									"skillPoints": 1,
+								}
+							}
 						},
 					]
 				},
