@@ -5,7 +5,7 @@ main{ max-width: 1200px; margin: auto; padding: 40px; }
 h1,h2,h3,h4,h5,h6{ font-weight: normal; }
 
 .class-list{ list-style-type: none; padding: 20px 0; }
-.class-list li { display: inline-block; margin:0 10px 0 0; position: relative; cursor:pointer; width: 58px; height:58px; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; opacity:0.8; }
+.class-list li { display: inline-block; margin:0 10px 10px 0; position: relative; cursor:pointer; width: 58px; height:58px; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; opacity:0.8; }
 .class-list li img{ display: block; width:100%; }
 .class-list li.active,
 .class-list li:hover{ opacity: 1; }

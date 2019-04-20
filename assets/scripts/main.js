@@ -140,10 +140,13 @@ let skill = {
 			return this.tree.skills[id];
 		},
 		resetDisabledTalentPoints: function(){
+			/*
 			var firstRowSkillPoints = this.getFirstRowTotalSkillPoints();
 			if(firstRowSkillPoints < 5){
 				this.disableSecondRowAndHigherSkills();
 			}
+			*/
+
 			this.tree.skills.forEach((skill) => {
 				if(!skill.enabled && skill.currentRank > 0){
 					this.$emit('decreaseTreeSkillPoints', skill.currentRank);
