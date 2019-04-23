@@ -36,6 +36,7 @@ let skill = {
 		tree: Object,
 		className: String,
 		currentSkillTier: Number,
+		availableSkillPoints: Number,
 	},
 	data: function(){
 		return {
@@ -96,7 +97,7 @@ let skill = {
 	},
 	methods: {
 		onIncreaseSkillRank: function(){
-			if(this.skill.enabled){
+			if(this.skill.enabled && this.availableSkillPoints > 0){
 				if(this.skill.currentRank < this.skill.maxRank){
 					this.skill.currentRank++
 					this.$parent.$emit('decreaseAvailableSkillPoints');
@@ -150,6 +151,7 @@ let talentTree = {
 		className: String,
 		tree: Object,
 		constants: Object,
+		availableSkillPoints: Number,
 	},
 	data: function(){
 		return {
@@ -168,6 +170,7 @@ let talentTree = {
 				v-bind:tree="tree"
 				v-bind:className="className"
 				v-bind:currentSkillTier="currentSkillTier"
+				v-bind:availableSkillPoints="availableSkillPoints"
 				v-on:increaseTreeSkillPoints="onIncreaseTreeSkillPoints"
 				v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints"
 				v-on:increaseCurrentSkillTier="onIncreaseCurrentSkillTier"
@@ -233,6 +236,7 @@ let classPanel = {
 			v-on:increaseRequiredLevel="increaseRequiredLevel"
 			v-bind:className="classType.name"
 			v-bind:constants="constants"
+			v-bind:availableSkillPoints="classType.availableSkillPoints"
 		></talent-tree>
 	</div>`,
 	methods: {
