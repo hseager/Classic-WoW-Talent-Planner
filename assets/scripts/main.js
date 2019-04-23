@@ -41,6 +41,7 @@ let skill = {
 	data: function(){
 		return {
 			showTooltip: false,
+			skillIcon: this.getSkillIcon(),
 		}
 	},
 	template: 
@@ -50,7 +51,7 @@ let skill = {
 				v-on:click.right.prevent="onDecreaseSkillRank"
 				v-on:mouseover="showTooltip = true"
 				v-on:mouseout="showTooltip = false">
-				<img v-bind:src="getSkillIcon" class="skill-icon-image">
+				<img v-bind:src="skillIcon" class="skill-icon-image">
 			</div>
 			<span class="skill-rank"
 				v-on:click="onIncreaseSkillRank"
@@ -74,11 +75,6 @@ let skill = {
 				}
 			}
 		},
-		getSkillIcon: function(){
-			if(typeof this.skill.icon !== 'undefined'){
-				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name + '/' + this.getImageFileName(this.skill.name);
-			}
-		},
 		skillRequirementArrow: function(){
 			if(this.skill.requirements && this.skill.requirements.skill){
 				let requiredSkill = this.getSkill(this.skill.requirements.skill.id),
@@ -93,7 +89,7 @@ let skill = {
 				}
 				return cssClassName;
 			}
-		}
+		},
 	},
 	methods: {
 		onIncreaseSkillRank: function(){
@@ -142,6 +138,9 @@ let skill = {
 		},
 		getSkill: function(id){
 			return this.tree.skills[id];
+		},
+		getSkillIcon: function(){
+			return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name + '/' + this.getImageFileName(this.skill.name);
 		},
 	},
 };
