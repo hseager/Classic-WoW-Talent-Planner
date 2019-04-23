@@ -76,7 +76,7 @@ let skill = {
 		},
 		getSkillIcon: function(){
 			if(typeof this.skill.icon !== 'undefined'){
-				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name + '/' + this.skill.icon;
+				return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name + '/' + this.getImageFileName(this.skill.name);
 			}
 		},
 		skillRequirementArrow: function(){
@@ -183,7 +183,7 @@ let talentTree = {
 	},
 	computed: {
 		getTreeBackgroundImage: function(){
-			let backgroundImageUrl = this.constants.imageDirectory + this.constants.backgroundDirectory + 'background-' + this.className + '-' + this.tree.name.replace(' ','-').toLowerCase() + '.jpg';
+			let backgroundImageUrl = this.constants.imageDirectory + this.constants.backgroundDirectory + 'background-' + this.className + '-' + this.getImageFileName(this.tree.name);
 			return {
 				backgroundImage: `url('${backgroundImageUrl}')`,
 				backgroundRepeat: 'no-repeat',
@@ -285,6 +285,12 @@ let classList = {
 		}
 	}
 };
+
+Vue.mixin({
+	methods: {
+		getImageFileName: name => name.replace(/ /g,'-').toLowerCase() + '.jpg',
+	}
+});
 
 var app = new Vue({
 	el: '#talent-calculator',

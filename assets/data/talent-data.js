@@ -652,7 +652,7 @@ let talentData = {
 					"skills": [
 						{ 
 							"id": 0,
-							"name": "Sheild Specialization",
+							"name": "Shield Specialization",
 							"maxRank": 5,
 							"currentRank": 0,
 							"rankDescription": [
