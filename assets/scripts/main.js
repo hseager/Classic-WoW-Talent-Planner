@@ -35,6 +35,7 @@ let skill = {
 		skill: Object,
 		tree: Object,
 		className: String,
+		currentSkillTier: Number,
 	},
 	data: function(){
 		return {
@@ -100,18 +101,22 @@ let skill = {
 					this.skill.currentRank++
 					this.$parent.$emit('decreaseAvailableSkillPoints');
 					this.$parent.$emit('increaseRequiredLevel');
-					this.$emit('increaseTreeSkillPoints', this.skill.position[0]);
+					this.$emit('increaseTreeSkillPoints');
+					this.$emit('increaseCurrentSkillTier', this.skill.position[0]);
 					this.checkSkillRequirements();
 				}
 			}
 		},
 		onDecreaseSkillRank: function(){
 			if(this.skill.currentRank >= 1){
-				this.skill.currentRank--;
-				this.$parent.$emit('increaseAvailableSkillPoints', 1);
-				this.$parent.$emit('decreaseRequiredLevel', 1);
-				this.$emit('decreaseTreeSkillPoints', 1);
-				this.checkSkillRequirements();
+				if(this.skill.position[0] == this.currentSkillTier){
+					this.skill.currentRank--;
+					this.$parent.$emit('increaseAvailableSkillPoints');
+					this.$parent.$emit('decreaseRequiredLevel');
+					this.$emit('decreaseTreeSkillPoints');
+					this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);
+					this.checkSkillRequirements();
+				}
 			}
 		},
 		checkSkillRequirements: function(){
@@ -124,14 +129,12 @@ let skill = {
 								skill.enabled = true;
 							} else{
 								skill.enabled = false;
-								this.resetDisabledTalentPoints();
 							}
 						} else {
 							skill.enabled = true;
 						}
 					} else {
 						skill.enabled = false;
-						this.resetDisabledTalentPoints();
 					}
 				}
 			});
@@ -139,39 +142,6 @@ let skill = {
 		getSkill: function(id){
 			return this.tree.skills[id];
 		},
-		resetDisabledTalentPoints: function(){
-			/*
-			var firstRowSkillPoints = this.getFirstRowTotalSkillPoints();
-			if(firstRowSkillPoints < 5){
-				this.disableSecondRowAndHigherSkills();
-			}
-			*/
-
-			this.tree.skills.forEach((skill) => {
-				if(!skill.enabled && skill.currentRank > 0){
-					this.$emit('decreaseTreeSkillPoints', skill.currentRank);
-					this.$parent.$emit('increaseAvailableSkillPoints', skill.currentRank);
-					this.$parent.$emit('decreaseRequiredLevel', skill.currentRank);
-					skill.currentRank = 0;
-				}
-			});
-		},
-		getFirstRowTotalSkillPoints: function(){
-			var firstRowSkillPoints = 0;
-			this.tree.skills.forEach((skill) => {
-				if(skill.position[0] == 1){
-					firstRowSkillPoints = firstRowSkillPoints + skill.currentRank;
-				}
-			});
-			return firstRowSkillPoints;
-		},
-		disableSecondRowAndHigherSkills: function(){
-			this.tree.skills.forEach((skill) => {
-				if(skill.position[0] > 1){
-					skill.enabled = false;
-				}
-			});
-		}
 	},
 };
 
@@ -180,6 +150,11 @@ let talentTree = {
 		className: String,
 		tree: Object,
 		constants: Object,
+	},
+	data: function(){
+		return {
+			currentSkillTier: 0,
+		}
 	},
 	template: 
 	`<div class="talent-tree-container">
@@ -192,8 +167,11 @@ let talentTree = {
 				v-bind:constants="constants"
 				v-bind:tree="tree"
 				v-bind:className="className"
+				v-bind:currentSkillTier="currentSkillTier"
 				v-on:increaseTreeSkillPoints="onIncreaseTreeSkillPoints"
-				v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints">
+				v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints"
+				v-on:increaseCurrentSkillTier="onIncreaseCurrentSkillTier"
+				v-on:decreaseCurrentSkillTier="onDecreaseCurrentSkillTier">
 			></skill>
 		</div>
 	</div>`,
@@ -211,11 +189,29 @@ let talentTree = {
 		},
 	},
 	methods: {
-		onIncreaseTreeSkillPoints: function(tier){
+		onIncreaseTreeSkillPoints: function(){
 			this.tree.skillPoints++;
 		},
-		onDecreaseTreeSkillPoints: function(amount){
-			this.tree.skillPoints = this.tree.skillPoints - amount;
+		onDecreaseTreeSkillPoints: function(){
+			this.tree.skillPoints--;
+		},
+		onIncreaseCurrentSkillTier: function(tier){
+			if(tier > this.currentSkillTier)
+				this.currentSkillTier = tier;
+		},
+		onDecreaseCurrentSkillTier: function(tier){
+			let totalTierSkillPoints = this.getTotalTierSkillPoints(tier);
+			if(totalTierSkillPoints == 0)
+				this.currentSkillTier = tier - 1;
+		},
+		getTotalTierSkillPoints: function(tier){
+			let tierSkillPoints = 0;
+			this.tree.skills.forEach((skill) => {
+				if(skill.position[0] == tier){
+					tierSkillPoints = tierSkillPoints + skill.currentRank;
+				}
+			});
+			return tierSkillPoints;
 		}
 	}
 };
@@ -243,8 +239,8 @@ let classPanel = {
 		decreaseAvailableSkillPoints: function(){
 			this.classType.availableSkillPoints--;
 		},
-		increaseAvailableSkillPoints: function(amount){
-			this.classType.availableSkillPoints = this.classType.availableSkillPoints + amount;
+		increaseAvailableSkillPoints: function(){
+			this.classType.availableSkillPoints++;
 		},
 		increaseRequiredLevel: function(){
 			if(this.classType.requiredLevel == 0)
@@ -252,11 +248,11 @@ let classPanel = {
 			else
 				this.classType.requiredLevel++;
 		},
-		decreaseRequiredLevel: function(amount){
+		decreaseRequiredLevel: function(){
 			if(this.classType.requiredLevel == 10)
 				this.classType.requiredLevel = 0;
 			else
-				this.classType.requiredLevel = this.classType.requiredLevel - amount;
+				this.classType.requiredLevel--;
 		},
 	},
 	components: {
