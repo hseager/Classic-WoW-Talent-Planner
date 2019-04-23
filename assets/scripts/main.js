@@ -41,7 +41,6 @@ let skill = {
 	data: function(){
 		return {
 			showTooltip: false,
-			skillIcon: this.getSkillIcon(),
 		}
 	},
 	template: 
@@ -89,6 +88,9 @@ let skill = {
 				}
 				return cssClassName;
 			}
+		},
+		skillIcon: function(){
+			return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name + '/' + this.getImageFileName(this.skill.name);
 		},
 	},
 	methods: {
@@ -139,9 +141,6 @@ let skill = {
 		getSkill: function(id){
 			return this.tree.skills[id];
 		},
-		getSkillIcon: function(){
-			return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name + '/' + this.getImageFileName(this.skill.name);
-		},
 	},
 };
 
@@ -187,6 +186,7 @@ let talentTree = {
 				backgroundImage: `url('${backgroundImageUrl}')`,
 				backgroundRepeat: 'no-repeat',
 				backgroundSize: 'cover',
+				backgroundPosition: 'center',
 			}
 		},
 	},
