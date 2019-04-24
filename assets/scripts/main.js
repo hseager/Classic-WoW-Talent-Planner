@@ -287,7 +287,7 @@ let classList = {
 
 Vue.mixin({
 	methods: {
-		getImageFileName: name => name.replace(/ /g,'-').toLowerCase() + '.jpg',
+		getImageFileName: name => name.replace("'","").replace(/ /g,'-').toLowerCase() + '.jpg',
 	}
 });
 
