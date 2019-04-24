@@ -1405,7 +1405,238 @@ let talentData = {
 							"name": "Improved Blessing of Might",
 							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Increases the melee attack power bonus of your Blessing of Might by 4%.",
+								"Increases the melee attack power bonus of your Blessing of Might by 8%.",
+								"Increases the melee attack power bonus of your Blessing of Might by 12%.",
+								"Increases the melee attack power bonus of your Blessing of Might by 16%.",
+								"Increases the melee attack power bonus of your Blessing of Might by 20%.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Benediction",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the Mana cost of your Judgement and Seal spells by 3%.",
+								"Reduces the Mana cost of your Judgement and Seal spells by 6%.",
+								"Reduces the Mana cost of your Judgement and Seal spells by 9%.",
+								"Reduces the Mana cost of your Judgement and Seal spells by 12%.",
+								"Reduces the Mana cost of your Judgement and Seal spells by 15%.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Improved Judgement",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Decreases the cooldown of your Judgement spell by 1 sec.",
+								"Decreases the cooldown of your Judgement spell by 2 sec.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 3,
+							"name": "Improved Seal of the Crusader",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the melee attack power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by 5%.",
+								"Increases the melee attack power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by 10%.",
+								"Increases the melee attack power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by 15%.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 4,
+							"name": "Deflection",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your Parry chance by 1%.",
+								"Increases your Parry chance by 2%.",
+								"Increases your Parry chance by 3%.",
+								"Increases your Parry chance by 4%.",
+								"Increases your Parry chance by 5%.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 5,
+							"name": "Vindication",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives the Paladin's damaging melee attacks a chance to reduce the target's Strength and Agility by 5% for 10 sec.",
+								"Gives the Paladin's damaging melee attacks a chance to reduce the target's Strength and Agility by 10% for 10 sec.",
+								"Gives the Paladin's damaging melee attacks a chance to reduce the target's Strength and Agility by 15% for 10 sec.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 6,
+							"name": "Conviction",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your chance to get a critical strike with melee weapons by 1%.",
+								"Increases your chance to get a critical strike with melee weapons by 2%.",
+								"Increases your chance to get a critical strike with melee weapons by 3%.",
+								"Increases your chance to get a critical strike with melee weapons by 4%.",
+								"Increases your chance to get a critical strike with melee weapons by 5%.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 7,
+							"name": "Seal of Command",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.<br><br>Unleashing this Seal's energy will judge an enemy, instantly causing 46.5 to 55.5 Holy damage, 93 to 102 if the target is stunned or incapacitated.",
+							],
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 8,
+							"name": "Pursuit of Justice",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases movement and mounted movement speed by 4%. This does not stack with other movement speed increasing effects.",
+								"Increases movement and mounted movement speed by 8%. This does not stack with other movement speed increasing effects.",
+							],
+							"position" : [3,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 9,
+							"name": "Eye for an Eye",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"All spell criticals against you cause 15% of the damage taken to the caster as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
+								"All spell criticals against you cause 30% of the damage taken to the caster as well. The damage caused by Eye for an Eye will not exceed 50% of the Paladin's total health.",
+							],
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 10,
+							"name": "Improved Retribution Aura",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage done by your Retribution Aura by 25%.",
+								"Increases the damage done by your Retribution Aura by 50%.",
+							],
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 11,
+							"name": "Two-Handed Weapon Specialization",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage you deal with two-handed melee weapons by 2%.",
+								"Increases the damage you deal with two-handed melee weapons by 4%.",
+								"Increases the damage you deal with two-handed melee weapons by 6%.",
+							],
+							"position" : [5,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 12,
+							"name": "Sanctity Aura",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases Holy damage done by party members within 30 yards by 10%. Players may only have one Aura on them per Paladin at any one time.",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 13,
+							"name": "Vengeance",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 3% bonus to Physical and Holy damage you deal for 8 sec after dealing a critical strike from a weapon swing, spell, or ability.",
+								"Gives you a 6% bonus to Physical and Holy damage you deal for 8 sec after dealing a critical strike from a weapon swing, spell, or ability.",
+								"Gives you a 9% bonus to Physical and Holy damage you deal for 8 sec after dealing a critical strike from a weapon swing, spell, or ability.",
+								"Gives you a 12% bonus to Physical and Holy damage you deal for 8 sec after dealing a critical strike from a weapon swing, spell, or ability.",
+								"Gives you a 15% bonus to Physical and Holy damage you deal for 8 sec after dealing a critical strike from a weapon swing, spell, or ability.",
+							],
+							"position" : [6,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 6,
+									"skillPoints": 5,
+								}
+							}
+						},
+						{ 
+							"id": 14,
+							"name": "Repentance",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+							}
 						},
 					]
 				}

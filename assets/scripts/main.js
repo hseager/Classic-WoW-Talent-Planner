@@ -17,7 +17,7 @@ let tooltip = {
 			<br/>
 			<p>Next rank:</p>
 		</div>
-		<p class="rank-description">{{skill.rankDescription[skill.currentRank]}}</p>
+		<p class="rank-description" v-html="skill.rankDescription[skill.currentRank]"></p>
 	</div>`,
 	computed: {
 		hasNextRank: function(){
@@ -83,7 +83,7 @@ let skill = {
 					cssClassName = 'down-arrow';
 				} else if(arrowDistance == 2){
 					cssClassName = ['down-arrow','medium-arrow'];
-				} else if(arrowDistance == 2){
+				} else if(arrowDistance == 3){
 					cssClassName = ['down-arrow','large-arrow'];
 				}
 				return cssClassName;
