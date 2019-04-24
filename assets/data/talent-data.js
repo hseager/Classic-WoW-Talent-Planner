@@ -1651,6 +1651,7 @@ let talentData = {
 				{ 
 					"id": 0,
 					"name": "Beast Mastery",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0, 
@@ -1677,6 +1678,7 @@ let talentData = {
 				{ 
 					"id": 1,
 					"name": "Marksmanship",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1697,6 +1699,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Survival",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1718,6 +1721,7 @@ let talentData = {
 				{ 
 					"id": 0,
 					"name": "Assassination",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0, 
@@ -1731,6 +1735,7 @@ let talentData = {
 				{ 
 					"id": 1,
 					"name": "Combat",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1744,6 +1749,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Subtlety",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1765,6 +1771,7 @@ let talentData = {
 				{ 
 					"id": 0,
 					"name": "Discipline",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0, 
@@ -1778,6 +1785,7 @@ let talentData = {
 				{ 
 					"id": 1,
 					"name": "Holy",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1791,6 +1799,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Shadow",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1812,6 +1821,7 @@ let talentData = {
 				{ 
 					"id": 0,
 					"name": "Elemental",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0, 
@@ -1825,6 +1835,7 @@ let talentData = {
 				{ 
 					"id": 1,
 					"name": "Enhancement",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1838,6 +1849,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Restoration",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1859,6 +1871,7 @@ let talentData = {
 				{ 
 					"id": 0,
 					"name": "Arcane",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0, 
@@ -1872,6 +1885,7 @@ let talentData = {
 				{ 
 					"id": 1,
 					"name": "Fire",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1885,6 +1899,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Frost",
+					"skillPoints": 0,
 					"maxRank": 5,
 					"currentRank": 0,
 					"rankDescription": []
@@ -1900,6 +1915,7 @@ let talentData = {
 				{ 
 					"id": 0,
 					"name": "Affliction",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0, 
@@ -1913,6 +1929,7 @@ let talentData = {
 				{ 
 					"id": 1,
 					"name": "Demonology",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1926,6 +1943,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Destruction",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1947,6 +1965,7 @@ let talentData = {
 				{ 
 					"id": 0,
 					"name": "Balance",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0, 
@@ -1960,6 +1979,7 @@ let talentData = {
 				{ 
 					"id": 1,
 					"name": "Feral Combat",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1973,6 +1993,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Restoration",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
