@@ -992,11 +992,159 @@ let talentData = {
 								"specPoints": 10,
 							},
 						},
+						{ 
+							"id": 5,
+							"name": "Consecration",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Consecrates the land beneath Paladin, doing 64 Holy damage over 8 sec to enemies who enter the area.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 6,
+							"name": "Improved Lay on Hands",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives the target of your Lay on Hands spell a 15% bonus to their armor value from items for 2 min. In addition, the cooldown for your Lay on Hands spell is reduced by 10 min.",
+								"Gives the target of your Lay on Hands spell a 30% bonus to their armor value from items for 2 min. In addition, the cooldown for your Lay on Hands spell is reduced by 20 min.",
+							],
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 7,
+							"name": "Unyielding Faith",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your chance to resist Fear and Disorient effects by an additional 5%.",
+								"Increases your chance to resist Fear and Disorient effects by an additional 10%.",
+							],
+							"position" : [3,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8,
+							"name": "Illumination",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"After getting a critical effect from your Flash of Light, Holy Light, or Holy Shock heal spell, gives you a 20% chance to gain Mana equal to the base cost of the spell.",
+								"After getting a critical effect from your Flash of Light, Holy Light, or Holy Shock heal spell, gives you a 40% chance to gain Mana equal to the base cost of the spell.",
+								"After getting a critical effect from your Flash of Light, Holy Light, or Holy Shock heal spell, gives you a 60% chance to gain Mana equal to the base cost of the spell.",
+								"After getting a critical effect from your Flash of Light, Holy Light, or Holy Shock heal spell, gives you a 80% chance to gain Mana equal to the base cost of the spell.",
+								"After getting a critical effect from your Flash of Light, Holy Light, or Holy Shock heal spell, gives you a 100% chance to gain Mana equal to the base cost of the spell.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 9,
+							"name": "Improved Blessing of Wisdom",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the effect of your Blessing of Wisdom spell by 10%.",
+								"Increases the effect of your Blessing of Wisdom spell by 20%.",
+							],
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 10,
+							"name": "Divine Favor",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a 100% critical effect chance.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+								"skill": {
+									"id": 8,
+									"skillPoints": 5
+								}
+							},
+						},
+						{ 
+							"id": 11,
+							"name": "Lasting Judgement",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the duration of your Judgement of Light and Judgement of Wisdom by 10 sec.",
+								"Increases the duration of your Judgement of Light and Judgement of Wisdom by 20 sec.",
+								"Increases the duration of your Judgement of Light and Judgement of Wisdom by 30 sec.",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 12,
+							"name": "Holy Power",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical effect chance of your Holy spells by 1%.",
+								"Increases the critical effect chance of your Holy spells by 2%.",
+								"Increases the critical effect chance of your Holy spells by 3%.",
+								"Increases the critical effect chance of your Holy spells by 4%.",
+								"Increases the critical effect chance of your Holy spells by 5%.",
+							],
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							},
+						},
+						{ 
+							"id": 13,
+							"name": "Holy Shock",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Blasts the target with Holy energy, causing 204 to 221 Holy damage to an enemy, or 204 to 221 healing to an ally.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 10,
+									"skillPoints": 1
+								}
+							},
+						},
 					]
 				},
 				{ 
 					"id": 1,
 					"name": "Protection",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
@@ -1010,6 +1158,7 @@ let talentData = {
 				{ 
 					"id": 2,
 					"name": "Retribution",
+					"skillPoints": 0,
 					"skills": [
 						{ 
 							"id": 0,
