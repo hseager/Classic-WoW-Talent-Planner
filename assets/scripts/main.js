@@ -97,7 +97,13 @@ let skill = {
 			}
 		},
 		skillIcon: function(){
-			return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name.replace(' ','-').toLowerCase() + '/' + this.getImageFileName(this.skill.name);
+			return 	this.constants.imageDirectory + 
+					this.constants.skillIconDirectory + 
+					this.className + '/' + 
+					this.tree.name
+						.replace(' ','-')
+						.toLowerCase() + '/' + 
+					this.getImageFileName(this.skill.name);
 		},
 	},
 	methods: {
@@ -188,7 +194,10 @@ let talentTree = {
 	},
 	computed: {
 		getTreeBackgroundImage: function(){
-			let backgroundImageUrl = this.constants.imageDirectory + this.constants.backgroundDirectory + 'background-' + this.className + '-' + this.getImageFileName(this.tree.name);
+			let backgroundImageUrl = 	this.constants.imageDirectory + 
+										this.constants.backgroundDirectory + 'background-' + 
+										this.className + '-' + 
+										this.getImageFileName(this.tree.name);
 			return {
 				backgroundImage: `url('${backgroundImageUrl}')`,
 				backgroundRepeat: 'no-repeat',
@@ -294,7 +303,10 @@ let classList = {
 
 Vue.mixin({
 	methods: {
-		getImageFileName: name => name.replace("'","").replace(/ /g,'-').toLowerCase() + '.jpg',
+		getImageFileName: name => 	name.replace("'","")
+										.replace(':','')
+										.replace(/ /g,'-')
+										.toLowerCase() + '.jpg',
 	}
 });
 
