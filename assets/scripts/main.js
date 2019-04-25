@@ -77,16 +77,23 @@ let skill = {
 		skillRequirementArrow: function(){
 			if(this.skill.requirements && this.skill.requirements.skill){
 				let requiredSkill = this.getSkill(this.skill.requirements.skill.id),
-					cssClassName = '',
-					arrowDistance = this.skill.position[0] - requiredSkill.position[0];
-				if(arrowDistance == 1){
-					cssClassName = 'down-arrow';
-				} else if(arrowDistance == 2){
-					cssClassName = ['down-arrow','medium-arrow'];
-				} else if(arrowDistance == 3){
-					cssClassName = ['down-arrow','large-arrow'];
+					cssClassNames = [],
+					arrowYDistance = this.skill.position[0] - requiredSkill.position[0],
+					arrowXDistance = this.skill.position[1] - requiredSkill.position[1];
+
+				if(arrowYDistance == 1){
+					cssClassNames.push('down-arrow');
+				} else if(arrowYDistance == 2){
+					cssClassNames.push('down-arrow','medium-arrow');
+				} else if(arrowYDistance == 3){
+					cssClassNames.push('down-arrow','large-arrow');
 				}
-				return cssClassName;
+
+				if(arrowXDistance == 1){
+					cssClassNames.push('side-arrow');
+				}
+
+				return cssClassNames;
 			}
 		},
 		skillIcon: function(){

@@ -3003,10 +3003,273 @@ let talentData = {
 							"name": "Master of Deception",
 							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Reduces the chance enemies have to detect you while in Stealth mode.",
+								"Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 1).",
+								"Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 2).",
+								"Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 3).",
+								"Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (Rank 4).",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Opportunity",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 4%.",
+								"Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 8%.",
+								"Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 12%.",
+								"Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 16%.",
+								"Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 20%.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Sleight of Hand",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the chance you are critically hit by melee and ranged attacks by 1% and increases the threat reduction of your Feint ability by 10%.",
+								"Reduces the chance you are critically hit by melee and ranged attacks by 2% and increases the threat reduction of your Feint ability by 20%.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 3,
+							"name": "Elusiveness",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
+								"Reduces the cooldown of your Vanish and Blind abilities by 1.5 min.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 4,
+							"name": "Camouflage",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your speed while stealthed by 3% and reduces the cooldown of your Stealth ability by 1 sec.",
+								"Increases your speed while stealthed by 6% and reduces the cooldown of your Stealth ability by 2 sec.",
+								"Increases your speed while stealthed by 9% and reduces the cooldown of your Stealth ability by 3 sec.",
+								"Increases your speed while stealthed by 12% and reduces the cooldown of your Stealth ability by 4 sec.",
+								"Increases your speed while stealthed by 15% and reduces the cooldown of your Stealth ability by 5 sec.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 5,
+							"name": "Initiative",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 25% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+								"Gives you a 50% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+								"Gives you a 75% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 6,
+							"name": "Ghostly Strike",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 7,
+							"name": "Improved Ambush",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike chance of your Ambush ability by 15%.",
+								"Increases the critical strike chance of your Ambush ability by 30%.",
+								"Increases the critical strike chance of your Ambush ability by 45%.",
+							],
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 8,
+							"name": "Setup",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 15% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.",
+								"Gives you a 30% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.",
+								"Gives you a 45% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.",
+							],
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 9,
+							"name": "Improved Sap",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 30% chance to return to stealth mode after using your Sap ability.",
+								"Gives you a 60% chance to return to stealth mode after using your Sap ability.",
+								"Gives you a 90% chance to return to stealth mode after using your Sap ability.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 10,
+							"name": "Serrated Blades",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Causes your attacks to ignore 0 of your target's Armor and increases the damage dealt by your Rupture ability by 10%. The amount of Armor reduced increases with your level.",
+								"Causes your attacks to ignore 0 of your target's Armor and increases the damage dealt by your Rupture ability by 20%. The amount of Armor reduced increases with your level.",
+								"Causes your attacks to ignore 0 of your target's Armor and increases the damage dealt by your Rupture ability by 30%. The amount of Armor reduced increases with your level.",
+							],
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 11,
+							"name": "Heightened Senses",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 2%.",
+								"Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 4%. More effective than Heightened Senses (Rank 1).",
+							],
+							"position" : [5,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 12,
+							"name": "Preparation",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 13,
+							"name": "Dirty Deeds",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the Energy cost of your Cheap Shot and Garrote abilities by 10.",
+								"Reduces the Energy cost of your Cheap Shot and Garrote abilities by 20.",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 14,
+							"name": "Hemorrhage",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"An instant strike that damages the opponent and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 3. Lasts 30 charges or 15 sec. Awards 1 combo point.",
+							],
+							"position" : [5,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+								"skill": {
+									"id": 10,
+									"skillPoints": 3,
+								}
+							},
+						},
+						{ 
+							"id": 15,
+							"name": "Deadliness",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your Attack Power by 2%.",
+								"Increases your Attack Power by 4%.",
+								"Increases your Attack Power by 6%.",
+								"Increases your Attack Power by 8%.",
+								"Increases your Attack Power by 10%.",
+							],
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							},
+						},
+						{ 
+							"id": 16,
+							"name": "Premeditation",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"When used, adds 2 combo points to your target. You must add to or use those combo points within 10 sec or the combo points are lost.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 12,
+									"skillPoints": 1,
+								}
+							},
 						},
 					]
-				}
+				},
 			]
 		},
 		{
