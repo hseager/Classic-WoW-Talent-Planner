@@ -2683,7 +2683,313 @@ let talentData = {
 							"name": "Improved Gouge",
 							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Increases the effect duration of your Gouge ability by 0.5 sec.",
+								"Increases the effect duration of your Gouge ability by 1 sec.",
+								"Increases the effect duration of your Gouge ability by 1.5 sec.",
+							],
+							"position" : [1,1],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Improved Sinister Strike",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the Energy cost of your Sinister Strike ability by 3.",
+								"Reduces the Energy cost of your Sinister Strike ability by 5.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Lightning Reflexes",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your Dodge chance by 1%.",
+								"Increases your Dodge chance by 2%.",
+								"Increases your Dodge chance by 3%.",
+								"Increases your Dodge chance by 4%.",
+								"Increases your Dodge chance by 5%.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 3,
+							"name": "Improved Backstab",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike chance of your Backstab ability by 10%.",
+								"Increases the critical strike chance of your Backstab ability by 20%.",
+								"Increases the critical strike chance of your Backstab ability by 30%.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 4,
+							"name": "Deflection",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your Parry chance by 1%.",
+								"Increases your Parry chance by 2%.",
+								"Increases your Parry chance by 3%.",
+								"Increases your Parry chance by 4%.",
+								"Increases your Parry chance by 5%.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 5,
+							"name": "Precision",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your chance to hit with melee weapons by 1%.",
+								"Increases your chance to hit with melee weapons by 2%.",
+								"Increases your chance to hit with melee weapons by 3%.",
+								"Increases your chance to hit with melee weapons by 4%.",
+								"Increases your chance to hit with melee weapons by 5%.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 6,
+							"name": "Endurance",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the cooldown of your Sprint and Evasion abilities by 45 sec.",
+								"Reduces the cooldown of your Sprint and Evasion abilities by 1.5 min.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 7,
+							"name": "Riposte",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.",
+								"Reduces the cooldown of your Sprint and Evasion abilities by 1.5 min.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+								"skill": {
+									"id": 4,
+									"skillPoints": 5,
+								}
+							}
+						},
+						{ 
+							"id": 8,
+							"name": "Improved Sprint",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives a 50% chance to remove all movement impairing effects when you activate your Sprint ability.",
+								"Gives a 100% chance to remove all movement impairing effects when you activate your Sprint ability.",
+							],
+							"position" : [3,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 9,
+							"name": "Improved Kick",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives your Kick ability a 50% chance to silence the target for 2 sec.",
+								"Gives your Kick ability a 100% chance to silence the target for 2 sec.",
+							],
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 10,
+							"name": "Dagger Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your chance to get a critical strike with Daggers by 1%.",
+								"Increases your chance to get a critical strike with Daggers by 2%.",
+								"Increases your chance to get a critical strike with Daggers by 3%.",
+								"Increases your chance to get a critical strike with Daggers by 4%.",
+								"Increases your chance to get a critical strike with Daggers by 5%.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 11,
+							"name": "Dual Wield Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage done by your offhand weapon by 10%.",
+								"Increases the damage done by your offhand weapon by 20%.",
+								"Increases the damage done by your offhand weapon by 30%.",
+								"Increases the damage done by your offhand weapon by 40%.",
+								"Increases the damage done by your offhand weapon by 50%.",
+							],
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+								"skill": {
+									"id": 5,
+									"skillPoints": 5,
+								}
+							}
+						},
+						{ 
+							"id": 12,
+							"name": "Mace Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your skill with Maces by 1, and gives you a 1% chance to stun your target for 3 sec with a mace.",
+								"Increases your skill with Maces by 2, and gives you a 2% chance to stun your target for 3 sec with a mace.",
+								"Increases your skill with Maces by 3, and gives you a 3% chance to stun your target for 3 sec with a mace.",
+								"Increases your skill with Maces by 4, and gives you a 4% chance to stun your target for 3 sec with a mace.",
+								"Increases your skill with Maces by 5, and gives you a 6% chance to stun your target for 3 sec with a mace.",
+							],
+							"position" : [5,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 13,
+							"name": "Blade Flurry",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your attack speed by 20%. In addition, attacks strike an additional nearby opponent. Lasts 15 sec.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 14,
+							"name": "Sword Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 1% chance to get an extra attack on the same target after dealing damage with your Sword.",
+								"Gives you a 2% chance to get an extra attack on the same target after dealing damage with your Sword.",
+								"Gives you a 3% chance to get an extra attack on the same target after dealing damage with your Sword.",
+								"Gives you a 4% chance to get an extra attack on the same target after dealing damage with your Sword.",
+								"Gives you a 5% chance to get an extra attack on the same target after dealing damage with your Sword.",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 15,
+							"name": "Fist Weapon Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your chance to get a critical strike with Fist Weapons by 1%.",
+								"Increases your chance to get a critical strike with Fist Weapons by 2%.",
+								"Increases your chance to get a critical strike with Fist Weapons by 3%.",
+								"Increases your chance to get a critical strike with Fist Weapons by 4%.",
+								"Increases your chance to get a critical strike with Fist Weapons by 5%.",
+							],
+							"position" : [5,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 16,
+							"name": "Weapon Expertise",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your skill with Sword, Fist and Dagger weapons by 3.",
+								"Increases your skill with Sword, Fist and Dagger weapons by 5.",
+							],
+							"position" : [6,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 13,
+									"skillPoints": 1,
+								}
+							}
+						},
+						{ 
+							"id": 17,
+							"name": "Aggression",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage of your Sinister Strike and Eviscerate abilities by 2%.",
+								"Increases the damage of your Sinister Strike and Eviscerate abilities by 4%.",
+								"Increases the damage of your Sinister Strike and Eviscerate abilities by 6%.",
+							],
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							}
+						},
+						{ 
+							"id": 18,
+							"name": "Adrenaline Rush",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your Energy regeneration rate by 100% for 15 sec.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+							}
 						},
 					]
 				},
