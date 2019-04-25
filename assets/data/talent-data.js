@@ -1,5 +1,5 @@
 let talentData = {
-	"currentClass": 2,
+	"currentClass": 3,
 	"constants": {
 		"imageDirectory": "assets/images/",
 		"classIconDirectory": "class-icons/",
@@ -2432,11 +2432,244 @@ let talentData = {
 					"skillPoints": 0,
 					"skills": [
 						{ 
-							"id": 0, 
-							"name": "Improved Eviscerate", 
-							"maxRank": 5, 
+							"id": 0,
+							"name": "Improved Eviscerate",
+							"maxRank": 3,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Increases the damage done by your Eviscerate ability by 5%.",
+								"Increases the damage done by your Eviscerate ability by 10%.",
+								"Increases the damage done by your Eviscerate ability by 15%.",
+							],
+							"position" : [1,1],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Remorseless Attacks",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"After killing an opponent that yields experience or honor, gives you a 20% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike. Lasts 20 sec.",
+								"After killing an opponent that yields experience or honor, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike. Lasts 20 sec.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Malice",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your critical strike chance by 1%.",
+								"Increases your critical strike chance by 2%.",
+								"Increases your critical strike chance by 3%.",
+								"Increases your critical strike chance by 4%.",
+								"Increases your critical strike chance by 5%.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 3,
+							"name": "Ruthlessness",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives your finishing moves a 20% chance to add a combo point to your target.",
+								"Gives your finishing moves a 40% chance to add a combo point to your target.",
+								"Gives your finishing moves a 60% chance to add a combo point to your target.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 4,
+							"name": "Murder",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases all damage caused against Humanoid, Giant, Beast and Dragonkin targets by 1%.",
+								"Increases all damage caused against Humanoid, Giant, Beast and Dragonkin targets by 2%.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 5,
+							"name": "Improved Slice and Dice",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the duration of your Slice and Dice ability by 15%.",
+								"Increases the duration of your Slice and Dice ability by 30%.",
+								"Increases the duration of your Slice and Dice ability by 45%.",
+							],
+							"position" : [2,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							}
+						},
+						{ 
+							"id": 6,
+							"name": "Relentless Strikes",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Your finishing moves have a 20% chance per combo point to restore 25 energy.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 7,
+							"name": "Improved Expose Armor",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the armor reduced by your Expose Armor ability by 25%.",
+								"Increases the armor reduced by your Expose Armor ability by 50%.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							}
+						},
+						{ 
+							"id": 8,
+							"name": "Lethality",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, and Hemorrhage abilities by 6%.",
+								"Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, and Hemorrhage abilities by 12%.",
+								"Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, and Hemorrhage abilities by 18%.",
+								"Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, and Hemorrhage abilities by 24%.",
+								"Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, and Hemorrhage abilities by 30%.",
+							],
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+								"skill": {
+									"id": 2,
+									"skillPoints": 5,
+								}
+							}
+						},
+						{ 
+							"id": 9,
+							"name": "Vile Poisons",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage dealt by your poisons by 4% and gives your poisons an additional 8% chance to resist dispel effects.",
+								"Increases the damage dealt by your poisons by 8% and gives your poisons an additional 18% chance to resist dispel effects.",
+								"Increases the damage dealt by your poisons by 12% and gives your poisons an additional 24% chance to resist dispel effects.",
+								"Increases the damage dealt by your poisons by 16% and gives your poisons an additional 32% chance to resist dispel effects.",
+								"Increases the damage dealt by your poisons by 20% and gives your poisons an additional 40% chance to resist dispel effects.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 10,
+							"name": "Improved Poisons",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the chance to apply poisons to your target by 2%.",
+								"Increases the chance to apply poisons to your target by 4%.",
+								"Increases the chance to apply poisons to your target by 6%.",
+								"Increases the chance to apply poisons to your target by 8%.",
+								"Increases the chance to apply poisons to your target by 10%.",
+							],
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							}
+						},
+						{ 
+							"id": 11,
+							"name": "Cold Blood",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, or Eviscerate by 100%.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 12,
+							"name": "Improved Kidney Shot",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"While affected by your Kidney Shot ability, the target receives an additional 3% damage from all sources.",
+								"While affected by your Kidney Shot ability, the target receives an additional 6% damage from all sources",
+								"While affected by your Kidney Shot ability, the target receives an additional 9% damage from all sources",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							}
+						},
+						{ 
+							"id": 13,
+							"name": "Seal Fate",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Your critical strikes from abilities that add combo points have a 20% chance to add an additional combo point.",
+								"Your critical strikes from abilities that add combo points have a 40% chance to add an additional combo point.",
+								"Your critical strikes from abilities that add combo points have a 60% chance to add an additional combo point.",
+								"Your critical strikes from abilities that add combo points have a 80% chance to add an additional combo point.",
+								"Your critical strikes from abilities that add combo points have a 100% chance to add an additional combo point.",
+							],
+							"position" : [6,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 11,
+									"skillPoints": 1,
+								}
+							}
+						},
+						{ 
+							"id": 14,
+							"name": "Vigor",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your maximum Energy by 10.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+							}
 						},
 					]
 				},
