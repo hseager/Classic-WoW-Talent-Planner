@@ -90,7 +90,7 @@ let skill = {
 			}
 		},
 		skillIcon: function(){
-			return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name + '/' + this.getImageFileName(this.skill.name);
+			return this.constants.imageDirectory + this.constants.skillIconDirectory + this.className + '/' + this.tree.name.replace(' ','-').toLowerCase() + '/' + this.getImageFileName(this.skill.name);
 		},
 	},
 	methods: {
