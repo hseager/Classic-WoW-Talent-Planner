@@ -1,5 +1,5 @@
 let talentData = {
-	"currentClass": 6,
+	"currentClass": 7,
 	"constants": {
 		"imageDirectory": "assets/images/",
 		"classIconDirectory": "class-icons/",
@@ -5678,7 +5678,276 @@ let talentData = {
 							"name": "Suppression", 
 							"maxRank": 5, 
 							"currentRank": 0,
-							"rankDescription": []
+							"position" : [1,2],
+							"rankDescription": [
+								"Reduces the chance for enemies to resist your Affliction spells by 2%.",
+								"Reduces the chance for enemies to resist your Affliction spells by 4%.",
+								"Reduces the chance for enemies to resist your Affliction spells by 6%.",
+								"Reduces the chance for enemies to resist your Affliction spells by 8%.",
+								"Reduces the chance for enemies to resist your Affliction spells by 10%.",
+							],
+							"enabled": true,
+						},
+						{ 
+							"id": 1, 
+							"name": "Improved Corruption", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"position" : [1,3],
+							"rankDescription": [
+								"Reduces the casting time of your Corruption spell by 0.4 sec.",
+								"Reduces the casting time of your Corruption spell by 0.8 sec.",
+								"Reduces the casting time of your Corruption spell by 1.2 sec.",
+								"Reduces the casting time of your Corruption spell by 1.6 sec.",
+								"Reduces the casting time of your Corruption spell by 2 sec.",
+							],
+							"enabled": true,
+						},
+						{ 
+							"id": 2, 
+							"name": "Improved Curse of Weakness", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"position" : [2,1],
+							"rankDescription": [
+								"Increases the effect of your Curse of Weakness by 6%.",
+								"Increases the effect of your Curse of Weakness by 13%.",
+								"Increases the effect of your Curse of Weakness by 20%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 3, 
+							"name": "Improved Drain Soul", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"position" : [2,2],
+							"rankDescription": [
+								"Gives you a 50% chance to get a 100% increase to your Mana regeneration for 10 sec if the target is killed by you while you drain its soul. In addition your Mana may continue to regenerate while casting at 50% of normal.",
+								"Gives you a 100% chance to get a 100% increase to your Mana regeneration for 10 sec if the target is killed by you while you drain its soul. In addition your Mana may continue to regenerate while casting at 50% of normal.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4, 
+							"name": "Improved Life Tap", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"position" : [2,3],
+							"rankDescription": [
+								"Increases the amount of Mana awarded by your Life Tap spell by 10%.",
+								"Increases the amount of Mana awarded by your Life Tap spell by 20%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 5, 
+							"name": "Improved Drain Life", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"position" : [2,4],
+							"rankDescription": [
+								"Increases the Health drained by your Drain Life spell by 2%.",
+								"Increases the Health drained by your Drain Life spell by 4%.",
+								"Increases the Health drained by your Drain Life spell by 6%.",
+								"Increases the Health drained by your Drain Life spell by 8%.",
+								"Increases the Health drained by your Drain Life spell by 10%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 6, 
+							"name": "Improved Curse of Agony", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"position" : [3,1],
+							"rankDescription": [
+								"Increases the damage done by your Curse of Agony by 2%.",
+								"Increases the damage done by your Curse of Agony by 4%.",
+								"Increases the damage done by your Curse of Agony by 6%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 7, 
+							"name": "Fel Concentration", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"position" : [3,2],
+							"rankDescription": [
+								"Gives you a 14% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
+								"Gives you a 28% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
+								"Gives you a 42% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
+								"Gives you a 56% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
+								"Gives you a 70% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8, 
+							"name": "Amplify Curse", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"position" : [3,3],
+							"rankDescription": [
+								"Increases the effect of your next Curse of Weakness or Curse of Agony by 50%, or your next Curse of Exhaustion by 20%. Lasts 30 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 9, 
+							"name": "Grim Reach", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"position" : [4,1],
+							"rankDescription": [
+								"Increases the range of your Affliction spells by 10%.",
+								"Increases the range of your Affliction spells by 20%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 10, 
+							"name": "Nightfall", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"position" : [4,2],
+							"rankDescription": [
+								"Gives your Corruption and Drain Life spells a 2% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.",
+								"Gives your Corruption and Drain Life spells a 4% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 11, 
+							"name": "Improved Drain Mana", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"position" : [4,4],
+							"rankDescription": [
+								"Causes 15% of the Mana drained by your Drain Mana spell to damage the opponent.",
+								"Causes 30% of the Mana drained by your Drain Mana spell to damage the opponent.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 12, 
+							"name": "Siphon Life", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"position" : [5,2],
+							"rankDescription": [
+								"Transfers 15 health from the target to the caster every 3 sec. Lasts 30 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13,
+							"name": "Curse of Exhaustion", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"position" : [5,3],
+							"rankDescription": [
+								"Reduces the target's movement speed by 10% for 12 sec. Only one Curse per Warlock can be active on any one target.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+								"skill": {
+									"id": 8,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 14,
+							"name": "Improved Curse of Exhaustion", 
+							"maxRank": 4, 
+							"currentRank": 0,
+							"position" : [5,4],
+							"rankDescription": [
+								"Increases the speed reduction of your Curse of Exhaustion by 5%.",
+								"Increases the speed reduction of your Curse of Exhaustion by 10%.",
+								"Increases the speed reduction of your Curse of Exhaustion by 15%.",
+								"Increases the speed reduction of your Curse of Exhaustion by 20%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+								"skill": {
+									"id": 13,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 15,
+							"name": "Shadow Mastery", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"position" : [6,2],
+							"rankDescription": [
+								"Increases the damage dealt or life drained by your Shadow spells by 2%.",
+								"Increases the damage dealt or life drained by your Shadow spells by 4%.",
+								"Increases the damage dealt or life drained by your Shadow spells by 6%.",
+								"Increases the damage dealt or life drained by your Shadow spells by 8%.",
+								"Increases the damage dealt or life drained by your Shadow spells by 10%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 12,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 16,
+							"name": "Dark Pact", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"position" : [7,2],
+							"rankDescription": [
+								"Drains 150 of your pet's Mana, returning 100% to you.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+							},
 						},
 					]
 				},
