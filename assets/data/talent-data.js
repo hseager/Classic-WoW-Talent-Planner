@@ -1,5 +1,5 @@
 let talentData = {
-	"currentClass": 4,
+	"currentClass": 5,
 	"constants": {
 		"imageDirectory": "assets/images/",
 		"classIconDirectory": "class-icons/",
@@ -4077,11 +4077,247 @@ let talentData = {
 					"skillPoints": 0,
 					"skills": [
 						{ 
-							"id": 0, 
-							"name": "Convection", 
-							"maxRank": 5, 
+							"id": 0,
+							"name": "Convection",
+							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Reduces the mana cost of your Shock, Lightning Bolt and Chain Lightning spells by 2%.",
+								"Reduces the mana cost of your Shock, Lightning Bolt and Chain Lightning spells by 4%.",
+								"Reduces the mana cost of your Shock, Lightning Bolt and Chain Lightning spells by 6%.",
+								"Reduces the mana cost of your Shock, Lightning Bolt and Chain Lightning spells by 8%.",
+								"Reduces the mana cost of your Shock, Lightning Bolt and Chain Lightning spells by 10%.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Concussion",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage done by your Lightning Bolt, Chain Lightning and Shock spells by 1%.",
+								"Increases the damage done by your Lightning Bolt, Chain Lightning and Shock spells by 2%.",
+								"Increases the damage done by your Lightning Bolt, Chain Lightning and Shock spells by 3%.",
+								"Increases the damage done by your Lightning Bolt, Chain Lightning and Shock spells by 4%.",
+								"Increases the damage done by your Lightning Bolt, Chain Lightning and Shock spells by 5%.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Earth's Grasp",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the health of your Stoneclaw Totem by 25% and the radius of your Earthbind Totem by 10%.",
+								"Increases the health of your Stoneclaw Totem by 50% and the radius of your Earthbind Totem by 20%.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 3,
+							"name": "Elemental Warding",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces damage taken from Fire, Frost and Nature effects by 4%.",
+								"Reduces damage taken from Fire, Frost and Nature effects by 7%.",
+								"Reduces damage taken from Fire, Frost and Nature effects by 10%.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4,
+							"name": "Call of Flame",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage done by your Fire Totems by 5%.",
+								"Increases the damage done by your Fire Totems by 10%.",
+								"Increases the damage done by your Fire Totems by 15%.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 5,
+							"name": "Elemental Focus",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 6,
+							"name": "Reverberation",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the cooldown of your Shock spells by 0.2 sec.",
+								"Reduces the cooldown of your Shock spells by 0.4 sec.",
+								"Reduces the cooldown of your Shock spells by 0.6 sec.",
+								"Reduces the cooldown of your Shock spells by 0.8 sec.",
+								"Reduces the cooldown of your Shock spells by 1 sec.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 7,
+							"name": "Call of Thunder",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional 1%.",
+								"Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional 2%.",
+								"Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional 3%.",
+								"Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional 4%.",
+								"Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by an additional 6%.",
+							],
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8,
+							"name": "Improved Fire Totems",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the delay before your Fire Nova Totem activates by 1 sec. and decreases the threat generated by your Magma Totem by 25%.",
+								"Reduces the delay before your Fire Nova Totem activates by 2 sec. and decreases the threat generated by your Magma Totem by 50%.",
+							],
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 9,
+							"name": "Eye of the Storm",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 33% chance to gain the Focused Casting effect that lasts for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage.",
+								"Gives you a 66% chance to gain the Focused Casting effect that lasts for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage.",
+								"Gives you a 100% chance to gain the Focused Casting effect that lasts for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 10,
+							"name": "Elemental Devastation",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Your offensive spell crits will increase your chance to get a critical strike with melee attacks by 3% for 10 sec.",
+								"Your offensive spell crits will increase your chance to get a critical strike with melee attacks by 6% for 10 sec.",
+								"Your offensive spell crits will increase your chance to get a critical strike with melee attacks by 9% for 10 sec.",
+							],
+							"position" : [4,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 11,
+							"name": "Storm Reach",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the range of your Lightning Bolt and Chain Lightning spells by 3 yards.",
+								"Increases the range of your Lightning Bolt and Chain Lightning spells by 6 yards.",
+							],
+							"position" : [5,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 12,
+							"name": "Elemental Fury",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike damage bonus of your Searing, Magma, and Fire Nova Totems and your Fire, Frost, and Nature spells by 100%.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13,
+							"name": "Lightning Mastery",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.2 sec.",
+								"Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.4 sec.",
+								"Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.6 sec.",
+								"Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.8 sec.",
+								"Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 1 sec.",
+							],
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 7,
+									"skillPoints": 5,
+								}
+							},
+						},
+						{ 
+							"id": 14,
+							"name": "Elemental Mastery",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, this spell gives your next Fire, Frost, or Nature damage spell a 100% critical strike chance and reduces the mana cost by 100%.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 12,
+									"skillPoints": 1,
+								}
+							},
 						},
 					]
 				},
