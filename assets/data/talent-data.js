@@ -5387,9 +5387,278 @@ let talentData = {
 					"id": 2,
 					"name": "Frost",
 					"skillPoints": 0,
-					"maxRank": 5,
-					"currentRank": 0,
-					"rankDescription": []
+					"skills": [
+						{ 
+							"id": 0, 
+							"name": "Frost Warding", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the armor and resistances given by your Frost Armor and Ice Armor spells by 15%. In addition, gives your Frost Ward a 10% chance to reflect Frost spells and effects while active.",
+								"Increases the armor and resistances given by your Frost Armor and Ice Armor spells by 30%. In addition, gives your Frost Ward a 20% chance to reflect Frost spells and effects while active.",
+							],
+							"position" : [1,1],
+							"enabled": true,
+						},
+						{ 
+							"id": 1, 
+							"name": "Improved Frostbolt", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the casting time of your Frostbolt spell by 0.1 sec.",
+								"Reduces the casting time of your Frostbolt spell by 0.2 sec.",
+								"Reduces the casting time of your Frostbolt spell by 0.3 sec.",
+								"Reduces the casting time of your Frostbolt spell by 0.4 sec.",
+								"Reduces the casting time of your Frostbolt spell by 0.5 sec.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 2, 
+							"name": "Elemental Precision", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the chance that the opponent can resist your Frost and Fire spells by 2%.",
+								"Reduces the chance that the opponent can resist your Frost and Fire spells by 4%.",
+								"Reduces the chance that the opponent can resist your Frost and Fire spells by 6%.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 3, 
+							"name": "Ice Shards", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike damage bonus of your Frost spells by 20%.",
+								"Increases the critical strike damage bonus of your Frost spells by 40%.",
+								"Increases the critical strike damage bonus of your Frost spells by 60%.",
+								"Increases the critical strike damage bonus of your Frost spells by 80%.",
+								"Increases the critical strike damage bonus of your Frost spells by 100%.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4, 
+							"name": "Frostbite", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives your Chill effects a 5% chance to freeze the target for 5 sec.",
+								"Gives your Chill effects a 10% chance to freeze the target for 5 sec.",
+								"Gives your Chill effects a 15% chance to freeze the target for 5 sec.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 5, 
+							"name": "Improved Frost Nova", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the cooldown of your Frost Nova spell by 2 sec.",
+								"Reduces the cooldown of your Frost Nova spell by 4 sec.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 6, 
+							"name": "Permafrost", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the duration of your Chill effects by 1 sec and reduces the target's speed by an additional 4%.",
+								"Increases the duration of your Chill effects by 2 sec and reduces the target's speed by an additional 7%.",
+								"Increases the duration of your Chill effects by 3 sec and reduces the target's speed by an additional 10%.",
+							],
+							"position" : [2,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 7, 
+							"name": "Piercing Ice", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage done by your Frost spells by 2%.",
+								"Increases the damage done by your Frost spells by 4%.",
+								"Increases the damage done by your Frost spells by 6%.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8, 
+							"name": "Cold Snap", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, this spell finishes the cooldown on all of your Frost spells.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 9, 
+							"name": "Improved Blizzard", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Adds a chill effect to your Blizzard spell. This effect lowers the target's movement speed by 30%. Lasts 2 sec.",
+								"Adds a chill effect to your Blizzard spell. This effect lowers the target's movement speed by 50%. Lasts 2 sec.",
+								"Adds a chill effect to your Blizzard spell. This effect lowers the target's movement speed by 65%. Lasts 2 sec.",
+							],
+							"position" : [3,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 10, 
+							"name": "Arctic Reach", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10%.",
+								"Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 20%.",
+							],
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 11, 
+							"name": "Frost Channeling", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the mana cost of your Frost spells by 5% and reduces the threat caused by your Frost spells by 10%.",
+								"Reduces the mana cost of your Frost spells by 10% and reduces the threat caused by your Frost spells by 20%.",
+								"Reduces the mana cost of your Frost spells by 15% and reduces the threat caused by your Frost spells by 30%.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 12, 
+							"name": "Shatter", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike chance of all your spells against frozen targets by 10%.",
+								"Increases the critical strike chance of all your spells against frozen targets by 20%.",
+								"Increases the critical strike chance of all your spells against frozen targets by 30%.",
+								"Increases the critical strike chance of all your spells against frozen targets by 40%.",
+								"Increases the critical strike chance of all your spells against frozen targets by 50%.",
+							],
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+								"skill": {
+									"id": 5,
+									"skillPoints": 2,
+								}
+							},
+						},
+						{ 
+							"id": 13, 
+							"name": "Ice Block", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move or cast spells.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 14, 
+							"name": "Improved Cone of Cold", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage dealt by your Cone of Cold spell by 15%.",
+								"Increases the damage dealt by your Cone of Cold spell by 25%.",
+								"Increases the damage dealt by your Cone of Cold spell by 35%.",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 15, 
+							"name": "Winter's Chill", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives your Frost damage spells a 20% chance to apply the Winter's Chill effect, which increases the chance a Frost spell will critically hit the target by 2% for 15 sec. Stacks up to 5 times.",
+								"Gives your Frost damage spells a 40% chance to apply the Winter's Chill effect, which increases the chance a Frost spell will critically hit the target by 2% for 15 sec. Stacks up to 5 times.",
+								"Gives your Frost damage spells a 60% chance to apply the Winter's Chill effect, which increases the chance a Frost spell will critically hit the target by 2% for 15 sec. Stacks up to 5 times.",
+								"Gives your Frost damage spells a 80% chance to apply the Winter's Chill effect, which increases the chance a Frost spell will critically hit the target by 2% for 15 sec. Stacks up to 5 times.",
+								"Gives your Frost damage spells a 100% chance to apply the Winter's Chill effect, which increases the chance a Frost spell will critically hit the target by 2% for 15 sec. Stacks up to 5 times.",
+							],
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							},
+						},
+						{ 
+							"id": 16, 
+							"name": "Ice Barrier", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Instantly shields you, absorbing 438 damage. Lasts 1 min. While the shield holds, spells will not be interrupted.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 13,
+									"skillPoints": 1,
+								}
+							},
+						},
+					]
 				}
 			]
 		},
