@@ -4331,7 +4331,262 @@ let talentData = {
 							"name": "Ancestral Knowledge",
 							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Increases your maximum Mana by 1%.",
+								"Increases your maximum Mana by 2%.",
+								"Increases your maximum Mana by 3%.",
+								"Increases your maximum Mana by 4%.",
+								"Increases your maximum Mana by 5%.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Shield Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your chance to block attacks with a shield by 1% and increases the amount blocked by 5%.",
+								"Increases your chance to block attacks with a shield by 2% and increases the amount blocked by 10%.",
+								"Increases your chance to block attacks with a shield by 3% and increases the amount blocked by 15%.",
+								"Increases your chance to block attacks with a shield by 4% and increases the amount blocked by 20%.",
+								"Increases your chance to block attacks with a shield by 5% and increases the amount blocked by 25%.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Guardian Totems",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 10% and reduces the cooldown of your Grounding Totem by 1 sec.",
+								"Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 20% and reduces the cooldown of your Grounding Totem by 2 sec.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 3,
+							"name": "Thundering Strikes",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Improves your chance to get a critical strike with your weapon attacks by 1%.",
+								"Improves your chance to get a critical strike with your weapon attacks by 2%.",
+								"Improves your chance to get a critical strike with your weapon attacks by 3%.",
+								"Improves your chance to get a critical strike with your weapon attacks by 4%.",
+								"Improves your chance to get a critical strike with your weapon attacks by 5%.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4,
+							"name": "Improved Ghost Wolf",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the cast time of your Ghost Wolf spell by 1 sec.",
+								"Reduces the cast time of your Ghost Wolf spell by 2 sec.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 5,
+							"name": "Improved Lightning Shield",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage done by your Lightning Shield orbs by 5%.",
+								"Increases the damage done by your Lightning Shield orbs by 10%.",
+								"Increases the damage done by your Lightning Shield orbs by 15%.",
+							],
+							"position" : [2,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 6,
+							"name": "Enhancing Totems",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the effect of your Strength of Earth and Grace of Air Totems by 8%.",
+								"Increases the effect of your Strength of Earth and Grace of Air Totems by 8%.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 7,
+							"name": "Two-Handed Axes and Maces",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Allows you to use Two-Handed Axes and Two-Handed Maces.",
+							],
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8,
+							"name": "Anticipation",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your chance to dodge by an additional 1%.",
+								"Increases your chance to dodge by an additional 2%.",
+								"Increases your chance to dodge by an additional 3%.",
+								"Increases your chance to dodge by an additional 4%.",
+								"Increases your chance to dodge by an additional 5%.",
+							],
+							"position" : [3,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 9,
+							"name": "Flurry",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your attack speed by 10% for your next 3 swings after dealing a critical strike.",
+								"Increases your attack speed by 15% for your next 3 swings after dealing a critical strike.",
+								"Increases your attack speed by 20% for your next 3 swings after dealing a critical strike.",
+								"Increases your attack speed by 25% for your next 3 swings after dealing a critical strike.",
+								"Increases your attack speed by 30% for your next 3 swings after dealing a critical strike.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+								"skill": {
+									"id": 3,
+									"skillPoints": 5,
+								}
+							},
+						},
+						{ 
+							"id": 10,
+							"name": "Toughness",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your armor value from items by 2%.",
+								"Increases your armor value from items by 4%.",
+								"Increases your armor value from items by 6%.",
+								"Increases your armor value from items by 8%.",
+								"Increases your armor value from items by 10%.",
+							],
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 11,
+							"name": "Improved Weapon Totems",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the melee attack power bonus of your Windfury Totem by 15% and increases the damage caused by your Flametongue Totem by 6%.",
+								"Increases the melee attack power bonus of your Windfury Totem by 30% and increases the damage caused by your Flametongue Totem by 12%.",
+							],
+							"position" : [5,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 12,
+							"name": "Elemental Weapons",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the melee attack power bonus of your Rockbiter Weapon by 7%, your Windfury Weapon effect by 13% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 5%.",
+								"Increases the melee attack power bonus of your Rockbiter Weapon by 14%, your Windfury Weapon effect by 27% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 10%.",
+								"Increases the melee attack power bonus of your Rockbiter Weapon by 20%, your Windfury Weapon effect by 40% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 15%.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13,
+							"name": "Parry",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives a chance to parry enemy melee attacks.",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 14,
+							"name": "Weapon Mastery",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage you deal with all weapons by 2%.",
+								"Increases the damage you deal with all weapons by 4%.",
+								"Increases the damage you deal with all weapons by 6%.",
+								"Increases the damage you deal with all weapons by 8%.",
+								"Increases the damage you deal with all weapons by 10%.",
+							],
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							},
+						},
+						{ 
+							"id": 15,
+							"name": "Stormstrike",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you an extra attack. In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%. Lasts 12 sec.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 12,
+									"skillPoints": 3,
+								}
+							},
 						},
 					]
 				},
