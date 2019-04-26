@@ -5937,8 +5937,8 @@ let talentData = {
 						},
 						{ 
 							"id": 16,
-							"name": "Dark Pact", 
-							"maxRank": 1, 
+							"name": "Dark Pact",
+							"maxRank": 1,
 							"currentRank": 0,
 							"position" : [7,2],
 							"rankDescription": [

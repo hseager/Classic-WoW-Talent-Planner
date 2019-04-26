@@ -125,7 +125,7 @@ let skill = {
 		},
 		onDecreaseSkillRank: function(){
 			if(this.skill.currentRank >= 1){
-				if(this.skill.position[0] == this.currentSkillTier){
+				if(this.isValidDecrease()){
 					this.skill.currentRank--;
 					this.$parent.$emit('increaseAvailableSkillPoints');
 					this.$parent.$emit('decreaseRequiredLevel');
@@ -158,6 +158,23 @@ let skill = {
 		getSkill: function(id){
 			return this.tree.skills[id];
 		},
+		isValidDecrease: function(){
+			if(this.hasAdjacentSkillRequirement())
+				return false;
+
+			if(this.skill.position[0] == this.currentSkillTier)
+				return true;
+			else 
+				return false;
+		},
+		hasAdjacentSkillRequirement: function(){
+			let adjacentSkill = this.getSkill(this.skill.id + 1);
+			if(adjacentSkill.requirements && adjacentSkill.requirements.skill){
+				return adjacentSkill.requirements.skill.id == this.skill.id && adjacentSkill.currentRank > 0;
+			} else {
+				return false;
+			}
+		}
 	},
 };
 
