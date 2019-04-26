@@ -3540,7 +3540,256 @@ let talentData = {
 							"name": "Healing Focus",
 							"maxRank": 2,
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Gives you a 35% chance to avoid interruption caused by damage while casting any healing spell.",
+								"Gives you a 70% chance to avoid interruption caused by damage while casting any healing spell.",
+							],
+							"position" : [1,1],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Improved Renew",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the amount healed by your Renew spell by 5%.",
+								"Increases the amount healed by your Renew spell by 10%.",
+								"Increases the amount healed by your Renew spell by 15%.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Holy Specialization",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical effect chance of your Holy spells by 1%.",
+								"Increases the critical effect chance of your Holy spells by 2%.",
+								"Increases the critical effect chance of your Holy spells by 3%.",
+								"Increases the critical effect chance of your Holy spells by 4%.",
+								"Increases the critical effect chance of your Holy spells by 5%.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 3,
+							"name": "Spell Warding",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces all spell damage taken by 2%.",
+								"Reduces all spell damage taken by 4%.",
+								"Reduces all spell damage taken by 6%.",
+								"Reduces all spell damage taken by 8%.",
+								"Reduces all spell damage taken by 10%.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4,
+							"name": "Divine Fury",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the casting time of your Smite, Holy Fire, Heal and Greater Heal spells by 0.1 sec.",
+								"Reduces the casting time of your Smite, Holy Fire, Heal and Greater Heal spells by 0.2 sec.",
+								"Reduces the casting time of your Smite, Holy Fire, Heal and Greater Heal spells by 0.3 sec.",
+								"Reduces the casting time of your Smite, Holy Fire, Heal and Greater Heal spells by 0.4 sec.",
+								"Reduces the casting time of your Smite, Holy Fire, Heal and Greater Heal spells by 0.5 sec.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 5,
+							"name": "Holy Nova",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Causes an explosion of holy light around the caster, causing 28 to 33 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 52 to 61. These effects cause no threat.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 6,
+							"name": "Blessed Recovery",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"After being struck by a melee or ranged critical hit, heal 8% of the damage taken over 6 sec.",
+								"After being struck by a melee or ranged critical hit, heal 16% of the damage taken over 6 sec.",
+								"After being struck by a melee or ranged critical hit, heal 25% of the damage taken over 6 sec.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 7,
+							"name": "Inspiration",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your target's armor by 8% for 15 sec after getting a critical effect from your Flash Heal, Heal, Greater Heal, or Prayer of Healing spell.",
+								"Increases your target's armor by 16% for 15 sec after getting a critical effect from your Flash Heal, Heal, Greater Heal, or Prayer of Healing spell.",
+								"Increases your target's armor by 25% for 15 sec after getting a critical effect from your Flash Heal, Heal, Greater Heal, or Prayer of Healing spell.",
+							],
+							"position" : [3,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8,
+							"name": "Holy Reach",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the range of your Smite and Holy Fire spells and the radius of your Prayer of Healing and Holy Nova spells by 10%.",
+								"Increases the range of your Smite and Holy Fire spells and the radius of your Prayer of Healing and Holy Nova spells by 20%.",
+							],
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 9,
+							"name": "Improved Healing",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the Mana cost of your Lesser Heal, Heal, and Greater Heal spells by 5%.",
+								"Reduces the Mana cost of your Lesser Heal, Heal, and Greater Heal spells by 10%.",
+								"Reduces the Mana cost of your Lesser Heal, Heal, and Greater Heal spells by 15%.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 10,
+							"name": "Searing Light",
+							"maxRank": 2,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage of your Smite and Holy Fire spells by 5%.",
+								"Increases the damage of your Smite and Holy Fire spells by 10%.",
+							],
+							"position" : [4,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+								"skill": {
+									"id": 4,
+									"skillPoints": 5,
+								}
+							},
+						},
+						{ 
+							"id": 11,
+							"name": "Improved Prayer of Healing",
+							"maxRank": 3,
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the Mana cost of your Prayer of Healing spell by 10%.",
+								"Reduces the Mana cost of your Prayer of Healing spell by 20%.",
+								"Reduces the Mana cost of your Prayer of Healing spell by 30%.",
+							],
+							"position" : [5,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 12,
+							"name": "Spirit of Redemption",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Upon death, the priest becomes the Spirit of Redemption for 10 sec. The Spirit of Redemption cannot move, attack, be attacked or targeted by any spells or effects. While in this form the priest can cast any healing spell free of cost. When the effect ends, the priest dies.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13,
+							"name": "Spiritual Guidance",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases spell damage and healing by up to 5% of your total Spirit.",
+								"Increases spell damage and healing by up to 10% of your total Spirit.",
+								"Increases spell damage and healing by up to 15% of your total Spirit.",
+								"Increases spell damage and healing by up to 20% of your total Spirit.",
+								"Increases spell damage and healing by up to 25% of your total Spirit.",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 14,
+							"name": "Spiritual Healing",
+							"maxRank": 5,
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the amount healed by your healing spells by 2%.",
+								"Increases the amount healed by your healing spells by 4%.",
+								"Increases the amount healed by your healing spells by 6%.",
+								"Increases the amount healed by your healing spells by 8%.",
+								"Increases the amount healed by your healing spells by 10%.",
+							],
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							},
+						},
+						{ 
+							"id": 15,
+							"name": "Lightwell",
+							"maxRank": 1,
+							"currentRank": 0,
+							"rankDescription": [
+								"Creates a holy Lightwell near the priest. Members of your raid or party can click the Lightwell to restore 0 health over 10 sec. Being attacked cancels the effect. Lightwell lasts for 0 sec or 5 charges.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 12,
+									"skillPoints": 1,
+								}
+							},
 						},
 					]
 				},
