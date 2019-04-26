@@ -5121,11 +5121,265 @@ let talentData = {
 					"skillPoints": 0,
 					"skills": [
 						{ 
-							"id": 0,
-							"name": "Improved Fireball",
-							"maxRank": 5,
+							"id": 0, 
+							"name": "Improved Fireball", 
+							"maxRank": 5, 
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Reduces the casting time of your Fireball spell by 0.1 sec.",
+								"Reduces the casting time of your Fireball spell by 0.2 sec.",
+								"Reduces the casting time of your Fireball spell by 0.3 sec.",
+								"Reduces the casting time of your Fireball spell by 0.4 sec.",
+								"Reduces the casting time of your Fireball spell by 0.5 sec.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 1, 
+							"name": "Impact", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives your Fire spells a 2% chance to stun the target for 2 sec.",
+								"Gives your Fire spells a 4% chance to stun the target for 2 sec.",
+								"Gives your Fire spells a 6% chance to stun the target for 2 sec.",
+								"Gives your Fire spells a 8% chance to stun the target for 2 sec.",
+								"Gives your Fire spells a 10% chance to stun the target for 2 sec.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 2, 
+							"name": "Ignite", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Your critical strikes from Fire damage spells cause the target to burn for an additional 8% of your spell's damage over 4 sec.",
+								"Your critical strikes from Fire damage spells cause the target to burn for an additional 16% of your spell's damage over 4 sec.",
+								"Your critical strikes from Fire damage spells cause the target to burn for an additional 24% of your spell's damage over 4 sec.",
+								"Your critical strikes from Fire damage spells cause the target to burn for an additional 32% of your spell's damage over 4 sec.",
+								"Your critical strikes from Fire damage spells cause the target to burn for an additional 40% of your spell's damage over 4 sec.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 3, 
+							"name": "Flame Throwing", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the range of your Fire spells by 3 yards.",
+								"Increases the range of your Fire spells by 6 yards.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4, 
+							"name": "Improved Fire Blast", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the cooldown of your Fire Blast spell by 0.5 sec.",
+								"Reduces the cooldown of your Fire Blast spell by 1 sec.",
+								"Reduces the cooldown of your Fire Blast spell by 1.5 sec.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 5, 
+							"name": "Incinerate", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike chance of your Fire Blast and Scorch spells by 2%.",
+								"Increases the critical strike chance of your Fire Blast and Scorch spells by 4%.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 6, 
+							"name": "Improved Flamestrike", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike chance of your Flamestrike spell by 5%.",
+								"Increases the critical strike chance of your Flamestrike spell by 10%.",
+								"Increases the critical strike chance of your Flamestrike spell by 15%.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 7, 
+							"name": "Pyroblast", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Hurls an immense fiery boulder that causes 141 to 188 Fire damage and an additional 56 Fire damage over 12 sec.",
+							],
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8, 
+							"name": "Burning Soul", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives your Fire spells a 35% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by 15%.",
+								"Gives your Fire spells a 70% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by 30%.",
+							],
+							"position" : [3,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 9, 
+							"name": "Improved Scorch", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Your Scorch spells have a 33% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases the Fire damage dealt to your target by 3% and lasts 30 sec. Stacks up to 5 times.",
+								"Your Scorch spells have a 66% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases the Fire damage dealt to your target by 3% and lasts 30 sec. Stacks up to 5 times.",
+								"Your Scorch spells have a 100% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases the Fire damage dealt to your target by 3% and lasts 30 sec. Stacks up to 5 times.",
+								
+							],
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 10, 
+							"name": "Improved Fire Ward", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Causes your Fire Ward to have a 10% chance to reflect Fire spells while active.",
+								"Causes your Fire Ward to have a 20% chance to reflect Fire spells while active.",
+								
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 11, 
+							"name": "Master of Elements", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Your Fire and Frost spell criticals will refund 10% of their base mana cost.",
+								"Your Fire and Frost spell criticals will refund 20% of their base mana cost.",
+								"Your Fire and Frost spell criticals will refund 30% of their base mana cost.",
+								
+							],
+							"position" : [4,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 12, 
+							"name": "Critical Mass", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike chance of your Fire spells by 2%.",
+								"Increases the critical strike chance of your Fire spells by 4%.",
+								"Increases the critical strike chance of your Fire spells by 6%.",
+								
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13, 
+							"name": "Blast Wave", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 154 to 187 Fire damage, and dazing them for 6 sec.",
+								
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+								"skill": {
+									"id": 7,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 14, 
+							"name": "Fire Power", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the damage done by your Fire spells by 2%.",
+								"Increases the damage done by your Fire spells by 4%.",
+								"Increases the damage done by your Fire spells by 6%.",
+								"Increases the damage done by your Fire spells by 8%.",
+								"Increases the damage done by your Fire spells by 10%.",
+							],
+							"position" : [6,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							},
+						},
+						{ 
+							"id": 15, 
+							"name": "Combustion", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 3 critical strikes with Fire spells.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 12,
+									"skillPoints": 3,
+								}
+							},
 						},
 					]
 				},
