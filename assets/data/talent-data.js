@@ -1,5 +1,5 @@
 let talentData = {
-	"currentClass": 5,
+	"currentClass": 6,
 	"constants": {
 		"imageDirectory": "assets/images/",
 		"classIconDirectory": "class-icons/",
@@ -4860,7 +4860,258 @@ let talentData = {
 							"name": "Arcane Subtlety", 
 							"maxRank": 2, 
 							"currentRank": 0,
-							"rankDescription": []
+							"rankDescription": [
+								"Reduces your target's resistance to all your spells by 5 and reduces the threat caused by your Arcane spells by 20%.",
+								"Reduces your target's resistance to all your spells by 10 and reduces the threat caused by your Arcane spells by 40%.",
+							],
+							"position" : [1,1],
+							"enabled": true,
+						},
+						{ 
+							"id": 1, 
+							"name": "Arcane Focus", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Reduces the chance that the opponent can resist your Arcane spells by 2%.",
+								"Reduces the chance that the opponent can resist your Arcane spells by 4%.",
+								"Reduces the chance that the opponent can resist your Arcane spells by 6%.",
+								"Reduces the chance that the opponent can resist your Arcane spells by 8%.",
+								"Reduces the chance that the opponent can resist your Arcane spells by 10%.",
+							],
+							"position" : [1,2],
+							"enabled": true,
+						},
+						{ 
+							"id": 2, 
+							"name": "Improved Arcane Missiles", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+								"Gives you a 40% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+								"Gives you a 60% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+								"Gives you a 80% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+								"Gives you a 100% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+							],
+							"position" : [1,3],
+							"enabled": true,
+						},
+						{ 
+							"id": 3, 
+							"name": "Wand Specialization", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your damage with Wands by 13%.",
+								"Increases your damage with Wands by 25%.",
+							],
+							"position" : [2,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4, 
+							"name": "Magic Absorption", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases all resistances by 2 and causes all spells you fully resist to restore 1% of your total mana. 1 sec. cooldown.",
+								"Increases all resistances by 4 and causes all spells you fully resist to restore 2% of your total mana. 1 sec. cooldown.",
+								"Increases all resistances by 6 and causes all spells you fully resist to restore 3% of your total mana. 1 sec. cooldown.",
+								"Increases all resistances by 8 and causes all spells you fully resist to restore 4% of your total mana. 1 sec. cooldown.",
+								"Increases all resistances by 10 and causes all spells you fully resist to restore 5% of your total mana. 1 sec. cooldown.",
+							],
+							"position" : [2,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 5, 
+							"name": "Arcane Concentration", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives you a 2% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+								"Gives you a 4% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+								"Gives you a 6% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+								"Gives you a 8% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+								"Gives you a 10% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+							],
+							"position" : [2,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 6, 
+							"name": "Magic Attunement", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the effect of your Amplify Magic and Dampen Magic spells by 25%.",
+								"Increases the effect of your Amplify Magic and Dampen Magic spells by 50%.",
+							],
+							"position" : [3,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 7, 
+							"name": "Improved Arcane Explosion", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases the critical strike chance of your Arcane Explosion spell by an additional 2%.",
+								"Increases the critical strike chance of your Arcane Explosion spell by an additional 4%.",
+								"Increases the critical strike chance of your Arcane Explosion spell by an additional 6%.",
+							],
+							"position" : [3,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8, 
+							"name": "Arcane Resilience", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your armor by an amount equal to 50% of your Intellect.",
+							],
+							"position" : [3,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 9, 
+							"name": "Improved Mana Shield", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Decreases the mana lost per point of damage taken when Mana Shield is active by 10%.",
+								"Decreases the mana lost per point of damage taken when Mana Shield is active by 20%.",
+							],
+							"position" : [4,1],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 10, 
+							"name": "Improved Counterspell", 
+							"maxRank": 2, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Gives your Counterspell a 50% chance to silence the target for 4 sec.",
+								"Gives your Counterspell a 100% chance to silence the target for 4 sec.",
+							],
+							"position" : [4,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 11, 
+							"name": "Arcane Meditation", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Allows 5% of your Mana regeneration to continue while casting.",
+								"Allows 10% of your Mana regeneration to continue while casting.",
+								"Allows 15% of your Mana regeneration to continue while casting.",
+							],
+							"position" : [4,4],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 12, 
+							"name": "Presence of Mind", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.",
+							],
+							"position" : [5,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13, 
+							"name": "Arcane Mind", 
+							"maxRank": 5, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your maximum Mana by 2%.",
+								"Increases your maximum Mana by 4%.",
+								"Increases your maximum Mana by 6%.",
+								"Increases your maximum Mana by 8%.",
+								"Increases your maximum Mana by 10%.",
+							],
+							"position" : [5,3],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+								"skill": {
+									"id": 8,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 14, 
+							"name": "Arcane Instability", 
+							"maxRank": 3, 
+							"currentRank": 0,
+							"rankDescription": [
+								"Increases your spell damage and critical strike chance by 1%.",
+								"Increases your spell damage and critical strike chance by 2%.",
+								"Increases your spell damage and critical strike chance by 3%.",
+							],
+							"position" : [6,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 12,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 15, 
+							"name": "Arcane Power", 
+							"maxRank": 1, 
+							"currentRank": 0,
+							"rankDescription": [
+								"When activated, your spells deal 30% more damage while costing 30% more mana to cast. This effect lasts 15 sec.",
+							],
+							"position" : [7,2],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 14,
+									"skillPoints": 1,
+								}
+							},
 						},
 					]
 				},
