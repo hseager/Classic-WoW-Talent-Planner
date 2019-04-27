@@ -169,7 +169,7 @@ let skill = {
 		},
 		hasAdjacentSkillRequirement: function(){
 			let adjacentSkill = this.getSkill(this.skill.id + 1);
-			if(adjacentSkill.requirements && adjacentSkill.requirements.skill){
+			if(adjacentSkill && adjacentSkill.requirements && adjacentSkill.requirements.skill){
 				return adjacentSkill.requirements.skill.id == this.skill.id && adjacentSkill.currentRank > 0;
 			} else {
 				return false;

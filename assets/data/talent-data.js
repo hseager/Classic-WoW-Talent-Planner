@@ -6200,7 +6200,7 @@ let talentData = {
 							},
 						},
 						{ 
-							"id": 14,
+							"id": 15,
 							"name": "Soul Link",
 							"maxRank": 1,
 							"currentRank": 0,
@@ -6218,7 +6218,7 @@ let talentData = {
 							},
 						},
 						{ 
-							"id": 15,
+							"id": 16,
 							"name": "Improved Spellstone",
 							"maxRank": 1,
 							"currentRank": 0,
@@ -6243,7 +6243,267 @@ let talentData = {
 							"name": "Improved Shadow Bolt",
 							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"position" : [1,2],
+							"rankDescription": [
+								"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 4% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
+								"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 8% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
+								"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 12% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
+								"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 16% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
+								"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 20% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
+							],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Cataclysm",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [1,3],
+							"rankDescription": [
+								"Reduces the Mana cost of your Destruction spells by 1%.",
+								"Reduces the Mana cost of your Destruction spells by 2%.",
+								"Reduces the Mana cost of your Destruction spells by 3%.",
+								"Reduces the Mana cost of your Destruction spells by 4%.",
+								"Reduces the Mana cost of your Destruction spells by 5%.",
+							],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Bane",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [2,2],
+							"rankDescription": [
+								"Reduces the casting time of your Shadow Bolt and Immolate spells by 0.1 sec and your Soul Fire spell by 0.4 sec.",
+								"Reduces the casting time of your Shadow Bolt and Immolate spells by 0.2 sec and your Soul Fire spell by 0.8 sec.",
+								"Reduces the casting time of your Shadow Bolt and Immolate spells by 0.3 sec and your Soul Fire spell by 1.2 sec.",
+								"Reduces the casting time of your Shadow Bolt and Immolate spells by 0.4 sec and your Soul Fire spell by 1.6 sec.",
+								"Reduces the casting time of your Shadow Bolt and Immolate spells by 0.5 sec and your Soul Fire spell by 2 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 3,
+							"name": "Aftermath",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [2,3],
+							"rankDescription": [
+								"Gives your Destruction spells a 2% chance to daze the target for 5 sec.",
+								"Gives your Destruction spells a 4% chance to daze the target for 5 sec.",
+								"Gives your Destruction spells a 6% chance to daze the target for 5 sec.",
+								"Gives your Destruction spells a 8% chance to daze the target for 5 sec.",
+								"Gives your Destruction spells a 10% chance to daze the target for 5 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4,
+							"name": "Improved Firebolt",
+							"maxRank": 2,
+							"currentRank": 0,
+							"position" : [3,1],
+							"rankDescription": [
+								"Reduces the casting time of your Imp's Firebolt spell by 0.5 sec.",
+								"Reduces the casting time of your Imp's Firebolt spell by 1 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 5,
+							"name": "Improved Lash of Pain",
+							"maxRank": 2,
+							"currentRank": 0,
+							"position" : [3,2],
+							"rankDescription": [
+								"Reduces the cooldown of your Succubus' Lash of Pain spell by 3 sec.",
+								"Reduces the cooldown of your Succubus' Lash of Pain spell by 6 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 6,
+							"name": "Devastation",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [3,3],
+							"rankDescription": [
+								"Increases the critical strike chance of your Destruction spells by 1%.",
+								"Increases the critical strike chance of your Destruction spells by 2%.",
+								"Increases the critical strike chance of your Destruction spells by 3%.",
+								"Increases the critical strike chance of your Destruction spells by 4%.",
+								"Increases the critical strike chance of your Destruction spells by 5%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 7,
+							"name": "Shadowburn",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [3,4],
+							"rankDescription": [
+								"Instantly blasts the target for 87 to 100 Shadow damage. If the target dies within 5 sec of Shadowburn, and yields experience or honor, the caster gains a Soul Shard.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8,
+							"name": "Intensity",
+							"maxRank": 2,
+							"currentRank": 0,
+							"position" : [4,1],
+							"rankDescription": [
+								"Gives you a 35% chance to resist interruption caused by damage while channeling the Rain of Fire, Hellfire or Soul Fire spell.",
+								"Gives you a 70% chance to resist interruption caused by damage while channeling the Rain of Fire, Hellfire or Soul Fire spell.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 9,
+							"name": "Destructive Reach",
+							"maxRank": 2,
+							"currentRank": 0,
+							"position" : [4,2],
+							"rankDescription": [
+								"Increases the range of your Destruction spells by 10%.",
+								"Increases the range of your Destruction spells by 20%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 10,
+							"name": "Improved Searing Pain",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [4,4],
+							"rankDescription": [
+								"Increases the critical strike chance of your Searing Pain spell by 2%.",
+								"Increases the critical strike chance of your Searing Pain spell by 4%.",
+								"Increases the critical strike chance of your Searing Pain spell by 6%.",
+								"Increases the critical strike chance of your Searing Pain spell by 8%.",
+								"Increases the critical strike chance of your Searing Pain spell by 10%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 11,
+							"name": "Pyroclasm",
+							"maxRank": 2,
+							"currentRank": 0,
+							"position" : [5,1],
+							"rankDescription": [
+								"Gives your Rain of Fire, Hellfire, and Soul Fire spells a 13% chance to stun the target for 3 sec.",
+								"Gives your Rain of Fire, Hellfire, and Soul Fire spells a 26% chance to stun the target for 3 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+								"skill": {
+									"id": 8,
+									"skillPoints": 2,
+								}
+							},
+						},
+						{ 
+							"id": 12,
+							"name": "Improved Immolate",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [5,2],
+							"rankDescription": [
+								"Increases the initial damage of your Immolate spell by 5%.",
+								"Increases the initial damage of your Immolate spell by 10%.",
+								"Increases the initial damage of your Immolate spell by 15%.",
+								"Increases the initial damage of your Immolate spell by 20%.",
+								"Increases the initial damage of your Immolate spell by 25%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13,
+							"name": "Ruin",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [5,3],
+							"rankDescription": [
+								"Increases the critical strike damage bonus of your Destruction spells by 100%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+								"skill": {
+									"id": 6,
+									"skillPoints": 5,
+								}
+							},
+						},
+						{ 
+							"id": 14,
+							"name": "Emberstorm",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [6,3],
+							"rankDescription": [
+								"Increases the damage done by your Fire spells by 2%.",
+								"Increases the damage done by your Fire spells by 4%.",
+								"Increases the damage done by your Fire spells by 6%.",
+								"Increases the damage done by your Fire spells by 8%.",
+								"Increases the damage done by your Fire spells by 10%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+							},
+						},
+						{ 
+							"id": 15,
+							"name": "Conflagrate",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [7,2],
+							"rankDescription": [
+								"Ignites a target that is already afflicted by Immolate, dealing 240 to 307 Fire damage and consuming the Immolate spell.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 12,
+									"skillPoints": 5,
+								}
+							},
 						},
 					]
 				}
