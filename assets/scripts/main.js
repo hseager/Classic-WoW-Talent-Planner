@@ -138,23 +138,29 @@ let skill = {
 		checkSkillRequirements: function(){
 			this.tree.skills.forEach((skill) => {
 				if(skill.requirements){
-					if(skill.requirements.specPoints){
+					if(skill.requirements.specPoints && skill.requirements.skill){
 						if(this.tree.skillPoints >= skill.requirements.specPoints){
-							skill.enabled = true;
-							return;
+							let requiredSkill = this.getSkill(skill.requirements.skill.id);
+							if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
+								skill.enabled = true;
+							} else{
+								skill.enabled = false;
+							}
 						} else {
 							skill.enabled = false;
-							return;
 						}
-					}
-					if(skill.requirements.skill){
+					} else if(skill.requirements.specPoints){
+						if(this.tree.skillPoints >= skill.requirements.specPoints){
+							skill.enabled = true;
+						} else {
+							skill.enabled = false;
+						}
+					} else if(skill.requirements.skill){
 						let requiredSkill = this.getSkill(skill.requirements.skill.id);
 						if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
 							skill.enabled = true;
-							return;
 						} else{
 							skill.enabled = false;
-							return;
 						}
 					}
 				}
@@ -332,6 +338,8 @@ Vue.mixin({
 		getImageFileName: name => 	name.replace("'","")
 										.replace(':','')
 										.replace(/ /g,'-')
+										.replace('(','')
+										.replace(')','')
 										.toLowerCase() + '.jpg',
 	}
 });
