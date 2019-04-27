@@ -6130,6 +6130,107 @@ let talentData = {
 								"specPoints": 15,
 							},
 						},
+						{ 
+							"id": 11,
+							"name": "Improved Enslave Demon",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [5,1],
+							"rankDescription": [
+								"Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 2% and reduces the resist chance by 2%.",
+								"Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 4% and reduces the resist chance by 4%.",
+								"Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 6% and reduces the resist chance by 6%.",
+								"Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 8% and reduces the resist chance by 8%.",
+								"Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 10% and reduces the resist chance by 10%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 12,
+							"name": "Demonic Sacrifice",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [5,2],
+							"rankDescription": [
+								"When activated, sacrifices your summoned demon to grant you an effect that lasts 30 min. The effect is canceled if any Demon is summoned.<br><br>Imp: Increases your Fire damage by 15%.<br><br>Voidwalker: Restores 3% of total Health every 4 sec.<br><br>Succubus: Increases your Shadow damage by 15%.<br><br>Felhunter: Restores 2% of total Mana every 4 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13,
+							"name": "Improved Firestone",
+							"maxRank": 2,
+							"currentRank": 0,
+							"position" : [5,4],
+							"rankDescription": [
+								"Increases the bonus Fire damage from Firestones and the Firestone effect by 15%.",
+								"Increases the bonus Fire damage from Firestones and the Firestone effect by 30%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 14,
+							"name": "Master Demonologist",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [6,3],
+							"rankDescription": [
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 4%.<br><br>Voidwalker - Reduces physical damage taken by 2%.<br><br>Succubus - Increases all damage caused by 2%.<br><br>Felhunter - Increases all resistances by .2 per level.",
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 8%.<br><br>Voidwalker - Reduces physical damage taken by 4%.<br><br>Succubus - Increases all damage caused by 4%.<br><br>Felhunter - Increases all resistances by .4 per level.",
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 12%.<br><br>Voidwalker - Reduces physical damage taken by 6%.<br><br>Succubus - Increases all damage caused by 6%.<br><br>Felhunter - Increases all resistances by .6 per level.",
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 16%.<br><br>Voidwalker - Reduces physical damage taken by 8%.<br><br>Succubus - Increases all damage caused by 8%.<br><br>Felhunter - Increases all resistances by .8 per level.",
+								"Grants both the Warlock and the summoned demon an effect as long as that demon is active.<br><br>Imp - Reduces threat caused by 20%.<br><br>Voidwalker - Reduces physical damage taken by 10%.<br><br>Succubus - Increases all damage caused by 10%.<br><br>Felhunter - Increases all resistances by 1 per level.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 10,
+									"skillPoints": 5,
+								}
+							},
+						},
+						{ 
+							"id": 14,
+							"name": "Soul Link",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [7,2],
+							"rankDescription": [
+								"When active, 30% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, or Felhunter demon instead. In addition, both the demon and master will inflict 3% more damage. Lasts as long as the demon is active.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+								"skill": {
+									"id": 12,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 15,
+							"name": "Improved Spellstone",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [7,3],
+							"rankDescription": [
+								"Increases the amount of damage absorbed by your Spellstone by 15%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+							},
+						},
 					]
 				},
 				{ 
