@@ -1,5 +1,5 @@
 let talentData = {
-	"currentClass": 7,
+	"currentClass": 8,
 	"constants": {
 		"imageDirectory": "assets/images/",
 		"classIconDirectory": "class-icons/",
@@ -6521,11 +6521,273 @@ let talentData = {
 					"skillPoints": 0,
 					"skills": [
 						{ 
-							"id": 0, 
-							"name": "Improved Wrath", 
-							"maxRank": 5, 
+							"id": 0,
+							"name": "Improved Wrath",
+							"maxRank": 5,
 							"currentRank": 0,
-							"rankDescription": []
+							"position" : [1,1],
+							"rankDescription": [
+								"Reduces the cast time of your Wrath spell by 0.1 sec.",
+								"Reduces the cast time of your Wrath spell by 0.2 sec.",
+								"Reduces the cast time of your Wrath spell by 0.3 sec.",
+								"Reduces the cast time of your Wrath spell by 0.4 sec.",
+								"Reduces the cast time of your Wrath spell by 0.5 sec.",
+							],
+							"enabled": true,
+						},
+						{ 
+							"id": 1,
+							"name": "Nature's Grasp",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [1,2],
+							"rankDescription": [
+								"While active, any time an enemy strikes the caster they have a 35% chance to become afflicted by Entangling Roots (Rank 1). Only useable outdoors. 1 charge. Lasts 45 sec.",
+							],
+							"enabled": true,
+						},
+						{ 
+							"id": 2,
+							"name": "Improved Nature's Grasp",
+							"maxRank": 4,
+							"currentRank": 0,
+							"position" : [1,3],
+							"rankDescription": [
+								"Increases the chance for your Nature's Grasp to entangle an enemy by 15%.",
+								"Increases the chance for your Nature's Grasp to entangle an enemy by 30%.",
+								"Increases the chance for your Nature's Grasp to entangle an enemy by 45%.",
+								"Increases the chance for your Nature's Grasp to entangle an enemy by 65%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"skill": {
+									"id": 1,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 3,
+							"name": "Improved Entangling Roots",
+							"maxRank": 3,
+							"currentRank": 0,
+							"position" : [2,1],
+							"rankDescription": [
+								"Gives you a 40% chance to avoid interruption caused by damage while casting Entangling Roots.",
+								"Gives you a 70% chance to avoid interruption caused by damage while casting Entangling Roots.",
+								"Gives you a 100% chance to avoid interruption caused by damage while casting Entangling Roots.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 4,
+							"name": "Improved Moonfire",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [2,2],
+							"rankDescription": [
+								"Increases the damage and critical strike chance of your Moonfire spell by 2%.",
+								"Increases the damage and critical strike chance of your Moonfire spell by 4%.",
+								"Increases the damage and critical strike chance of your Moonfire spell by 6%.",
+								"Increases the damage and critical strike chance of your Moonfire spell by 8%.",
+								"Increases the damage and critical strike chance of your Moonfire spell by 10%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 5,
+							"name": "Natural Weapons",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [2,3],
+							"rankDescription": [
+								"Increases the damage you deal with physical attacks in all forms by 2%.",
+								"Increases the damage you deal with physical attacks in all forms by 4%.",
+								"Increases the damage you deal with physical attacks in all forms by 6%.",
+								"Increases the damage you deal with physical attacks in all forms by 8%.",
+								"Increases the damage you deal with physical attacks in all forms by 10%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 6,
+							"name": "Natural Shapeshifter",
+							"maxRank": 3,
+							"currentRank": 0,
+							"position" : [2,4],
+							"rankDescription": [
+								"Reduces the mana cost of all shapeshifting by 10%.",
+								"Reduces the mana cost of all shapeshifting by 20%.",
+								"Reduces the mana cost of all shapeshifting by 30%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 5,
+							},
+						},
+						{ 
+							"id": 7,
+							"name": "Improved Thorns",
+							"maxRank": 3,
+							"currentRank": 0,
+							"position" : [3,1],
+							"rankDescription": [
+								"Increases damage caused by your Thorns spell by 25%.",
+								"Increases damage caused by your Thorns spell by 50%.",
+								"Increases damage caused by your Thorns spell by 75%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 8,
+							"name": "Omen of Clarity",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [3,3],
+							"rankDescription": [
+								"Imbues the Druid with natural energy. Each of the Druid's melee attacks has a chance of causing the caster to enter a Clearcasting state. The Clearcasting state reduces the Mana, Rage or Energy cost of your next damage or healing spell or offensive ability by 100%. Lasts 10 min.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+								"skill": {
+									"id": 5,
+									"skillPoints": 5,
+								}
+							},
+						},
+						{ 
+							"id": 9,
+							"name": "Nature's Reach",
+							"maxRank": 2,
+							"currentRank": 0,
+							"position" : [3,4],
+							"rankDescription": [
+								"Increases the range of your Wrath, Entangling Roots, Faerie Fire, Moonfire, Starfire, and Hurricane spells by 10%.",
+								"Increases the range of your Wrath, Entangling Roots, Faerie Fire, Moonfire, Starfire, and Hurricane spells by 20%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 10,
+							},
+						},
+						{ 
+							"id": 10,
+							"name": "Vengeance",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [4,2],
+							"rankDescription": [
+								"Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by 20%.",
+								"Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by 40%.",
+								"Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by 60%.",
+								"Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by 80%.",
+								"Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by 100%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+								"skill": {
+									"id": 4,
+									"skillPoints": 5,
+								}
+							},
+						},
+						{ 
+							"id": 11,
+							"name": "Improved Starfire",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [4,3],
+							"rankDescription": [
+								"Reduces the cast time of Starfire by 0.1 sec and has a 3% chance to stun the target for 3 sec.",
+								"Reduces the cast time of Starfire by 0.2 sec and has a 6% chance to stun the target for 3 sec.",
+								"Reduces the cast time of Starfire by 0.3 sec and has a 9% chance to stun the target for 3 sec.",
+								"Reduces the cast time of Starfire by 0.4 sec and has a 12% chance to stun the target for 3 sec.",
+								"Reduces the cast time of Starfire by 0.5 sec and has a 15% chance to stun the target for 3 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 15,
+							},
+						},
+						{ 
+							"id": 12,
+							"name": "Nature's Grace",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [5,2],
+							"rankDescription": [
+								"All spell criticals grace you with a blessing of nature, reducing the casting time of your next spell by 0.5 sec.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 13,
+							"name": "Moonglow",
+							"maxRank": 3,
+							"currentRank": 0,
+							"position" : [5,3],
+							"rankDescription": [
+								"Reduces the Mana cost of your Moonfire, Starfire, Wrath, Healing Touch, Regrowth and Rejuvenation spells by 3%.",
+								"Reduces the Mana cost of your Moonfire, Starfire, Wrath, Healing Touch, Regrowth and Rejuvenation spells by 6%.",
+								"Reduces the Mana cost of your Moonfire, Starfire, Wrath, Healing Touch, Regrowth and Rejuvenation spells by 9%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 20,
+							},
+						},
+						{ 
+							"id": 14,
+							"name": "Moonfury",
+							"maxRank": 5,
+							"currentRank": 0,
+							"position" : [6,2],
+							"rankDescription": [
+								"Increases the damage done by your Starfire, Moonfire and Wrath spells by 2%.",
+								"Increases the damage done by your Starfire, Moonfire and Wrath spells by 4%.",
+								"Increases the damage done by your Starfire, Moonfire and Wrath spells by 6%.",
+								"Increases the damage done by your Starfire, Moonfire and Wrath spells by 8%.",
+								"Increases the damage done by your Starfire, Moonfire and Wrath spells by 10%.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 25,
+								"skill": {
+									"id": 12,
+									"skillPoints": 1,
+								}
+							},
+						},
+						{ 
+							"id": 15,
+							"name": "Moonkin Form",
+							"maxRank": 1,
+							"currentRank": 0,
+							"position" : [7,2],
+							"rankDescription": [
+								"Transforms the Druid into Moonkin Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 3%. The Moonkin can only cast Balance spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+							],
+							"enabled": false,
+							"requirements": {
+								"specPoints": 30,
+							},
 						},
 					]
 				},

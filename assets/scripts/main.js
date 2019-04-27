@@ -137,20 +137,25 @@ let skill = {
 		},
 		checkSkillRequirements: function(){
 			this.tree.skills.forEach((skill) => {
-				if(skill.requirements && skill.requirements.specPoints){
-					if(this.tree.skillPoints >= skill.requirements.specPoints){
-						if(skill.requirements.skill){
-							let requiredSkill = this.getSkill(skill.requirements.skill.id);
-							if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
-								skill.enabled = true;
-							} else{
-								skill.enabled = false;
-							}
-						} else {
+				if(skill.requirements){
+					if(skill.requirements.specPoints){
+						if(this.tree.skillPoints >= skill.requirements.specPoints){
 							skill.enabled = true;
+							return;
+						} else {
+							skill.enabled = false;
+							return;
 						}
-					} else {
-						skill.enabled = false;
+					}
+					if(skill.requirements.skill){
+						let requiredSkill = this.getSkill(skill.requirements.skill.id);
+						if(requiredSkill.currentRank == skill.requirements.skill.skillPoints){
+							skill.enabled = true;
+							return;
+						} else{
+							skill.enabled = false;
+							return;
+						}
 					}
 				}
 			});
