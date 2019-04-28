@@ -1,3 +1,6 @@
+import Vue from 'vue';
+import talentData from './data/talent-data.json';
+
 let tooltip = {
 	props: {
 		skill: Object,
@@ -343,30 +346,33 @@ Vue.mixin({
 	}
 });
 
-var app = new Vue({
-	el: '#talent-calculator',
-	data: talentData,
-	components: {
-		classList,
-		classPanel
-	},
-	template: 
-	`<div>
-		<ul class="class-list">
-			<class-list
-				v-for="classType in classes"
-				v-bind:classType="classType"
-				v-bind:key="classType.id"
-				v-on:change-class="currentClass = classType.id"
+(function(){
+	var app = new Vue({
+		el: '#talent-calculator',
+		data: talentData,
+		components: {
+			classList,
+			classPanel
+		},
+		template: '<h2>Hello world</h2>',
+		template: 
+		`<div>
+			<ul class="class-list">
+				<class-list
+					v-for="classType in classes"
+					v-bind:classType="classType"
+					v-bind:key="classType.id"
+					v-on:change-class="currentClass = classType.id"
+					v-bind:constants="constants"
+					v-bind:currentClass="currentClass"
+				></class-list>
+			</ul>
+			<strong>Skills points: {{classes[currentClass].availableSkillPoints}}</strong><br/>
+			<strong>Required level: {{classes[currentClass].requiredLevel}}</strong>
+			<class-panel
+				v-bind:class-type="classes[currentClass]"
 				v-bind:constants="constants"
-				v-bind:currentClass="currentClass"
-			></class-list>
-		</ul>
-		<strong>Skills points: {{classes[currentClass].availableSkillPoints}}</strong><br/>
-		<strong>Required level: {{classes[currentClass].requiredLevel}}</strong>
-		<class-panel
-			v-bind:class-type="classes[currentClass]"
-			v-bind:constants="constants"
-		></class-panel>
-	</div>`,
-});
+			></class-panel>
+		</div>`,
+	});
+})();

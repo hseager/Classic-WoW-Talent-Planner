@@ -1,0 +1,28 @@
+{
+  "name": "wow-talent-calculator",
+  "version": "1.0.0",
+  "description": "A talent calculator for Classic WoW",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hseager/ClassicWoWTalentCalculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hseager/ClassicWoWTalentCalculator/issues"
+  },
+  "homepage": "https://github.com/hseager/ClassicWoWTalentCalculator#readme",
+  "devDependencies": {
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
