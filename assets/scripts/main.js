@@ -7,7 +7,6 @@ let tooltip = {
 	template: 
 	`<div v-if="showTooltip" class="skill-tooltip">
 		<h3>{{skill.name}}</h3>
-		<p>Rank {{skill.currentRank}}/{{skill.maxRank}}</p>
 		<p class="rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
 		<div v-if="this.skill.requirements && !this.skill.enabled">
 			<p class="skill-requirement" v-if="skill.requirements.skill">Requires {{skill.requirements.skill.skillPoints}} points in {{ getRequiredSkillName }} </p>
