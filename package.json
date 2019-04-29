@@ -17,6 +17,9 @@
     "url": "https://github.com/hseager/ClassicWoWTalentCalculator/issues"
   },
   "homepage": "https://github.com/hseager/ClassicWoWTalentCalculator#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
+  },
   "dependencies": {}
 }

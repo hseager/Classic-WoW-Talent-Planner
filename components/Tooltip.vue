@@ -1,16 +1,16 @@
 <template>
-	<div v-if="showTooltip" class="skill-tooltip">
+	<div v-if="showTooltip" class="tooltip">
 		<h3>{{skill.name}}</h3>
 		<p class="rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
 		<div v-if="this.skill.requirements && !this.skill.enabled">
-			<p class="skill-requirement" v-if="skill.requirements.skill">Requires {{skill.requirements.skill.skillPoints}} points in {{ getRequiredSkillName }} </p>
-			<p class="skill-requirement" v-if="skill.requirements.specPoints">Requires {{skill.requirements.specPoints}} points in {{treeName}} talents</p>
+			<p class="tooltip-requirement" v-if="skill.requirements.skill">Requires {{skill.requirements.skill.skillPoints}} points in {{ getRequiredSkillName }} </p>
+			<p class="tooltip-requirement" v-if="skill.requirements.specPoints">Requires {{skill.requirements.specPoints}} points in {{treeName}} talents</p>
 		</div>
 		<div v-if="hasNextRank">
 			<br/>
 			<p>Next rank:</p>
 		</div>
-		<p class="rank-description" v-html="skill.rankDescription[skill.currentRank]"></p>
+		<p class="tooltip-rank-description" v-html="skill.rankDescription[skill.currentRank]"></p>
 	</div>
 </template>
 <script>
@@ -31,3 +31,8 @@
 		},
 	}
 </script>
+<style lang="scss">
+	.tooltip{ position: absolute; bottom:100%; left:100%;  padding: 10px; background:rgba(11, 21, 41, 0.9); width: 300px; z-index:2; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; color:#efefef; }
+	.tooltip-rank-description{ color: #ffd200; }
+	.tooltip-requirement{ color: #ff2f2a; }
+</style>

@@ -1,5 +1,6 @@
-import Vue from 'vue';
-import App from './components/App.vue';
+import Vue from 'vue'
+import App from './components/App.vue'
+import './assets/css/global.scss'
 
 Vue.mixin({
 	methods: {
