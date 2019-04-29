@@ -1,7 +1,7 @@
 {
-	"currentClass": 8,
+	"currentClass": 0,
 	"constants": {
-		"imageDirectory": "assets/images/",
+		"imageDirectory": "images/",
 		"classIconDirectory": "class-icons/",
 		"backgroundDirectory": "backgrounds/",
 		"skillIconDirectory": "skill-icons/"
