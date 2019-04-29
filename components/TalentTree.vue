@@ -79,9 +79,3 @@
 		}
 	}
 </script>
-<style lang="scss">
-	.talent-tree-container{ margin:0 20px 0 0; }
-	.talent-trees{ display: flex; margin:20px 0; flex-wrap: wrap; }
-	.talent-tree{ width: 350px; min-height: 450px; padding:20px; background:#333; display: grid; grid-template-columns: repeat(4, 25%); grid-template-rows: repeat(7, 1fr); border: 1px solid #666; }
-	.talent-tree-title{ text-align:center; font-size: 20px; margin:0 0 10px; }
-</style>

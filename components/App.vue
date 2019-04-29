@@ -19,7 +19,7 @@
 	</div>
 </template>
 <script>
-	import talentData from '../data/talent-data.json';
+	import talentData from '../assets/data/talent-data.json';
 	import classList from './ClassList';
 	import classPanel from './ClassPanel';
 

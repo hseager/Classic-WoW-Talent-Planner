@@ -31,8 +31,3 @@
 		},
 	}
 </script>
-<style lang="scss">
-	.tooltip{ position: absolute; bottom:100%; left:100%;  padding: 10px; background:rgba(11, 21, 41, 0.9); width: 300px; z-index:2; border: 2px solid #6b6b6c; border-radius: 5px; border-top-color: #c7c9cb; border-bottom-color: #46474a; color:#efefef; }
-	.tooltip-rank-description{ color: #ffd200; }
-	.tooltip-requirement{ color: #ff2f2a; }
-</style>

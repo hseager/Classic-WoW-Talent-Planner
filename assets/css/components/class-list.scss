@@ -1,0 +1,36 @@
+.class-list{ 
+	list-style-type: none; 
+	padding: 20px 0;
+}
+.class-list li { 
+	display: inline-block;
+	margin:0 10px 10px 0;
+	position: relative;
+	cursor:pointer;
+	width: 58px;
+	height:58px;
+	border: 2px solid #6b6b6c;
+	border-radius: 5px;
+	border-top-color: #c7c9cb;
+	border-bottom-color: #46474a;
+	opacity:0.8;
+}
+.class-list li img{ 
+	display: block;
+	width:100%;
+}
+.class-list li.active,
+.class-list li:hover{ 
+	opacity: 1;
+}
+.class-list li:hover:after,
+.class-list li.active:after{ 
+	content:'';
+	box-shadow: inset 0 0 16px #526db1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
