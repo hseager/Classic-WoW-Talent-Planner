@@ -4,8 +4,7 @@
   "description": "A talent calculator for Classic WoW",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,11 +17,6 @@
     "url": "https://github.com/hseager/ClassicWoWTalentCalculator/issues"
   },
   "homepage": "https://github.com/hseager/ClassicWoWTalentCalculator#readme",
-  "devDependencies": {
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1"
-  },
-  "dependencies": {
-    "vue": "^2.6.10"
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
