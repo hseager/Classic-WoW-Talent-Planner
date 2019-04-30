@@ -2,9 +2,16 @@
 	display: flex;
 	margin:20px 0;
 	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.talent-tree-panel{
+	max-width: 350px;
+	margin: 0 0 20px;
+}
+.talent-tree-panel:first-of-type{
+	display: block;
 }
 .talent-tree{ 
-	max-width: 350px;
 	min-height: 450px;
 	padding:20px;
 	background:#333;
