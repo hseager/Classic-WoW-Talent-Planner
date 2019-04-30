@@ -1,7 +1,6 @@
 .talent-trees{ 
 	display: flex;
-	margin: 0 0 20px 0;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-wrap: wrap;
 }
 .talent-tree-panel{
@@ -10,8 +9,7 @@
 	text-align: center;
 }
 .talent-tree{ 
-	min-height: 450px;
-	padding: 20px;
+	padding: 5px;
 	background:#333;
 	display: grid;
 	grid-template-columns: repeat(4, 25%);
@@ -24,8 +22,7 @@
 }
 .talent-tree-title{ 
 	text-align:center;
-	font-size: 15px;
-	background: #000;
+	font-size: 18px;
 	padding: 10px 20px;
 	display: inline-block;
 	border: 2px solid #666;
@@ -33,4 +30,7 @@
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-bottom: 0;
+}
+.talent-tree-points{
+	font-size: 15px;
 }

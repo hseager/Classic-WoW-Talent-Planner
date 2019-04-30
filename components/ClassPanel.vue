@@ -1,9 +1,5 @@
 <template>
 	<div class="talent-trees">
-		<h3 class="talent-tree-title"
-		v-for="tree in classType.talentTrees"
-		v-bind:tree="tree"
-		v-bind:key="tree.id">{{tree.name}}</h3>
 		<talent-tree
 			v-for="tree in classType.talentTrees"
 			v-bind:tree="tree"
