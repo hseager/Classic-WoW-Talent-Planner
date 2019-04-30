@@ -1,20 +1,21 @@
 <template>
-	<div :class="['skill', { 'is-enabled': skill.enabled }, { 'is-max-rank': skill.currentRank == skill.maxRank }, skillRequirementArrow]" :style="getGridPosition">
+	<div :class="['skill', { 'is-enabled': skill.enabled }, { 'is-max-rank': skill.currentRank == skill.maxRank }, skillRequirementArrow]" :style="getGridPosition" ref="skill">
 		<div class="skill-icon"
 			v-on:click="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank"
-			v-on:mouseover="showTooltip = true"
-			v-on:mouseout="showTooltip = false">
+			v-on:mouseenter="onShowTooltip()"
+			v-on:mouseleave="onHideTooltip()">
 			<img v-bind:src="skillIcon" class="skill-icon-image">
 		</div>
 		<span class="skill-rank"
 			v-on:click="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank"
-			v-on:mouseover="showTooltip = true"
-			v-on:mouseout="showTooltip = false">{{skill.currentRank}}/{{skill.maxRank}}</span>
+			v-on:mouseenter="onShowTooltip()"
+			v-on:mouseleave="onHideTooltip()">{{skill.currentRank}}/{{skill.maxRank}}</span>
 		<tooltip
 			v-bind:skill="skill"
 			v-bind:showTooltip="showTooltip"
+			v-bind:tooltipPosition="tooltipPosition"
 			v-bind:treeName="tree.name"></tooltip>
 	</div>
 </template>
@@ -33,6 +34,7 @@
 		data: function(){
 			return {
 				showTooltip: false,
+				tooltipPosition: 'left',
 			}
 		},
 		components: {
@@ -158,6 +160,21 @@
 				} else {
 					return false;
 				}
+			},
+			onShowTooltip: function(){
+				this.showTooltip = true;
+				let positionLeft = this.$refs['skill'].getBoundingClientRect().left;
+				let windowWidth = window.innerWidth;
+				let distanceFromRightOfScreen = windowWidth - positionLeft;
+				let tooltipWidth = 420;
+				if(distanceFromRightOfScreen < tooltipWidth){
+					this.tooltipPosition = 'right';
+				} else {
+					this.tooltipPosition = 'left';
+				}
+			},
+			onHideTooltip: function(){
+				this.showTooltip = false;
 			}
 		},
 	}
