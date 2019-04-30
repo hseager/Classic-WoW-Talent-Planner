@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<img src="../public/images/logo/wow-classic-logo.png" class="logo" />
+		<img src="../public/images/wow-classic-logo.png" class="logo" />
 		<ul class="class-list">
 			<class-list
 				v-for="classType in classes"
@@ -15,7 +15,7 @@
 			v-bind:class-type="classes[currentClass]"
 			v-bind:constants="constants"
 		></class-panel>
-		<strong>Skills points: {{classes[currentClass].availableSkillPoints}}</strong><br/>
+		<strong>Skill points: {{classes[currentClass].availableSkillPoints}}</strong><br/><br/>
 		<strong>Required level: {{classes[currentClass].requiredLevel}}</strong>
 	</div>
 </template>

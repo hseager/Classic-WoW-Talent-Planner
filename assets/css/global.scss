@@ -1,4 +1,5 @@
 @import "setup/reset.scss";
+@import "setup/fonts.scss";
 @import "setup/base.scss";
 
 @import "layout/layout.scss";
@@ -6,5 +7,5 @@
 @import "components/class-list.scss";
 @import "components/talent-trees.scss";
 @import "components/skill-arrows.scss";
-@import "components/skills.scss";
+@import "components/skill.scss";
 @import "components/tooltip.scss";
