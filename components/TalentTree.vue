@@ -1,5 +1,5 @@
 <template>
-	<div class="talent-tree-container">
+	<div class="talent-tree-panel">
 		<h3 class="talent-tree-title">{{tree.name}} ({{tree.skillPoints}})</h3>
 		<div class="talent-tree" :style="getTreeBackgroundImage">
 			<skill

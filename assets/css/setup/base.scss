@@ -1,15 +1,19 @@
 body{ 
-	background:#111; 
+	background:url(../../public/images/backgrounds/main-background.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 	font-family:'Helvetica', 'Verdana'; 
-	color:#efefef;
+	color: #efefef;
 	font-size: 14px;
+	margin:0 40px;
 }
 main{ 
 	max-width: 1200px;
-	margin: auto;
-	padding: 40px;
+	margin: 40px auto;
+	padding: 20px 40px 40px;
+	background: rgba(0, 0, 8, 0.8);
+	border-radius: 10px;
 }
-
 h1,h2,h3,h4,h5,h6{ 
 	font-weight: normal;
 }

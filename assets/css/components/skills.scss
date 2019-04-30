@@ -31,12 +31,12 @@
 	display: block;
 }
 .skill.is-enabled{ 
-	cursor:pointer;
+	cursor: pointer;
 	border-color: #16ba17;
-	background:#000;
+	background: #000;
 }
 .skill.is-max-rank{
-	border-color: #ffd100;
+	border-color: #ffd200;
 }
 .skill.is-enabled .skill-icon-image{
 	filter: grayscale(0);

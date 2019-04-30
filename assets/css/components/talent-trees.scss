@@ -1,13 +1,10 @@
-.talent-tree-container{ 
-	margin:0 20px 0 0;
-}
 .talent-trees{ 
 	display: flex;
 	margin:20px 0;
-	flex-wrap: wrap;
+	justify-content: space-between;
 }
 .talent-tree{ 
-	width: 350px;
+	max-width: 350px;
 	min-height: 450px;
 	padding:20px;
 	background:#333;
