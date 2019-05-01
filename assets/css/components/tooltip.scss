@@ -14,6 +14,7 @@
 	color:#efefef;
 	font-size: 14px;
 	line-height: 20px;
+	text-align: left;
 }
 .tooltip.tooltip-position-right{
 	left: initial;
@@ -30,4 +31,8 @@
 }
 .tooltip-rank-description{
 	color: #ffd200;
+	margin:0;
+}
+.tooltip-next-rank{
+	margin: 5px 0 0 0;
 }

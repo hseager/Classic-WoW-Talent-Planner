@@ -34,3 +34,29 @@
 .talent-tree-points{
 	font-size: 15px;
 }
+
+.talent-info{
+	padding: 15px;
+	border: 1px solid #666;
+	display: inline-block;
+}
+
+.talent-info-stat{
+	font-size: 16px;
+}
+
+.talent-reset{
+	font-size: 15px;
+	color: #ff2f2a;
+	margin: 0;
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 1200px) {
+	.talent-trees{ 
+		justify-content: space-between;
+	}
+	.talent-tree{
+		padding: 10px;
+	}
+}

@@ -7,8 +7,7 @@
 			<p class="tooltip-requirement" v-if="skill.requirements.specPoints">Requires {{skill.requirements.specPoints}} points in {{treeName}} talents</p>
 		</div>
 		<div v-if="hasNextRank">
-			<br/>
-			<p>Next rank:</p>
+			<p class="tooltip-next-rank">Next rank:</p>
 		</div>
 		<p class="tooltip-rank-description" v-html="skill.rankDescription[skill.currentRank]"></p>
 	</div>

@@ -16,8 +16,9 @@
 			v-bind:constants="constants"
 		></class-panel>
 		<div class="talent-info">
-			<p>Skill points: {{classes[currentClass].availableSkillPoints}}</p>
-			<p>Required level: {{classes[currentClass].requiredLevel}}</p>
+			<p class="talent-info-stat">Skill points: {{classes[currentClass].availableSkillPoints}}</p>
+			<p class="talent-info-stat">Required level: {{classes[currentClass].requiredLevel}}</p>
+			<p class="talent-reset">Reset</p>
 		</div>
 	</div>
 </template>
