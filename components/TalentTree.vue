@@ -41,7 +41,7 @@
 			getTreeBackgroundImage: function(){
 				let backgroundImageUrl = 	this.constants.imageDirectory + 
 											this.constants.backgroundDirectory + 'background-' + 
-											this.className + '-' + 
+											this.className.toLowerCase() + '-' + 
 											this.getImageFileName(this.tree.name);
 				return {
 					backgroundImage: `url('${backgroundImageUrl}')`,

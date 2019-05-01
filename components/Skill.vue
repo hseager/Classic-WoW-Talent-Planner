@@ -78,7 +78,7 @@
 			skillIcon: function(){
 				return 	this.constants.imageDirectory + 
 						this.constants.skillIconDirectory + 
-						this.className + '/' + 
+						this.className.toLowerCase() + '/' + 
 						this.tree.name
 							.replace(' ','-')
 							.toLowerCase() + '/' + 

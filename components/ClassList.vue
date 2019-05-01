@@ -14,7 +14,7 @@
 		},
 		data: function(){
 			return {
-				classIconImage: this.constants.imageDirectory + this.constants.classIconDirectory + 'icon-' + this.classType.name + '.jpg',
+				classIconImage: this.constants.imageDirectory + this.constants.classIconDirectory + 'icon-' + this.classType.name.toLowerCase() + '.jpg',
 			}
 		},
 		methods: {
