@@ -22,8 +22,8 @@
 				<p class="talent-info-stat">Required level: {{data.classes[data.currentClass].requiredLevel}}</p>
 			</div>
 			<div class="talent-actions">
-				<button class="button" v-on:click="saveTalentTrees()">Save</button>
-				<button class="button" v-on:click="resetTalentTrees()">Reset</button>
+				<button class="button" v-on:click="saveTalentTrees">Save</button>
+				<button class="button" v-on:click="resetTalentTrees">Reset</button>
 			</div>
 		</div>
 	</div>
@@ -48,12 +48,6 @@
 			if(localData != null){
 				this.data = JSON.parse(localData);
 			}
-		},
-		watch: {
-			currentClass(){
-				alert(123);
-			},
-			deep: true
 		},
 		methods: {
 			resetTalentTrees: function(){
