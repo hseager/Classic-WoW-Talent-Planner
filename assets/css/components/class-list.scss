@@ -14,7 +14,8 @@
 	border-radius: 5px;
 	border-top-color: #c7c9cb;
 	border-bottom-color: #46474a;
-	opacity:0.85;
+	opacity: 0.85;
+	vertical-align: top;
 }
 .class-list li img{ 
 	display: block;
@@ -34,6 +35,16 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 5px;
+}
+
+.class-list-name{
+	margin-top: -8px;
+	display: block;
+	z-index: 2;
+	position: relative;
+	color: #ffd200;
+	text-shadow: 0px 1px 4px #000;
+	font-size: 14px;
 }
 
 @media only screen and (min-width: 1200px) {

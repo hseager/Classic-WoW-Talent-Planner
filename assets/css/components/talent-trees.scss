@@ -10,12 +10,10 @@
 }
 .talent-tree{ 
 	padding: 5px;
-	background:#333;
 	display: grid;
 	grid-template-columns: repeat(4, 25%);
 	grid-template-rows: repeat(7, 1fr);
-	border: 1px solid #666;
-	border: 2px solid #6b6b6c;
+	border: 1px solid #6b6b6c;
 	border-radius: 5px;
 	border-top-color: #c7c9cb;
 	border-bottom-color: #46474a;
@@ -25,7 +23,7 @@
 	font-size: 18px;
 	padding: 10px 20px;
 	display: inline-block;
-	border: 2px solid #666;
+	border: 1px solid #666;
 	border-top-color: #c7c9cb;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
@@ -33,16 +31,6 @@
 }
 .talent-tree-points{
 	font-size: 15px;
-}
-
-.talent-info{
-	padding: 15px;
-	border: 1px solid #666;
-	display: inline-block;
-}
-
-.talent-info-stat{
-	font-size: 16px;
 }
 
 @media only screen and (min-width: 1200px) {

@@ -1,0 +1,22 @@
+.talent-toolbar{
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 5px;
+	border: 1px solid #6b6b6c;
+	border-radius: 5px;
+	border-top-color: #c7c9cb;
+	border-bottom-color: #46474a;
+}
+
+.talent-info-stat{
+	font-size: 15px;
+}
+
+.talent-info-stat:last-child{
+	margin: 0;
+}
+
+.talent-actions .button{
+	margin: 0 0 0 20px;
+}

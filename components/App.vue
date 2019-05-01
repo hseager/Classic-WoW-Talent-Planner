@@ -16,10 +16,15 @@
 			v-bind:class-type="classes[currentClass]"
 			v-bind:constants="constants"
 		></class-panel>
-		<div class="talent-info">
-			<p class="talent-info-stat">Skill points: {{classes[currentClass].availableSkillPoints}}</p>
-			<p class="talent-info-stat">Required level: {{classes[currentClass].requiredLevel}}</p>
-			<button class="button" v-on:click="resetTalentTrees()">Reset</button>
+		<div class="talent-toolbar">
+			<div class="talent-info">
+				<p class="talent-info-stat">Skill points: {{classes[currentClass].availableSkillPoints}}</p>
+				<p class="talent-info-stat">Required level: {{classes[currentClass].requiredLevel}}</p>
+			</div>
+			<div class="talent-actions">
+				<button class="button">Save</button>
+				<button class="button" v-on:click="resetTalentTrees()">Reset</button>
+			</div>
 		</div>
 	</div>
 </template>
