@@ -3,15 +3,15 @@
 		<div class="skill-icon"
 			v-on:click="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank"
-			v-on:mouseenter="onShowTooltip()"
-			v-on:mouseleave="onHideTooltip()">
+			v-on:mouseenter="onShowTooltip"
+			v-on:mouseleave="onHideTooltip">
 			<img v-bind:src="skillIcon" class="skill-icon-image">
 		</div>
 		<span class="skill-rank"
 			v-on:click="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank"
-			v-on:mouseenter="onShowTooltip()"
-			v-on:mouseleave="onHideTooltip()">{{skill.currentRank}}/{{skill.maxRank}}</span>
+			v-on:mouseenter="onShowTooltip"
+			v-on:mouseleave="onHideTooltip">{{skill.currentRank}}/{{skill.maxRank}}</span>
 		<tooltip
 			v-bind:skill="skill"
 			v-bind:showTooltip="showTooltip"

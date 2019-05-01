@@ -49,6 +49,12 @@
 				this.data = JSON.parse(localData);
 			}
 		},
+		watch: {
+			currentClass(){
+				alert(123);
+			},
+			deep: true
+		},
 		methods: {
 			resetTalentTrees: function(){
 				let currentClass = this.data.classes[this.data.currentClass];
@@ -63,7 +69,6 @@
 						}
 					});
 				});
-				window.localStorage.removeItem('talent-data');
 			},
 			saveTalentTrees: function(){
 				window.localStorage.setItem('talent-data', JSON.stringify(this.data));
