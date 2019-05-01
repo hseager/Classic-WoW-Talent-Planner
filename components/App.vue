@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<img src="../public/images/wow-classic-logo.png" class="logo" />
+		<h1 class="main-title">Talent Calculator</h1>
 		<ul class="class-list">
 			<class-list
 				v-for="classType in classes"
@@ -18,7 +19,7 @@
 		<div class="talent-info">
 			<p class="talent-info-stat">Skill points: {{classes[currentClass].availableSkillPoints}}</p>
 			<p class="talent-info-stat">Required level: {{classes[currentClass].requiredLevel}}</p>
-			<p class="talent-reset">Reset</p>
+			<button class="button" v-on:click="resetTalentTrees()">Reset</button>
 		</div>
 	</div>
 </template>
@@ -33,7 +34,22 @@
 			classPanel
 		},
 		data(){
-			return talentData
-		} 
+			return talentData;
+		},
+		methods: {
+			resetTalentTrees: function(){
+				let currentClass = talentData.classes[this.currentClass];
+				currentClass.availableSkillPoints = 51;
+				currentClass.requiredLevel = 0;
+				currentClass.talentTrees.forEach(tree => {
+					tree.skillPoints = 0;
+					tree.skills.forEach(skill => {
+						skill.currentRank = 0;
+						if(skill.requirements)
+						 	skill.enabled = false;
+					});
+				});
+			}
+		}
 	}
 </script>
