@@ -13,3 +13,21 @@
 	color: #fef8be;
 	margin: 0 0 20px;
 }
+
+footer{
+	padding: 0 0 20px;
+}
+
+footer ul{
+	list-style-type: none;
+	text-align: center;
+}
+
+footer ul li img{
+	width: 25px;
+	opacity: 0.8;
+}
+
+footer ul li img:hover{
+	opacity: 1;
+}
