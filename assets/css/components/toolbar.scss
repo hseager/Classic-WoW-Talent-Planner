@@ -10,7 +10,7 @@
 }
 
 .talent-info-stat{
-	font-size: 15px;
+	font-size: 13px;
 }
 
 .talent-info-stat:last-child{
@@ -18,5 +18,18 @@
 }
 
 .talent-actions .button{
-	margin: 0 0 0 20px;
+	margin: 0 0 0 10px;
+}
+
+.talent-actions .button:first-child{
+	margin: 0;
+}
+
+@media only screen and (min-width: 1200px) {
+	.talent-info-stat{
+		font-size: 15px;
+	}
+	.talent-actions .button{
+		margin: 0 0 0 20px;
+	}
 }

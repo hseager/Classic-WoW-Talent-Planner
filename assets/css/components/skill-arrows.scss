@@ -9,6 +9,7 @@
 	height: 36%;
 	z-index: 1;
 	cursor: default;
+	filter: grayscale(100%) brightness(60%);
 }
 .down-arrow.medium-arrow:before{ 
 	height: 166%;
@@ -25,16 +26,18 @@
 	width: 20px;
 	height: 24px;
 	transform: rotate(-90deg);
+	
 }
 .corner-arrow:before{ 
 	content:'';
 	background:url('../../public/images/arrows/right-down-arrow.png') no-repeat right;
 	position: absolute;
-	bottom: 159%;
+	bottom: 160%;
 	left: -34%;
 	width: 60px;
 	height: 20px;
 	cursor: default;
+	filter: grayscale(100%) brightness(60%);
 }
 .corner-arrow:after{ 
 	content:'';
@@ -47,4 +50,12 @@
 	z-index:1;
 	height: 42px;
 	cursor: default;
+	filter: grayscale(100%) brightness(60%);
+}
+
+.skill.is-enabled.side-arrow:after,
+.skill.is-enabled.down-arrow:before,
+.skill.is-enabled.corner-arrow:before,
+.skill.is-enabled.corner-arrow:after{
+	filter: grayscale(0%) brightness(100%);
 }
