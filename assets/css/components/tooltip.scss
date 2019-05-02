@@ -1,34 +1,37 @@
 .tooltip{ 
 	position: absolute;
-	bottom:110%;
+	bottom: 110%;
 	left: 105%; 
 	padding: 10px;
 	background: rgba(11, 21, 41, 0.9);
 	width: 340px;
-	z-index:2;
+	z-index: 2;
 	border: 2px solid #6b6b6c;
 	border-radius: 5px;
-	border-top-color:
-	#c7c9cb;
+	border-top-color: #c7c9cb;
 	border-bottom-color: #46474a;
-	color:#efefef;
+	color: #efefef;
 	font-size: 14px;
 	line-height: 20px;
 	text-align: left;
 }
 .tooltip-skill-name{
 	font-size: 18px;
-	margin:0 0 4px;
+	margin: 0 0 4px;
 }
 .tooltip-requirement{ 
 	color: #ff2f2a;
-	margin:0 0 2px;
+	margin: 0 0 2px;
 	line-height: 18px
 }
 .tooltip-rank-description{
 	color: #ffd200;
-	margin:0;
+	margin: 0;
 }
 .tooltip-next-rank{
+	margin: 5px 0 0 0;
+}
+
+.tooltip-mobile-message{
 	margin: 5px 0 0 0;
 }

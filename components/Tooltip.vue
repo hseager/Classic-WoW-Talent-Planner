@@ -10,6 +10,10 @@
 			<p class="tooltip-next-rank">Next rank:</p>
 		</div>
 		<p class="tooltip-rank-description" v-html="skill.rankDescription[skill.currentRank]"></p>
+		<div v-if="isValidDecrease">
+			<p v-if="isMobile()" class="tooltip-mobile-message">Tap &amp; hold to remove</p>
+			<p v-if="!isMobile()" class="tooltip-mobile-message">Right click to remove</p>
+		</div>
 	</div>
 </template>
 <script>
@@ -20,6 +24,7 @@
 			showTooltip: Boolean,
 			tooltipPosition: Object,
 			treeName: String,
+			isValidDecrease: Boolean
 		},
 		computed: {
 			hasNextRank: function(){

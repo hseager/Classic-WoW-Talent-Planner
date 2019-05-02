@@ -10,6 +10,13 @@ Vue.mixin({
 										.replace('(','')
 										.replace(')','')
 										.toLowerCase() + '.jpg',
+		isMobile: function(){
+			let windowWidth = window.innerWidth;
+			if(windowWidth <= 700)
+				return true;
+			else 
+				return false;
+		}
 	}
 });
 
