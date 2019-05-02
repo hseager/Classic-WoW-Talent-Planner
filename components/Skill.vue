@@ -171,7 +171,7 @@
 				let windowWidth = window.innerWidth;
 				let distanceFromRightOfScreen = windowWidth - positionLeft;
 				let tooltipWidth = 360;
-				if(windowWidth <= 700){
+				if(this.isMobile()){
 					this.tooltipPosition = {'left': -positionLeft + (windowWidth - tooltipWidth) / 2 + 'px'};
 				} else {
 					if(distanceFromRightOfScreen < (tooltipWidth + 80)){
