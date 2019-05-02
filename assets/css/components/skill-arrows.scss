@@ -8,31 +8,33 @@
 	width:20px;
 	height: 36%;
 	z-index: 1;
+	cursor: default;
 }
 .down-arrow.medium-arrow:before{ 
-	height: 169%;
+	height: 166%;
 }
 .down-arrow.large-arrow:before{
-	height: 295%;
+	height: 297%;
 }
 .side-arrow:after{ 
 	content:'';
 	background:url('../../public/images/arrows/down-arrow.png') no-repeat bottom;
 	position: absolute;
-	bottom: 11px;
-	left: -21px;
+	bottom: 18px;
+	left: -19px;
 	width: 20px;
-	height: 28px;
+	height: 24px;
 	transform: rotate(-90deg);
 }
 .corner-arrow:before{ 
 	content:'';
 	background:url('../../public/images/arrows/right-down-arrow.png') no-repeat right;
 	position: absolute;
-	bottom: 90px;
-	left: -25px;
+	bottom: 159%;
+	left: -34%;
 	width: 60px;
 	height: 20px;
+	cursor: default;
 }
 .corner-arrow:after{ 
 	content:'';
@@ -44,4 +46,5 @@
 	width:20px;
 	z-index:1;
 	height: 42px;
+	cursor: default;
 }

@@ -1,5 +1,5 @@
 <template>
-	<div v-if="showTooltip" :class="['tooltip', {'tooltip-position-right' : getTooltipPosition}]">
+	<div v-if="showTooltip" :class="['tooltip']" :style="tooltipPosition">
 		<h3 class="tooltip-skill-name">{{skill.name}}</h3>
 		<p class="tooltip-rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
 		<div v-if="this.skill.requirements && !this.skill.enabled">
@@ -18,7 +18,7 @@
 		props: {
 			skill: Object,
 			showTooltip: Boolean,
-			tooltipPosition: String,
+			tooltipPosition: Object,
 			treeName: String,
 		},
 		computed: {
@@ -28,9 +28,6 @@
 			getRequiredSkillName: function(){
 				return this.$parent.getSkill(this.skill.requirements.skill.id).name;
 			},
-			getTooltipPosition: function(){
-				return this.tooltipPosition == 'right' ? true : false;
-			}
 		},
 	}
 </script>

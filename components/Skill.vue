@@ -34,7 +34,9 @@
 		data: function(){
 			return {
 				showTooltip: false,
-				tooltipPosition: 'left',
+				tooltipPosition: {
+					'left': '100%',
+				}
 			}
 		},
 		components: {
@@ -166,11 +168,15 @@
 				let positionLeft = this.$refs['skill'].getBoundingClientRect().left;
 				let windowWidth = window.innerWidth;
 				let distanceFromRightOfScreen = windowWidth - positionLeft;
-				let tooltipWidth = 420;
-				if(distanceFromRightOfScreen < tooltipWidth){
-					this.tooltipPosition = 'right';
+				let tooltipWidth = 360;
+				if(windowWidth <= 700){
+					this.tooltipPosition = {'left': -positionLeft + (windowWidth - tooltipWidth) / 2 + 'px'};
 				} else {
-					this.tooltipPosition = 'left';
+					if(distanceFromRightOfScreen < (tooltipWidth + 80)){
+						this.tooltipPosition = {'left': 'initial', 'right': '100%'};
+					} else {
+						this.tooltipPosition = {'left': 100 + '%'};
+					}
 				}
 			},
 			onHideTooltip: function(){
