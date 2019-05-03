@@ -12,6 +12,7 @@
 			"name": "Warrior", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,

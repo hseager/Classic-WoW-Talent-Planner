@@ -26,17 +26,22 @@
 				<button class="button" v-on:click="resetTalentTrees">Reset</button>
 			</div>
 		</div>
+		<talent-path
+			v-bind:talentPath="data.classes[data.currentClass].talentPath"
+		></talent-path>
 	</div>
 </template>
 <script>
 	import talentData from '../assets/data/talent-data.json';
 	import classList from './ClassList';
 	import classPanel from './ClassPanel';
+	import talentPath from './TalentPath';
 
 	export default {
 		components: {
 			classList,
-			classPanel
+			classPanel,
+			talentPath
 		},
 		data(){
 			return {

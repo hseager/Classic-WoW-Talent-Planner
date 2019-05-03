@@ -95,6 +95,7 @@
 						this.skill.currentRank++
 						this.$parent.$emit('decreaseAvailableSkillPoints');
 						this.$parent.$emit('increaseRequiredLevel');
+						this.$parent.$emit('addToTalentPath', this.tree.id, this.skill.id, this.skillIcon);
 						this.$emit('increaseTreeSkillPoints');
 						this.$emit('increaseCurrentSkillTier', this.skill.position[0]);
 						this.checkSkillRequirements();

@@ -8,6 +8,7 @@
 			v-on:increaseAvailableSkillPoints="increaseAvailableSkillPoints"
 			v-on:decreaseRequiredLevel="decreaseRequiredLevel"
 			v-on:increaseRequiredLevel="increaseRequiredLevel"
+			v-on:addToTalentPath="onAddToTalentPath"
 			v-bind:className="classType.name"
 			v-bind:constants="constants"
 			v-bind:availableSkillPoints="classType.availableSkillPoints"
@@ -45,6 +46,12 @@
 				else
 					this.classType.requiredLevel--;
 			},
+			onAddToTalentPath: function(treeId, skillId, skillIcon){
+				this.classType.talentPath.push({treeId, skillId, skillIcon});
+			},
+			onRemoveFromTalentPath: function(treeId, skillId){
+				this.classType.talentPath.push({treeId: treeId, skillId: skillId});
+			}
 		},
 	}
 </script>
