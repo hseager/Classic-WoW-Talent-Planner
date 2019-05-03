@@ -16,7 +16,7 @@
 			v-bind:skill="skill"
 			v-bind:showTooltip="showTooltip"
 			v-bind:tooltipPosition="tooltipPosition"
-			v-bind:isValidDecrease="isValidDecrease()"
+			v-bind:isValidDecrease="isValidDecrease"
 			v-bind:treeName="tree.name"></tooltip>
 	</div>
 </template>
@@ -87,6 +87,18 @@
 							.toLowerCase() + '/' + 
 						this.getImageFileName(this.skill.name);
 			},
+			isValidDecrease: function(){
+				if(this.skill.currentRank == 0)
+					return false;
+
+				if(this.hasAdjacentSkillRequirement())
+					return false;
+
+				if(this.skill.position[0] == this.currentSkillTier)
+					return true;
+				else 
+					return false;
+			},
 		},
 		methods: {
 			onIncreaseSkillRank: function(){
@@ -103,10 +115,11 @@
 				}
 			},
 			onDecreaseSkillRank: function(){
-				if(this.isValidDecrease()){
+				if(this.isValidDecrease){
 					this.skill.currentRank--;
 					this.$parent.$emit('increaseAvailableSkillPoints');
 					this.$parent.$emit('decreaseRequiredLevel');
+					this.$parent.$emit('removeFromTalentPath', this.tree.id, this.skill.id);
 					this.$emit('decreaseTreeSkillPoints');
 					this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);
 					this.checkSkillRequirements();
@@ -146,19 +159,8 @@
 			getSkill: function(id){
 				return this.tree.skills[id];
 			},
-			isValidDecrease: function(){
-				if(this.skill.currentRank == 0)
-					return false;
-
-				if(this.hasAdjacentSkillRequirement())
-					return false;
-
-				if(this.skill.position[0] == this.currentSkillTier)
-					return true;
-				else 
-					return false;
-			},
 			hasAdjacentSkillRequirement: function(){
+				
 				let adjacentSkill = this.getSkill(this.skill.id + 1);
 				if(adjacentSkill && adjacentSkill.requirements && adjacentSkill.requirements.skill){
 					return adjacentSkill.requirements.skill.id == this.skill.id && adjacentSkill.currentRank > 0;

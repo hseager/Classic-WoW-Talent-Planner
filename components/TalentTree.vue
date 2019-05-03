@@ -9,7 +9,7 @@
 				v-bind:constants="constants"
 				v-bind:tree="tree"
 				v-bind:className="className"
-				v-bind:currentSkillTier="currentSkillTier"
+				v-bind:currentSkillTier="tree.currentSkillTier"
 				v-bind:availableSkillPoints="availableSkillPoints"
 				v-on:increaseTreeSkillPoints="onIncreaseTreeSkillPoints"
 				v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints"
@@ -28,11 +28,6 @@
 			tree: Object,
 			constants: Object,
 			availableSkillPoints: Number,
-		},
-		data: function(){
-			return {
-				currentSkillTier: 0,
-			}
 		},
 		components: {
 			skill
@@ -59,13 +54,13 @@
 				this.tree.skillPoints--;
 			},
 			onIncreaseCurrentSkillTier: function(tier){
-				if(tier > this.currentSkillTier)
-					this.currentSkillTier = tier;
+				if(tier > this.tree.currentSkillTier)
+					this.tree.currentSkillTier = tier;
 			},
 			onDecreaseCurrentSkillTier: function(tier){
 				let totalTierSkillPoints = this.getTotalTierSkillPoints(tier);
 				if(totalTierSkillPoints == 0)
-					this.currentSkillTier = tier - 1;
+					this.tree.currentSkillTier = tier - 1;
 			},
 			getTotalTierSkillPoints: function(tier){
 				let tierSkillPoints = 0;

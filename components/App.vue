@@ -1,34 +1,41 @@
 <template>
 	<div>
-		<img src="../public/images/wow-classic-logo.png" class="logo" />
-		<h1 class="main-title">Talent Calculator</h1>
-		<ul class="class-list">
-			<class-list
-				v-for="classType in data.classes"
-				v-bind:classType="classType"
-				v-bind:key="classType.id"
-				v-on:change-class="data.currentClass = classType.id"
+		<main>
+			<img src="../public/images/wow-classic-logo.png" class="logo" />
+			<h1 class="main-title">Talent Calculator</h1>
+			<ul class="class-list">
+				<class-list
+					v-for="classType in data.classes"
+					v-bind:classType="classType"
+					v-bind:key="classType.id"
+					v-on:change-class="data.currentClass = classType.id"
+					v-bind:constants="data.constants"
+					v-bind:currentClass="data.currentClass"
+				></class-list>
+			</ul>
+			<class-panel
+				v-bind:class-type="data.classes[data.currentClass]"
 				v-bind:constants="data.constants"
-				v-bind:currentClass="data.currentClass"
-			></class-list>
-		</ul>
-		<class-panel
-			v-bind:class-type="data.classes[data.currentClass]"
-			v-bind:constants="data.constants"
-		></class-panel>
-		<div class="talent-toolbar">
-			<div class="talent-info">
-				<p class="talent-info-stat">Skill points: {{data.classes[data.currentClass].availableSkillPoints}}</p>
-				<p class="talent-info-stat">Required level: {{data.classes[data.currentClass].requiredLevel}}</p>
+			></class-panel>
+			<div class="talent-toolbar">
+				<div class="talent-info">
+					<p class="talent-info-stat">Skill points: {{data.classes[data.currentClass].availableSkillPoints}}</p>
+					<p class="talent-info-stat">Required level: {{data.classes[data.currentClass].requiredLevel}}</p>
+				</div>
+				<div class="talent-actions">
+					<button class="button" v-on:click="saveTalentTrees">Save</button>
+					<button class="button" v-on:click="resetTalentTrees">Reset</button>
+				</div>
 			</div>
-			<div class="talent-actions">
-				<button class="button" v-on:click="saveTalentTrees">Save</button>
-				<button class="button" v-on:click="resetTalentTrees">Reset</button>
-			</div>
-		</div>
-		<talent-path
-			v-bind:talentPath="data.classes[data.currentClass].talentPath"
-		></talent-path>
+			<talent-path
+				v-bind:talentPath="data.classes[data.currentClass].talentPath"
+			></talent-path>
+		</main>
+		<footer>
+			<ul>
+				<li><a href="https://github.com/hseager/ClassicWoWTalentCalculator" target="_blank"><img src="images/github-logo.png" /></a></li>
+			</ul>
+		</footer>
 	</div>
 </template>
 <script>

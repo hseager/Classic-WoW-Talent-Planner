@@ -8,7 +8,7 @@
 	export default {
 		name: 'class-list',
 		props: {
-			constants: Object,		
+			constants: Object,
 			classType: Object,
 			currentClass: Number
 		},
