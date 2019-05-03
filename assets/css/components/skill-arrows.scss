@@ -2,26 +2,26 @@
 	content:''; 
 	background:url('../../public/images/arrows/down-arrow.png') no-repeat bottom; 
 	position: absolute; 
-	bottom: 95%; 
+	bottom: 54px; 
 	left: 50%;
 	margin-left: -10px;
-	width:20px;
-	height: 36%;
+	width: 20px;
+	height: 20px;
 	z-index: 1;
 	cursor: default;
 	filter: grayscale(100%) brightness(60%);
 }
 .down-arrow.medium-arrow:before{ 
-	height: 166%;
+	height: 91px;
 }
 .down-arrow.large-arrow:before{
-	height: 297%;
+	height: 163px;
 }
 .side-arrow:after{ 
 	content:'';
 	background:url('../../public/images/arrows/down-arrow.png') no-repeat bottom;
 	position: absolute;
-	bottom: 18px;
+	bottom: 16px;
 	left: -19px;
 	width: 20px;
 	height: 24px;
@@ -32,9 +32,9 @@
 	content:'';
 	background:url('../../public/images/arrows/right-down-arrow.png') no-repeat right;
 	position: absolute;
-	bottom: 164%;
-	left: -33%;
-	width: 95%;
+	bottom: 91px;
+	left: -22px;
+	width: 58px;
 	height: 20px;
 	cursor: default;
 	filter: grayscale(100%) brightness(60%);
@@ -43,12 +43,11 @@
 	content:'';
 	background:url('../../public/images/arrows/down-arrow.png') no-repeat bottom;
 	position: absolute;
-	bottom: 95%;
-	left: 50%;
-	margin-left: -10px;
+	bottom: 52px;
+	left: 18px;
 	width: 20px;
 	z-index:1;
-	height: 74%;
+	height: 41px;
 	cursor: default;
 	filter: grayscale(100%) brightness(60%);
 }

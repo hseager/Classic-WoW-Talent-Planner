@@ -5,13 +5,13 @@
 }
 .talent-tree-panel{
 	max-width: 350px;
-	margin: 0 5px 20px;
+	margin: 0 0 20px;
 	text-align: center;
 }
 .talent-tree{ 
 	padding: 5px;
 	display: grid;
-	grid-template-columns: repeat(4, 25%);
+	grid-template-columns: repeat(4, 75px);
 	grid-template-rows: repeat(7, 1fr);
 	border: 1px solid #6b6b6c;
 	border-radius: 5px;
@@ -33,6 +33,11 @@
 	font-size: 15px;
 }
 
+@media only screen and (min-width: 640px) {
+	.talent-tree-panel{
+		margin: 0 5px 20px;
+	}
+}
 @media only screen and (min-width: 1200px) {
 	.talent-trees{ 
 		justify-content: space-between;
