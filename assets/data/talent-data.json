@@ -908,6 +908,7 @@
 			"name": "Paladin", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -1654,6 +1655,7 @@
 			"name": "Hunter", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -2435,6 +2437,7 @@
 			"name": "Rogue", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -3290,6 +3293,7 @@
 			"name": "Priest", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -4086,6 +4090,7 @@
 			"name": "Shaman", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -4868,6 +4873,7 @@
 			"name": "Mage", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -5689,6 +5695,7 @@
 			"name": "Warlock", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -6539,6 +6546,7 @@
 			"name": "Druid", 
 			"availableSkillPoints": 51,
 			"requiredLevel": 0,
+			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,

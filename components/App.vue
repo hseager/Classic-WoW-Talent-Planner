@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<talent-path
-				v-bind:talentPath="data.classes[data.currentClass].talentPath"
+				v-bind:currentClass="data.classes[data.currentClass]"
 			></talent-path>
 		</main>
 		<footer>
@@ -75,6 +75,7 @@
 						}
 					});
 				});
+				currentClass.talentPath = [];
 			},
 			saveTalentTrees: function(){
 				window.localStorage.setItem('talent-data', JSON.stringify(this.data));

@@ -48,11 +48,16 @@
 					this.classType.requiredLevel--;
 			},
 			onAddToTalentPath: function(treeId, skillId, skillIcon){
-				this.classType.talentPath.push({treeId, skillId, skillIcon});
+				this.classType.talentPath.push({treeId, skillId, skillIcon, isFaded : false});
 			},
 			onRemoveFromTalentPath: function(treeId, skillId){
-				//console.log(treeId + ' ' + skillId);
-				//this.classType.talentPath.push({treeId: treeId, skillId: skillId});
+				let talentPathItemIndex = '';
+				this.classType.talentPath.forEach(function(talentPathItem, i){
+					if(talentPathItem.treeId == treeId && talentPathItem.skillId == skillId){
+						talentPathItemIndex = i;
+					}
+				});
+				this.classType.talentPath.splice(talentPathItemIndex, 1);
 			}
 		},
 	}

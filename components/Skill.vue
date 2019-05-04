@@ -1,5 +1,11 @@
 <template>
-	<div :class="['skill', { 'is-enabled': skill.enabled }, { 'is-max-rank': skill.currentRank == skill.maxRank }, skillRequirementArrow]" :style="getGridPosition" ref="skill">
+	<div :class="['skill', 
+		{ 'is-enabled': skill.enabled }, 
+		{ 'is-max-rank': skill.currentRank == skill.maxRank }, 
+		{ 'is-faded': isFaded },
+		skillRequirementArrow]" 
+		:style="getGridPosition" 
+		ref="skill">
 		<div class="skill-icon"
 			v-on:click="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank"
@@ -37,11 +43,24 @@
 				showTooltip: false,
 				tooltipPosition: {
 					'left': '100%',
-				}
+				},
+				isFaded: false,
 			}
 		},
 		components: {
 			tooltip,
+		},
+		mounted(){
+			this.$root.$on('highlightSkill', (skillOnTree) => {
+				if(skillOnTree == this.skill){
+					this.isFaded = false;
+				} else {
+					this.isFaded = true;
+				}
+			});
+			this.$root.$on('unHighlightSkills', () => {
+				this.isFaded = false;
+			});
 		},
 		computed:{
 			getGridPosition: function(){
@@ -160,7 +179,6 @@
 				return this.tree.skills[id];
 			},
 			hasAdjacentSkillRequirement: function(){
-				
 				let adjacentSkill = this.getSkill(this.skill.id + 1);
 				if(adjacentSkill && adjacentSkill.requirements && adjacentSkill.requirements.skill){
 					return adjacentSkill.requirements.skill.id == this.skill.id && adjacentSkill.currentRank > 0;

@@ -1,18 +1,28 @@
 .talent-path{
 	margin: 20px 0 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.talent-path-table{
-	width: 100%;
-	border-collapse: collapse;
+.talent-path-skill{
+	text-align: center;
+	padding: 5px;
 }
 
-.talent-path-table th,
-.talent-path-table td{
-	border: 1px solid #ccc;
-	padding: 5px 2px;
+.talent-path-skill.is-faded{
+	opacity: 0.5;
+}
+
+.talent-path-level{
+	margin: 0 0 5px;
 }
 
 .talent-path-skill-icon{
-	width: 30px;
+	width: 33px;
+	display: block;
+	border: 1px solid #6b6b6c;
+	border-radius: 3px;
+	border-top-color: #c7c9cb;
+	border-bottom-color: #46474a;
 }

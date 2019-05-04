@@ -1,36 +1,45 @@
 <template>
 	<div class="talent-path">
-		<table class="talent-path-table">
-			<tbody>
-				<tr>
-					<th></th>
-					<th v-for="n in 34" v-if="n > 9" :key="n">{{n}}</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td v-for="(talent, index) in talentPath" v-if="index <= 24" v-bind:key="index">
-						{{talent.treeId}} - {{talent.skillId}}<br/>
-						<img :src="talent.skillIcon" class="talent-path-skill-icon"/>
-					</td>
-				</tr>
-				<tr>
-					<th v-for="n in 60" v-if="n > 34" :key="n">{{n}}</th>
-				</tr>
-				<tr>
-					<td v-for="(talent, index) in talentPath" v-if="index > 24" v-bind:key="index">
-						{{talent.treeId}} - {{talent.skillId}}<br/>
-						<img :src="talent.skillIcon" class="talent-path-skill-icon"/>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<div :class="['talent-path-skill',
+			{ 'is-faded': talent.isFaded }]"
+			v-for="(talent, index) in currentClass.talentPath" :key="index"
+			v-on:mouseenter="onTalentPathItemMouseEnter(talent);"
+			v-on:mouseleave="onTalentPathItemMouseLeave">
+			<p class="talent-path-level">{{index + 10}}</p>
+			<img :src="talent.skillIcon" class="talent-path-skill-icon"/>
+		</div>
 	</div>
 </template>
 <script>
 	export default {
 		name: 'talent-path',
 		props: {
-			talentPath: Array,
+			currentClass: Object,
 		},
+		methods: {
+			onTalentPathItemMouseEnter(talent){
+				let skillOnTree;
+				this.currentClass.talentTrees.forEach(function(tree){
+					if(tree.id == talent.treeId){
+						tree.skills.forEach(function(skill){
+							if(skill.id == talent.skillId){
+								skillOnTree = skill;
+							}
+						});
+					}
+				});
+				this.$root.$emit('highlightSkill', skillOnTree);
+				this.currentClass.talentPath.forEach(function(talentPathItem){
+					talentPathItem.isFaded = true;
+				});
+				talent.isFaded = false;
+			},
+			onTalentPathItemMouseLeave(){
+				this.currentClass.talentPath.forEach(function(talentPathItem){
+					talentPathItem.isFaded = false;
+				});
+				this.$root.$emit('unHighlightSkills');
+			}
+		}
 	}
 </script>
