@@ -1,12 +1,14 @@
 .talent-toolbar{
 	padding: 15px;
-	display: flex;
-	justify-content: space-between;
 	border-radius: 5px;
 	border: 1px solid #6b6b6c;
 	border-radius: 5px;
 	border-top-color: #c7c9cb;
 	border-bottom-color: #46474a;
+}
+
+.talent-info{
+	margin: 0 0 20px;
 }
 
 .talent-info-stat{
@@ -23,6 +25,18 @@
 
 .talent-actions .button:first-child{
 	margin: 0;
+}
+
+@media only screen and (min-width: 640px) {
+	.talent-toolbar{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.talent-info{
+		margin: 0;
+	}
 }
 
 @media only screen and (min-width: 1200px) {
