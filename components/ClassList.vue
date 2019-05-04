@@ -1,5 +1,5 @@
 <template>
-	<li v-on:click="onClassSelect" v-bind:class="{ active: currentClass === classType.id }">
+	<li v-on:click.prevent="onClassSelect" v-bind:class="{ active: currentClass === classType.id }">
 		<img v-bind:src="classIconImage">
 		<span v-if="currentClass === classType.id" class="class-list-name">{{classType.name}}</span>
 	</li>

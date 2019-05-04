@@ -4,17 +4,17 @@
 		{ 'is-max-rank': skill.currentRank == skill.maxRank }, 
 		{ 'is-faded': isFaded },
 		skillRequirementArrow]" 
-		:style="getGridPosition" 
+		:style="getGridPosition"
 		ref="skill">
 		<div class="skill-icon"
-			v-on:click="onIncreaseSkillRank"
+			v-on:click.prevent="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank"
-			v-on:mouseenter="onShowTooltip"
-			v-on:mouseleave="onHideTooltip">
+			v-on:mouseenter.prevent="onShowTooltip"
+			v-on:mouseleave.prevent="onHideTooltip">
 			<img v-bind:src="skillIcon" class="skill-icon-image">
 		</div>
 		<span class="skill-rank"
-			v-on:click="onIncreaseSkillRank"
+			v-on:click.prevent="onIncreaseSkillRank"
 			v-on:click.right.prevent="onDecreaseSkillRank"
 			v-on:mouseenter="onShowTooltip"
 			v-on:mouseleave="onHideTooltip">{{skill.currentRank}}/{{skill.maxRank}}</span>

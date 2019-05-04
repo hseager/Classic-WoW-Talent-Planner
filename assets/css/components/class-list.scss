@@ -19,7 +19,8 @@
 }
 .class-list li img{ 
 	display: block;
-	width:100%;
+	width: 100%;
+	pointer-events: none;
 }
 .class-list li.active,
 .class-list li:hover{ 

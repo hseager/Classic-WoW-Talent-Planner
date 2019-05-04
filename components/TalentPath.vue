@@ -3,8 +3,8 @@
 		<div :class="['talent-path-skill',
 			{ 'is-faded': talent.isFaded }]"
 			v-for="(talent, index) in currentClass.talentPath" :key="index"
-			v-on:mouseenter="onTalentPathItemMouseEnter(talent);"
-			v-on:mouseleave="onTalentPathItemMouseLeave">
+			v-on:mouseenter.prevent="onTalentPathItemMouseEnter(talent);"
+			v-on:mouseleave.prevent="onTalentPathItemMouseLeave">
 			<p class="talent-path-level">{{index + 10}}</p>
 			<img :src="talent.skillIcon" class="talent-path-skill-icon"/>
 		</div>
