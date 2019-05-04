@@ -15,6 +15,9 @@
 	line-height: 20px;
 	text-align: left;
 	pointer-events: none;
+	-moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
 }
 .tooltip-skill-name{
 	font-size: 18px;
