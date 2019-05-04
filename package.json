@@ -1,22 +1,22 @@
 {
-  "name": "wow-talent-calculator",
+  "name": "wow-talent-planner",
   "version": "1.0.0",
-  "description": "A talent calculator for Classic WoW",
+  "description": "A talent planner for Classic WoW",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hseager/ClassicWoWTalentCalculator.git"
+    "url": "git+https://github.com/hseager/Classic-WoW-Talent-Planner.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hseager/ClassicWoWTalentCalculator/issues"
+    "url": "https://github.com/hseager/Classic-WoW-Talent-Planner/issues"
   },
-  "homepage": "https://github.com/hseager/ClassicWoWTalentCalculator#readme",
+  "homepage": "https://github.com/hseager/Classic-WoW-Talent-Planner#readme",
   "devDependencies": {
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0"

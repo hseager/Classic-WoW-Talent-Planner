@@ -2,7 +2,7 @@
 	<div>
 		<main>
 			<img src="../public/images/wow-classic-logo.png" class="logo" />
-			<h1 class="main-title">Talent Calculator</h1>
+			<h1 class="main-title">Talent Planner</h1>
 			<ul class="class-list">
 				<class-list
 					v-for="classType in data.classes"
@@ -33,7 +33,7 @@
 		</main>
 		<footer>
 			<ul>
-				<li><a href="https://github.com/hseager/ClassicWoWTalentCalculator" target="_blank"><img src="images/github-logo.png" /></a></li>
+				<li><a href="https://github.com/hseager/Classic-WoW-Talent-Planner" target="_blank"><img src="images/github-logo.png" /></a></li>
 			</ul>
 		</footer>
 	</div>

@@ -1,2 +1,2 @@
-# Classic WoW Talent Calculator
-A talent calculator for Classic WoW
+# Classic WoW Talent Planner
+A talent planner for World of Warcraft Classic
