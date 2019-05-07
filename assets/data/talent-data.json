@@ -207,11 +207,11 @@
 							"currentRank": 0,
 							"position" : [5,1],
 							"rankDescription": [
-								"Increases the damage you deal with two-handed melee weapons by 1%.",
-								"Increases the damage you deal with two-handed melee weapons by 2%.",
-								"Increases the damage you deal with two-handed melee weapons by 3%.",
-								"Increases the damage you deal with two-handed melee weapons by 4%.",
-								"Increases the damage you deal with two-handed melee weapons by 5%."
+								"Increases your chance to get a critical strike with Axes by 1%.",
+								"Increases your chance to get a critical strike with Axes by 2%.",
+								"Increases your chance to get a critical strike with Axes by 3%.",
+								"Increases your chance to get a critical strike with Axes by 4%.",
+								"Increases your chance to get a critical strike with Axes by 5%."
 							],
 							"enabled": false,
 							"requirements": {
@@ -1914,7 +1914,7 @@
 							"position" : [7,2],
 							"enabled": false,
 							"requirements": {
-								"specPoints": 25,
+								"specPoints": 30,
 								"skill": {
 									"id": 12,
 									"skillPoints": 1
@@ -2696,7 +2696,7 @@
 						{ 
 							"id": 0,
 							"name": "Improved Gouge",
-							"maxRank": 5,
+							"maxRank": 3,
 							"currentRank": 0,
 							"rankDescription": [
 								"Increases the effect duration of your Gouge ability by 0.5 sec.",
@@ -3825,10 +3825,10 @@
 							"currentRank": 0,
 							"rankDescription": [
 								"Gives you a 20% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec.",
-								"Gives you a 20% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec.",
-								"Gives you a 20% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec.",
-								"Gives you a 20% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec.",
-								"Gives you a 20% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec."
+								"Gives you a 40% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec.",
+								"Gives you a 60% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec.",
+								"Gives you a 80% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec.",
+								"Gives you a 100% chance to gain a 100% bonus to your Spirit after killing a target that yields experience. For the duration, your Mana will regenerate at a 50% rate while casting. Lasts 15 sec."
 							],
 							"position" : [1,2],
 							"enabled": true
@@ -3904,8 +3904,7 @@
 							"currentRank": 0,
 							"rankDescription": [
 								"Reduces the cooldown of your Psychic Scream spell by 2 sec.",
-								"Reduces the cooldown of your Psychic Scream spell by 4 sec.",
-								"Reduces the cooldown of your Psychic Scream spell by 2 sec."
+								"Reduces the cooldown of your Psychic Scream spell by 4 sec."
 							],
 							"position" : [3,1],
 							"enabled": false,
@@ -4604,7 +4603,7 @@
 							"position" : [7,2],
 							"enabled": false,
 							"requirements": {
-								"specPoints": 25,
+								"specPoints": 30,
 								"skill": {
 									"id": 12,
 									"skillPoints": 3
@@ -5052,7 +5051,7 @@
 						{ 
 							"id": 11, 
 							"name": "Arcane Meditation", 
-							"maxRank": 5, 
+							"maxRank": 3,
 							"currentRank": 0,
 							"rankDescription": [
 								"Allows 5% of your Mana regeneration to continue while casting.",
@@ -5135,7 +5134,7 @@
 								"specPoints": 30,
 								"skill": {
 									"id": 14,
-									"skillPoints": 1
+									"skillPoints": 3
 								}
 							}
 						}
