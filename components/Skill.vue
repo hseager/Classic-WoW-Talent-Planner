@@ -53,13 +53,14 @@
 		mounted(){
 			this.$root.$on('highlightSkill', (skillOnTree) => {
 				if(skillOnTree == this.skill){
-					this.isFaded = false;
+					this.showTooltip = true;
 				} else {
 					this.isFaded = true;
 				}
 			});
 			this.$root.$on('unHighlightSkills', () => {
 				this.isFaded = false;
+				this.showTooltip = false;
 			});
 		},
 		computed:{
