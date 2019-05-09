@@ -430,9 +430,9 @@
 							"maxRank": 3,
 							"currentRank": 0,
 							"rankDescription": [
+								"Regenerates 1% of your total Health over 6 sec after being the victim of a critical strike.",
 								"Regenerates 2% of your total Health over 6 sec after being the victim of a critical strike.",
-								"Regenerates 6% of your total Health over 6 sec after being the victim of a critical strike.",
-								"Regenerates 12% of your total Health over 6 sec after being the victim of a critical strike."
+								"Regenerates 3% of your total Health over 6 sec after being the victim of a critical strike."
 							],
 							"position" : [3,3],
 							"enabled": false,
