@@ -9,7 +9,8 @@
 			v-on:decreaseRequiredLevel="decreaseRequiredLevel"
 			v-on:increaseRequiredLevel="increaseRequiredLevel"
 			v-on:addToTalentPath="onAddToTalentPath"
-			v-on:removeFromTalentPath="onRemoveFromTalentPath"
+			v-on:removeSkillFromTalentPath="onRemoveSkillFromTalentPath"
+			v-on:removeTreeFromTalentPath="onRemoveTreeFromTalentPath"
 			v-bind:className="classType.name"
 			v-bind:constants="constants"
 			v-bind:availableSkillPoints="classType.availableSkillPoints"
@@ -53,17 +54,23 @@
 			onAddToTalentPath: function(treeId, skillId, skillIcon){
 				this.classType.talentPath.push({treeId, skillId, skillIcon, faded : false});
 			},
-			onRemoveFromTalentPath: function(treeId, skillId){
+			onRemoveSkillFromTalentPath: function(treeId, skillId){
 				let talentPathItemIndex = '';
-				this.classType.talentPath.forEach(function(talentPathItem, i){
+				this.classType.talentPath.forEach((talentPathItem, i) => {
 					if(talentPathItem.treeId == treeId && talentPathItem.skillId == skillId){
 						talentPathItemIndex = i;
 					}
 				});
-				console.log(talentPathItemIndex);
 				if(typeof talentPathItemIndex == 'number'){
 					this.classType.talentPath.splice(talentPathItemIndex, 1);
 				}
+			},
+			onRemoveTreeFromTalentPath: function(treeId){
+				this.classType.talentPath.forEach((talentPathItem, i) => {
+					if(talentPathItem.treeId == treeId){
+						this.classType.talentPath.splice(i, 1);
+					}
+				});
 			},
 			checkMaxLevel: function(){
 				if(this.classType.requiredLevel == 60){

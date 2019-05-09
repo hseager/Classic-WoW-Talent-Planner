@@ -77,13 +77,13 @@
 					this.$emit('increaseAvailableSkillPoints', this.tree.skillPoints);
 					this.$emit('decreaseRequiredLevel', this.tree.skillPoints);
 					this.tree.skillPoints = 0;
+					this.tree.currentSkillTier = 0;
 					this.tree.skills.forEach((skill) => {
 						skill.currentRank = 0;
 						if(skill.requirements){
 							skill.enabled = false;
 						}
-
-						this.$emit('removeFromTalentPath', this.tree.id, skill.id);
+						this.$emit('removeTreeFromTalentPath', this.tree.id);
 					});
 				}
 			}

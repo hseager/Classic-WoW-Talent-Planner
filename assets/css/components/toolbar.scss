@@ -1,49 +1,23 @@
 .talent-toolbar{
-	padding: 15px;
-	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+}
+
+.talent-info{
+	margin: 0 0 30px;
 	border: 1px solid #6b6b6c;
 	border-radius: 5px;
 	border-top-color: #c7c9cb;
 	border-bottom-color: #46474a;
-}
-
-.talent-info{
-	margin: 0 0 20px;
+	padding: 15px;
 }
 
 .talent-info-stat{
-	font-size: 13px;
+	font-size: 15px;
+	display: inline;
+	margin:0 20px 0 0;
 }
 
 .talent-info-stat:last-child{
 	margin: 0;
-}
-
-.talent-actions .button{
-	margin: 0 0 0 10px;
-}
-
-.talent-actions .button:first-child{
-	margin: 0;
-}
-
-@media only screen and (min-width: 640px) {
-	.talent-toolbar{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	
-	.talent-info{
-		margin: 0;
-	}
-}
-
-@media only screen and (min-width: 1200px) {
-	.talent-info-stat{
-		font-size: 15px;
-	}
-	.talent-actions .button{
-		margin: 0 0 0 20px;
-	}
 }

@@ -13,23 +13,22 @@
 					v-bind:currentClass="data.currentClass"
 				></class-list>
 			</ul>
-			<class-panel
-				v-bind:class-type="data.classes[data.currentClass]"
-				v-bind:constants="data.constants"
-			></class-panel>
 			<div class="talent-toolbar">
 				<div class="talent-info">
 					<p class="talent-info-stat">Skill points: {{data.classes[data.currentClass].availableSkillPoints}}</p>
 					<p class="talent-info-stat">Required level: {{data.classes[data.currentClass].requiredLevel}}</p>
 				</div>
-				<div class="talent-actions">
-					<button class="button" v-on:click="saveTalentTrees">Save</button>
-					<button class="button" v-on:click="resetTalentTrees">Reset</button>
-				</div>
 			</div>
+			<class-panel
+				v-bind:class-type="data.classes[data.currentClass]"
+				v-bind:constants="data.constants"
+			></class-panel>
 			<talent-path
 				v-bind:currentClass="data.classes[data.currentClass]"
 			></talent-path>
+			<div class="talent-actions">
+				<button class="button" v-on:click="saveTalentTrees">Save</button>
+			</div>
 		</main>
 		<footer>
 			<ul>
@@ -62,21 +61,6 @@
 			}
 		},
 		methods: {
-			resetTalentTrees: function(){
-				let currentClass = this.data.classes[this.data.currentClass];
-				currentClass.availableSkillPoints = 51;
-				currentClass.requiredLevel = 0;
-				currentClass.talentTrees.forEach(tree => {
-					tree.skillPoints = 0;
-					tree.skills.forEach(skill => {
-						skill.currentRank = 0;
-						if(skill.requirements){
-							skill.enabled = false;
-						}
-					});
-				});
-				currentClass.talentPath = [];
-			},
 			saveTalentTrees: function(){
 				window.localStorage.setItem('talent-data', JSON.stringify(this.data));
 			},
