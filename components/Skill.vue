@@ -144,8 +144,8 @@
 			onDecreaseSkillRank: function(){
 				if(this.isValidDecrease){
 					this.skill.currentRank--;
-					this.$parent.$emit('increaseAvailableSkillPoints');
-					this.$parent.$emit('decreaseRequiredLevel');
+					this.$parent.$emit('increaseAvailableSkillPoints', 1);
+					this.$parent.$emit('decreaseRequiredLevel', 1);
 					this.$parent.$emit('removeFromTalentPath', this.tree.id, this.skill.id);
 					this.$emit('decreaseTreeSkillPoints');
 					this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);

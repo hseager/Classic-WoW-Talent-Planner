@@ -32,8 +32,8 @@
 			decreaseAvailableSkillPoints: function(){
 				this.classType.availableSkillPoints--;
 			},
-			increaseAvailableSkillPoints: function(){
-				this.classType.availableSkillPoints++;
+			increaseAvailableSkillPoints: function(points){
+				this.classType.availableSkillPoints = this.classType.availableSkillPoints + points;
 			},
 			increaseRequiredLevel: function(){
 				if(this.classType.requiredLevel == 0)
@@ -43,12 +43,11 @@
 
 				this.checkMaxLevel();
 			},
-			decreaseRequiredLevel: function(){
-				if(this.classType.requiredLevel == 10)
+			decreaseRequiredLevel: function(points){
+				this.classType.requiredLevel = this.classType.requiredLevel - points;
+				if(this.classType.requiredLevel < 10)
 					this.classType.requiredLevel = 0;
-				else
-					this.classType.requiredLevel--;
-
+					
 				this.checkMaxLevel();
 			},
 			onAddToTalentPath: function(treeId, skillId, skillIcon){
@@ -61,7 +60,10 @@
 						talentPathItemIndex = i;
 					}
 				});
-				this.classType.talentPath.splice(talentPathItemIndex, 1);
+				console.log(talentPathItemIndex);
+				if(typeof talentPathItemIndex == 'number'){
+					this.classType.talentPath.splice(talentPathItemIndex, 1);
+				}
 			},
 			checkMaxLevel: function(){
 				if(this.classType.requiredLevel == 60){

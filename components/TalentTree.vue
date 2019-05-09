@@ -17,6 +17,7 @@
 				v-on:decreaseCurrentSkillTier="onDecreaseCurrentSkillTier">
 			</skill>
 		</div>
+		<span class="talent-tree-reset" v-on:click="resetTalentTree">Reset</span>
 	</div>
 </template>
 <script>
@@ -70,6 +71,21 @@
 					}
 				});
 				return tierSkillPoints;
+			},
+			resetTalentTree: function(){
+				if(this.tree.skillPoints > 0){
+					this.$emit('increaseAvailableSkillPoints', this.tree.skillPoints);
+					this.$emit('decreaseRequiredLevel', this.tree.skillPoints);
+					this.tree.skillPoints = 0;
+					this.tree.skills.forEach((skill) => {
+						skill.currentRank = 0;
+						if(skill.requirements){
+							skill.enabled = false;
+						}
+
+						this.$emit('removeFromTalentPath', this.tree.id, skill.id);
+					});
+				}
 			}
 		}
 	}

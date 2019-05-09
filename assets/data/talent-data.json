@@ -772,7 +772,6 @@
 							"position" : [3,2],
 							"enabled": false, 
  							"faded": false, 
- 							"faded": false,
 							"requirements": {
 								"specPoints": 10,
 								"skill": {
