@@ -2,7 +2,7 @@
 	<div :class="['skill', 
 		{ 'is-enabled': skill.enabled }, 
 		{ 'is-max-rank': skill.currentRank == skill.maxRank }, 
-		{ 'is-faded': isFaded },
+		{ 'is-faded': skill.faded },
 		skillRequirementArrow]" 
 		:style="getGridPosition"
 		ref="skill">
@@ -29,7 +29,7 @@
 <script>
 	import tooltip from './Tooltip';
 	export default {
-		name: 'talent-tree',
+		name: 'skill',
 		props: {
 			constants: Object,
 			skill: Object,
@@ -44,7 +44,6 @@
 				tooltipPosition: {
 					'left': '100%',
 				},
-				isFaded: false,
 			}
 		},
 		components: {
@@ -55,11 +54,19 @@
 				if(skillOnTree == this.skill){
 					this.showTooltip = true;
 				} else {
-					this.isFaded = true;
+					this.skill.faded = true;
 				}
 			});
 			this.$root.$on('unHighlightSkills', () => {
-				this.isFaded = false;
+				if(this.availableSkillPoints == 0){
+					if(this.skill.currentRank == 0){
+						this.skill.faded = true;
+					} else {
+						this.skill.faded = false;
+					}
+				} else {
+					this.skill.faded = false;
+				}
 				this.showTooltip = false;
 			});
 		},

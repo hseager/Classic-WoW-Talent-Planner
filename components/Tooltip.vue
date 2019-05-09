@@ -1,5 +1,5 @@
 <template>
-	<div v-if="showTooltip" :class="['tooltip']" :style="tooltipPosition">
+	<div v-if="showTooltip && !skill.faded" :class="['tooltip']" :style="tooltipPosition">
 		<h3 class="tooltip-skill-name">{{skill.name}}</h3>
 		<p class="tooltip-rank-description">{{skill.rankDescription[skill.currentRank-1]}}</p>
 		<div v-if="this.skill.requirements && !this.skill.enabled">

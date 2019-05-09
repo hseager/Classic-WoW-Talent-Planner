@@ -1,5 +1,5 @@
 <template>
-	<div class="talent-trees">
+	<div :class="['talent-trees', { 'is-max-level' : this.classType.requiredLevel == 60 }]">
 		<talent-tree
 			v-for="tree in classType.talentTrees"
 			v-bind:tree="tree"
@@ -40,15 +40,19 @@
 					this.classType.requiredLevel = 10;
 				else
 					this.classType.requiredLevel++;
+
+				this.checkMaxLevel();
 			},
 			decreaseRequiredLevel: function(){
 				if(this.classType.requiredLevel == 10)
 					this.classType.requiredLevel = 0;
 				else
 					this.classType.requiredLevel--;
+
+				this.checkMaxLevel();
 			},
 			onAddToTalentPath: function(treeId, skillId, skillIcon){
-				this.classType.talentPath.push({treeId, skillId, skillIcon, isFaded : false});
+				this.classType.talentPath.push({treeId, skillId, skillIcon, faded : false});
 			},
 			onRemoveFromTalentPath: function(treeId, skillId){
 				let talentPathItemIndex = '';
@@ -58,6 +62,23 @@
 					}
 				});
 				this.classType.talentPath.splice(talentPathItemIndex, 1);
+			},
+			checkMaxLevel: function(){
+				if(this.classType.requiredLevel == 60){
+					this.classType.talentTrees.forEach(tree => {
+						tree.skills.forEach(skill => {
+							if(skill.currentRank == 0){
+								skill.faded = true;
+							}
+						});
+					});
+				} else if(this.classType.requiredLevel == 59){
+					this.classType.talentTrees.forEach(tree => {
+						tree.skills.forEach(skill => {
+							skill.faded = false;
+						});
+					});
+				}
 			}
 		},
 	}

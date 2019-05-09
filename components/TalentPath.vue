@@ -1,7 +1,7 @@
 <template>
 	<div class="talent-path">
 		<div :class="['talent-path-skill',
-			{ 'is-faded': talent.isFaded }]"
+			{ 'is-faded': talent.faded }]"
 			v-for="(talent, index) in currentClass.talentPath" :key="index"
 			v-on:mouseenter.prevent="onTalentPathItemMouseEnter(talent);"
 			v-on:mouseleave.prevent="onTalentPathItemMouseLeave">
@@ -30,13 +30,13 @@
 				});
 				this.$root.$emit('highlightSkill', skillOnTree);
 				this.currentClass.talentPath.forEach(function(talentPathItem){
-					talentPathItem.isFaded = true;
+					talentPathItem.faded = true;
 				});
-				talent.isFaded = false;
+				talent.faded = false;
 			},
 			onTalentPathItemMouseLeave(){
 				this.currentClass.talentPath.forEach(function(talentPathItem){
-					talentPathItem.isFaded = false;
+					talentPathItem.faded = false;
 				});
 				this.$root.$emit('unHighlightSkills');
 			}
