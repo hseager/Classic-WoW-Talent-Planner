@@ -4020,7 +4020,7 @@
 							"maxRank": 1,
 							"currentRank": 0,
 							"rankDescription": [
-								"Creates a holy Lightwell near the priest. Members of your raid or party can click the Lightwell to restore 800 health over 10 sec. Being attacked cancels the effect. Lightwell lasts for 0 sec or 5 charges."
+								"Creates a holy Lightwell near the priest. Members of your raid or party can click the Lightwell to restore 800 health over 10 sec. Being attacked cancels the effect. Lightwell lasts for 3 min or 5 charges."
 							],
 							"position" : [7,2],
 							"enabled": false, 
