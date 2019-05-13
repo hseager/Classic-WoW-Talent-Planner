@@ -7753,8 +7753,11 @@
 							"currentRank": 0,
 							"position" : [6,3],
 							"rankDescription": [
-								"Reduces threat caused by Tranquility by 50%.",
-								"Reduces threat caused by Tranquility by 100%."
+								"Increases the critical effect chance of your Regrowth spell by 10%.",
+								"Increases the critical effect chance of your Regrowth spell by 20%.",
+								"Increases the critical effect chance of your Regrowth spell by 30%.",
+								"Increases the critical effect chance of your Regrowth spell by 40%.",
+								"Increases the critical effect chance of your Regrowth spell by 50%."
 							],
 							"enabled": false, 
  							"faded": false,
