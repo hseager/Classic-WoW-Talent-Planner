@@ -12,12 +12,14 @@
 			v-on:mouseenter.prevent="onShowTooltip"
 			v-on:mouseleave.prevent="onHideTooltip">
 			<img v-bind:src="skillIcon" class="skill-icon-image">
+			<button v-if="showTooltip && isMobile() && isValidDecrease" v-on:click.stop="onDecreaseSkillRank" class="skill-mobile-button skill-mobile-button-decrease">-</button>
+			<button v-if="showTooltip && isMobile() && isValidDecrease" v-on:click.stop="onIncreaseSkillRank" class="skill-mobile-button skill-mobile-button-increase">+</button>
 		</div>
 		<span class="skill-rank"
 			v-on:click.prevent="onIncreaseSkillRank"
 			v-on:contextmenu.prevent="onDecreaseSkillRank"
-			v-on:mouseenter="onShowTooltip"
-			v-on:mouseleave="onHideTooltip">{{skill.currentRank}}/{{skill.maxRank}}</span>
+			v-on:mouseenter.prevent="onShowTooltip"
+			v-on:mouseleave.prevent="onHideTooltip">{{skill.currentRank}}/{{skill.maxRank}}</span>
 		<tooltip
 			v-bind:skill="skill"
 			v-bind:showTooltip="showTooltip"
@@ -150,6 +152,10 @@
 					this.$emit('decreaseTreeSkillPoints');
 					this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);
 					this.checkSkillRequirements();
+
+					if(this.skill.currentRank == 0 && this.isMobile()){
+						this.showTooltip = false;
+					}
 				}
 			},
 			checkSkillRequirements: function(){

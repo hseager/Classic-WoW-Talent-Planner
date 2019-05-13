@@ -11,7 +11,6 @@
 		</div>
 		<p class="tooltip-rank-description" v-html="skill.rankDescription[skill.currentRank]"></p>
 		<div v-if="isValidDecrease">
-			<p v-if="isMobile()" class="tooltip-mobile-message">Tap &amp; hold talent to remove</p>
 			<p v-if="!isMobile()" class="tooltip-mobile-message">Right click talent to remove</p>
 		</div>
 	</div>

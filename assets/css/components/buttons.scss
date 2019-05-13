@@ -1,0 +1,46 @@
+.button{
+	border: 0;
+	background: #2e2458;
+	padding: 12px 35px;
+	cursor: pointer;
+	color: #efefef;
+	border-radius: 3px;
+	outline: none;
+	border: 1px solid #463684;
+	border-top: 1px solid #7262b1;
+	border-bottom: 1px solid transparent;
+}
+
+.button:hover{
+	background: #382d6b;
+}
+
+.button:active{
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid #7262b1;
+}
+
+.skill-mobile-button{
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	padding: 4px 4px;
+	width: 24px;
+	background: #030215;
+	border: 1px solid #6b6b6c;
+	border-radius: 3px;
+	border-top-color: #c7c9cb;
+	border-bottom-color: #46474a;
+	box-shadow: 0 1px 5px #000;
+	color: #efefef;
+	z-index: 2;
+	outline: none;
+}
+
+.skill-mobile-button-decrease{
+	left: -26px;
+}
+
+.skill-mobile-button-increase{
+	right: -26px;
+}
