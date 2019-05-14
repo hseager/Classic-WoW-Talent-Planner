@@ -1045,8 +1045,8 @@
 							"currentRank": 0,
 							"rankDescription": [
 								"Increases the amount healed by your Holy Light and Flash of Light spells by 4%.",
-								"Increases the amount healed by your Holy Light and Flash of Light spells by 4%.",
-								"Increases the amount healed by your Holy Light and Flash of Light spells by 4%."
+								"Increases the amount healed by your Holy Light and Flash of Light spells by 8%.",
+								"Increases the amount healed by your Holy Light and Flash of Light spells by 12%."
 							],
 							"position" : [3,1],
 							"enabled": false, 
@@ -2557,7 +2557,7 @@
 							"maxRank": 1,
 							"currentRank": 0,
 							"rankDescription": [
-								"A stinging shot that puts the target to sleep for 12 sec. Any damage will cancel the effect. When the target wakes up, the Sting causes 0 Nature damage over 12 sec. Only usable out of combat. Only one Sting per Hunter can be active on the target at a time."
+								"A stinging shot that puts the target to sleep for 12 sec. Any damage will cancel the effect. When the target wakes up, the Sting causes 300 Nature damage over 12 sec. Only usable out of combat. Only one Sting per Hunter can be active on the target at a time."
 							],
 							"position" : [7,2],
 							"enabled": false, 
@@ -2970,8 +2970,7 @@
 							"maxRank": 1,
 							"currentRank": 0,
 							"rankDescription": [
-								"A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.",
-								"Reduces the cooldown of your Sprint and Evasion abilities by 1.5 min."
+								"A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec."
 							],
 							"position" : [3,2],
 							"enabled": false, 
@@ -3362,9 +3361,9 @@
 							"maxRank": 3,
 							"currentRank": 0,
 							"rankDescription": [
-								"Causes your attacks to ignore 0 of your target's Armor and increases the damage dealt by your Rupture ability by 10%. The amount of Armor reduced increases with your level.",
-								"Causes your attacks to ignore 0 of your target's Armor and increases the damage dealt by your Rupture ability by 20%. The amount of Armor reduced increases with your level.",
-								"Causes your attacks to ignore 0 of your target's Armor and increases the damage dealt by your Rupture ability by 30%. The amount of Armor reduced increases with your level."
+								"Causes your attacks to ignore 100 of your target's Armor and increases the damage dealt by your Rupture ability by 10%. The amount of Armor reduced increases with your level.",
+								"Causes your attacks to ignore 200 of your target's Armor and increases the damage dealt by your Rupture ability by 20%. The amount of Armor reduced increases with your level.",
+								"Causes your attacks to ignore 300 of your target's Armor and increases the damage dealt by your Rupture ability by 30%. The amount of Armor reduced increases with your level."
 							],
 							"position" : [4,3],
 							"enabled": false, 
@@ -3723,10 +3722,10 @@
 							"currentRank": 0,
 							"rankDescription": [
 								"Increases your spell damage by 1% and the critical strike chance of your offensive spells by 1%.",
-								"Increases your spell damage by 1% and the critical strike chance of your offensive spells by 1%.",
-								"Increases your spell damage by 1% and the critical strike chance of your offensive spells by 1%.",
-								"Increases your spell damage by 1% and the critical strike chance of your offensive spells by 1%.",
-								"Increases your spell damage by 1% and the critical strike chance of your offensive spells by 1%."
+								"Increases your spell damage by 2% and the critical strike chance of your offensive spells by 2%.",
+								"Increases your spell damage by 3% and the critical strike chance of your offensive spells by 3%.",
+								"Increases your spell damage by 4% and the critical strike chance of your offensive spells by 4%.",
+								"Increases your spell damage by 5% and the critical strike chance of your offensive spells by 5%."
 							],
 							"position" : [6,3],
 							"enabled": false, 
@@ -4021,7 +4020,7 @@
 							"maxRank": 1,
 							"currentRank": 0,
 							"rankDescription": [
-								"Creates a holy Lightwell near the priest. Members of your raid or party can click the Lightwell to restore 0 health over 10 sec. Being attacked cancels the effect. Lightwell lasts for 0 sec or 5 charges."
+								"Creates a holy Lightwell near the priest. Members of your raid or party can click the Lightwell to restore 800 health over 10 sec. Being attacked cancels the effect. Lightwell lasts for 3 min or 5 charges."
 							],
 							"position" : [7,2],
 							"enabled": false, 
@@ -4289,10 +4288,10 @@
 							"currentRank": 0,
 							"rankDescription": [
 								"Increases your Shadow spell damage by 2%.",
-								"Increases your Shadow spell damage by 2%.",
-								"Increases your Shadow spell damage by 2%.",
-								"Increases your Shadow spell damage by 2%.",
-								"Increases your Shadow spell damage by 2%."
+								"Increases your Shadow spell damage by 4%.",
+								"Increases your Shadow spell damage by 6%.",
+								"Increases your Shadow spell damage by 8%.",
+								"Increases your Shadow spell damage by 10%."
 							],
 							"position" : [6,3],
 							"enabled": false, 
@@ -4710,7 +4709,7 @@
 							"currentRank": 0,
 							"rankDescription": [
 								"Increases the effect of your Strength of Earth and Grace of Air Totems by 8%.",
-								"Increases the effect of your Strength of Earth and Grace of Air Totems by 8%."
+								"Increases the effect of your Strength of Earth and Grace of Air Totems by 15%."
 							],
 							"position" : [3,1],
 							"enabled": false, 
@@ -7426,7 +7425,7 @@
 							"position" : [4,4],
 							"rankDescription": [
 								"Gives you a 50% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear and Dire Bear Form.",
-								"Gives you a 50% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear and Dire Bear Form."
+								"Gives you a 100% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear and Dire Bear Form."
 							],
 							"enabled": false, 
  							"faded": false,
