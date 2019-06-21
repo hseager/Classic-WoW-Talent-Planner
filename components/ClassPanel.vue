@@ -4,6 +4,10 @@
 			v-for="tree in classType.talentTrees"
 			v-bind:tree="tree"
 			v-bind:key="tree.id"
+			v-bind:className="classType.name"
+			v-bind:constants="constants"
+			v-bind:availableSkillPoints="classType.availableSkillPoints"
+			v-bind:requiredLevel="classType.requiredLevel"
 			v-on:decreaseAvailableSkillPoints="decreaseAvailableSkillPoints"
 			v-on:increaseAvailableSkillPoints="increaseAvailableSkillPoints"
 			v-on:decreaseRequiredLevel="decreaseRequiredLevel"
@@ -11,9 +15,6 @@
 			v-on:addToTalentPath="onAddToTalentPath"
 			v-on:removeSkillFromTalentPath="onRemoveSkillFromTalentPath"
 			v-on:removeTreeFromTalentPath="onRemoveTreeFromTalentPath"
-			v-bind:className="classType.name"
-			v-bind:constants="constants"
-			v-bind:availableSkillPoints="classType.availableSkillPoints"
 		></talent-tree>
 	</div>
 </template>

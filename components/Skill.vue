@@ -25,7 +25,8 @@
 			v-bind:showTooltip="showTooltip"
 			v-bind:tooltipPosition="tooltipPosition"
 			v-bind:isValidDecrease="isValidDecrease"
-			v-bind:treeName="tree.name"></tooltip>
+			v-bind:treeName="tree.name"
+			v-bind:requiredLevel="requiredLevel"></tooltip>
 	</div>
 </template>
 <script>
@@ -39,6 +40,7 @@
 			className: String,
 			currentSkillTier: Number,
 			availableSkillPoints: Number,
+			requiredLevel: Number,
 		},
 		data: function(){
 			return {

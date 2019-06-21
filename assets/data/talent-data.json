@@ -3361,9 +3361,14 @@
 							"maxRank": 3,
 							"currentRank": 0,
 							"rankDescription": [
-								"Causes your attacks to ignore 100 of your target's Armor and increases the damage dealt by your Rupture ability by 10%. The amount of Armor reduced increases with your level.",
-								"Causes your attacks to ignore 200 of your target's Armor and increases the damage dealt by your Rupture ability by 20%. The amount of Armor reduced increases with your level.",
-								"Causes your attacks to ignore 300 of your target's Armor and increases the damage dealt by your Rupture ability by 30%. The amount of Armor reduced increases with your level."
+								"Causes your attacks to ignore {value} of your target's Armor and increases the damage dealt by your Rupture ability by 10%. The amount of Armor reduced increases with your level.<br/><em>(ignores 100 Armor at level 60)</em>",
+								"Causes your attacks to ignore {value} of your target's Armor and increases the damage dealt by your Rupture ability by 20%. The amount of Armor reduced increases with your level.<br/><em>(ignores 200 Armor at level 60)</em>",
+								"Causes your attacks to ignore {value} of your target's Armor and increases the damage dealt by your Rupture ability by 30%. The amount of Armor reduced increases with your level.<br/><em>(ignores 300 Armor at level 60)</em>"
+							],
+							"rankData": [
+								1.67,
+								3.33,
+								5
 							],
 							"position" : [4,3],
 							"enabled": false, 

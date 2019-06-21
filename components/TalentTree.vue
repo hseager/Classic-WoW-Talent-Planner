@@ -11,6 +11,7 @@
 				v-bind:className="className"
 				v-bind:currentSkillTier="tree.currentSkillTier"
 				v-bind:availableSkillPoints="availableSkillPoints"
+				v-bind:requiredLevel="requiredLevel"
 				v-on:increaseTreeSkillPoints="onIncreaseTreeSkillPoints"
 				v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints"
 				v-on:increaseCurrentSkillTier="onIncreaseCurrentSkillTier"
@@ -29,6 +30,7 @@
 			tree: Object,
 			constants: Object,
 			availableSkillPoints: Number,
+			requiredLevel: Number,
 		},
 		components: {
 			skill
