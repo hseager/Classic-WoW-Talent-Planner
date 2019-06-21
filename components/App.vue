@@ -55,14 +55,15 @@
 			}
 		},
 		mounted(){
-			let localData = window.localStorage.getItem('talent-data');
+			window.localStorage.removeItem('talent-data');
+			let localData = window.localStorage.getItem('talent-data-1');
 			if(localData != null){
 				this.data = JSON.parse(localData);
 			}
 		},
 		methods: {
 			saveTalentTrees: function(){
-				window.localStorage.setItem('talent-data', JSON.stringify(this.data));
+				window.localStorage.setItem('talent-data-1', JSON.stringify(this.data));
 			},
 		}
 	}
