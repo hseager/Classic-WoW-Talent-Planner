@@ -1,11 +1,5 @@
 {
 	"currentClass": 0,
-	"constants": {
-		"imageDirectory": "images/",
-		"classIconDirectory": "class-icons/",
-		"backgroundDirectory": "backgrounds/",
-		"skillIconDirectory": "skill-icons/"
-	},
 	"classes": [
 		{
 			"id": 0, 

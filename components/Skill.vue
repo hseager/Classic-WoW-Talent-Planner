@@ -30,11 +30,12 @@
 	</div>
 </template>
 <script>
+	import { config } from './Config.js';
 	import tooltip from './Tooltip';
+	
 	export default {
 		name: 'skill',
 		props: {
-			constants: Object,
 			skill: Object,
 			tree: Object,
 			className: String,
@@ -110,8 +111,8 @@
 				}
 			},
 			skillIcon: function(){
-				return 	this.constants.imageDirectory + 
-						this.constants.skillIconDirectory + 
+				return 	config.imageDirectory + 
+						config.skillIconDirectory + 
 						this.className.toLowerCase() + '/' + 
 						this.tree.name
 							.replace(' ','-')

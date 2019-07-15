@@ -9,7 +9,6 @@
 					v-bind:classType="classType"
 					v-bind:key="classType.id"
 					v-on:change-class="data.currentClass = classType.id"
-					v-bind:constants="data.constants"
 					v-bind:currentClass="data.currentClass"
 				></class-list>
 			</ul>
@@ -21,7 +20,6 @@
 			</div>
 			<class-panel
 				v-bind:class-type="data.classes[data.currentClass]"
-				v-bind:constants="data.constants"
 			></class-panel>
 			<talent-path
 				v-bind:currentClass="data.classes[data.currentClass]"

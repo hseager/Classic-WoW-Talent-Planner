@@ -5,16 +5,16 @@
 	</li>
 </template>
 <script>
+	import { config } from './Config.js';
 	export default {
 		name: 'class-list',
 		props: {
-			constants: Object,
 			classType: Object,
 			currentClass: Number
 		},
 		data: function(){
 			return {
-				classIconImage: this.constants.imageDirectory + this.constants.classIconDirectory + 'icon-' + this.classType.name.toLowerCase() + '.jpg',
+				classIconImage: config.imageDirectory + config.classIconDirectory + 'icon-' + this.classType.name.toLowerCase() + '.jpg',
 			}
 		},
 		methods: {

@@ -6,7 +6,6 @@
 				v-for="skill in tree.skills"
 				v-bind:skill="skill"
 				v-bind:key="skill.id"
-				v-bind:constants="constants"
 				v-bind:tree="tree"
 				v-bind:className="className"
 				v-bind:currentSkillTier="tree.currentSkillTier"
@@ -22,13 +21,14 @@
 	</div>
 </template>
 <script>
+	import { config } from './Config.js';
 	import skill from './Skill';
+
 	export default {
 		name: 'talent-tree',
 		props: {
 			className: String,
 			tree: Object,
-			constants: Object,
 			availableSkillPoints: Number,
 			requiredLevel: Number,
 		},
@@ -37,8 +37,8 @@
 		},
 		computed: {
 			getTreeBackgroundImage: function(){
-				let backgroundImageUrl = 	this.constants.imageDirectory + 
-											this.constants.backgroundDirectory + 'background-' + 
+				let backgroundImageUrl = 	config.imageDirectory + 
+											config.backgroundDirectory + 'background-' + 
 											this.className.toLowerCase() + '-' + 
 											this.getImageFileName(this.tree.name);
 				return {

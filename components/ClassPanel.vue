@@ -5,7 +5,6 @@
 			v-bind:tree="tree"
 			v-bind:key="tree.id"
 			v-bind:className="classType.name"
-			v-bind:constants="constants"
 			v-bind:availableSkillPoints="classType.availableSkillPoints"
 			v-bind:requiredLevel="classType.requiredLevel"
 			v-on:decreaseAvailableSkillPoints="decreaseAvailableSkillPoints"
@@ -25,7 +24,6 @@
 		name: 'class-panel',
 		props: {
 			classType: Object,
-			constants: Object,
 		},
 		components: {
 			talentTree
