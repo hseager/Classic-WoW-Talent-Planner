@@ -10,12 +10,9 @@
 	cursor:pointer;
 	width: 54px;
 	height: 54px;
-	border: 2px solid #6b6b6c;
-	border-radius: 5px;
-	border-top-color: #c7c9cb;
-	border-bottom-color: #46474a;
 	opacity: 0.85;
 	vertical-align: top;
+	@include wow-border;
 }
 .class-list li img{ 
 	display: block;

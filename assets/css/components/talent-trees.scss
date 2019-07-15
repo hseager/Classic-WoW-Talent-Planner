@@ -13,10 +13,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 75px);
 	grid-template-rows: repeat(7, 1fr);
-	border: 1px solid #6b6b6c;
-	border-radius: 5px;
-	border-top-color: #c7c9cb;
-	border-bottom-color: #46474a;
+	@include wow-border;
 }
 .talent-tree-title{ 
 	text-align:center;

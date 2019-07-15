@@ -5,11 +5,8 @@
 
 .talent-info{
 	margin: 0 0 30px;
-	border: 1px solid #6b6b6c;
-	border-radius: 5px;
-	border-top-color: #c7c9cb;
-	border-bottom-color: #46474a;
 	padding: 15px;
+	@include wow-thin-border;
 }
 
 .talent-info-stat{

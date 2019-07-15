@@ -6,10 +6,6 @@
 	background: rgba(11, 21, 41, 0.9);
 	width: 340px;
 	z-index: 2;
-	border: 2px solid #6b6b6c;
-	border-radius: 5px;
-	border-top-color: #c7c9cb;
-	border-bottom-color: #46474a;
 	color: #efefef;
 	font-size: 14px;
 	line-height: 20px;
@@ -17,7 +13,8 @@
 	pointer-events: none;
 	-moz-user-select: none;
     -ms-user-select: none;
-    -webkit-user-select: none;
+	-webkit-user-select: none;
+	@include wow-border;
 }
 .tooltip-skill-name{
 	font-size: 18px;
