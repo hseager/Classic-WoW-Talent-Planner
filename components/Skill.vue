@@ -41,14 +41,14 @@
 			className: String,
 			currentSkillTier: Number,
 			availableSkillPoints: Number,
-			requiredLevel: Number,
+			requiredLevel: Number
 		},
 		data: function(){
 			return {
 				showTooltip: false,
 				tooltipPosition: {
 					'left': '100%',
-				},
+				}
 			}
 		},
 		components: {
@@ -130,7 +130,7 @@
 					return true;
 				else 
 					return false;
-			},
+			}
 		},
 		methods: {
 			onIncreaseSkillRank: function(){

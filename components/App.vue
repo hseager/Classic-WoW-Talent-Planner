@@ -8,8 +8,8 @@
 					v-for="classType in data.classes"
 					v-bind:classType="classType"
 					v-bind:key="classType.id"
-					v-on:change-class="data.currentClass = classType.id"
 					v-bind:currentClass="data.currentClass"
+					v-on:change-class="data.currentClass = classType.id"
 				></class-list>
 			</ul>
 			<div class="talent-toolbar">
@@ -53,7 +53,6 @@
 			}
 		},
 		mounted(){
-			window.localStorage.removeItem('talent-data');
 			let localData = window.localStorage.getItem('talent-data-1');
 			if(localData != null){
 				this.data = JSON.parse(localData);
@@ -62,7 +61,7 @@
 		methods: {
 			saveTalentTrees: function(){
 				window.localStorage.setItem('talent-data-1', JSON.stringify(this.data));
-			},
+			}
 		}
 	}
 </script>

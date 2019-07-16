@@ -32,17 +32,17 @@
 			},
 			requiredSkillName: function(){
 				return this.$parent.getSkill(this.skill.requirements.skill.id).name;
-			},
+			}
 		},
 		methods: {
 			getSkillDescription: function(rank){
 				if(this.skill.name == "Serrated Blades"){
-					return this.calculateSerratedBladesData(rank);
+					return this.calculateSerratedBladesValues(rank);
 				} else {
 					return this.skill.rankDescription[rank];
 				}
 			},
-			calculateSerratedBladesData: function(rank){
+			calculateSerratedBladesValues: function(rank){
 				let armorTimesValue = this.skill.rankData[rank];
 				let armorValue = Math.ceil(armorTimesValue * (this.requiredLevel == 0 ? 10 : this.requiredLevel));
 				if(this.skill.rankDescription[rank])

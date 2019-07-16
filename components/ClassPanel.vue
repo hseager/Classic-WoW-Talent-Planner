@@ -7,10 +7,10 @@
 			v-bind:className="classType.name"
 			v-bind:availableSkillPoints="classType.availableSkillPoints"
 			v-bind:requiredLevel="classType.requiredLevel"
-			v-on:decreaseAvailableSkillPoints="decreaseAvailableSkillPoints"
-			v-on:increaseAvailableSkillPoints="increaseAvailableSkillPoints"
-			v-on:decreaseRequiredLevel="decreaseRequiredLevel"
-			v-on:increaseRequiredLevel="increaseRequiredLevel"
+			v-on:decreaseAvailableSkillPoints="onDecreaseAvailableSkillPoints"
+			v-on:increaseAvailableSkillPoints="onIncreaseAvailableSkillPoints"
+			v-on:decreaseRequiredLevel="onDecreaseRequiredLevel"
+			v-on:increaseRequiredLevel="onIncreaseRequiredLevel"
 			v-on:addToTalentPath="onAddToTalentPath"
 			v-on:removeSkillFromTalentPath="onRemoveSkillFromTalentPath"
 			v-on:removeTreeFromTalentPath="onRemoveTreeFromTalentPath"
@@ -29,13 +29,13 @@
 			talentTree
 		},
 		methods: {
-			decreaseAvailableSkillPoints: function(){
+			onDecreaseAvailableSkillPoints: function(){
 				this.classType.availableSkillPoints--;
 			},
-			increaseAvailableSkillPoints: function(points){
+			onIncreaseAvailableSkillPoints: function(points){
 				this.classType.availableSkillPoints = this.classType.availableSkillPoints + points;
 			},
-			increaseRequiredLevel: function(){
+			onIncreaseRequiredLevel: function(){
 				if(this.classType.requiredLevel == 0)
 					this.classType.requiredLevel = 10;
 				else
@@ -43,7 +43,7 @@
 
 				this.checkMaxLevel();
 			},
-			decreaseRequiredLevel: function(points){
+			onDecreaseRequiredLevel: function(points){
 				this.classType.requiredLevel = this.classType.requiredLevel - points;
 				if(this.classType.requiredLevel < 10)
 					this.classType.requiredLevel = 0;
