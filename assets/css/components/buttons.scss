@@ -2,6 +2,7 @@
 	border: 0;
 	background: #2e2458;
 	padding: 12px 35px;
+	margin: 0 5px;
 	cursor: pointer;
 	color: #efefef;
 	border-radius: 3px;
@@ -43,4 +44,9 @@
 
 .skill-mobile-button-increase{
 	right: -26px;
+
+}
+.button i{
+	vertical-align: middle;
+	font-size: 18px;
 }

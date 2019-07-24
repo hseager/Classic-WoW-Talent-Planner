@@ -18,15 +18,16 @@
 				v-on:decreaseCurrentSkillTier="onDecreaseCurrentSkillTier">
 			</skill>
 		</div>
-		<span class="talent-tree-reset" v-on:click="resetTalentTree">Reset</span>
+		<span class="talent-tree-reset" v-on:click="resetTalentTree">Reimposta</span>
 	</div>
 </template>
 <script>
 	import skill from './Skill';
+
 	export default {
 		name: 'talent-tree',
 		props: {
-			className: String,
+			className: String,			
 			tree: Object,
 			constants: Object,
 			availableSkillPoints: Number,
@@ -61,17 +62,17 @@
 					this.tree.currentSkillTier = tier;
 			},
 			onDecreaseCurrentSkillTier: function(tier){
-				let totalTierSkillPoints = this.getTotalTierSkillPoints(tier);
+				let totalTierSkillPoints = this.getTotalTierSkillPoints(tier);			
 				if(totalTierSkillPoints == 0)
 					this.tree.currentSkillTier = tier - 1;
 			},
 			getTotalTierSkillPoints: function(tier){
-				let tierSkillPoints = 0;
+				let tierSkillPoints = 0;					
 				this.tree.skills.forEach((skill) => {
 					if(skill.position[0] == tier){
 						tierSkillPoints = tierSkillPoints + skill.currentRank;
 					}
-				});
+				});		
 				return tierSkillPoints;
 			},
 			resetTalentTree: function(){

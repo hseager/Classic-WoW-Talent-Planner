@@ -3,15 +3,15 @@
 		<h3 class="tooltip-skill-name">{{skill.name}}</h3>
 		<p class="tooltip-rank-description" v-html="getSkillDescription(skill.currentRank - 1)"></p>
 		<div v-if="this.skill.requirements && !this.skill.enabled">
-			<p class="tooltip-requirement" v-if="skill.requirements.skill">Requires {{skill.requirements.skill.skillPoints}} points in {{ requiredSkillName }} </p>
-			<p class="tooltip-requirement" v-if="skill.requirements.specPoints">Requires {{skill.requirements.specPoints}} points in {{treeName}} talents</p>
+			<p class="tooltip-requirement" v-if="skill.requirements.skill">Richiede {{skill.requirements.skill.skillPoints}} punti in {{ requiredSkillName }} </p>
+			<p class="tooltip-requirement" v-if="skill.requirements.specPoints">Richiede {{skill.requirements.specPoints}} punti spesi nel ramo {{treeName}} </p>
 		</div>
 		<div v-if="hasNextRank">
-			<p class="tooltip-next-rank">Next rank:</p>
+			<p class="tooltip-next-rank">Rango successivo:</p>
 		</div>
 		<p class="tooltip-rank-description" v-html="getSkillDescription(skill.currentRank)"></p>
 		<div v-if="isValidDecrease">
-			<p v-if="!isMobile()" class="tooltip-mobile-message">Right click talent to remove</p>
+			<p v-if="!isMobile()" class="tooltip-mobile-message">Clic destro per rimuovere il talento</p>
 		</div>
 	</div>
 </template>

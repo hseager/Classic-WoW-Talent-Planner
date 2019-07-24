@@ -1,25 +1,77 @@
 {
-  "name": "wow-talent-planner",
-  "version": "1.0.0",
-  "description": "A talent planner for Classic WoW",
-  "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hseager/Classic-WoW-Talent-Planner.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hseager/Classic-WoW-Talent-Planner/issues"
-  },
-  "homepage": "https://github.com/hseager/Classic-WoW-Talent-Planner#readme",
-  "devDependencies": {
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0"
-  },
-  "dependencies": {}
+    "name": "wow-classic-talent-calculator",
+    "version": "1.0.0",
+    "description": "A talent Calculator for World of Warcraft Classic",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iamadagostino/wow-classic-talent-calculator.git"
+    },
+    "keywords": [
+        "wow",
+        "classic",
+        "talent",
+        "calculator"
+    ],
+    "author": "Angelo D'Agostino",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/iamadagostino/wow-classic-talent-calculator/issues"
+    },
+    "homepage": "https://github.com/iamadagostino/wow-classic-talent-calculator#readme",
+    "dependencies": {
+        "babel-preset-env": "^1.7.0",
+        "core-js": "^2.6.5",
+        "eslint-config-airbnb": "^17.1.1",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.14.2",
+        "flatted": "^2.0.1",
+        "js-base64": "^2.5.1",
+        "jsonpack": "^1.1.5",
+        "material-icons": "^0.3.1",
+        "vue": "^2.6.10",
+        "vue-textarea-autosize": "^1.0.4",
+        "vuesax": "^3.9.0",
+        "webpack": "^4.36.1"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^3.9.2",
+        "@vue/cli-plugin-eslint": "^3.9.2",
+        "@vue/cli-service": "^3.9.3",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "node-sass": "^4.12.0",
+        "sass-loader": "^7.1.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "rules": {},
+        "parserOptions": {
+            "parser": "babel-eslint"
+        }
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
 }

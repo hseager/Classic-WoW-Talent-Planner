@@ -53,7 +53,7 @@
 		components: {
 			tooltip,
 		},
-		mounted(){
+		mounted: function(){
 			this.$root.$on('highlightSkill', (skillOnTree) => {
 				if(skillOnTree == this.skill){
 					this.showTooltip = true;
