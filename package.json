@@ -30,7 +30,7 @@
         "eslint-config-airbnb": "^17.1.1",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-jsx-a11y": "^6.2.3",
-        "eslint-plugin-react": "^7.14.2",
+        "eslint-plugin-react": "^7.14.3",
         "flatted": "^2.0.1",
         "js-base64": "^2.5.1",
         "jsonpack": "^1.1.5",
@@ -38,7 +38,7 @@
         "vue": "^2.6.10",
         "vue-textarea-autosize": "^1.0.4",
         "vuesax": "^3.9.0",
-        "webpack": "^4.36.1"
+        "webpack": "^4.38.0"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^3.9.2",
