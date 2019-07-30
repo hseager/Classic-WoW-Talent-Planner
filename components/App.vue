@@ -89,6 +89,7 @@
 			}		
 		},
 		mounted: function() {
+			document.domain = window.location.hostname;
 			window.localStorage.removeItem('talentsDataImported');
 			let localDataSaved = window.localStorage.getItem('talentsDataSaved');
 			if (localDataSaved != null){
