@@ -1,14 +1,16 @@
-.talent-trees{ 
+.talent-trees {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
-.talent-tree-panel{
+
+.talent-tree-panel {
 	max-width: 350px;
 	margin: 0 0 20px;
 	text-align: center;
 }
-.talent-tree{ 
+
+.talent-tree {
 	padding: 5px;
 	display: grid;
 	grid-template-columns: repeat(4, 75px);
@@ -18,8 +20,9 @@
 	border-top-color: #c7c9cb;
 	border-bottom-color: #46474a;
 }
-.talent-tree-title{ 
-	text-align:center;
+
+.talent-tree-title {
+	text-align: center;
 	font-size: 18px;
 	padding: 10px 20px;
 	display: inline-block;
@@ -29,10 +32,12 @@
 	border-top-right-radius: 5px;
 	border-bottom: 0;
 }
-.talent-tree-points{
+
+.talent-tree-points {
 	font-size: 15px;
 }
-.talent-tree-reset{
+
+.talent-tree-reset {
 	text-align: center;
 	color: #d4d4d4;
 	padding: 6px 15px;
@@ -45,20 +50,23 @@
 	border-bottom-right-radius: 5px;
 	border-top: 0;
 }
-.talent-tree-reset:hover{
+
+.talent-tree-reset:hover {
 	color: #efefef;
 }
 
 @media only screen and (min-width: 640px) {
-	.talent-tree-panel{
+	.talent-tree-panel {
 		margin: 0 5px 20px;
 	}
 }
+
 @media only screen and (min-width: 1200px) {
-	.talent-trees{ 
+	.talent-trees {
 		justify-content: space-between;
 	}
-	.talent-tree{
+
+	.talent-tree {
 		padding: 10px;
 	}
 }

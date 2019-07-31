@@ -1,29 +1,37 @@
-body{ 
-	background:url(../../public/images/backgrounds/main-background.jpg) no-repeat;
+body {
+	background: url(../../public/images/backgrounds/main-background.jpg) no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	//font-family:'Helvetica', 'Verdana'; 
 	font-family: 'Laila', serif;
 	color: #efefef;
 	font-size: 13px;
-	margin:0 10px;
+	margin: 0 10px;
 }
-main{ 
+
+main {
 	max-width: 1200px;
 	margin: 20px auto;
 	padding: 10px 15px 20px;
 	background: rgba(0, 0, 8, 0.8);
 	border-radius: 10px;
 }
-h1,h2,h3,h4,h5,h6{ 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: normal;
 }
-p{
-	margin:0 0 10px;
+
+p {
+	margin: 0 0 10px;
 }
 
 @media only screen and (min-width: 1200px) {
-	main{
+	main {
 		padding: 40px;
 	}
 }

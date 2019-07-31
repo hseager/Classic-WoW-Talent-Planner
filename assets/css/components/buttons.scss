@@ -1,8 +1,8 @@
-.button{
+.button {
 	border: 0;
 	background: #2e2458;
 	padding: 12px 35px;
-	margin: 0 5px;
+	margin: 5px;
 	cursor: pointer;
 	color: #efefef;
 	border-radius: 3px;
@@ -12,16 +12,16 @@
 	border-bottom: 1px solid transparent;
 }
 
-.button:hover{
+.button:hover {
 	background: #382d6b;
 }
 
-.button:active{
+.button:active {
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid #7262b1;
 }
 
-.skill-mobile-button{
+.skill-mobile-button {
 	position: absolute;
 	top: 50%;
 	margin-top: -12px;
@@ -38,15 +38,16 @@
 	outline: none;
 }
 
-.skill-mobile-button-decrease{
+.skill-mobile-button-decrease {
 	left: -26px;
 }
 
-.skill-mobile-button-increase{
+.skill-mobile-button-increase {
 	right: -26px;
 
 }
-.button i{
+
+.button i {
 	vertical-align: middle;
 	font-size: 18px;
 }

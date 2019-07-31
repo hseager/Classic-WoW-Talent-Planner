@@ -1,24 +1,24 @@
-.talent-path{
+.talent-path {
 	margin: 0 0 20px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
-.talent-path-skill{
+.talent-path-skill {
 	text-align: center;
 	padding: 5px;
 }
 
-.talent-path-skill.is-faded{
+.talent-path-skill.is-faded {
 	opacity: 0.5;
 }
 
-.talent-path-level{
+.talent-path-level {
 	margin: 0 0 5px;
 }
 
-.talent-path-skill-icon{
+.talent-path-skill-icon {
 	width: 33px;
 	display: block;
 	border: 1px solid #6b6b6c;
@@ -26,7 +26,7 @@
 	border-top-color: #c7c9cb;
 	border-bottom-color: #46474a;
 	pointer-events: none;
-	-moz-user-select:none;
-    -ms-user-select:none;
-    -webkit-user-select:none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 }

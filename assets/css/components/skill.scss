@@ -1,4 +1,4 @@
-.skill{ 
+.skill {
 	position: relative;
 	margin: 8px;
 	padding: 1px;
@@ -6,11 +6,12 @@
 	border-radius: 5px;
 	border-bottom: none;
 	width: 58px;
-	-moz-user-select:none;
-    -ms-user-select:none;
-    -webkit-user-select:none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 }
-.skill-icon{ 
+
+.skill-icon {
 	width: 100%;
 	overflow: hidden;
 	border: 2px solid #6b6b6c;
@@ -19,7 +20,8 @@
 	border-bottom-color: #46474a;
 	box-shadow: 0 1px 5px #000;
 }
-.skill-rank{ 
+
+.skill-rank {
 	position: absolute;
 	bottom: -8px;
 	right: -15px;
@@ -30,32 +32,39 @@
 	border-radius: 5px;
 	font-size: 12px;
 }
-.skill-icon-image{ 
+
+.skill-icon-image {
 	filter: grayscale(100%);
 	width: 100%;
 	display: block;
 	pointer-events: none;
-	-moz-user-select:none;
-    -ms-user-select:none;
-    -webkit-user-select:none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 }
-.skill.is-enabled{ 
+
+.skill.is-enabled {
 	cursor: pointer;
 	border-color: #16ba17;
 	background: #000;
 }
-.skill.is-max-rank{
+
+.skill.is-max-rank {
 	border-color: #ffd200;
 }
-.skill.is-enabled .skill-icon-image{
+
+.skill.is-enabled .skill-icon-image {
 	filter: grayscale(0);
 }
-.skill.is-enabled .skill-rank{
+
+.skill.is-enabled .skill-rank {
 	cursor: pointer;
 }
-.skill.is-faded{
+
+.skill.is-faded {
 	opacity: 0.3;
 }
-.is-max-level .skill.is-enabled{
+
+.is-max-level .skill.is-enabled {
 	border-color: #efefef;
 }

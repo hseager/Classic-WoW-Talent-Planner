@@ -1,7 +1,7 @@
-.tooltip{ 
+.tooltip {
 	position: absolute;
 	bottom: 110%;
-	left: 105%; 
+	left: 105%;
 	padding: 10px;
 	background: rgba(11, 21, 41, 0.9);
 	width: 340px;
@@ -16,26 +16,30 @@
 	text-align: left;
 	pointer-events: none;
 	-moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 }
-.tooltip-skill-name{
+
+.tooltip-skill-name {
 	font-size: 18px;
 	margin: 0 0 4px;
 }
-.tooltip-requirement{ 
+
+.tooltip-requirement {
 	color: #ff2f2a;
 	margin: 0 0 2px;
 	line-height: 18px
 }
-.tooltip-rank-description{
+
+.tooltip-rank-description {
 	color: #ffd200;
 	margin: 0;
 }
-.tooltip-next-rank{
+
+.tooltip-next-rank {
 	margin: 5px 0 0 0;
 }
 
-.tooltip-mobile-message{
+.tooltip-mobile-message {
 	margin: 5px 0 0 0;
 }

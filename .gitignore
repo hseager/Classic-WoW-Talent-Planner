@@ -1,2 +1,5 @@
 node_modules/
 dist/
+.eslintrc.js
+package-lock.json
+vue.config.js

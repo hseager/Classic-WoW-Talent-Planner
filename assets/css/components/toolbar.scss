@@ -1,9 +1,9 @@
-.talent-toolbar{
+.talent-toolbar {
 	display: flex;
 	justify-content: center;
 }
 
-.talent-info{
+.talent-info {
 	margin: 0 0 30px;
 	border: 1px solid #6b6b6c;
 	border-radius: 5px;
@@ -12,12 +12,12 @@
 	padding: 15px;
 }
 
-.talent-info-stat{
+.talent-info-stat {
 	font-size: 15px;
 	display: inline;
-	margin:0 20px 0 0;
+	margin: 0 20px 0 0;
 }
 
-.talent-info-stat:last-child{
+.talent-info-stat:last-child {
 	margin: 0;
 }
