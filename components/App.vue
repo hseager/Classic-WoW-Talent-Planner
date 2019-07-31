@@ -195,7 +195,7 @@ export default {
       s.removeAllRanges();
       s.addRange(range);
 
-      el.setSelectionRange(0, elCount); // A big number, to cover anything that could be inside the element.
+      el.setSelectionRange(0, elCount);
 
       el.contentEditable = oldContentEditable;
       el.readOnly = oldReadOnly;
