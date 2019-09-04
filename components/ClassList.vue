@@ -1,25 +1,31 @@
 <template>
-	<li v-on:click.prevent="onClassSelect" v-bind:class="{ active: currentClass === classType.id }">
-		<img v-bind:src="classIconImage">
-		<span v-if="currentClass === classType.id" class="class-list-name">{{classType.name}}</span>
-	</li>
+	<ul class="class-list">
+		<li v-for="classType in classes" 
+			:key="classType.id"
+			v-on:click.prevent="changeClass(classType.id)"
+			v-bind:class="{ active: currentClassId === classType.id }">
+			<img v-bind:src="getClassIconImage(classType.name)">
+			<span v-if="currentClassId === classType.id" class="class-list-name">{{classType.name}}</span>
+		</li>
+	</ul>
 </template>
 <script>
 	import { config } from './Config.js';
 	export default {
 		name: 'class-list',
 		props: {
-			classType: Object,
-			currentClass: Number
-		},
-		data: function(){
-			return {
-				classIconImage: config.imageDirectory + config.classIconDirectory + 'icon-' + this.classType.name.toLowerCase() + '.jpg',
-			}
+			classes: Array,
+			currentClassId: Number
 		},
 		methods: {
-			onClassSelect: function(){
-				this.$emit('change-class');
+			changeClass(classId){
+				this.$emit('change-class', classId);
+			},
+			getClassIconImage(className){
+				return 	config.imageDirectory + 
+						config.classIconDirectory +
+						'icon-' +
+						className.toLowerCase() + '.jpg';
 			}
 		}
 	}

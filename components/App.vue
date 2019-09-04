@@ -3,26 +3,22 @@
 		<main>
 			<img src="../public/images/wow-classic-logo.png" class="logo" />
 			<h1 class="main-title">Talent Planner</h1>
-			<ul class="class-list">
-				<class-list
-					v-for="classType in data.classes"
-					v-bind:classType="classType"
-					v-bind:key="classType.id"
-					v-bind:currentClass="data.currentClass"
-					v-on:change-class="data.currentClass = classType.id"
-				></class-list>
-			</ul>
+			<class-list
+				v-bind:currentClassId="data.currentClassId"
+				v-bind:classes="data.classes"
+				v-on:change-class="onChangeClass"
+			></class-list>
 			<div class="talent-toolbar">
 				<div class="talent-info">
-					<p class="talent-info-stat">Skill points: {{data.classes[data.currentClass].availableSkillPoints}}</p>
-					<p class="talent-info-stat">Required level: {{data.classes[data.currentClass].requiredLevel}}</p>
+					<p class="talent-info-stat">Skill points: {{skillPoints}}</p>
+					<p class="talent-info-stat">Required level: {{requiredLevel}}</p>
 				</div>
 			</div>
 			<class-panel
-				v-bind:class-type="data.classes[data.currentClass]"
+				v-bind:class-type="currentClass"
 			></class-panel>
 			<talent-path
-				v-bind:currentClass="data.classes[data.currentClass]"
+				v-bind:currentClass="currentClass"
 			></talent-path>
 			<div class="talent-actions">
 				<button class="button" v-on:click="saveTalentTrees">Save</button>
@@ -58,9 +54,23 @@
 				this.data = JSON.parse(localData);
 			}
 		},
+		computed: {
+			currentClass(){
+				return this.data.classes[this.data.currentClassId];
+			},
+			skillPoints(){
+				return this.currentClass.availableSkillPoints;
+			},
+			requiredLevel(){
+				return this.currentClass.requiredLevel;
+			}
+		},
 		methods: {
-			saveTalentTrees: function(){
+			saveTalentTrees(){
 				window.localStorage.setItem('talent-data-1', JSON.stringify(this.data));
+			},
+			onChangeClass(classId){
+				this.data.currentClassId = classId;
 			}
 		}
 	}
