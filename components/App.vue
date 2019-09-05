@@ -4,7 +4,6 @@
 			<img src="../public/images/wow-classic-logo.png" class="logo" />
 			<h1 class="main-title">Talent Planner</h1>
 			<class-list
-				v-bind:currentClassId="data.currentClassId"
 				v-bind:classes="data.classes"
 			></class-list>
 			<div class="talent-toolbar">

@@ -8,8 +8,8 @@ export const store = new Vuex.Store({
 		currentClassId: 0
 	},
 	mutations: {
-		changeClass(state, classId) {
-			state.currentClassId = classId;
+		changeClass(state, payload) {
+			state.currentClassId = payload.classId;
 		}
 	}
 });

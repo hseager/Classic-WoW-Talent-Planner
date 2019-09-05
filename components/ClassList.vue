@@ -15,11 +15,18 @@
 		name: 'class-list',
 		props: {
 			classes: Array,
-			currentClassId: Number
+		},
+		computed: {
+			currentClassId(){
+				return this.$store.state.currentClassId;
+			}
 		},
 		methods: {
 			changeClass(classId){
-				this.$store.commit('changeClass', classId);
+				this.$store.commit({
+					type: 'changeClass',
+					classId: classId
+				});
 			},
 			getClassIconImage(className){
 				return 	config.imageDirectory + 
