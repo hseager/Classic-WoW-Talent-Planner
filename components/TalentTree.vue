@@ -21,7 +21,7 @@
 	</div>
 </template>
 <script>
-	import { config } from './Config.js';
+	import { config } from '../includes/Config.js';
 	import skill from './Skill';
 
 	export default {

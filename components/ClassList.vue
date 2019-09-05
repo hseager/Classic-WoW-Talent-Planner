@@ -10,7 +10,7 @@
 	</ul>
 </template>
 <script>
-	import { config } from './Config.js';
+	import { config } from '../includes/Config.js';
 	export default {
 		name: 'class-list',
 		props: {
@@ -19,7 +19,7 @@
 		},
 		methods: {
 			changeClass(classId){
-				this.$emit('change-class', classId);
+				this.$store.commit('changeClass', classId);
 			},
 			getClassIconImage(className){
 				return 	config.imageDirectory + 

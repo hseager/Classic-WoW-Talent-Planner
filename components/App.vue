@@ -6,7 +6,6 @@
 			<class-list
 				v-bind:currentClassId="data.currentClassId"
 				v-bind:classes="data.classes"
-				v-on:change-class="onChangeClass"
 			></class-list>
 			<div class="talent-toolbar">
 				<div class="talent-info">
@@ -56,21 +55,18 @@
 		},
 		computed: {
 			currentClass(){
-				return this.data.classes[this.data.currentClassId];
+				return this.data.classes[this.$store.state.currentClassId];
 			},
 			availableSkillPoints(){
 				return this.currentClass.availableSkillPoints;
 			},
 			requiredLevel(){
 				return this.currentClass.requiredLevel;
-			}
+			},
 		},
 		methods: {
 			saveTalentTrees(){
 				window.localStorage.setItem('talent-data-1', JSON.stringify(this.data));
-			},
-			onChangeClass(classId){
-				this.data.currentClassId = classId;
 			}
 		}
 	}
