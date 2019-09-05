@@ -81,7 +81,7 @@
 						});
 					});
 				} else if(this.currentClass.requiredLevel == 59){
-					this.classType.talentTrees.forEach(tree => {
+					this.currentClass.talentTrees.forEach(tree => {
 						tree.skills.forEach(skill => {
 							skill.faded = false;
 						});
