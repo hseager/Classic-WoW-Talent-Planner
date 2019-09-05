@@ -10,12 +10,12 @@
 			></class-list>
 			<div class="talent-toolbar">
 				<div class="talent-info">
-					<p class="talent-info-stat">Skill points: {{skillPoints}}</p>
+					<p class="talent-info-stat">Skill points: {{availableSkillPoints}}</p>
 					<p class="talent-info-stat">Required level: {{requiredLevel}}</p>
 				</div>
 			</div>
 			<class-panel
-				v-bind:class-type="currentClass"
+				v-bind:currentClass="currentClass"
 			></class-panel>
 			<talent-path
 				v-bind:currentClass="currentClass"
@@ -58,7 +58,7 @@
 			currentClass(){
 				return this.data.classes[this.data.currentClassId];
 			},
-			skillPoints(){
+			availableSkillPoints(){
 				return this.currentClass.availableSkillPoints;
 			},
 			requiredLevel(){
