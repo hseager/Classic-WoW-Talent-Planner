@@ -1,7 +1,7 @@
 {
   "name": "wow-talent-planner",
   "version": "1.0.0",
-  "description": "A talent planner for Classic WoW",
+  "description": "A talent planner for World of Warcraft Classic",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/hseager/Classic-WoW-Talent-Planner.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "wow",
+    "classic",
+    "talent",
+    "planner",
+    "caluclator",
+    "warcraft"
+  ],
+  "author": "Harvey Seager",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hseager/Classic-WoW-Talent-Planner/issues"
