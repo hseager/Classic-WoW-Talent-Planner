@@ -18,9 +18,9 @@
 			<talent-path
 				v-bind:currentClass="currentClass"
 			></talent-path>
-			<div class="talent-actions">
-				<button class="button" v-on:click="saveTalentTrees">Save</button>
-			</div>
+			<build-controls
+				v-bind:currentClass="currentClass"
+			></build-controls>
 		</main>
 		<footer>
 			<ul>
@@ -34,22 +34,18 @@
 	import classList from './ClassList';
 	import classPanel from './ClassPanel';
 	import talentPath from './TalentPath';
+	import buildControls from './BuildControls';
 
 	export default {
 		components: {
 			classList,
 			classPanel,
-			talentPath
+			talentPath,
+			buildControls
 		},
 		data(){
 			return {
 				data: talentData
-			}
-		},
-		mounted(){
-			let localData = window.localStorage.getItem('talent-data-1');
-			if(localData != null){
-				this.data = JSON.parse(localData);
 			}
 		},
 		computed: {
@@ -62,11 +58,6 @@
 			requiredLevel(){
 				return this.currentClass.requiredLevel;
 			},
-		},
-		methods: {
-			saveTalentTrees(){
-				window.localStorage.setItem('talent-data-1', JSON.stringify(this.data));
-			}
 		}
 	}
 </script>
