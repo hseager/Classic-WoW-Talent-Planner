@@ -4,11 +4,11 @@
 			v-if="builds.length > 0">
 			<h2 class="build-title">Builds</h2>
 			<ul class="build-list">
-				<li class="build-list-item"
-					v-for="build in builds" 
+				<li :class="['build-list-item', { 'active': build.id == currentBuildId }]"
+					v-for="build in builds"
 					:key="build.id"
-					v-on:click="selectBuild">
-					{{build.name}} - {{build.id}}
+					v-on:click="selectBuild(build.id)">
+					{{build.name}}
 				</li>
 			</ul>
 		</div>
@@ -22,6 +22,11 @@
 		name: 'build-controls',
 		props: {
 			currentClass: Object,
+		},
+		computed: {
+			currentBuildId(){
+				return this.$store.state.currentBuildId;
+			}
 		},
 		data(){
 			return {
@@ -89,8 +94,11 @@
 					return 0;
 				}
 			},
-			selectBuild(){
-				console.log(123);
+			selectBuild(buildId){
+				this.$store.commit({
+					type: 'changeBuild',
+					buildId
+				});
 			}
 		}
 	}
