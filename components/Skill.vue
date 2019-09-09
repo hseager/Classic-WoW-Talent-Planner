@@ -25,8 +25,7 @@
 			v-bind:showTooltip="showTooltip"
 			v-bind:tooltipPosition="tooltipPosition"
 			v-bind:isValidDecrease="isValidDecrease"
-			v-bind:treeName="tree.name"
-			v-bind:requiredLevel="requiredLevel"></tooltip>
+			v-bind:treeName="tree.name"></tooltip>
 	</div>
 </template>
 <script>
@@ -42,8 +41,7 @@
 			skill: Object,
 			tree: Object,
 			className: String,
-			currentSkillTier: Number,
-			requiredLevel: Number
+			currentSkillTier: Number
 		},
 		data(){
 			return {
@@ -75,6 +73,15 @@
 			});
 		},
 		computed:{
+			currentClassStore(){
+				return this.$store.state.classes[this.$store.state.currentClassId];
+			},
+			availableSkillPoints(){
+				return this.currentClassStore.availableSkillPoints;
+			},
+			requiredLevel(){
+				return this.currentClassStore.requiredLevel;
+			},			
 			getGridPosition: function(){
 				if(typeof this.skill.position !== 'undefined'){
 					return {
@@ -129,21 +136,15 @@
 					return true;
 				else 
 					return false;
-			},
-			currentClassStore(){
-				return this.$store.state.classes[this.$store.state.currentClassId];
-			},
-			availableSkillPoints(){
-				return this.currentClassStore.availableSkillPoints;
 			}
 		},
 		methods: {
 			onIncreaseSkillRank: function(){
 				if(this.skill.enabled && this.availableSkillPoints > 0){
 					if(this.skill.currentRank < this.skill.maxRank){
-						this.skill.currentRank++
+						this.skill.currentRank++;
 						this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints - 1);
-						this.$parent.$emit('increaseRequiredLevel');
+						this.$store.commit('setRequiredLevel', this.requiredLevel + 1);
 						this.$parent.$emit('addToTalentPath', this.tree.id, this.skill.id, this.skillIcon);
 						this.$emit('increaseTreeSkillPoints');
 						this.$emit('increaseCurrentSkillTier', this.skill.position[0]);
@@ -155,7 +156,7 @@
 				if(this.isValidDecrease){
 					this.skill.currentRank--;
 					this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints + 1);
-					this.$parent.$emit('decreaseRequiredLevel', 1);
+					this.$store.commit('setRequiredLevel', this.requiredLevel - 1);
 					this.$parent.$emit('removeSkillFromTalentPath', this.tree.id, this.skill.id);
 					this.$emit('decreaseTreeSkillPoints');
 					this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);

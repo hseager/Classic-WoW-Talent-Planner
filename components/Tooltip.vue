@@ -23,8 +23,7 @@
 			showTooltip: Boolean,
 			tooltipPosition: Object,
 			treeName: String,
-			isValidDecrease: Boolean,
-			requiredLevel: Number,
+			isValidDecrease: Boolean
 		},
 		computed: {
 			hasNextRank: function(){
@@ -32,6 +31,9 @@
 			},
 			requiredSkillName: function(){
 				return this.$parent.getSkill(this.skill.requirements.skill.id).name;
+			},
+			requiredLevel(){
+				return this.$store.state.classes[this.$store.state.currentClassId].requiredLevel;
 			}
 		},
 		methods: {

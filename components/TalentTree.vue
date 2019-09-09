@@ -9,7 +9,6 @@
 				v-bind:tree="tree"
 				v-bind:className="className"
 				v-bind:currentSkillTier="tree.currentSkillTier"
-				v-bind:requiredLevel="requiredLevel"
 				v-on:increaseTreeSkillPoints="onIncreaseTreeSkillPoints"
 				v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints"
 				v-on:increaseCurrentSkillTier="onIncreaseCurrentSkillTier"
@@ -28,12 +27,14 @@
 		props: {
 			className: String,
 			tree: Object,
-			requiredLevel: Number,
 		},
 		components: {
 			skill
 		},
 		computed: {
+			requiredLevel(){
+				return this.$store.state.classes[this.$store.state.currentClassId].requiredLevel;
+			},
 			getTreeBackgroundImage: function(){
 				let backgroundImageUrl = 	config.imageDirectory + 
 											config.backgroundDirectory + 'background-' + 
@@ -78,7 +79,7 @@
 			resetTalentTree: function(){
 				if(this.tree.skillPoints > 0){
 					this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints + this.tree.skillPoints);
-					this.$emit('decreaseRequiredLevel', this.tree.skillPoints);
+					this.$store.commit('setRequiredLevel', this.requiredLevel - this.tree.skillPoints);
 					this.tree.skillPoints = 0;
 					this.tree.currentSkillTier = 0;
 					this.tree.skills.forEach((skill) => {

@@ -5,9 +5,6 @@
 			v-bind:tree="tree"
 			v-bind:key="tree.id"
 			v-bind:className="currentClass.name"
-			v-bind:requiredLevel="currentClass.requiredLevel"
-			v-on:decreaseRequiredLevel="onDecreaseRequiredLevel"
-			v-on:increaseRequiredLevel="onIncreaseRequiredLevel"
 			v-on:addToTalentPath="onAddToTalentPath"
 			v-on:removeSkillFromTalentPath="onRemoveSkillFromTalentPath"
 			v-on:removeTreeFromTalentPath="onRemoveTreeFromTalentPath"
@@ -25,22 +22,12 @@
 		components: {
 			talentTree
 		},
+		computed: {
+			requiredLevel(){
+				return this.$store.state.classes[this.$store.state.currentClassId].requiredLevel;
+			}
+		},
 		methods: {
-			onIncreaseRequiredLevel: function(){
-				if(this.currentClass.requiredLevel == 0)
-					this.currentClass.requiredLevel = 10;
-				else
-					this.currentClass.requiredLevel++;
-
-				this.checkMaxLevel();
-			},
-			onDecreaseRequiredLevel: function(points){
-				this.currentClass.requiredLevel = this.currentClass.requiredLevel - points;
-				if(this.currentClass.requiredLevel < 10)
-					this.currentClass.requiredLevel = 0;
-					
-				this.checkMaxLevel();
-			},
 			onAddToTalentPath: function(treeId, skillId, skillIcon){
 				this.currentClass.talentPath.push({treeId, skillId, skillIcon, faded : false});
 			},
@@ -63,7 +50,7 @@
 				});
 			},
 			checkMaxLevel: function(){
-				if(this.currentClass.requiredLevel == 60){
+				if(this.requiredLevel == 60){
 					this.currentClass.talentTrees.forEach(tree => {
 						tree.skills.forEach(skill => {
 							if(skill.currentRank == 0){
@@ -71,7 +58,7 @@
 							}
 						});
 					});
-				} else if(this.currentClass.requiredLevel == 59){
+				} else if(this.requiredLevel == 59){
 					this.currentClass.talentTrees.forEach(tree => {
 						tree.skills.forEach(skill => {
 							skill.faded = false;
