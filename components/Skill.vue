@@ -35,24 +35,23 @@
 	
 	export default {
 		name: 'skill',
+		components: {
+			tooltip,
+		},		
 		props: {
 			skill: Object,
 			tree: Object,
 			className: String,
 			currentSkillTier: Number,
-			availableSkillPoints: Number,
 			requiredLevel: Number
 		},
-		data: function(){
+		data(){
 			return {
 				showTooltip: false,
 				tooltipPosition: {
 					'left': '100%',
 				}
 			}
-		},
-		components: {
-			tooltip,
 		},
 		mounted(){
 			this.$root.$on('highlightSkill', (skillOnTree) => {
@@ -130,6 +129,12 @@
 					return true;
 				else 
 					return false;
+			},
+			currentClassStore(){
+				return this.$store.state.classes[this.$store.state.currentClassId];
+			},
+			availableSkillPoints(){
+				return this.currentClassStore.availableSkillPoints;
 			}
 		},
 		methods: {
@@ -137,7 +142,7 @@
 				if(this.skill.enabled && this.availableSkillPoints > 0){
 					if(this.skill.currentRank < this.skill.maxRank){
 						this.skill.currentRank++
-						this.$parent.$emit('decreaseAvailableSkillPoints');
+						this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints - 1);
 						this.$parent.$emit('increaseRequiredLevel');
 						this.$parent.$emit('addToTalentPath', this.tree.id, this.skill.id, this.skillIcon);
 						this.$emit('increaseTreeSkillPoints');
@@ -149,13 +154,12 @@
 			onDecreaseSkillRank: function(){
 				if(this.isValidDecrease){
 					this.skill.currentRank--;
-					this.$parent.$emit('increaseAvailableSkillPoints', 1);
+					this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints + 1);
 					this.$parent.$emit('decreaseRequiredLevel', 1);
 					this.$parent.$emit('removeSkillFromTalentPath', this.tree.id, this.skill.id);
 					this.$emit('decreaseTreeSkillPoints');
 					this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);
 					this.checkSkillRequirements();
-
 					if(this.skill.currentRank == 0 && this.isMobile()){
 						this.showTooltip = false;
 					}

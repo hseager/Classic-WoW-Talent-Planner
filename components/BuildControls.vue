@@ -26,7 +26,13 @@
 		computed: {
 			currentBuildId(){
 				return this.$store.state.currentBuildId;
-			}
+			},
+			currentClassStore(){
+				return this.$store.state.classes[this.$store.state.currentClassId];
+			},
+			availableSkillPoints(){
+				return this.currentClassStore.availableSkillPoints;
+			},
 		},
 		data(){
 			return {
@@ -75,7 +81,7 @@
 					id: this.getNewBuildId(),
 					name: buildName,
 					classId: this.currentClass.id,
-					availableSkillPoints: this.currentClass.availableSkillPoints,
+					availableSkillPoints: this.availableSkillPoints,
 					requiredLevel: this.currentClass.requiredLevel,
 					talentTrees
 				};
@@ -96,9 +102,15 @@
 			},
 			selectBuild(buildId){
 				this.$store.commit({
-					type: 'changeBuild',
+					type: 'setCurrentBuild',
 					buildId
 				});
+				this.loadBuild(buildId);
+			},
+			loadBuild(buildId){
+				let build = this.builds.filter(build => build.id == buildId)[0];
+				this.$store.commit('setCurrentClass', build.classId);
+				this.$store.commit('setAvailableSkillPoints', build.availableSkillPoints);
 			}
 		}
 	}

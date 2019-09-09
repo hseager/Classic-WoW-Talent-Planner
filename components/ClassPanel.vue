@@ -5,10 +5,7 @@
 			v-bind:tree="tree"
 			v-bind:key="tree.id"
 			v-bind:className="currentClass.name"
-			v-bind:availableSkillPoints="currentClass.availableSkillPoints"
 			v-bind:requiredLevel="currentClass.requiredLevel"
-			v-on:decreaseAvailableSkillPoints="onDecreaseAvailableSkillPoints"
-			v-on:increaseAvailableSkillPoints="onIncreaseAvailableSkillPoints"
 			v-on:decreaseRequiredLevel="onDecreaseRequiredLevel"
 			v-on:increaseRequiredLevel="onIncreaseRequiredLevel"
 			v-on:addToTalentPath="onAddToTalentPath"
@@ -29,12 +26,6 @@
 			talentTree
 		},
 		methods: {
-			onDecreaseAvailableSkillPoints: function(){
-				this.currentClass.availableSkillPoints--;
-			},
-			onIncreaseAvailableSkillPoints: function(points){
-				this.currentClass.availableSkillPoints = this.currentClass.availableSkillPoints + points;
-			},
 			onIncreaseRequiredLevel: function(){
 				if(this.currentClass.requiredLevel == 0)
 					this.currentClass.requiredLevel = 10;

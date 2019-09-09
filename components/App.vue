@@ -13,13 +13,13 @@
 				</div>
 			</div>
 			<class-panel
-				v-bind:currentClass="currentClass"
+				v-bind:currentClass="currentClassData"
 			></class-panel>
 			<talent-path
-				v-bind:currentClass="currentClass"
+				v-bind:currentClass="currentClassData"
 			></talent-path>
 			<build-controls
-				v-bind:currentClass="currentClass"
+				v-bind:currentClass="currentClassData"
 			></build-controls>
 		</main>
 		<footer>
@@ -49,14 +49,17 @@
 			}
 		},
 		computed: {
-			currentClass(){
+			currentClassData(){
 				return this.data.classes[this.$store.state.currentClassId];
 			},
+			currentClassStore(){
+				return this.$store.state.classes[this.$store.state.currentClassId];
+			},
 			availableSkillPoints(){
-				return this.currentClass.availableSkillPoints;
+				return this.currentClassStore.availableSkillPoints;
 			},
 			requiredLevel(){
-				return this.currentClass.requiredLevel;
+				return this.currentClassStore.requiredLevel;
 			},
 		}
 	}

@@ -6,14 +6,55 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
 	state: {
 		currentClassId: 0,
-		currentBuildId: 0,
+		currentBuildId: null,
+		classes: [
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			},
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			},
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			},
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			},
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			},
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			},
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			},
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			},
+			{
+				availableSkillPoints: 51,
+				requiredLevel: 0,
+			}
+		]
 	},
 	mutations: {
-		changeClass(state, payload) {
-			state.currentClassId = payload.classId;
+		setCurrentClass(state, classId){
+			state.currentClassId = classId;
 		},
-		changeBuild(state, payload){
+		setCurrentBuild(state, payload){
 			state.currentBuildId = payload.buildId;
+		},
+		setAvailableSkillPoints(state, skillPoints){
+			state.classes[state.currentClassId].availableSkillPoints = skillPoints;
 		}
 	}
 });
