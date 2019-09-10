@@ -57,13 +57,19 @@ export const store = new Vuex.Store({
 			state.classes[state.currentClassId].availableSkillPoints = skillPoints;
 		},
 		setRequiredLevel(state, requiredLevel){
-			/*
 			let currentRequiredLevel = state.classes[state.currentClassId].requiredLevel;
-			if(currentRequiredLevel == 0 &&  requiredLevel == 1)
-				state.classes[state.currentClassId].requiredLevel = 10;
-			else
-				state.classes[state.currentClassId].requiredLevel = requiredLevel;
-			*/
+			if(currentRequiredLevel < requiredLevel){
+				if(requiredLevel < 10){
+					state.classes[state.currentClassId].requiredLevel = 10;
+					return;
+				}
+			} else {
+				if(requiredLevel < 10){
+					state.classes[state.currentClassId].requiredLevel = 0;
+					return;
+				}
+			}
+			state.classes[state.currentClassId].requiredLevel = requiredLevel;
 		}
 	}
 });
