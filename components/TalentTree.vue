@@ -21,6 +21,7 @@
 <script>
 	import { config } from '../includes/Config.js';
 	import skill from './Skill';
+	import { mapGetters } from 'vuex';
 
 	export default {
 		name: 'talent-tree',
@@ -32,9 +33,6 @@
 			skill
 		},
 		computed: {
-			requiredLevel(){
-				return this.$store.state.classes[this.$store.state.currentClassId].requiredLevel;
-			},
 			getTreeBackgroundImage: function(){
 				let backgroundImageUrl = 	config.imageDirectory + 
 											config.backgroundDirectory + 'background-' + 
@@ -47,9 +45,10 @@
 					backgroundPosition: 'center',
 				}
 			},
-			availableSkillPoints(){
-				return this.$store.state.classes[this.$store.state.currentClassId].availableSkillPoints;
-			}
+			...mapGetters([
+				'availableSkillPoints',
+				'requiredLevel'
+			])
 		},
 		methods: {
 			onIncreaseTreeSkillPoints: function(){

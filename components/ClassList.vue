@@ -11,15 +11,17 @@
 </template>
 <script>
 	import { config } from '../includes/Config.js';
+	import { mapState } from 'vuex';
+
 	export default {
 		name: 'class-list',
 		props: {
 			classes: Array,
 		},
 		computed: {
-			currentClassId(){
-				return this.$store.state.currentClassId;
-			}
+			...mapState({
+				currentClassId: state => state.currentClassId,
+			})
 		},
 		methods: {
 			setClass(classId){

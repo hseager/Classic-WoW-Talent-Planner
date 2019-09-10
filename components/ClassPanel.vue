@@ -13,6 +13,7 @@
 </template>
 <script>
 	import talentTree from './TalentTree';
+	import { mapGetters } from 'vuex';
 
 	export default {
 		name: 'class-panel',
@@ -23,9 +24,9 @@
 			talentTree
 		},
 		computed: {
-			requiredLevel(){
-				return this.$store.state.classes[this.$store.state.currentClassId].requiredLevel;
-			}
+			...mapGetters([
+				'requiredLevel'
+			])
 		},
 		methods: {
 			onAddToTalentPath: function(treeId, skillId, skillIcon){

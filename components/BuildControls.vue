@@ -27,11 +27,10 @@
 			currentClass: Object,
 		},
 		computed: {
-			...mapGetters({
-				currentClassState: 'currentClass',
-				availableSkillPoints: 'availableSkillPoints',
-				requiredLevel: 'requiredLevel'
-			}),
+			...mapGetters([
+				'availableSkillPoints',
+				'requiredLevel'
+			]),
 			...mapState({
 				currentClassId: state => state.currentClassId,
 				currentBuildId: state => state.currentBuildId,

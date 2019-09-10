@@ -31,6 +31,7 @@
 <script>
 	import { config } from '../includes/Config.js';
 	import tooltip from './Tooltip';
+	import { mapGetters } from 'vuex';
 	
 	export default {
 		name: 'skill',
@@ -73,15 +74,10 @@
 			});
 		},
 		computed:{
-			currentClassStore(){
-				return this.$store.state.classes[this.$store.state.currentClassId];
-			},
-			availableSkillPoints(){
-				return this.currentClassStore.availableSkillPoints;
-			},
-			requiredLevel(){
-				return this.currentClassStore.requiredLevel;
-			},			
+			...mapGetters([
+				'availableSkillPoints',
+				'requiredLevel'
+			]),
 			getGridPosition: function(){
 				if(typeof this.skill.position !== 'undefined'){
 					return {

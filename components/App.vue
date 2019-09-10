@@ -35,6 +35,8 @@
 	import classPanel from './ClassPanel';
 	import talentPath from './TalentPath';
 	import buildControls from './BuildControls';
+	import { mapGetters } from 'vuex';
+	import { mapState } from 'vuex';
 
 	export default {
 		components: {
@@ -50,17 +52,15 @@
 		},
 		computed: {
 			currentClassData(){
-				return this.data.classes[this.$store.state.currentClassId];
+				return this.data.classes[this.currentClassId];
 			},
-			currentClassStore(){
-				return this.$store.state.classes[this.$store.state.currentClassId];
-			},
-			availableSkillPoints(){
-				return this.currentClassStore.availableSkillPoints;
-			},
-			requiredLevel(){
-				return this.currentClassStore.requiredLevel;
-			},
+			...mapGetters([
+				'availableSkillPoints',
+				'requiredLevel'
+			]),
+			...mapState({
+				currentClassId: state => state.currentClassId
+			}),
 		}
 	}
 </script>

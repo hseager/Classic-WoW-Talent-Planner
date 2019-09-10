@@ -16,6 +16,8 @@
 	</div>
 </template>
 <script>
+	import { mapGetters } from 'vuex';
+
 	export default {
 		name: 'tooltip',
 		props: {
@@ -32,9 +34,9 @@
 			requiredSkillName: function(){
 				return this.$parent.getSkill(this.skill.requirements.skill.id).name;
 			},
-			requiredLevel(){
-				return this.$store.state.classes[this.$store.state.currentClassId].requiredLevel;
-			}
+			...mapGetters([
+				'requiredLevel'
+			])
 		},
 		methods: {
 			getSkillDescription: function(rank){
