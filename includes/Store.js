@@ -82,5 +82,15 @@ export const store = new Vuex.Store({
 			}
 			state.classes[state.currentClassId].requiredLevel = requiredLevel;
 		}
+	},
+	actions: {
+		loadBuild({commit}, build){
+			return new Promise((resolve) => {
+				commit('setCurrentClass', build.classId);
+				commit('setAvailableSkillPoints', build.availableSkillPoints);
+				commit('setRequiredLevel', build.requiredLevel);
+				resolve();
+			})
+		}
 	}
 });
