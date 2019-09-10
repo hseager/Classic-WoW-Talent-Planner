@@ -18,27 +18,24 @@
 	</div>
 </template>
 <script>
+	import { mapGetters } from 'vuex';
+	import { mapState } from 'vuex';
+
 	export default {
 		name: 'build-controls',
 		props: {
 			currentClass: Object,
 		},
 		computed: {
-			currentClassId(){
-				return this.$store.state.currentClassId;
-			},			
-			currentBuildId(){
-				return this.$store.state.currentBuildId;
-			},
-			currentClassStore(){
-				return this.$store.state.classes[this.currentClassId];
-			},
-			availableSkillPoints(){
-				return this.currentClassStore.availableSkillPoints;
-			},
-			requiredLevel(){
-				return this.currentClassStore.requiredLevel;
-			}
+			...mapGetters({
+				currentClassState: 'currentClass',
+				availableSkillPoints: 'availableSkillPoints',
+				requiredLevel: 'requiredLevel'
+			}),
+			...mapState({
+				currentClassId: state => state.currentClassId,
+				currentBuildId: state => state.currentBuildId,
+			}),
 		},
 		data(){
 			return {
@@ -118,6 +115,15 @@
 				this.$store.commit('setCurrentClass', build.classId);
 				this.$store.commit('setAvailableSkillPoints', build.availableSkillPoints);
 				this.$store.commit('setRequiredLevel', build.requiredLevel);
+				
+				/*
+				build.talentTrees.forEach(talentTree => {
+					let dataTree = this.currentClass.talentTrees.filter(tree => tree.id == talentTree.treeId)[0];
+					console.log(dataTree);
+					dataTree.skillPoints = talentTree.skillPoints;
+					dataTree.currentSkillTier = talentTree.currentSkillTier;
+				});
+				*/
 			}
 		}
 	}

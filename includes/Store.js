@@ -46,6 +46,17 @@ export const store = new Vuex.Store({
 			}
 		]
 	},
+	getters: {
+		currentClass: state => {
+			return state.classes[state.currentClassId];
+		},
+		availableSkillPoints: (state, getters) => {
+			return getters.currentClass.availableSkillPoints;
+		},
+		requiredLevel: (state, getters) => {
+			return getters.currentClass.requiredLevel;
+		}
+	},
 	mutations: {
 		setCurrentClass(state, classId){
 			state.currentClassId = classId;
