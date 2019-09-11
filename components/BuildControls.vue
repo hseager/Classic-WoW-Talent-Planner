@@ -119,7 +119,7 @@
 				let build = this.builds.filter(build => build.id == buildId)[0];
 				this.resetTrees();
 				this.$store.dispatch('loadBuild', build).then(() => {
-					this.currentClass.talentPath = build.talentPath;
+					this.currentClass.talentPath = [...build.talentPath];
 					build.talentTrees.forEach(talentTree => {
 						let dataTree = this.currentClass.talentTrees.filter(tree => tree.id == talentTree.treeId)[0];
 						dataTree.skillPoints = talentTree.skillPoints;

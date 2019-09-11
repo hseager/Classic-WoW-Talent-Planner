@@ -79,6 +79,10 @@
 				if(this.tree.skillPoints > 0){
 					this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints + this.tree.skillPoints);
 					this.$store.commit('setRequiredLevel', this.requiredLevel - this.tree.skillPoints);
+					this.$store.commit({
+						type: 'setCurrentBuild',
+						buildId: null
+					});
 					this.tree.skillPoints = 0;
 					this.tree.currentSkillTier = 0;
 					this.tree.skills.forEach((skill) => {

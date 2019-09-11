@@ -26,6 +26,10 @@
 		methods: {
 			setClass(classId){
 				this.$store.commit('setCurrentClass', classId);
+				this.$store.commit({
+					type: 'setCurrentBuild',
+					buildId: null
+				});
 			},
 			getClassIconImage(className){
 				return 	config.imageDirectory + 

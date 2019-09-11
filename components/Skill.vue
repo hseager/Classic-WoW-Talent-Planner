@@ -141,6 +141,10 @@
 						this.skill.currentRank++;
 						this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints - 1);
 						this.$store.commit('setRequiredLevel', this.requiredLevel + 1);
+						this.$store.commit({
+							type: 'setCurrentBuild',
+							buildId: null
+						});
 						this.$parent.$emit('addToTalentPath', this.tree.id, this.skill.id, this.skillIcon);
 						this.$emit('increaseTreeSkillPoints');
 						this.$emit('increaseCurrentSkillTier', this.skill.position[0]);
@@ -153,6 +157,10 @@
 					this.skill.currentRank--;
 					this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints + 1);
 					this.$store.commit('setRequiredLevel', this.requiredLevel - 1);
+					this.$store.commit({
+						type: 'setCurrentBuild',
+						buildId: null
+					});
 					this.$parent.$emit('removeSkillFromTalentPath', this.tree.id, this.skill.id);
 					this.$emit('decreaseTreeSkillPoints');
 					this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);
