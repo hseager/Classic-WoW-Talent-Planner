@@ -9,11 +9,13 @@
 					:key="build.id"
 					v-on:click="selectBuild(build.id)">
 					{{build.name}}
+					<span class="build-delete"
+						v-on:click.stop="deleteBuild(build.id)">X</span>
 				</li>
 			</ul>
 		</div>
 		<div class="talent-actions">
-			<button class="button" v-on:click="saveBuilds">Save Build</button>
+			<button class="button" v-on:click.stop="saveBuilds">Save Build</button>
 		</div>
 	</div>
 </template>
@@ -142,6 +144,10 @@
 						}
 					});
 				});
+			},
+			deleteBuild(buildId){
+				this.builds = this.builds.filter(build => build.id != buildId);
+				window.localStorage.setItem('builds', JSON.stringify(this.builds));
 			}
 		}
 	}
