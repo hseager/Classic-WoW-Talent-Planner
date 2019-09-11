@@ -27,3 +27,9 @@
 	-webkit-user-select:none;
 	@include wow-thin-border;
 }
+
+@media only screen and (min-width: 1200px) {
+	.talent-path{
+		margin: 0 0 40px;
+	}
+}

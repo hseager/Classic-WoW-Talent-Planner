@@ -11,7 +11,7 @@ body{
 main{ 
 	max-width: 1200px;
 	margin: 20px auto;
-	padding: 10px 15px 20px;
+	padding: 20px 15px;
 	background: rgba(0, 0, 8, 0.8);
 	border-radius: 10px;
 }
@@ -24,6 +24,6 @@ p{
 
 @media only screen and (min-width: 1200px) {
 	main{
-		padding: 40px;
+		padding: 25px;
 	}
 }
