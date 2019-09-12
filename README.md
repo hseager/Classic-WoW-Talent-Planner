@@ -12,7 +12,7 @@ A talent planner for World of Warcraft Classic
 ## To build
 * Clone the repository
 * Run 'npm install'
-* Install [vue-cli](https://cli.vuejs.org/) | npm install -g vue-cli
+* Install [Vue CLI](https://cli.vuejs.org/) | npm install -g vue-cli
 * Install [Vuex](https://vuex.vuejs.org/) | npm install --save vuex
 * To start local development run 'vue serve'
 * To build for production run 'vue build'
