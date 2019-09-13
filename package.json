@@ -1,15 +1,29 @@
 {
   "name": "wow-talent-planner",
   "version": "1.0.0",
-  "description": "A talent planner for World of Warcraft Classic",
   "private": true,
+  "description": "A talent planner for World of Warcraft Classic",
+  "author": "Harvey Seager",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hseager/Classic-WoW-Talent-Planner.git"
+  "dependencies": {
+    "vuex": "^3.1.1"
   },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/hseager/Classic-WoW-Talent-Planner/issues"
+  },
+  "homepage": "https://github.com/hseager/Classic-WoW-Talent-Planner#readme",
   "keywords": [
     "wow",
     "classic",
@@ -18,17 +32,9 @@
     "calculator",
     "warcraft"
   ],
-  "author": "Harvey Seager",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hseager/Classic-WoW-Talent-Planner/issues"
-  },
-  "homepage": "https://github.com/hseager/Classic-WoW-Talent-Planner#readme",
-  "devDependencies": {
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0"
-  },
-  "dependencies": {
-    "vuex": "^3.1.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hseager/Classic-WoW-Talent-Planner.git"
   }
 }
