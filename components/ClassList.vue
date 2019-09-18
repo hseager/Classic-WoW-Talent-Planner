@@ -20,14 +20,14 @@ export default {
     },
     computed: {
         ...mapState({
-            currentClassId: state => state.currentClassId
+            currentClassId: state => state.classes.currentClassId
         })
     },
     methods: {
         setClass (classId) {
-            this.$store.commit('setCurrentClass', classId);
+            this.$store.commit('classes/setCurrentClass', classId);
             this.$store.commit({
-                type: 'setCurrentBuild',
+                type: 'builds/setCurrentBuild',
                 buildId: null
             });
         },

@@ -28,13 +28,13 @@ export default {
         currentClass: Object
     },
     computed: {
-        ...mapGetters([
-            'availableSkillPoints',
-            'requiredLevel'
-        ]),
+        ...mapGetters({
+            availableSkillPoints: 'classes/availableSkillPoints',
+            requiredLevel: 'classes/requiredLevel'
+        }),
         ...mapState({
-            currentClassId: state => state.currentClassId,
-            currentBuildId: state => state.currentBuildId
+            currentClassId: state => state.classes.currentClassId,
+            currentBuildId: state => state.builds.currentBuildId
         })
     },
     data () {
@@ -108,7 +108,7 @@ export default {
         selectBuild (buildId) {
             if (this.currentBuildId !== buildId) {
                 this.$store.commit({
-                    type: 'setCurrentBuild',
+                    type: 'builds/setCurrentBuild',
                     buildId
                 });
                 this.loadBuild(buildId);
@@ -117,7 +117,7 @@ export default {
         loadBuild (buildId) {
             let build = this.builds.filter(build => build.id === buildId)[0];
             this.resetTrees();
-            this.$store.dispatch('loadBuild', build).then(() => {
+            this.$store.dispatch('builds/loadBuild', build).then(() => {
                 this.currentClass.talentPath = [...build.talentPath];
                 build.talentTrees.forEach(talentTree => {
                     let dataTree = this.currentClass.talentTrees.filter(tree => tree.id === talentTree.treeId)[0];

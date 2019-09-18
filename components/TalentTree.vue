@@ -45,10 +45,10 @@ export default {
                 backgroundPosition: 'center'
             };
         },
-        ...mapGetters([
-            'availableSkillPoints',
-            'requiredLevel'
-        ])
+        ...mapGetters({
+            availableSkillPoints: 'classes/availableSkillPoints',
+            requiredLevel: 'classes/requiredLevel'
+        })
     },
     methods: {
         onIncreaseTreeSkillPoints () {
@@ -79,10 +79,10 @@ export default {
         },
         resetTalentTree () {
             if (this.tree.skillPoints > 0) {
-                this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints + this.tree.skillPoints);
-                this.$store.commit('setRequiredLevel', this.requiredLevel - this.tree.skillPoints);
+                this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints + this.tree.skillPoints);
+                this.$store.commit('classes/setRequiredLevel', this.requiredLevel - this.tree.skillPoints);
                 this.$store.commit({
-                    type: 'setCurrentBuild',
+                    type: 'builds/setCurrentBuild',
                     buildId: null
                 });
                 this.tree.skillPoints = 0;

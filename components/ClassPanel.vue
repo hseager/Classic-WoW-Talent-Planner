@@ -24,9 +24,9 @@ export default {
         talentTree
     },
     computed: {
-        ...mapGetters([
-            'requiredLevel'
-        ])
+        ...mapGetters({
+            requiredLevel: 'classes/requiredLevel'
+        })
     },
     methods: {
         onAddToTalentPath (treeId, skillId, skillIcon) {

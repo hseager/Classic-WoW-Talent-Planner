@@ -53,12 +53,12 @@ export default {
         currentClassData () {
             return this.data.classes[this.currentClassId];
         },
-        ...mapGetters([
-            'availableSkillPoints',
-            'requiredLevel'
-        ]),
+        ...mapGetters({
+            availableSkillPoints: 'classes/availableSkillPoints',
+            requiredLevel: 'classes/requiredLevel'
+        }),
         ...mapState({
-            currentClassId: state => state.currentClassId
+            currentClassId: state => state.classes.currentClassId
         })
     }
 };

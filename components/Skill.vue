@@ -74,10 +74,10 @@ export default {
         });
     },
     computed: {
-        ...mapGetters([
-            'availableSkillPoints',
-            'requiredLevel'
-        ]),
+        ...mapGetters({
+            availableSkillPoints: 'classes/availableSkillPoints',
+            requiredLevel: 'classes/requiredLevel'
+        }),
         getGridPosition () {
             if (typeof this.skill.position !== 'undefined') {
                 return {
@@ -146,10 +146,10 @@ export default {
             if (this.skill.enabled && this.availableSkillPoints > 0) {
                 if (this.skill.currentRank < this.skill.maxRank) {
                     this.skill.currentRank++;
-                    this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints - 1);
-                    this.$store.commit('setRequiredLevel', this.requiredLevel + 1);
+                    this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints - 1);
+                    this.$store.commit('classes/setRequiredLevel', this.requiredLevel + 1);
                     this.$store.commit({
-                        type: 'setCurrentBuild',
+                        type: 'builds/setCurrentBuild',
                         buildId: null
                     });
                     this.$parent.$emit('addToTalentPath', this.tree.id, this.skill.id, this.skillIcon);
@@ -162,10 +162,10 @@ export default {
         onDecreaseSkillRank () {
             if (this.isValidDecrease) {
                 this.skill.currentRank--;
-                this.$store.commit('setAvailableSkillPoints', this.availableSkillPoints + 1);
-                this.$store.commit('setRequiredLevel', this.requiredLevel - 1);
+                this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints + 1);
+                this.$store.commit('classes/setRequiredLevel', this.requiredLevel - 1);
                 this.$store.commit({
-                    type: 'setCurrentBuild',
+                    type: 'builds/setCurrentBuild',
                     buildId: null
                 });
                 this.$parent.$emit('removeSkillFromTalentPath', this.tree.id, this.skill.id);

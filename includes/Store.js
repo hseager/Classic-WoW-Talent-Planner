@@ -3,10 +3,32 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
+const builds = {
+    namespaced: true,
+    state: {
+        currentBuildId: null
+    },
+    mutations: {
+        setCurrentBuild (state, payload) {
+            state.currentBuildId = payload.buildId;
+        }
+    },
+    actions: {
+        loadBuild ({ commit }, build) {
+            return new Promise((resolve) => {
+                commit('classes/setCurrentClass', build.classId, { root: true });
+                commit('classes/setAvailableSkillPoints', build.availableSkillPoints, { root: true });
+                commit('classes/setRequiredLevel', build.requiredLevel, { root: true });
+                resolve();
+            });
+        }
+    }
+};
+
+const classes = {
+    namespaced: true,
     state: {
         currentClassId: 0,
-        currentBuildId: null,
         classes: [
             {
                 availableSkillPoints: 51,
@@ -61,9 +83,6 @@ export const store = new Vuex.Store({
         setCurrentClass (state, classId) {
             state.currentClassId = classId;
         },
-        setCurrentBuild (state, payload) {
-            state.currentBuildId = payload.buildId;
-        },
         setAvailableSkillPoints (state, skillPoints) {
             state.classes[state.currentClassId].availableSkillPoints = skillPoints;
         },
@@ -82,15 +101,12 @@ export const store = new Vuex.Store({
             }
             state.classes[state.currentClassId].requiredLevel = requiredLevel;
         }
-    },
-    actions: {
-        loadBuild ({ commit }, build) {
-            return new Promise((resolve) => {
-                commit('setCurrentClass', build.classId);
-                commit('setAvailableSkillPoints', build.availableSkillPoints);
-                commit('setRequiredLevel', build.requiredLevel);
-                resolve();
-            });
-        }
+    }
+};
+
+export const store = new Vuex.Store({
+    modules: {
+        builds,
+        classes
     }
 });

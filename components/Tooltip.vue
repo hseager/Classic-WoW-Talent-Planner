@@ -34,9 +34,9 @@ export default {
         requiredSkillName () {
             return this.$parent.getSkill(this.skill.requirements.skill.id).name;
         },
-        ...mapGetters([
-            'requiredLevel'
-        ])
+        ...mapGetters({
+            requiredLevel: 'classes/requiredLevel'
+        })
     },
     methods: {
         getSkillDescription (rank) {
