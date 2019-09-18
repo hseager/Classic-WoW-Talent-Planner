@@ -8,7 +8,6 @@
 				{ 
 					"id": 0,
 					"name": "Arms",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -334,7 +333,6 @@
 				{ 
 					"id": 1,
 					"name": "Fury",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -642,7 +640,6 @@
 				{ 
 					"id": 2,
 					"name": "Protection",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -952,9 +949,8 @@
 			"talentPath": [],
 			"talentTrees": [
 				{ 
-					"id": 0,
+					"id": 3,
 					"name": "Holy",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -1203,9 +1199,8 @@
 					]
 				},
 				{ 
-					"id": 1,
+					"id": 4,
 					"name": "Protection",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -1473,9 +1468,8 @@
 					]
 				},
 				{ 
-					"id": 2,
+					"id": 5,
 					"name": "Retribution",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -1741,9 +1735,8 @@
 			"talentPath": [],
 			"talentTrees": [
 				{ 
-					"id": 0,
+					"id": 6,
 					"name": "Beast Mastery",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -2023,9 +2016,8 @@
 					]
 				},
 				{ 
-					"id": 1,
+					"id": 7,
 					"name": "Marksmanship",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -2281,9 +2273,8 @@
 					]
 				},
 				{ 
-					"id": 2,
+					"id": 8,
 					"name": "Survival",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -2567,9 +2558,8 @@
 			"talentPath": [],
 			"talentTrees": [
 				{ 
-					"id": 0,
+					"id": 9,
 					"name": "Assassination",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -2830,9 +2820,8 @@
 					]
 				},
 				{ 
-					"id": 1,
+					"id": 10,
 					"name": "Combat",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -3169,9 +3158,8 @@
 					]
 				},
 				{ 
-					"id": 2,
+					"id": 11,
 					"name": "Subtlety",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -3476,9 +3464,8 @@
 			"talentPath": [],
 			"talentTrees": [
 				{ 
-					"id": 0,
+					"id": 12,
 					"name": "Discipline",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -3744,9 +3731,8 @@
 					]
 				},
 				{ 
-					"id": 1,
+					"id": 13,
 					"name": "Holy",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -4024,9 +4010,8 @@
 					]
 				},
 				{ 
-					"id": 2,
+					"id": 14,
 					"name": "Shadow",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -4317,9 +4302,8 @@
 			"talentPath": [],
 			"talentTrees": [
 				{ 
-					"id": 0,
+					"id": 15,
 					"name": "Elemental",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -4583,9 +4567,8 @@
 					]
 				},
 				{ 
-					"id": 1,
+					"id": 16,
 					"name": "Enhancement",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -4869,9 +4852,8 @@
 					]
 				},
 				{ 
-					"id": 2,
+					"id": 17,
 					"name": "Restoration",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -5144,9 +5126,8 @@
 			"talentPath": [],
 			"talentTrees": [
 				{ 
-					"id": 0,
+					"id": 18,
 					"name": "Arcane",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -5426,9 +5407,8 @@
 					]
 				},
 				{ 
-					"id": 1,
+					"id": 19,
 					"name": "Fire",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -5711,9 +5691,8 @@
 					]
 				},
 				{ 
-					"id": 2,
+					"id": 20,
 					"name": "Frost",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -6013,9 +5992,8 @@
 			"talentPath": [],
 			"talentTrees": [
 				{ 
-					"id": 0,
+					"id": 21,
 					"name": "Affliction",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -6314,9 +6292,8 @@
 					]
 				},
 				{ 
-					"id": 1,
+					"id": 22,
 					"name": "Demonology",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -6614,9 +6591,8 @@
 					]
 				},
 				{ 
-					"id": 2,
+					"id": 23,
 					"name": "Destruction",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -6912,9 +6888,8 @@
 			"talentPath": [],
 			"talentTrees": [
 				{ 
-					"id": 0,
+					"id": 24,
 					"name": "Balance",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -7205,9 +7180,8 @@
 					]
 				},
 				{ 
-					"id": 1,
+					"id": 25,
 					"name": "Feral Combat",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 
@@ -7489,9 +7463,8 @@
 					]
 				},
 				{ 
-					"id": 2,
+					"id": 26,
 					"name": "Restoration",
-					"skillPoints": 0,
 					"currentSkillTier": 0,
 					"skills": [
 						{ 

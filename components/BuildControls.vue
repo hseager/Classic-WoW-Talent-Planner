@@ -25,12 +25,13 @@ import { mapGetters, mapState } from 'vuex';
 export default {
     name: 'build-controls',
     props: {
-        currentClass: Object
+        currentClassData: Object
     },
     computed: {
         ...mapGetters({
             availableSkillPoints: 'classes/availableSkillPoints',
-            requiredLevel: 'classes/requiredLevel'
+            requiredLevel: 'classes/requiredLevel',
+            getTreeById: 'talentTrees/getTreeById'
         }),
         ...mapState({
             currentClassId: state => state.classes.currentClassId,
@@ -56,14 +57,15 @@ export default {
         },
         createNewBuild () {
             let talentTrees = [];
-            let buildName = this.currentClass.name + ' - ' +
-                            this.currentClass.talentTrees[0].skillPoints + '/' +
-                            this.currentClass.talentTrees[1].skillPoints + '/' +
-                            this.currentClass.talentTrees[2].skillPoints;
-            let talentPath = [...this.currentClass.talentPath];
+            let buildName = this.currentClassData.name + ' - ' +
+                            this.getTreeById(this.currentClassData.talentTrees[0].id).skillPoints + '/' +
+                            this.getTreeById(this.currentClassData.talentTrees[1].id).skillPoints + '/' +
+                            this.getTreeById(this.currentClassData.talentTrees[2].id).skillPoints;
+            let talentPath = [...this.currentClassData.talentPath];
 
-            this.currentClass.talentTrees.forEach(tree => {
-                if (tree.skillPoints > 0) {
+            this.currentClassData.talentTrees.forEach(tree => {
+                const currentTalentTree = this.getTreeById(tree.id);
+                if (currentTalentTree.skillPoints > 0) {
                     let skills = [];
                     tree.skills.forEach(skill => {
                         if (skill.currentRank > 0) {
@@ -74,8 +76,8 @@ export default {
                         }
                     });
                     talentTrees.push({
-                        treeId: tree.id,
-                        skillPoints: tree.skillPoints,
+                        id: tree.id,
+                        skillPoints: currentTalentTree.skillPoints,
                         currentSkillTier: tree.currentSkillTier,
                         skills
                     });
@@ -115,16 +117,15 @@ export default {
             }
         },
         loadBuild (buildId) {
-            let build = this.builds.filter(build => build.id === buildId)[0];
             this.resetTrees();
+            let build = this.builds.find(build => build.id === buildId);
             this.$store.dispatch('builds/loadBuild', build).then(() => {
-                this.currentClass.talentPath = [...build.talentPath];
+                this.currentClassData.talentPath = [...build.talentPath];
                 build.talentTrees.forEach(talentTree => {
-                    let dataTree = this.currentClass.talentTrees.filter(tree => tree.id === talentTree.treeId)[0];
-                    dataTree.skillPoints = talentTree.skillPoints;
+                    let dataTree = this.currentClassData.talentTrees.find(tree => tree.id === talentTree.id);
                     dataTree.currentSkillTier = talentTree.currentSkillTier;
                     talentTree.skills.forEach(skill => {
-                        let dataSkill = dataTree.skills.filter(dataSkill => dataSkill.id === skill.skillId)[0];
+                        let dataSkill = dataTree.skills.find(dataSkill => dataSkill.id === skill.skillId);
                         dataSkill.currentRank = skill.currentRank;
                         dataSkill.enabled = true;
                     });
@@ -132,9 +133,13 @@ export default {
             });
         },
         resetTrees () {
-            this.currentClass.talentPath = [];
-            this.currentClass.talentTrees.forEach(tree => {
-                tree.skillPoints = 0;
+            this.currentClassData.talentPath = [];
+            this.currentClassData.talentTrees.forEach(tree => {
+                this.$store.commit({
+                    type: 'talentTrees/setSkillPoints',
+                    treeId: tree.id,
+                    skillPoints: 0
+                });
                 tree.currentSkillTier = 0;
                 tree.skills.forEach(skill => {
                     skill.currentRank = 0;

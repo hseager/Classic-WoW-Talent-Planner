@@ -19,6 +19,9 @@ const builds = {
                 commit('classes/setCurrentClass', build.classId, { root: true });
                 commit('classes/setAvailableSkillPoints', build.availableSkillPoints, { root: true });
                 commit('classes/setRequiredLevel', build.requiredLevel, { root: true });
+                build.talentTrees.forEach(tree => {
+                    commit('talentTrees/setSkillPoints', { treeId: tree.id, skillPoints: tree.skillPoints }, { root: true });
+                });
                 resolve();
             });
         }
@@ -31,38 +34,47 @@ const classes = {
         currentClassId: 0,
         classes: [
             {
+                id: 0,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             },
             {
+                id: 1,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             },
             {
+                id: 2,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             },
             {
+                id: 3,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             },
             {
+                id: 4,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             },
             {
+                id: 5,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             },
             {
+                id: 6,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             },
             {
+                id: 7,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             },
             {
+                id: 8,
                 availableSkillPoints: 51,
                 requiredLevel: 0
             }
@@ -70,7 +82,7 @@ const classes = {
     },
     getters: {
         currentClass: state => {
-            return state.classes[state.currentClassId];
+            return state.classes.find(classType => classType.id === state.currentClassId);
         },
         availableSkillPoints: (state, getters) => {
             return getters.currentClass.availableSkillPoints;
@@ -104,9 +116,164 @@ const classes = {
     }
 };
 
+const talentTrees = {
+    namespaced: true,
+    state: {
+        talentTrees: [
+            {
+                id: 0,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 1,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 2,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 3,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 4,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 5,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 6,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 7,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 8,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 9,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 10,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 11,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 12,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 13,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 14,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 15,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 16,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 17,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 18,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 19,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 20,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 21,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 22,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 23,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 24,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 25,
+                skillPoints: 0,
+                currentSkillTier: 0
+            },
+            {
+                id: 26,
+                skillPoints: 0,
+                currentSkillTier: 0
+            }
+        ]
+    },
+    getters: {
+        getTreeById: (state) => (treeId) => {
+            return state.talentTrees.find(tree => tree.id === treeId);
+        }
+    },
+    mutations: {
+        setSkillPoints (state, payload) {
+            const tree = state.talentTrees.find(tree => tree.id === payload.treeId);
+            tree.skillPoints = payload.skillPoints;
+        }
+    }
+};
+
 export const store = new Vuex.Store({
     modules: {
         builds,
-        classes
+        classes,
+        talentTrees
     }
 });

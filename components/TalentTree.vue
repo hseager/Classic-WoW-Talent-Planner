@@ -1,6 +1,6 @@
 <template>
     <div class="talent-tree-panel">
-        <h3 class="talent-tree-title">{{tree.name}} <span class="talent-tree-points">({{tree.skillPoints}})</span></h3>
+        <h3 class="talent-tree-title">{{tree.name}} <span class="talent-tree-points">({{currentTalentTree.skillPoints}})</span></h3>
         <div class="talent-tree" :style="getTreeBackgroundImage">
             <skill
                 v-for="skill in tree.skills"
@@ -9,8 +9,6 @@
                 v-bind:tree="tree"
                 v-bind:className="className"
                 v-bind:currentSkillTier="tree.currentSkillTier"
-                v-on:increaseTreeSkillPoints="onIncreaseTreeSkillPoints"
-                v-on:decreaseTreeSkillPoints="onDecreaseTreeSkillPoints"
                 v-on:increaseCurrentSkillTier="onIncreaseCurrentSkillTier"
                 v-on:decreaseCurrentSkillTier="onDecreaseCurrentSkillTier">
             </skill>
@@ -33,6 +31,11 @@ export default {
         skill
     },
     computed: {
+        ...mapGetters({
+            availableSkillPoints: 'classes/availableSkillPoints',
+            requiredLevel: 'classes/requiredLevel',
+            getTreeById: 'talentTrees/getTreeById'
+        }),
         getTreeBackgroundImage () {
             let backgroundImageUrl = config.imageDirectory +
                                         config.backgroundDirectory + 'background-' +
@@ -45,18 +48,11 @@ export default {
                 backgroundPosition: 'center'
             };
         },
-        ...mapGetters({
-            availableSkillPoints: 'classes/availableSkillPoints',
-            requiredLevel: 'classes/requiredLevel'
-        })
+        currentTalentTree () {
+            return this.getTreeById(this.tree.id);
+        }
     },
     methods: {
-        onIncreaseTreeSkillPoints () {
-            this.tree.skillPoints++;
-        },
-        onDecreaseTreeSkillPoints () {
-            this.tree.skillPoints--;
-        },
         onIncreaseCurrentSkillTier (tier) {
             if (tier > this.tree.currentSkillTier) {
                 this.tree.currentSkillTier = tier;
@@ -78,14 +74,18 @@ export default {
             return tierSkillPoints;
         },
         resetTalentTree () {
-            if (this.tree.skillPoints > 0) {
-                this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints + this.tree.skillPoints);
-                this.$store.commit('classes/setRequiredLevel', this.requiredLevel - this.tree.skillPoints);
+            if (this.currentTalentTree.skillPoints > 0) {
+                this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints + this.currentTalentTree.skillPoints);
+                this.$store.commit('classes/setRequiredLevel', this.requiredLevel - this.currentTalentTree.skillPoints);
                 this.$store.commit({
                     type: 'builds/setCurrentBuild',
                     buildId: null
                 });
-                this.tree.skillPoints = 0;
+                this.$store.commit({
+                    type: 'talentTrees/setSkillPoints',
+                    treeId: this.tree.id,
+                    skillPoints: 0
+                });
                 this.tree.currentSkillTier = 0;
                 this.tree.skills.forEach((skill) => {
                     skill.currentRank = 0;

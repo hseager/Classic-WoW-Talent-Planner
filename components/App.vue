@@ -13,13 +13,13 @@
                 </div>
             </div>
             <class-panel
-                v-bind:currentClass="currentClassData"
+                v-bind:currentClassData="currentClassData"
             ></class-panel>
             <talent-path
-                v-bind:currentClass="currentClassData"
+                v-bind:currentClassData="currentClassData"
             ></talent-path>
             <build-controls
-                v-bind:currentClass="currentClassData"
+                v-bind:currentClassData="currentClassData"
             ></build-controls>
         </main>
         <footer>

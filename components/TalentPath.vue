@@ -2,7 +2,7 @@
     <div class="talent-path">
         <div :class="['talent-path-skill',
             { 'is-faded': talent.faded }]"
-            v-for="(talent, index) in currentClass.talentPath" :key="index"
+            v-for="(talent, index) in currentClassData.talentPath" :key="index"
             v-on:mouseenter.prevent="onTalentPathItemMouseEnter(talent);"
             v-on:mouseleave.prevent="onTalentPathItemMouseLeave">
             <p class="talent-path-level">{{index + 10}}</p>
@@ -14,12 +14,12 @@
 export default {
     name: 'talent-path',
     props: {
-        currentClass: Object
+        currentClassData: Object
     },
     methods: {
         onTalentPathItemMouseEnter (talent) {
             let skillOnTree;
-            this.currentClass.talentTrees.forEach(tree => {
+            this.currentClassData.talentTrees.forEach(tree => {
                 if (tree.id === talent.treeId) {
                     tree.skills.forEach(skill => {
                         if (skill.id === talent.skillId) {
@@ -29,13 +29,13 @@ export default {
                 }
             });
             this.$root.$emit('highlightSkill', skillOnTree);
-            this.currentClass.talentPath.forEach(talentPathItem => {
+            this.currentClassData.talentPath.forEach(talentPathItem => {
                 talentPathItem.faded = true;
             });
             talent.faded = false;
         },
         onTalentPathItemMouseLeave () {
-            this.currentClass.talentPath.forEach(talentPathItem => {
+            this.currentClassData.talentPath.forEach(talentPathItem => {
                 talentPathItem.faded = false;
             });
             this.$root.$emit('unHighlightSkills');

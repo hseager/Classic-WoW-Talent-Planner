@@ -76,8 +76,12 @@ export default {
     computed: {
         ...mapGetters({
             availableSkillPoints: 'classes/availableSkillPoints',
-            requiredLevel: 'classes/requiredLevel'
+            requiredLevel: 'classes/requiredLevel',
+            getTreeById: 'talentTrees/getTreeById'
         }),
+        currentTalentTree () {
+            return this.getTreeById(this.tree.id);
+        },
         getGridPosition () {
             if (typeof this.skill.position !== 'undefined') {
                 return {
@@ -152,8 +156,12 @@ export default {
                         type: 'builds/setCurrentBuild',
                         buildId: null
                     });
+                    this.$store.commit({
+                        type: 'talentTrees/setSkillPoints',
+                        treeId: this.tree.id,
+                        skillPoints: this.currentTalentTree.skillPoints + 1
+                    });
                     this.$parent.$emit('addToTalentPath', this.tree.id, this.skill.id, this.skillIcon);
-                    this.$emit('increaseTreeSkillPoints');
                     this.$emit('increaseCurrentSkillTier', this.skill.position[0]);
                     this.checkSkillRequirements();
                 }
@@ -168,8 +176,12 @@ export default {
                     type: 'builds/setCurrentBuild',
                     buildId: null
                 });
+                this.$store.commit({
+                    type: 'talentTrees/setSkillPoints',
+                    treeId: this.tree.id,
+                    skillPoints: this.currentTalentTree.skillPoints - 1
+                });
                 this.$parent.$emit('removeSkillFromTalentPath', this.tree.id, this.skill.id);
-                this.$emit('decreaseTreeSkillPoints');
                 this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);
                 this.checkSkillRequirements();
                 if (this.skill.currentRank === 0 && this.isMobile()) {
@@ -181,7 +193,7 @@ export default {
             this.tree.skills.forEach((skill) => {
                 if (skill.requirements) {
                     if (skill.requirements.specPoints && skill.requirements.skill) {
-                        if (this.tree.skillPoints >= skill.requirements.specPoints) {
+                        if (this.currentTalentTree.skillPoints >= skill.requirements.specPoints) {
                             let requiredSkill = this.getSkill(skill.requirements.skill.id);
                             if (requiredSkill.currentRank === skill.requirements.skill.skillPoints) {
                                 skill.enabled = true;
@@ -192,7 +204,7 @@ export default {
                             skill.enabled = false;
                         }
                     } else if (skill.requirements.specPoints) {
-                        if (this.tree.skillPoints >= skill.requirements.specPoints) {
+                        if (this.currentTalentTree.skillPoints >= skill.requirements.specPoints) {
                             skill.enabled = true;
                         } else {
                             skill.enabled = false;
