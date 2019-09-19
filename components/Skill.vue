@@ -161,7 +161,12 @@ export default {
                         treeId: this.tree.id,
                         skillPoints: this.currentTalentTree.skillPoints + 1
                     });
-                    this.$parent.$emit('addToTalentPath', this.tree.id, this.skill.id, this.skillIcon);
+                    this.$store.commit({
+                        type: 'classes/addSkillToTalentPath',
+                        treeId: this.tree.id,
+                        skillId: this.skill.id,
+                        skillIcon: this.skillIcon
+                    });
                     this.$emit('increaseCurrentSkillTier', this.skill.position[0]);
                     this.checkSkillRequirements();
                 }
@@ -181,7 +186,11 @@ export default {
                     treeId: this.tree.id,
                     skillPoints: this.currentTalentTree.skillPoints - 1
                 });
-                this.$parent.$emit('removeSkillFromTalentPath', this.tree.id, this.skill.id);
+                this.$store.commit({
+                    type: 'classes/removeSkillFromTalentPath',
+                    treeId: this.tree.id,
+                    skillId: this.skill.id
+                });
                 this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);
                 this.checkSkillRequirements();
                 if (this.skill.currentRank === 0 && this.isMobile()) {

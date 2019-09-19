@@ -86,13 +86,16 @@ export default {
                     treeId: this.tree.id,
                     skillPoints: 0
                 });
+                this.$store.commit({
+                    type: 'classes/removeTreeFromTalentPath',
+                    treeId: this.tree.id
+                });
                 this.tree.currentSkillTier = 0;
                 this.tree.skills.forEach((skill) => {
                     skill.currentRank = 0;
                     if (skill.requirements) {
                         skill.enabled = false;
                     }
-                    this.$emit('removeTreeFromTalentPath', this.tree.id);
                 });
             }
         }

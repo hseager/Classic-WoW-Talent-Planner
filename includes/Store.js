@@ -19,6 +19,7 @@ const builds = {
                 commit('classes/setCurrentClass', build.classId, { root: true });
                 commit('classes/setAvailableSkillPoints', build.availableSkillPoints, { root: true });
                 commit('classes/setRequiredLevel', build.requiredLevel, { root: true });
+                commit('classes/setTalentPath', build.talentPath, { root: true });
                 build.talentTrees.forEach(tree => {
                     commit('talentTrees/setSkillPoints', { treeId: tree.id, skillPoints: tree.skillPoints }, { root: true });
                 });
@@ -36,47 +37,56 @@ const classes = {
             {
                 id: 0,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             },
             {
                 id: 1,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             },
             {
                 id: 2,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             },
             {
                 id: 3,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             },
             {
                 id: 4,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             },
             {
                 id: 5,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             },
             {
                 id: 6,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             },
             {
                 id: 7,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             },
             {
                 id: 8,
                 availableSkillPoints: 51,
-                requiredLevel: 0
+                requiredLevel: 0,
+                talentPath: []
             }
         ]
     },
@@ -89,6 +99,9 @@ const classes = {
         },
         requiredLevel: (state, getters) => {
             return getters.currentClass.requiredLevel;
+        },
+        talentPath: (state, getters) => {
+            return getters.currentClass.talentPath;
         }
     },
     mutations: {
@@ -112,6 +125,30 @@ const classes = {
                 }
             }
             state.classes[state.currentClassId].requiredLevel = requiredLevel;
+        },
+        setTalentPath (state, talentPath) {
+            state.classes[state.currentClassId].talentPath = talentPath;
+        },
+        addSkillToTalentPath (state, payload) {
+            state.classes[state.currentClassId].talentPath.push({
+                treeId: payload.treeId,
+                skillId: payload.skillId,
+                skillIcon: payload.skillIcon,
+                faded: false
+            });
+        },
+        removeSkillFromTalentPath (state, payload) {
+            let skillIndex = state.classes[state.currentClassId].talentPath.findIndex((talentPathItem) => {
+                return talentPathItem.treeId === payload.treeId && talentPathItem.skillId === payload.skillId;
+            });
+            if (skillIndex > -1) {
+                state.classes[state.currentClassId].talentPath.splice(skillIndex, 1);
+            }
+        },
+        removeTreeFromTalentPath (state, payload) {
+            state.classes[state.currentClassId].talentPath = state.classes[state.currentClassId].talentPath.filter((talentPathItem) => {
+                return talentPathItem.treeId !== payload.treeId;
+            });
         }
     }
 };

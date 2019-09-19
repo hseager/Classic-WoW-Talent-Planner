@@ -3,7 +3,6 @@
 		{
 			"id": 0, 
 			"name": "Warrior", 
-			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 0,
@@ -945,8 +944,7 @@
 		},
 		{
 			"id": 1, 
-			"name": "Paladin", 
-			"talentPath": [],
+			"name": "Paladin",
 			"talentTrees": [
 				{ 
 					"id": 3,
@@ -1731,8 +1729,7 @@
 		},
 		{ 
 			"id": 2,
-			"name": "Hunter", 
-			"talentPath": [],
+			"name": "Hunter",
 			"talentTrees": [
 				{ 
 					"id": 6,
@@ -2554,8 +2551,7 @@
 		},
 		{ 
 			"id": 3, 
-			"name": "Rogue", 
-			"talentPath": [],
+			"name": "Rogue",
 			"talentTrees": [
 				{ 
 					"id": 9,
@@ -3461,7 +3457,6 @@
 		{
 			"id": 4, 
 			"name": "Priest", 
-			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 12,
@@ -4299,7 +4294,6 @@
 		{
 			"id": 5, 
 			"name": "Shaman", 
-			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 15,
@@ -5123,7 +5117,6 @@
 		{ 
 			"id": 6, 
 			"name": "Mage", 
-			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 18,
@@ -5989,7 +5982,6 @@
 		{
 			"id": 7, 
 			"name": "Warlock", 
-			"talentPath": [],
 			"talentTrees": [
 				{ 
 					"id": 21,
@@ -6884,8 +6876,7 @@
 		},
 		{
 			"id": 8, 
-			"name": "Druid", 
-			"talentPath": [],
+			"name": "Druid",
 			"talentTrees": [
 				{ 
 					"id": 24,

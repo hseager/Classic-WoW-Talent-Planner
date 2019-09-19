@@ -31,6 +31,7 @@ export default {
         ...mapGetters({
             availableSkillPoints: 'classes/availableSkillPoints',
             requiredLevel: 'classes/requiredLevel',
+            talentPath: 'classes/talentPath',
             getTreeById: 'talentTrees/getTreeById'
         }),
         ...mapState({
@@ -61,7 +62,7 @@ export default {
                             this.getTreeById(this.currentClassData.talentTrees[0].id).skillPoints + '/' +
                             this.getTreeById(this.currentClassData.talentTrees[1].id).skillPoints + '/' +
                             this.getTreeById(this.currentClassData.talentTrees[2].id).skillPoints;
-            let talentPath = [...this.currentClassData.talentPath];
+            let buildTalentPath = [...this.talentPath];
 
             this.currentClassData.talentTrees.forEach(tree => {
                 const currentTalentTree = this.getTreeById(tree.id);
@@ -89,7 +90,7 @@ export default {
                 classId: this.currentClassId,
                 availableSkillPoints: this.availableSkillPoints,
                 requiredLevel: this.requiredLevel,
-                talentPath,
+                talentPath: buildTalentPath,
                 talentTrees
             };
             return newBuild;
@@ -120,7 +121,6 @@ export default {
             this.resetTrees();
             let build = this.builds.find(build => build.id === buildId);
             this.$store.dispatch('builds/loadBuild', build).then(() => {
-                this.currentClassData.talentPath = [...build.talentPath];
                 build.talentTrees.forEach(talentTree => {
                     let dataTree = this.currentClassData.talentTrees.find(tree => tree.id === talentTree.id);
                     dataTree.currentSkillTier = talentTree.currentSkillTier;
@@ -133,7 +133,10 @@ export default {
             });
         },
         resetTrees () {
-            this.currentClassData.talentPath = [];
+            this.$store.commit({
+                type: 'classes/setTalentPath',
+                talentPath: []
+            });
             this.currentClassData.talentTrees.forEach(tree => {
                 this.$store.commit({
                     type: 'talentTrees/setSkillPoints',
