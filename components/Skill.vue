@@ -41,8 +41,7 @@ export default {
     props: {
         skill: Object,
         tree: Object,
-        className: String,
-        currentSkillTier: Number
+        className: String
     },
     data () {
         return {
@@ -81,6 +80,9 @@ export default {
         }),
         currentTalentTree () {
             return this.getTreeById(this.tree.id);
+        },
+        currentSkillTier () {
+            return this.currentTalentTree.currentSkillTier;
         },
         getGridPosition () {
             if (typeof this.skill.position !== 'undefined') {
@@ -153,13 +155,14 @@ export default {
                     this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints - 1);
                     this.$store.commit('classes/setRequiredLevel', this.requiredLevel + 1);
                     this.$store.commit({
-                        type: 'builds/setCurrentBuild',
-                        buildId: null
-                    });
-                    this.$store.commit({
                         type: 'talentTrees/setSkillPoints',
                         treeId: this.tree.id,
                         skillPoints: this.currentTalentTree.skillPoints + 1
+                    });
+                    this.$store.commit({
+                        type: 'talentTrees/increaseCurrentSkillTier',
+                        treeId: this.tree.id,
+                        skillTier: this.skill.position[0]
                     });
                     this.$store.commit({
                         type: 'classes/addSkillToTalentPath',
@@ -167,7 +170,10 @@ export default {
                         skillId: this.skill.id,
                         skillIcon: this.skillIcon
                     });
-                    this.$emit('increaseCurrentSkillTier', this.skill.position[0]);
+                    this.$store.commit({
+                        type: 'builds/setCurrentBuild',
+                        buildId: null
+                    });
                     this.checkSkillRequirements();
                 }
             }
@@ -191,7 +197,11 @@ export default {
                     treeId: this.tree.id,
                     skillId: this.skill.id
                 });
-                this.$emit('decreaseCurrentSkillTier', this.skill.position[0]);
+                this.$store.commit({
+                    type: 'talentTrees/decreaseCurrentSkillTier',
+                    tree: this.tree,
+                    skillTier: this.skill.position[0]
+                });
                 this.checkSkillRequirements();
                 if (this.skill.currentRank === 0 && this.isMobile()) {
                     this.showTooltip = false;

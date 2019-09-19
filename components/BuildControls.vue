@@ -79,7 +79,7 @@ export default {
                     talentTrees.push({
                         id: tree.id,
                         skillPoints: currentTalentTree.skillPoints,
-                        currentSkillTier: tree.currentSkillTier,
+                        currentSkillTier: currentTalentTree.currentSkillTier,
                         skills
                     });
                 }
@@ -123,7 +123,6 @@ export default {
             this.$store.dispatch('builds/loadBuild', build).then(() => {
                 build.talentTrees.forEach(talentTree => {
                     let dataTree = this.currentClassData.talentTrees.find(tree => tree.id === talentTree.id);
-                    dataTree.currentSkillTier = talentTree.currentSkillTier;
                     talentTree.skills.forEach(skill => {
                         let dataSkill = dataTree.skills.find(dataSkill => dataSkill.id === skill.skillId);
                         dataSkill.currentRank = skill.currentRank;
@@ -143,7 +142,11 @@ export default {
                     treeId: tree.id,
                     skillPoints: 0
                 });
-                tree.currentSkillTier = 0;
+                this.$store.commit({
+                    type: 'talentTrees/setCurrentSkillTier',
+                    treeId: tree.id,
+                    currentSkillTier: 0
+                });
                 tree.skills.forEach(skill => {
                     skill.currentRank = 0;
                     if (skill.requirements) {

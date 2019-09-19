@@ -7,10 +7,7 @@
                 v-bind:skill="skill"
                 v-bind:key="skill.id"
                 v-bind:tree="tree"
-                v-bind:className="className"
-                v-bind:currentSkillTier="tree.currentSkillTier"
-                v-on:increaseCurrentSkillTier="onIncreaseCurrentSkillTier"
-                v-on:decreaseCurrentSkillTier="onDecreaseCurrentSkillTier">
+                v-bind:className="className">
             </skill>
         </div>
         <span class="talent-tree-reset" v-on:click="resetTalentTree">Reset</span>
@@ -18,8 +15,8 @@
 </template>
 <script>
 import { config } from '../includes/Config.js';
-import skill from './Skill';
 import { mapGetters } from 'vuex';
+import skill from './Skill';
 
 export default {
     name: 'talent-tree',
@@ -53,44 +50,28 @@ export default {
         }
     },
     methods: {
-        onIncreaseCurrentSkillTier (tier) {
-            if (tier > this.tree.currentSkillTier) {
-                this.tree.currentSkillTier = tier;
-            }
-        },
-        onDecreaseCurrentSkillTier (tier) {
-            let totalTierSkillPoints = this.getTotalTierSkillPoints(tier);
-            if (totalTierSkillPoints === 0) {
-                this.tree.currentSkillTier = tier - 1;
-            }
-        },
-        getTotalTierSkillPoints (tier) {
-            let tierSkillPoints = 0;
-            this.tree.skills.forEach((skill) => {
-                if (skill.position[0] === tier) {
-                    tierSkillPoints = tierSkillPoints + skill.currentRank;
-                }
-            });
-            return tierSkillPoints;
-        },
         resetTalentTree () {
             if (this.currentTalentTree.skillPoints > 0) {
                 this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints + this.currentTalentTree.skillPoints);
                 this.$store.commit('classes/setRequiredLevel', this.requiredLevel - this.currentTalentTree.skillPoints);
-                this.$store.commit({
-                    type: 'builds/setCurrentBuild',
-                    buildId: null
-                });
                 this.$store.commit({
                     type: 'talentTrees/setSkillPoints',
                     treeId: this.tree.id,
                     skillPoints: 0
                 });
                 this.$store.commit({
+                    type: 'talentTrees/setCurrentSkillTier',
+                    treeId: this.tree.id,
+                    currentSkillTier: 0
+                });
+                this.$store.commit({
                     type: 'classes/removeTreeFromTalentPath',
                     treeId: this.tree.id
                 });
-                this.tree.currentSkillTier = 0;
+                this.$store.commit({
+                    type: 'builds/setCurrentBuild',
+                    buildId: null
+                });
                 this.tree.skills.forEach((skill) => {
                     skill.currentRank = 0;
                     if (skill.requirements) {

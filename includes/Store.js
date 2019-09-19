@@ -22,6 +22,7 @@ const builds = {
                 commit('classes/setTalentPath', build.talentPath, { root: true });
                 build.talentTrees.forEach(tree => {
                     commit('talentTrees/setSkillPoints', { treeId: tree.id, skillPoints: tree.skillPoints }, { root: true });
+                    commit('talentTrees/setCurrentSkillTier', { treeId: tree.id, currentSkillTier: tree.currentSkillTier }, { root: true });
                 });
                 resolve();
             });
@@ -303,6 +304,28 @@ const talentTrees = {
         setSkillPoints (state, payload) {
             const tree = state.talentTrees.find(tree => tree.id === payload.treeId);
             tree.skillPoints = payload.skillPoints;
+        },
+        setCurrentSkillTier (state, payload) {
+            const tree = state.talentTrees.find(tree => tree.id === payload.treeId);
+            tree.currentSkillTier = payload.currentSkillTier;
+        },
+        increaseCurrentSkillTier (state, payload) {
+            const tree = state.talentTrees.find(tree => tree.id === payload.treeId);
+            if (payload.skillTier > tree.currentSkillTier) {
+                tree.currentSkillTier = payload.skillTier;
+            }
+        },
+        decreaseCurrentSkillTier (state, payload) {
+            let totalTierSkillPoints = 0;
+            payload.tree.skills.forEach((skill) => {
+                if (skill.position[0] === payload.skillTier) {
+                    totalTierSkillPoints = totalTierSkillPoints + skill.currentRank;
+                }
+            });
+            if (totalTierSkillPoints === 0) {
+                const tree = state.talentTrees.find(tree => tree.id === payload.tree.id);
+                tree.currentSkillTier = payload.skillTier - 1;
+            }
         }
     }
 };
