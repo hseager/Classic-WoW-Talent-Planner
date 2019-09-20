@@ -240,7 +240,7 @@ export default {
             });
         },
         getSkill (id) {
-            return this.tree.skills[id];
+            return this.tree.skills.find(skill => { return skill.id === id; });
         },
         hasAdjacentSkillRequirement () {
             let adjacentSkill = this.getSkill(this.skill.id + 1);
