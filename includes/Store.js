@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { talentTreeStoreData } from './storeData/TalentTreeStoreData';
+import { skillStoreData } from './storeData/SkillStoreData';
 
 Vue.use(Vuex);
 
@@ -195,10 +196,29 @@ const talentTrees = {
     }
 };
 
+const skills = {
+    namespaced: true,
+    state: {
+        skills: skillStoreData
+    },
+    getters: {
+        getSkillById: (state) => (id) => {
+            return state.skills.find(skill => skill.id === id);
+        }
+    },
+    mutations: {
+        setCurrentRank (state, payload) {
+            const skill = state.skills.find(skill => skill.id === payload.skillId);
+            skill.currentRank = payload.currentRank;
+        }
+    }
+};
+
 export const store = new Vuex.Store({
     modules: {
         builds,
         classes,
-        talentTrees
+        talentTrees,
+        skills
     }
 });

@@ -1,7 +1,7 @@
 <template>
     <div :class="['skill',
     { 'is-enabled': skill.enabled },
-        { 'is-max-rank': skill.currentRank == skill.maxRank },
+        { 'is-max-rank': skill.currentRank == skillData.maxRank },
         { 'is-faded': skill.faded },
         skillRequirementArrow]"
         :style="getGridPosition"
@@ -19,9 +19,9 @@
             v-on:click.prevent="onIncreaseSkillRank"
             v-on:contextmenu.prevent="onDecreaseSkillRank"
             v-on:mouseenter.prevent="onShowTooltip"
-            v-on:mouseleave.prevent="onHideTooltip">{{skill.currentRank}}/{{skill.maxRank}}</span>
+            v-on:mouseleave.prevent="onHideTooltip">{{skill.currentRank}}/{{skillData.maxRank}}</span>
         <tooltip
-            v-bind:skill="skill"
+            v-bind:skill="skillData"
             v-bind:showTooltip="showTooltip"
             v-bind:tooltipPosition="tooltipPosition"
             v-bind:isValidDecrease="isValidDecrease"
@@ -39,7 +39,7 @@ export default {
         tooltip
     },
     props: {
-        skill: Object,
+        skillData: Object,
         tree: Object,
         className: String
     },
@@ -76,8 +76,12 @@ export default {
         ...mapGetters({
             availableSkillPoints: 'classes/availableSkillPoints',
             requiredLevel: 'classes/requiredLevel',
-            getTreeById: 'talentTrees/getTreeById'
+            getTreeById: 'talentTrees/getTreeById',
+            getSkillById: 'skills/getSkillById'
         }),
+        skill () {
+            return this.getSkillById(this.skillData.id);
+        },
         currentTalentTree () {
             return this.getTreeById(this.tree.id);
         },
@@ -85,21 +89,21 @@ export default {
             return this.currentTalentTree.currentSkillTier;
         },
         getGridPosition () {
-            if (typeof this.skill.position !== 'undefined') {
+            if (typeof this.skillData.position !== 'undefined') {
                 return {
-                    gridRowStart: this.skill.position[0],
-                    gridColumnStart: this.skill.position[1]
+                    gridRowStart: this.skillData.position[0],
+                    gridColumnStart: this.skillData.position[1]
                 };
             } else {
                 return false;
             }
         },
         skillRequirementArrow () {
-            if (this.skill.requirements && this.skill.requirements.skill) {
-                let requiredSkill = this.getSkill(this.skill.requirements.skill.id);
+            if (this.skillData.requirements && this.skillData.requirements.skill) {
+                let requiredSkill = this.getSkill(this.skillData.requirements.skill.id);
                 let cssClassName = [];
-                let arrowYDistance = this.skill.position[0] - requiredSkill.position[0];
-                let arrowXDistance = this.skill.position[1] - requiredSkill.position[1];
+                let arrowYDistance = this.skillData.position[0] - requiredSkill.position[0];
+                let arrowXDistance = this.skillData.position[1] - requiredSkill.position[1];
 
                 if (arrowYDistance === 1) {
                     cssClassName = ['down-arrow'];
@@ -129,7 +133,7 @@ export default {
                     this.tree.name
                         .replace(' ', '-')
                         .toLowerCase() + '/' +
-                    this.getImageFileName(this.skill.name);
+                    this.getImageFileName(this.skillData.name);
         },
         isValidDecrease () {
             if (this.skill.currentRank === 0) {
@@ -140,7 +144,7 @@ export default {
                 return false;
             }
 
-            if (this.skill.position[0] === this.currentSkillTier) {
+            if (this.skillData.position[0] === this.currentSkillTier) {
                 return true;
             } else {
                 return false;
@@ -150,8 +154,12 @@ export default {
     methods: {
         onIncreaseSkillRank () {
             if (this.skill.enabled && this.availableSkillPoints > 0) {
-                if (this.skill.currentRank < this.skill.maxRank) {
-                    this.skill.currentRank++;
+                if (this.skill.currentRank < this.skillData.maxRank) {
+                    this.$store.commit({
+                        type: 'skills/setCurrentRank',
+                        skillId: this.skill.id,
+                        currentRank: this.skill.currentRank + 1
+                    });
                     this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints - 1);
                     this.$store.commit('classes/setRequiredLevel', this.requiredLevel + 1);
                     this.$store.commit({
@@ -162,12 +170,12 @@ export default {
                     this.$store.commit({
                         type: 'talentTrees/increaseCurrentSkillTier',
                         treeId: this.tree.id,
-                        skillTier: this.skill.position[0]
+                        skillTier: this.skillData.position[0]
                     });
                     this.$store.commit({
                         type: 'classes/addSkillToTalentPath',
                         treeId: this.tree.id,
-                        skillId: this.skill.id,
+                        skillId: this.skillData.id,
                         skillIcon: this.skillIcon
                     });
                     this.$store.commit({
@@ -180,7 +188,11 @@ export default {
         },
         onDecreaseSkillRank () {
             if (this.isValidDecrease) {
-                this.skill.currentRank--;
+                this.$store.commit({
+                    type: 'skills/setCurrentRank',
+                    skillId: this.skill.id,
+                    currentRank: this.skill.currentRank - 1
+                });
                 this.$store.commit('classes/setAvailableSkillPoints', this.availableSkillPoints + 1);
                 this.$store.commit('classes/setRequiredLevel', this.requiredLevel - 1);
                 this.$store.commit({
@@ -195,12 +207,12 @@ export default {
                 this.$store.commit({
                     type: 'classes/removeSkillFromTalentPath',
                     treeId: this.tree.id,
-                    skillId: this.skill.id
+                    skillId: this.skillData.id
                 });
                 this.$store.commit({
                     type: 'talentTrees/decreaseCurrentSkillTier',
                     tree: this.tree,
-                    skillTier: this.skill.position[0]
+                    skillTier: this.skillData.position[0]
                 });
                 this.checkSkillRequirements();
                 if (this.skill.currentRank === 0 && this.isMobile()) {
@@ -213,7 +225,7 @@ export default {
                 if (skill.requirements) {
                     if (skill.requirements.specPoints && skill.requirements.skill) {
                         if (this.currentTalentTree.skillPoints >= skill.requirements.specPoints) {
-                            let requiredSkill = this.getSkill(skill.requirements.skill.id);
+                            let requiredSkill = this.getSkillById(skill.requirements.skill.id);
                             if (requiredSkill.currentRank === skill.requirements.skill.skillPoints) {
                                 skill.enabled = true;
                             } else {
@@ -229,7 +241,7 @@ export default {
                             skill.enabled = false;
                         }
                     } else if (skill.requirements.skill) {
-                        let requiredSkill = this.getSkill(skill.requirements.skill.id);
+                        let requiredSkill = this.getSkillById(skill.requirements.skill.id);
                         if (requiredSkill.currentRank === skill.requirements.skill.skillPoints) {
                             skill.enabled = true;
                         } else {
@@ -243,9 +255,10 @@ export default {
             return this.tree.skills.find(skill => { return skill.id === id; });
         },
         hasAdjacentSkillRequirement () {
-            let adjacentSkill = this.getSkill(this.skill.id + 1);
-            if (adjacentSkill && adjacentSkill.requirements && adjacentSkill.requirements.skill) {
-                return adjacentSkill.requirements.skill.id === this.skill.id && adjacentSkill.currentRank > 0;
+            let adjacentSkillData = this.getSkill(this.skill.id + 1);
+            if (adjacentSkillData && adjacentSkillData.requirements && adjacentSkillData.requirements.skill) {
+                const adjacentSkill = this.getSkillById(adjacentSkillData.id);
+                return adjacentSkillData.requirements.skill.id === this.skill.id && adjacentSkill.currentRank > 0;
             } else {
                 return false;
             }

@@ -4,7 +4,7 @@
         <div class="talent-tree" :style="getTreeBackgroundImage">
             <skill
                 v-for="skill in tree.skills"
-                v-bind:skill="skill"
+                v-bind:skillData="skill"
                 v-bind:key="skill.id"
                 v-bind:tree="tree"
                 v-bind:className="className">
