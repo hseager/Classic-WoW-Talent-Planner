@@ -143,7 +143,7 @@ export default {
             if (this.hasAdjacentSkillRequirement()) {
                 return false;
             }
-
+            
             if (this.skillData.position[0] === this.currentSkillTier) {
                 return true;
             } else {
@@ -167,7 +167,7 @@ export default {
                         treeId: this.tree.id,
                         skillPoints: this.currentTalentTree.skillPoints + 1
                     });
-                    this.$store.commit({
+                    this.$store.dispatch({
                         type: 'talentTrees/increaseCurrentSkillTier',
                         treeId: this.tree.id,
                         skillTier: this.skillData.position[0]
@@ -209,7 +209,7 @@ export default {
                     treeId: this.tree.id,
                     skillId: this.skillData.id
                 });
-                this.$store.commit({
+                this.$store.dispatch({
                     type: 'talentTrees/decreaseCurrentSkillTier',
                     tree: this.tree,
                     skillTier: this.skillData.position[0]
@@ -223,29 +223,30 @@ export default {
         checkSkillRequirements () {
             this.tree.skills.forEach((skill) => {
                 if (skill.requirements) {
+                    let skillStore = this.getSkillById(skill.id);
                     if (skill.requirements.specPoints && skill.requirements.skill) {
                         if (this.currentTalentTree.skillPoints >= skill.requirements.specPoints) {
                             let requiredSkill = this.getSkillById(skill.requirements.skill.id);
                             if (requiredSkill.currentRank === skill.requirements.skill.skillPoints) {
-                                skill.enabled = true;
+                                skillStore.enabled = true;
                             } else {
-                                skill.enabled = false;
+                                skillStore.enabled = false;
                             }
                         } else {
-                            skill.enabled = false;
+                            skillStore.enabled = false;
                         }
                     } else if (skill.requirements.specPoints) {
                         if (this.currentTalentTree.skillPoints >= skill.requirements.specPoints) {
-                            skill.enabled = true;
+                            skillStore.enabled = true;
                         } else {
-                            skill.enabled = false;
+                            skillStore.enabled = false;
                         }
                     } else if (skill.requirements.skill) {
                         let requiredSkill = this.getSkillById(skill.requirements.skill.id);
                         if (requiredSkill.currentRank === skill.requirements.skill.skillPoints) {
-                            skill.enabled = true;
+                            skillStore.enabled = true;
                         } else {
-                            skill.enabled = false;
+                            skillStore.enabled = false;
                         }
                     }
                 }

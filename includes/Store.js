@@ -174,23 +174,34 @@ const talentTrees = {
         setCurrentSkillTier (state, payload) {
             const tree = state.talentTrees.find(tree => tree.id === payload.treeId);
             tree.currentSkillTier = payload.currentSkillTier;
-        },
-        increaseCurrentSkillTier (state, payload) {
-            const tree = state.talentTrees.find(tree => tree.id === payload.treeId);
-            if (payload.skillTier > tree.currentSkillTier) {
-                tree.currentSkillTier = payload.skillTier;
-            }
-        },
-        decreaseCurrentSkillTier (state, payload) {
+        }
+    },
+    actions: {
+        decreaseCurrentSkillTier ({ commit, getters, rootGetters }, payload) {
             let totalTierSkillPoints = 0;
             payload.tree.skills.forEach((skill) => {
                 if (skill.position[0] === payload.skillTier) {
-                    totalTierSkillPoints = totalTierSkillPoints + skill.currentRank;
+                    let skillStore = rootGetters['skills/getSkillById'](skill.id);
+                    totalTierSkillPoints = totalTierSkillPoints + skillStore.currentRank;
                 }
             });
             if (totalTierSkillPoints === 0) {
-                const tree = state.talentTrees.find(tree => tree.id === payload.tree.id);
-                tree.currentSkillTier = payload.skillTier - 1;
+                const tree = getters.getTreeById(payload.tree.id);
+                if (tree.currentSkillTier > 1) {
+                    commit('setCurrentSkillTier', {
+                        treeId: tree.id,
+                        currentSkillTier: payload.skillTier - 1
+                    });
+                }
+            }
+        },
+        increaseCurrentSkillTier ({ commit, getters }, payload) {
+            const tree = getters.getTreeById(payload.treeId);
+            if (payload.skillTier > tree.currentSkillTier) {
+                commit('setCurrentSkillTier', {
+                    treeId: tree.id,
+                    currentSkillTier: payload.skillTier
+                });
             }
         }
     }
