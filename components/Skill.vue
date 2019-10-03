@@ -21,7 +21,7 @@
             v-on:mouseenter.prevent="onShowTooltip"
             v-on:mouseleave.prevent="onHideTooltip">{{skill.currentRank}}/{{skillData.maxRank}}</span>
         <tooltip
-            v-bind:skill="skillData"
+            v-bind:skillData="skillData"
             v-bind:showTooltip="showTooltip"
             v-bind:tooltipPosition="tooltipPosition"
             v-bind:isValidDecrease="isValidDecrease"
@@ -139,11 +139,9 @@ export default {
             if (this.skill.currentRank === 0) {
                 return false;
             }
-
             if (this.hasAdjacentSkillRequirement()) {
                 return false;
             }
-            
             if (this.skillData.position[0] === this.currentSkillTier) {
                 return true;
             } else {
