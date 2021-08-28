@@ -1,5 +1,7 @@
 # Classic WoW Talent Planner
-A talent planner for World of Warcraft Classic
+A talent planner for World of Warcraft Classic built with Vue.js
+
+Demo: [https://hseager.github.io/Classic-WoW-Talent-Planner/](https://hseager.github.io/Classic-WoW-Talent-Planner/)
 
 ![screenshot](public/images/screenshot.jpg)
 
